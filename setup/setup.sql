@@ -6,7 +6,7 @@
 -- Tiempo de generación: 16-01-2015 a las 20:11:38
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.4.36-0+deb7u3
-DROP DATABASE 	CinesLy;
+DROP DATABASE IF EXISTS	CinesLy;
 
 CREATE DATABASE CinesLy;
 
