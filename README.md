@@ -1,4 +1,4 @@
-Cinefy
+Cines.ly
 ======
 
 El presente proyecto trata de crear una pequeña red social de usuarios de un cine.
