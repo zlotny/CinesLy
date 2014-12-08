@@ -13,7 +13,7 @@ Al final de su desarrollo, se espera que sea usable y se pueda hacer funcionar e
 Solo necesitas descargar el contenido del repositorio en tu servidor web y realizar la instalación de la base de datos,
 usando el script que ubicado bajo database-setup/ cuando esté terminado.
 
-  `git clone https://github.com/ndrs92/Cinefy.git`
+  `git clone https://github.com/ndrs92/Cinesly.git`
   
   `mysql -u user -p < text_file`
 
