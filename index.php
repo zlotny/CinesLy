@@ -1,25 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿
+<html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap Carousel Component Slider/Slideshow/Gallery/Banner</title>
 
-    <!-- Bootstrap core CSS -->
+    <title>CinesLy</title>
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="style/style.css" rel="stylesheet" />
 
-<!--
-<link href="css/custom.css" rel="stylesheet" type="text/css">
-<link href="css/colors.css" rel="stylesheet" type="text/css">
-<link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
-<link rel='stylesheet' type='text/css' href='css/fullcalendar.css' />
-<link href="css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"> -->
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -124,14 +113,6 @@
 
             <!-- Bullet Navigator Skin Begin -->
             <style>
-                /* jssor slider bullet navigator skin 21 css */
-                /*
-                .jssorb21 div           (normal)
-                .jssorb21 div:hover     (normal mouseover)
-                .jssorb21 .av           (active)
-                .jssorb21 .av:hover     (active mouseover)
-                .jssorb21 .dn           (mousedown)
-                */
                 .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
                     background: url(img/b21.png) no-repeat;
                     overflow: hidden;
@@ -162,15 +143,7 @@
             <!-- Bullet Navigator Skin End -->
             <!-- Arrow Navigator Skin Begin -->
             <style>
-                /* jssor slider arrow navigator skin 21 css */
-                /*
-                .jssora21l              (normal)
-                .jssora21r              (normal)
-                .jssora21l:hover        (normal mouseover)
-                .jssora21r:hover        (normal mouseover)
-                .jssora21ldn            (mousedown)
-                .jssora21rdn            (mousedown)
-                */
+              
                 .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
                     position: absolute;
                     cursor: pointer;
@@ -215,20 +188,14 @@
         <!-- Jssor Slider End -->
   
 
-    </div><!-- /.container -->
+    </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="javascript/jquery-2.1.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="javascript/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="javascript/ie10-viewport-bug-workaround.js"></script>
 
-    <!-- jssor slider scripts-->
-    <!-- use jssor.js + jssor.slider.js instead for development -->
-    <!-- jssor.slider.mini.js = (jssor.js + jssor.slider.js) -->
+
     <script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
