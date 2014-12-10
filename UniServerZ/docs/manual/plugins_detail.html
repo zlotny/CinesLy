@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Plugins Modules</title>
+  <meta name="Description" content="To keep The Uniform Server footprint as small as possible a range of modules (plugins) is provided. These are self-extracting 7z archives. Installing a module requires nothing more than double clicking on the module (plugin) file." />
+  <meta name="Keywords" content="Plugins,Modules,Installing,download,information,The Uniform Server, MPG, Mike Gleaves, Ric, UniServer, Olajide, BobS " />
+  <link href="common/css/main.css" rel="stylesheet" type="text/css">
+  <link href="common/css/menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<style type="text/css">
+/*****************************************/
+.heading {
+ margin:0px;
+ padding:4px;
+ padding-left:8px;
+ color: #ffffff;
+ background-color:  #2F2F76;
+ font-size: 13px;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.td_sub{
+ margin:0px;
+ padding:4px;
+ padding-left:8px;
+ color: #000000;
+ background-color:  #f0f0f0;
+ font-size: 12px;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+ul.plugins li{
+ font-size: 12px;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}
+
+/*****************************************/
+</style>
+
+<body id="p110">
+<!-- Start header -->
+  <script language="javascript" src="common/header.js"></script>
+<!-- End header -->
+
+<table id="main" >
+<tr valign="top">
+
+<td id="td_menu">
+<script language="javascript" src="common/top_menu.js"></script>
+<script language="javascript" src="common/home_additional_menu.js"></script>
+</td>
+
+<td id="td_spacer" >
+</td >
+
+<td id="td_content" >
+<!-- ============ Start Content ========== -->
+
+<table >
+<tr>
+ <td>
+    <img src="common/images/zero_logo4.png" alt="Zero logo" />
+ </td>
+ <td>
+<h1>Plugins - Modules</h1>
+</tr>
+</table>
+
+
+<p>To keep The Uniform Server footprint as small as possible a range of modules (plugins) is provided. These are self-extracting 7z archives. Installing a module requires nothing more than double clicking on the module (plugin) file.</p>
+
+<p>The extraction process creates folders and copies files to appropriate location within the server architecture. Generally plugins are automatically detected and configured. However certain plugins require specific configuration, details are provided in the accompanying documentation with each plugin.</p>
+
+<div id="page_links_menu_shadow" >
+ <div id="page_links_menu" >
+  <ul>
+   <li><a href="#Installing plugins" >Installing plugins</a></li>
+   <li><a href="#List of plugins" >List of plugins</a></li>
+   <li><a href="#Module (Plugin) download information" >Module (Plugin) download information</a></li>
+   <li><a href="#Pre-configured servers" >Pre-configured servers</a></li>
+
+   </ul>
+ </div>
+</div>
+
+<a name="Installing plugins"></a>
+<h2>Installing plugins</h2>
+
+<p>Installing is a misnomer! Nothing is installed to your PCs registry all files are extracted to their appropriate location within the UniServer folder structure.</p>
+
+<p>The extraction procedure unless stated in a plugins accompanying documentation is identical for all plugins, proceed as follows:</p>
+
+<ol>
+  <li> Download the desired plugin – see list below for available plugins. </li>
+  <li> Save to folder UniServerZ. </li>
+  <li> If running, stop Uniform Server (Apache and MySQL) from UniController </li>
+  <li> If running,  exit UniController. </li>
+  <li> Double click on the above installation file saved in UniServerZ folder. This runs the self-extracting archive. </li>
+  <li> If prompted allow overwriting of existing files. </li>
+  <li> If you wish; delete the installation file, it is no longer required. </li>
+</ol>
+
+<p><b><i>Note</i>:</b> Each plugin contains a read-me file providing any additional instructions this is located in folder UniServerZ. </p>
+
+<script language="javascript" src="common/top.js"></script>
+<a name="List of plugins"></a>
+<h2>List of plugins</h2>
+<p>The following lists currently (4-12-2014) available plugins:</p>
+
+<p><b>Default</b> - (PHP installed as an Apache module) for details refer to <a href="quick_start_guide.html">Quick Start Guide</a> page .</p>
+<table cellspacing="4">
+<tr valign="top">
+  <td class="heading" ><b>Plugin Name</b></td>
+  <td class="heading" ><b>Component Name</b></td>
+  <td class="heading" ><b>Size</b></td>
+  <td class="heading" ><b>Description</b></td>
+</tr>
+
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_adminer_4_1_0.exe</td>
+  <td class="td_sub">Adminer 4.1.0</td>
+  <td class="td_sub">0.33/0.36&nbsp;MB</td>
+  <td class="td_sub">MySQL admin alternative</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_apache_2_4_10_4.exe</td>
+  <td class="td_sub">Apache 2.4.10</td>
+  <td class="td_sub">3.1/13.1 MB</td>
+  <td class="td_sub">Apache server built with OpenSSL/1.0.1j-fips Added support for PHP 7</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_Controller_1_2_0.exe</td>
+  <td class="td_sub">UniController 1.2.0</td>
+  <td class="td_sub">2.08/7.49 MB</td>
+  <td class="td_sub">Server controller - Required main component - Added support for PHP 7</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_documentation_1_1_7.exe</td>
+  <td class="td_sub">Manual 1.1.7</td>
+  <td class="td_sub">1.23/1.94 MB</td>
+  <td class="td_sub">UniServer-Zero documentation. HTML manual</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_filezilla_server_1_0_1.exe</td>
+  <td class="td_sub">UniFzController.exe 1.0.1</td>
+  <td class="td_sub">1.79/4.60 MB</td>
+  <td class="td_sub">Portable: FileZilla Server V-0.9.46 with OpenSSL 1.0.2.0 libraries.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_filezilla_server_xp_1_0_1.exe</td>
+  <td class="td_sub">UniFzController.exe&nbsp;1.0.1</td>
+  <td class="td_sub">1.79/4.60 MB</td>
+  <td class="td_sub">Portable: FileZilla Server V-0.9.43 with OpenSSL 1.0.2.0 libraries -  Note: FileZilla Server V-0.9.43 is the last version to run on Windows XP</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_lua_1_0_0.exe</td>
+  <td class="td_sub">Lua 1.0.0</td>
+  <td class="td_sub">0.38/0.87 MB</td>
+  <td class="td_sub">Apache mod-lua & mod-plua: Docs, tutorial, extra modules, and examples</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_mariadb_5_5_40.exe</td>
+  <td class="td_sub">MariaDB 5.5.40</td>
+  <td class="td_sub">3.16/23.8 MB</td>
+  <td class="td_sub">MariaDB server 5.5 Drop in replacement for MySQL 5.5 server.</td>
+</tr>
+
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_mariadb_10_0_14.exe</td>
+  <td class="td_sub">MariaDB 10.0.14</td>
+  <td class="td_sub">3.78/24.0 MB</td>
+  <td class="td_sub">MariaDB server 10.0.0 Drop in replacement for MySQL 5.6 server.</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_mysql_5_5_41.exe</td>
+  <td class="td_sub">MySQL 5.5.41</td>
+  <td class="td_sub">3.09/28.0 MB</td>
+  <td class="td_sub">MySQL server 5.5</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_mysql_5_6_22.exe</td>
+  <td class="td_sub">MySQL 5.6.22</td>
+  <td class="td_sub">3.75/31.9 MB</td>
+  <td class="td_sub">MySQL server 5.6</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_mysqlautoback_1_0_0.exe</td>
+  <td class="td_sub">UniDbBackup 1.0.0</td>
+  <td class="td_sub">0.91/2.42 MB</td>
+  <td class="td_sub">Automatically create MySQL backups, FTP and E-Mail notification.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_palemoon_25_1_0.exe</td>
+  <td class="td_sub">Pale Moon 25.1.0</td>
+  <td class="td_sub">23.6/37.9 MB</td>
+  <td class="td_sub">Portable Pale Moon browser. Note support for Windows XP was dropped from version 25.0.0 onwards.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_pear_1_0_1.exe</td>
+  <td class="td_sub">Pear PEAR-1.9.4</td>
+  <td class="td_sub">0.58/4.16 MB</td>
+  <td class="td_sub">Pear and Pear frontend configured for portability.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_5_2_17.exe</td>
+  <td class="td_sub">PHP 5.2.17</td>
+  <td class="td_sub">5.52/20 MB</td>
+  <td class="td_sub">Requires phpMyAdmin downgrade to 4.0.10 or older version</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_5_3_29.exe</td>
+  <td class="td_sub">PHP 5.3.29</td>
+  <td class="td_sub">12.5/49.6 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1e and additional extensions.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_5_4_35.exe</td>
+  <td class="td_sub">PHP 5.4.35</td>
+  <td class="td_sub">12.9/49.5 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j and additional extensions.</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_5_5_19.exe</td>
+  <td class="td_sub">PHP 5.5.19</td>
+  <td class="td_sub">13.2/50.6 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j<br /><b>Note:</b> Will not run on Windows XP</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_5_6_3.exe</td>
+  <td class="td_sub">PHP 5.6.3</td>
+  <td class="td_sub">12.4/47.0 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j<br /><b>Note:</b> Will not run on Windows XP</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_7_0_0_dev.exe</td>
+  <td class="td_sub">PHP 7.0.0 dev</td>
+  <td class="td_sub">12.9/51.0 MB</td>
+  <td class="td_sub"> Will not run on Windows XP</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_phpmyadmin_4_2_13_1.exe</td>
+  <td class="td_sub">phpMyAdmin 4.2.13.1</td>
+  <td class="td_sub">3.49/20.0 MB</td>
+  <td class="td_sub">MySQL admin</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_phpmybackuppro_2_4.exe</td>
+  <td class="td_sub">phpMyBackupPro&nbsp;2.4.0</td>
+  <td class="td_sub">0.26/0.63 MB</td>
+  <td class="td_sub">phpMyBackupPro is a MySQL database backup tool written in PHP.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_strawberry_perl_5_18_1_1.exe</td>
+  <td class="td_sub">Strawberry Perl 5.18.1.1</td>
+  <td class="td_sub">7.34/46.1 MB</td>
+  <td class="td_sub">Full portable Strawberry Perl</td>
+</tr>
+  
+<tr valign="top">
+  <td class="td_sub">ZeroXI_strawberry_perl_mini_5_18_1_1.exe</td>
+  <td class="td_sub">Strawberry Perl 5.18.1.1</td>
+  <td class="td_sub">3.01/19.3 MB</td>
+  <td class="td_sub">Mini portable Strawberry Perl</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_sypex_dumper_2_0_10.exe</td>
+  <td class="td_sub">Sypex Dumper 2.0.10</td>
+  <td class="td_sub">0.24/0.32 MB</td>
+  <td class="td_sub">Alternative to phpMyBackupPro database backup tool.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_uniservice_2_0_1.exe</td>
+  <td class="td_sub">UniService 2.0.1</td>
+  <td class="td_sub">0.62/1.69 MB</td>
+  <td class="td_sub">Run servers as a service.</td>
+</tr>
+
+
+
+
+</table>
+
+<p><b>Alternative</b> - (PHP installed as fast cgi using Apache fcgid module) for details refer to <a href="plugins_fcgid.html">Plugins - CGI</a> page.</p>
+<table cellspacing="4">
+<tr valign="top">
+  <td class="heading" ><b>Plugin Name</b></td>
+  <td class="heading" ><b>Component Name</b></td>
+  <td class="heading" ><b>Size</b></td>
+  <td class="heading" ><b>Description</b></td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_apache_fcgid_2_3_9_b.exe</td>
+  <td class="td_sub">fcgid 2.3.9 + httpd.conf</td>
+  <td class="td_sub">0.18/0.09 MB</td>
+  <td class="td_sub">Apache mod_fcgid.so + httpd.conf First install ZeroXI_apache_2_4_10_3.exe</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_5_2_17.exe</td>
+  <td class="td_sub">PHP nts 5.2.17</td>
+  <td class="td_sub">5.41/20 MB</td>
+  <td class="td_sub">Requires phpMyAdmin downgrade to 4.0.10 or older version</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_5_3_29.exe</td>
+  <td class="td_sub">PHP nts 5.3.29</td>
+  <td class="td_sub">12.8/51.2 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1h and additional extensions.</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_5_4_35.exe</td>
+  <td class="td_sub">PHP nts 5.4.35</td>
+  <td class="td_sub">12.9/49.5 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j and additional extensions.</td>
+</tr>
+
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_5_5_19.exe</td>
+  <td class="td_sub">PHP nts 5.5.19</td>
+  <td class="td_sub">13.5/52.5 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j<br /><b>Note:</b> Will not run on Windows XP</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_5_6_3.exe</td>
+  <td class="td_sub">PHP nts 5.6.3</td>
+  <td class="td_sub">12.4/47.0 MB</td>
+  <td class="td_sub">PHP complete version built with OpenSSl 1.0.1j<br /><b>Note:</b> Will not run on Windows XP</td>
+</tr>
+
+<tr valign="top">
+  <td class="td_sub">ZeroXI_php_nts_7_0_0_dev.exe</td>
+  <td class="td_sub">PHP nts 7.0.0 dev</td>
+  <td class="td_sub">12.9/51.0 MB</td>
+  <td class="td_sub"> Will not run on Windows XP</td>
+</tr>
+
+</table>
+
+
+<p><i>Note 1</i>: Size shows two values Compressed/Uncompressed<br />
+   <i>Note 2</i>: You can use either one of two database servers MySQL or MariaDB.  MariaDB is a drop in replacements for MySQL.<br />
+The controller makes no distinction between the two database servers; menu items and buttons reflect installed server.<br />
+<i>Note 3</i>: PHP skipped version 6! and went straight to version 7.</p>
+
+
+<br />
+<script language="javascript" src="common/top.js"></script>
+<a name="Module (Plugin) download information"></a>
+<h2>Module (Plugin) download information</h2>
+
+<p>Modules are downloable from SourceForge.</p>
+<ul>
+  <li>Modules download folder:
+ <a href="http://sourceforge.net/projects/miniserver/files/UniServer%20ZeroXI/ZeroModules/"> http://sourceforge.net/projects/miniserver/files/UniServer ZeroXI/ZeroModules/</a></li>
+
+
+  <li>Older Modules folder:
+ <a href="http://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXI/ZeroXImodules/Archive_old_versions/"> http://sourceforge.net/projects/miniserver/files/Uniform%20Server%20ZeroXI/ZeroXImodules/Archive_old_versions/</a></li>
+</ul>
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Pre-configured servers"></a>
+<h2>Pre-configured servers</h2>
+
+<p>Pre-configured servers are downloable from SourceForge.</p>
+<ul>
+  <li>Server download folder:
+ <a href="http://sourceforge.net/projects/miniserver/files/UniServer%20ZeroXI/"> http://sourceforge.net/projects/miniserver/files/UniServer%20ZeroXI/</a></li>
+</ul>
+
+<hr />
+<div align="center">--oOo--</div>
+
+
+<script language="javascript" src="common/top.js"></script>
+
+<!-- ============ End Content ============ -->
+</td>
+</tr>
+</table>
+
+
+<!-- Start footer -->
+  <script language="javascript" src="common/footer.js"></script>
+<!-- End footer -->
+
+</body>
+</html>

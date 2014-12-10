@@ -17,6 +17,7 @@
      include "cabecera.php";
      cabeceraGrupos();
      ?>
+     <div class="container">
      <div class="row top-margin">
       <div class="col-sm-6">
        <div class="panel panel-default">
@@ -95,7 +96,7 @@
     </div>
   </div>
 </div>
-
+</div>
 </body>	
 
 <script src="javascript/jquery-2.1.1.min.js"></script>

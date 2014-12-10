@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Plugins fcgid </title>
+  <meta name="Description" content="All pre-configured ZeroXI servers have PHP installed as an Apache module. An alternative is to install and run PHP as fast CGI using Apache module mod_fcgid. This page covers updating a pre-configured ZeroXI server to run PHP as fast cgi in addition provides a step-by-step guide to creating a bespoke server using the available modules." />
+  <meta name="Keywords" content="Fast,CGI,Apache,module,mod_fcgid,Bespoke,server,run,PHP,fast,cgi,The Uniform Server, MPG, Mike Gleaves, Ric, UniServer, Olajide, BobS " />
+  <link href="common/css/main.css" rel="stylesheet" type="text/css">
+  <link href="common/css/menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<style type="text/css">
+/*****************************************/
+.heading {
+ margin:0px;
+ padding:4px;
+ padding-left:8px;
+ color: #ffffff;
+ background-color:  #2F2F76;
+ font-size: 13px;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.td_sub{
+ margin:0px;
+ padding:4px;
+ padding-left:8px;
+ color: #000000;
+ background-color:  #f0f0f0;
+ font-size: 12px;
+ font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+ul.plugins li{
+ font-size: 12px;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}
+
+/*****************************************/
+</style>
+
+<body id="p115">
+<!-- Start header -->
+  <script language="javascript" src="common/header.js"></script>
+<!-- End header -->
+
+<table id="main" >
+<tr valign="top">
+
+<td id="td_menu">
+<script language="javascript" src="common/top_menu.js"></script>
+<script language="javascript" src="common/home_additional_menu.js"></script>
+</td>
+
+<td id="td_spacer" >
+</td >
+
+<td id="td_content" >
+<!-- ============ Start Content ========== -->
+
+<table >
+<tr>
+ <td>
+    <img src="common/images/zero_logo4.png" alt="Zero logo" />
+ </td>
+ <td>
+<h1>Fast CGI using Apache module mod_fcgid</h1>
+</tr>
+</table>
+
+<p>All pre-configured ZeroXI servers have PHP installed as an Apache module. An alternative is to install and run PHP as fast CGI using Apache module mod_fcgid. This page covers updating  a pre-configured ZeroXI server to run PHP as fast cgi in addition provides a step-by-step guide to creating a bespoke server using the available modules.</p>
+
+<div id="page_links_menu_shadow" >
+ <div id="page_links_menu" >
+  <ul>
+   <li><a href="#Updating  a pre-configured ZeroXI server to run PHP as fast cgi" >Updating  a pre-configured ZeroXI server to run PHP as fast cgi</a></li>
+   <li><a href="#Bespoke server to run PHP as fast cgi" >Bespoke server to run PHP as fast cgi</a></li>
+   <li><a href="#Configuration notes" >Configuration notes</a></li>
+   </ul>
+ </div>
+</div>
+
+<a name="Updating  a pre-configured ZeroXI server to run PHP as fast cgi"></a>
+<h2>Updating  a pre-configured ZeroXI server to run PHP as fast cgi</h2>
+
+<p>To update a pre-configured ZeroXI server to run PHP as fast cgi proceed as follows:</p>
+
+<ol>
+  <li> If running, stop Uniform Server (Apache and MySQL) from UniController </li>
+  <li> If running,  exit UniController. </li>
+  <li> Download lastest version of fcgi module  <b>ZeroXI_apache_fcgid_2_3_9_b.exe</b></li>
+  <li> Save to folder UniServerZ. </li>
+  <li> Double click on the above installation file. This runs the self-extracting archive. </li>
+  <li> If prompted allow overwriting of existing files. </li>
+  <li> If you wish; delete the installation file, it is no longer required. </li>
+</ol>
+
+<ol start="8">
+  <li> If they exist delete the following folders :
+    <ul>
+      <li>\UniServerZ\core\<b>php52</b></li>
+      <li>\UniServerZ\core\<b>php53</b></li>
+      <li>\UniServerZ\core\<b>php54</b></li>
+      <li>\UniServerZ\core\<b>php55</b></li>
+      <li>\UniServerZ\core\<b>php56</b></li>
+      <li>\UniServerZ\core\<b>php70</b></li>
+    </ul>
+  </li>
+  <li> Download modules you require. Download one or all of the following PHP version (use latest version):
+    <ul>
+      <li>ZeroXI_php_nts_5_2_17.exe</li>
+      <li>ZeroXI_php_nts_5_3_29.exe</li>
+      <li>ZeroXI_php_nts_5_4_35.exe</li>
+      <li>ZeroXI_php_nts_5_5_19.exe</li>
+      <li>ZeroXI_php_nts_5_6_3.exe</li>
+      <li>ZeroXI_php_nts_7_0_0_dev.exe</li>
+    </ul>
+   </li>
+  <li> Save to folder UniServerZ. </li>
+  <li> For each of the above double click on the installation file. This runs the self-extracting archive. 
+    <ul>
+  <li> If prompted allow overwriting of existing files. </li>
+  <li> If you wish; delete the installation file, it is no longer required. </li>
+    </ul>
+  </li>
+</ol>
+
+
+<p><b><i>Note</i>:</b> Each plugin contains a read-me file providing any additional instructions this is located in folder UniServerZ. </p>
+
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Bespoke server to run PHP as fast cgi"></a>
+<h2>Bespoke server to run PHP as fast cgi</h2>
+
+
+<p>The following provides a complete guide for installing a  WAMP (Windows Apache MySQL and PHP) server running PHP as fast cgi. Installing is a misnomer! Nothing is installed to your PCs registry all files are extracted to their appropriate location within the UniServer
+folder structure.</p>
+
+<p>To install a WAMP server proceed as follows:</p> 
+
+<ol>
+  <li> Download and save the latest controller file (ZeroXI_Controller_1_1_8.exe from the Default list) to drive c:</li>
+  <li> The file is a self-extracting archive, double click on above file to run the extractor.</li>
+  <li> A new folder C:\<b>UniServerZ</b> is created containing the controller application UniController.exe and support folders and files.</li>
+</ol>
+
+<ol start="4">
+  <li> Download and save the latest Apache plugin file (ZeroXI_apache_2_4_10_3.exe from the Default list) to folder <b>UniServerZ</b></li>
+  <li> The file is a self-extracting archive, double click on above file to run the extractor.</li>
+</ol>
+
+
+<ol start="6">
+  <li> Download the following plugins (or latest version) and save to folder <b>UniServerZ</b>.
+       <ul>
+         <li>ZeroXI_apache_fcgid_2_3_9_b.exe - Apache mod_fcgid.so + httpd.conf (Use module from the Alternative list)</li>
+         <li>ZeroXI_mysql_5_5_41.exe - MySQL server (Use module from the Default list)</li>
+         <li>ZeroXI_php_nts_5_4_35.exe - PHP (Use PHP modules from the Alternative list)</li>
+         <li>ZerXI_phpmyadmin_4_2_11.exe - Admin for MySQL server (Use module from the Default list)</li>
+       </ul>
+   </li>
+  <li> For each of the above installation files double click to run the extractor.</li>
+  <li> If prompted allow overwriting of existing files. </li>
+  <li> If you wish; delete the installation files, they are no longer required. </li>
+</ol>
+
+<p><b><i>Note</i>:</b> Each plugin contains a read-me file providing any additional instructions this is located in folder UniServerZ. </p>
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Configuration notes"></a>
+<h2>Configuration notes</h2>
+
+<p><b>Note 1:</b> The module ZeroXI_apache_fcgid_2_3_9_b.exe overwrites the configuration file UniServerZ\core\apache2\conf\<b>httpd.conf</b> and adds mod_fcgid.so to the Apache modules folder UniServerZ\core\apache2\<b>modules</b></p>
+
+<p><b>Note 2:</b> Parameters  in configuration file UniServerZ\core\apache2\conf\<b>httpd.conf</b> </p>
+
+<table>
+
+<tr valign="top">
+ <td>
+   <p>Load module</p>
+ </td>
+ <td>
+<pre>
+LoadModule fcgid_module modules/mod_fcgid.so
+</pre>
+ </td>
+</tr>
+
+<tr valign="top">
+ <td>
+<p>Common fcgid module configuration parameters</p>
+ </td>
+ <td>
+<pre>
+&lt;IfModule fcgid_module&gt;
+ FcgidInitialEnv SystemRoot "C:/Windows"
+ FcgidInitialEnv SystemDrive "C:"
+ FcgidInitialEnv TEMP "C:/WINDOWS/Temp"
+ FcgidInitialEnv TMP "C:/WINDOWS/Temp"
+ FcgidInitialEnv US_ROOTF "${US_ROOTF}"
+ FcgidInitialEnv windir "C:/WINDOWS"
+ FcgidIOTimeout 64
+ FcgidConnectTimeout 16
+ FcgidMaxRequestsPerProcess 1000 
+ FcgidMaxProcesses 50 
+ FcgidMaxRequestLen 8131072
+ FcgidInitialEnv PHP_FCGI_MAX_REQUESTS 1000
+&lt;/IfModule&gt;
+</pre>
+ </td>
+
+
+<tr valign="top">
+ <td>
+<p>PHP selection is provided by IfDefine directives.</p>
+ </td>
+ <td>
+<pre>
+&lt;IfDefine php52&gt;
+ FcgidInitialEnv PATH "${US_ROOTF}/core/php52;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;"
+ FcgidInitialEnv PHPRC "${US_ROOTF}/core/php52/${PHP_INI_SELECT}"
+
+ &lt;Files ~ "\.php$&gt;"
+  AddHandler fcgid-script .php
+  FcgidWrapper "${US_ROOTF}/core/php52/php-cgi.exe" .php
+ &lt;/Files&gt;
+&lt;/IfDefine&gt;
+
+&lt;IfDefine php53&gt;
+.....etc
+&lt;/IfDefine&gt;
+
+&lt;IfDefine php54&gt;
+.....etc
+&lt;/IfDefine&gt;
+
+&lt;IfDefine php55&gt;
+.....etc
+&lt;/IfDefine&gt;
+
+&lt;IfDefine php56&gt;
+ .....etc
+&lt;/IfDefine&gt;
+
+&lt;IfDefine php70&gt;
+ FcgidInitialEnv PATH "${US_ROOTF}/core/php70;C:/WINDOWS/system32;C:/WINDOWS;C:/WINDOWS/System32/Wbem;"
+ FcgidInitialEnv PHPRC "${US_ROOTF}/core/php70/${PHP_INI_SELECT}"
+
+ &lt;Files ~ "\.php$&gt;"
+  AddHandler fcgid-script .php
+  FcgidWrapper "${US_ROOTF}/core/php70/php-cgi.exe" .php
+ &lt;/Files&gt;
+&lt;/IfDefine&gt;
+
+</pre>
+ </td>
+</tr>
+
+
+
+</table>
+
+<p><b>Note 3:</b> The above Apache configuration is intended to get you quickly  up and running with fast cgi. <br />
+You will need to tweak configuration parameters to suit your specific requirements. <br />
+For a complete list of directives refer to following page  <a href="http://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html">http://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html</a>  </p>
+
+<hr />
+<div align="center">--oOo--</div>
+
+
+<script language="javascript" src="common/top.js"></script>
+
+<!-- ============ End Content ============ -->
+</td>
+</tr>
+</table>
+
+
+<!-- Start footer -->
+  <script language="javascript" src="common/footer.js"></script>
+<!-- End footer -->
+
+</body>
+</html>
