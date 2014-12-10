@@ -47,7 +47,7 @@
                 <tr ><td>Amigo 4</td></tr>
               </table>
             </div>
-            <button type="submit" class="btn btn-default pull-right">Volver</button>
+            <button onclick="window.history.back()" type="submit" class="btn btn-default pull-right">Volver</button>
           </form>
         </div>
       </div>
