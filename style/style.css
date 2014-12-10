@@ -40,3 +40,9 @@ body{
     height: 200px;
 
 }
+
+ .custom-panel-right-fixed {
+ 	position:fixed;
+ 	right:0px;
+ 	margin-top:10px;
+ }
