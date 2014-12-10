@@ -1,206 +1,202 @@
 ﻿
 <html>
 <head>
-    <meta charset="utf-8">
-
-
-    <title>CinesLy</title>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="style/style.css" rel="stylesheet" />
-
-
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<meta charset="utf-8">
+	<title>CinesLy</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="style/style.css" rel="stylesheet" />
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    
-</head>
-<body>
-    <div class="row">
-        <div class="col-md-12">
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container container-fluid pers">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="bootstrap-carousel.html">
-                            <img class="img-circle img-responsive" src="img/logo.png" alt="" width="75px">
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <form class="navbar-form navbar-right" role="search">
-                            <input type="text" class="form-control" placeholder="correo electrónico">
-                            <input type="password" class="form-control" placeholder="contraseña">
-                            <input type="button" class="btn btn-inverse" value="login">
-                            <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"><span class="badge badge-pers">1</span>  </input></div>
-                            <a href="" data-toggle="modal" data-target="#forgetPass">¿Olvidaste tu contraseña?</a>                        
-                        </form>
-                    </div>
-                </div>
-            </nav>
-                            <div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h3>Registro</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <input type="text" class="form-control form-pers" placeholder="nombre de usuario">
-                                            <input type="text" class="form-control form-pers" placeholder="correo electrónico">
-                                            <input type="password" class="form-control form-pers" placeholder="contraseña">   
-                                            <input type="password" class="form-control form-pers" placeholder="repita la contraseña">              
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success">Registrarse</button>
-                                            <button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-                            <div id="forgetPass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h3>Recuperar contraseña</h3>
-                                        </div>
-                                        <div class="modal-body">
-                                            <input type="text" class="form-control form-pers" placeholder="correo electrónico">          
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-success">Enviar</button>
-                                            <button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>  
-        </div>
-    </div>
-    <div class="banner"style="min-height: 50px;background-color:#1D1D1D">
-        <!-- Jssor Slider Begin -->
-        <!-- You can move inline styles to css file or css block. -->
-        <!-- ================================================== -->
-        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
-            <!-- Loading Screen -->
-            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
-                top: 0px; left: 0px; width: 100%; height: 100%;">
-                </div>
-                <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
-                top: 0px; left: 0px; width: 100%; height: 100%;">
-                </div>
-            </div>
-            <!-- Slides Container -->
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 300px; overflow: hidden;">
-                <div>
-                    <img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 300px;width:100%;"/>
-                </div>
-                <div>
-                    <img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 300px;width:100%;"/>
-                </div>
-                <div>
-                    <img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 300px;width:100%;"/>
-                </div>
-            </div>
+      <![endif]-->
+  </head>
+  <body>
+  	<div class="row">
+  		<div class="col-md-12">
+  			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  				<div class="container container-fluid pers">
+  					<div class="navbar-header">
+  						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+  							<span class="sr-only">Toggle navigation</span>
+  							<span class="icon-bar"></span>
+  							<span class="icon-bar"></span>
+  							<span class="icon-bar"></span>
+  						</button>
+  						<a href="bootstrap-carousel.html">
+  							<img class="img-circle img-responsive" src="img/logo.png" alt="" width="75px">
+  						</a>
+  					</div>
+  					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  						<form class="navbar-form navbar-right" role="search">
+  							<input type="text" class="form-control" placeholder="correo electrónico">
+  							<input type="password" class="form-control" placeholder="contraseña">
+  							<input type="button" class="btn btn-inverse" value="login">
+  							<div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"><span class="badge badge-pers">1</span>  </input></div>
+  							<a href="" data-toggle="modal" data-target="#forgetPass">¿Olvidaste tu contraseña?</a>                        
+  						</form>
+  					</div>
+  				</div>
+  			</nav>
+  			<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+  					<div class="modal-content">
+  						<div class="modal-header">
+  							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  							<h3>Registro</h3>
+  						</div>
+  						<div class="modal-body">
+  							<input type="text" class="form-control form-pers" placeholder="nombre de usuario">
+  							<input type="text" class="form-control form-pers" placeholder="correo electrónico">
+  							<input type="password" class="form-control form-pers" placeholder="contraseña">   
+  							<input type="password" class="form-control form-pers" placeholder="repita la contraseña">              
+  						</div>
+  						<div class="modal-footer">
+  							<button type="button" class="btn btn-success">Registrarse</button>
+  							<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+  						</div>
+  					</div>
+  				</div>
+  			</div>  
+  			<div id="forgetPass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+  					<div class="modal-content">
+  						<div class="modal-header">
+  							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  							<h3>Recuperar contraseña</h3>
+  						</div>
+  						<div class="modal-body">
+  							<input type="text" class="form-control form-pers" placeholder="correo electrónico">          
+  						</div>
+  						<div class="modal-footer">
+  							<button type="button" class="btn btn-success">Enviar</button>
+  							<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+  						</div>
+  					</div>
+  				</div>
+  			</div>  
+  		</div>
+  	</div>
+  	<div class="banner"style="min-height: 50px;background-color:#1D1D1D">
+  		<!-- Jssor Slider Begin -->
+  		<!-- You can move inline styles to css file or css block. -->
+  		<!-- ================================================== -->
+  		<div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
+  		top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
+  		<!-- Loading Screen -->
+  		<div u="loading" style="position: absolute; top: 0px; left: 0px;">
+  			<div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+  			top: 0px; left: 0px; width: 100%; height: 100%;">
+  		</div>
+  		<div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
+  		top: 0px; left: 0px; width: 100%; height: 100%;">
+  	</div>
+  </div>
+  <!-- Slides Container -->
+  <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 300px; overflow: hidden;">
+  	<div>
+  		<img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 300px;width:100%;"/>
+  	</div>
+  	<div>
+  		<img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 300px;width:100%;"/>
+  	</div>
+  	<div>
+  		<img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 300px;width:100%;"/>
+  	</div>
+  </div>
 
-            <!-- Bullet Navigator Skin Begin -->
-            <style>
-                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
-                    background: url(img/b21.png) no-repeat;
-                    overflow: hidden;
-                    cursor: pointer;
-                }
+  <!-- Bullet Navigator Skin Begin -->
+  <style>
+  	.jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+  		background: url(img/b21.png) no-repeat;
+  		overflow: hidden;
+  		cursor: pointer;
+  	}
 
-                .jssorb21 div {
-                    background-position: -5px -5px;
-                }
+  	.jssorb21 div {
+  		background-position: -5px -5px;
+  	}
 
-                    .jssorb21 div:hover, .jssorb21 .av:hover {
-                        background-position: -35px -5px;
-                    }
+  	.jssorb21 div:hover, .jssorb21 .av:hover {
+  		background-position: -35px -5px;
+  	}
 
-                .jssorb21 .av {
-                    background-position: -65px -5px;
-                }
+  	.jssorb21 .av {
+  		background-position: -65px -5px;
+  	}
 
-                .jssorb21 .dn, .jssorb21 .dn:hover {
-                    background-position: -95px -5px;
-                }
-            </style>
-            <!-- bullet navigator container -->
-            <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
-                <!-- bullet navigator item prototype -->
-                <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
-            </div>
-            <!-- Bullet Navigator Skin End -->
-            <!-- Arrow Navigator Skin Begin -->
-            <style>
-              
-                .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
-                    position: absolute;
-                    cursor: pointer;
-                    display: block;
-                    background: url(img/a21.png) center center no-repeat;
-                    overflow: hidden;
-                }
+  	.jssorb21 .dn, .jssorb21 .dn:hover {
+  		background-position: -95px -5px;
+  	}
+  </style>
+  <!-- bullet navigator container -->
+  <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
+  	<!-- bullet navigator item prototype -->
+  	<div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+  </div>
+  <!-- Bullet Navigator Skin End -->
+  <!-- Arrow Navigator Skin Begin -->
+  <style>
 
-                .jssora21l {
-                    background-position: -3px -33px;
-                }
+  	.jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+  		position: absolute;
+  		cursor: pointer;
+  		display: block;
+  		background: url(img/a21.png) center center no-repeat;
+  		overflow: hidden;
+  	}
 
-                .jssora21r {
-                    background-position: -63px -33px;
-                }
+  	.jssora21l {
+  		background-position: -3px -33px;
+  	}
 
-                .jssora21l:hover {
-                    background-position: -123px -33px;
-                }
+  	.jssora21r {
+  		background-position: -63px -33px;
+  	}
 
-                .jssora21r:hover {
-                    background-position: -183px -33px;
-                }
+  	.jssora21l:hover {
+  		background-position: -123px -33px;
+  	}
 
-                .jssora21ldn {
-                    background-position: -243px -33px;
-                }
+  	.jssora21r:hover {
+  		background-position: -183px -33px;
+  	}
 
-                .jssora21rdn {
-                    background-position: -303px -33px;
-                }
-            </style>
-            <!-- Arrow Left -->
-            <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
-            </span>
-            <!-- Arrow Right -->
-            <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
-            </span>
-            <!-- Arrow Navigator Skin End -->
-            <a style="display: none" href="http://www.jssor.com">bootstrap carousel</a>
-        </div>
-        <!-- Jssor Slider End -->
-  
+  	.jssora21ldn {
+  		background-position: -243px -33px;
+  	}
 
-    </div>
-
-    <script src="javascript/jquery-2.1.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="javascript/docs.min.js"></script>
-    <script src="javascript/ie10-viewport-bug-workaround.js"></script>
+  	.jssora21rdn {
+  		background-position: -303px -33px;
+  	}
+  </style>
+  <!-- Arrow Left -->
+  <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+  </span>
+  <!-- Arrow Right -->
+  <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+  </span>
+  <!-- Arrow Navigator Skin End -->
+  <a style="display: none" href="http://www.jssor.com">bootstrap carousel</a>
+</div>
+<!-- Jssor Slider End -->
 
 
-    <script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
-    <script>
-        jQuery(document).ready(function ($) {
+</div>
 
-            var options = {
+<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="javascript/docs.min.js"></script>
+<script src="javascript/ie10-viewport-bug-workaround.js"></script>
+
+
+<script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
+<script>
+	jQuery(document).ready(function ($) {
+
+		var options = {
                 $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
@@ -218,7 +214,7 @@
                 $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
                 $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
                 $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
-              
+
                 $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
                     $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
@@ -246,11 +242,11 @@
             //responsive code begin
             //you can remove responsive code if you don't want the slider scales while window resizes
             function ScaleSlider() {
-                var bodyWidth = document.body.clientWidth;
-                if (bodyWidth)
-                    jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
-                else
-                    window.setTimeout(ScaleSlider, 30);
+            	var bodyWidth = document.body.clientWidth;
+            	if (bodyWidth)
+            		jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+            	else
+            		window.setTimeout(ScaleSlider, 30);
             }
             ScaleSlider();
 
@@ -259,7 +255,7 @@
             $(window).bind("orientationchange", ScaleSlider);
             //responsive code end
         });
-    </script>
+</script>
 
 </body>
 </html>
