@@ -62,21 +62,7 @@ function cabeceraCartelera(){
 		<div>
 
 		</div>
-		<?php
-	}
-	?>
-
-
-
-	<?php
-	function cabeceraPantallaPrincipal(){
-		echo "Deixade de tocar no teléfono";
-	}
-
-	?>
-
-
-
+	
 	<?php
 	function cabeceraGrupos(){
 		?>
