@@ -56,12 +56,8 @@ function cabeceraCartelera(){
 				</nav>
 			</div>
 		</div>
-		<div>
+	</div>
 
-		</div>
-		<div>
-
-		</div>
 	
 	<?php
 	}
@@ -129,12 +125,8 @@ function cabeceraCartelera(){
 					</nav>
 				</div>
 			</div>
-			<div>
+		</div>
 
-			</div>
-			<div>
-
-			</div>
 			<?php
 		}
 		?>
@@ -205,13 +197,8 @@ function cabeceraCartelera(){
 						</div><!-- /.container-fluid -->
 					</nav>
 				</div>
-			</div>
-			<div>
-
-			</div>
-			<div>
-
-			</div>
+			</div>	
+		</div>		
 			<?php
 		}
 		?>
