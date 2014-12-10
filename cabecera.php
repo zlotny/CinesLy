@@ -65,7 +65,6 @@ function cabeceraCartelera(){
 	
 	<?php
 	function cabeceraGrupos(){
-		?>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -148,6 +147,4 @@ function cabeceraCartelera(){
 			<div>
 
 			</div>
-			<?php
-		}
 		?>
