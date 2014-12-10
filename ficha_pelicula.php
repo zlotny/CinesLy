@@ -17,5 +17,5 @@
 </head>
 
 <body>
-<?php cabeceraPantallaPrincipal(); ?>
+<?php cabeceraGrupos(); ?>
 </body>
