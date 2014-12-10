@@ -35,7 +35,7 @@
               
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="buscar_peli" data-toggle="dropdown" aria-expanded="true">
-                  Buscar Película
+                  Buscar Películaaa
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="buscar_peli">
