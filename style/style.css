@@ -1,5 +1,5 @@
 body{
-	padding-top:57px;
+	padding-top:50px;
 }
 
 #test{
@@ -12,10 +12,30 @@ body{
 	margin-top: 50px;
 }
 
+<<<<<<< HEAD
 .btn-negro{
 	margin-top:1px;
 	background-color:transparent;
 	color:#43bfab;
 	border-color: #e2e2e2;
 	outline: none;
+=======
+.btn-makesmall{
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	padding: 0;
+	width: 60px;
+}
+
+.little-right{
+	margin-left: 5px;
+}
+
+.scrollable-table{
+
+    overflow-y: scroll;
+    height: 200px;
+
+>>>>>>> ac9849b141045ca119e9ab7d413b0f8ef7aed019
 }
