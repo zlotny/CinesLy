@@ -18,20 +18,21 @@
      cabeceraGrupos();
      ?>
      <div class="row top-margin">
+	 <div class="col-sm-3"></div>
       <div class="col-sm-6">
        <div class="panel panel-default">
-         <div class="panel-heading">Nuevo Grupo</div>
+         <div class="panel-heading">Modificar Grupo</div>
          <div class="panel-body">
 
 
           <form role="form">
             <div class="form-group">
-              <label for="nombre_grupo">Nombre del Grupo</label>
+              <label for="nombre_grupo">Cambiar nombre del Grupo</label>
               <input type="email" class="form-control" id="nombre_grupo"
               placeholder="Nombre de tu grupo">
             </div>
             <div class="form-group">
-              <label for="add_peli">Añadir Película</label>
+              <label for="change_peli">Cambiar Película</label>
               
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="buscar_peli" data-toggle="dropdown" aria-expanded="true">
@@ -47,7 +48,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="add_sesion">Añadir Sesión</label>
+              <label for="add_sesion">Cambiar Sesión</label>
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="buscar_ses" data-toggle="dropdown" aria-expanded="true">
                   Buscar Sesión
@@ -71,30 +72,22 @@
                 <tr ><td>Amigo 5</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
               </table>
             </div>
-            <button type="submit" class="btn btn-default pull-right">Crear</button>
+			<label for="del_amigos">Eliminar Amigos</label>
+			<div class="form-group scrollable-table">
+              <table class="table table-striped">
+                <tr ><td>Amigo 1</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Eliminar&nbsp;</span></td></tr>
+                <tr ><td>Amigo 2</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Eliminar&nbsp;</span></td></tr>
+                <tr ><td>Amigo 3</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Eliminar&nbsp;</span></td></tr>
+                <tr ><td>Amigo 4</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Eliminar&nbsp;</span></td></tr>
+                <tr ><td>Amigo 5</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Eliminar&nbsp;</span></td></tr>
+              </table>
+            </div>
+            <button type="submit" class="btn btn-default pull-right">Modificar</button>
           </form>
         </div>
       </div>
     </div>
-
-    <div class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">Grupos</div>
-        <div class="panel-body">
-         <div class="form-group scrollable-table">
-
-          <table class="table table-striped">
-          <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
-            <tr ><td>Grupo 1</td><td>10</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
-            <tr ><td>Grupo 2</td><td>14</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
-
-          </table>
-        </div>
-		<button type="submit" class="btn btn-default pull-right">Validar</button>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="col-sm-3"></div>
 
 </body>	
 
