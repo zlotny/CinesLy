@@ -57,7 +57,7 @@
 
 						<div class="well">
 							
-							<a class="media-left" href="#">
+							<a class="media-left" href="perfil.php">
 								<img src="img/logo.png" alt="" height="50px" width="50px" class="thumbnail">
 							</a>
 							<div class="media-body">
@@ -77,7 +77,7 @@
 
 						<div class="well">
 							
-							<a class="media-left" href="#">
+							<a class="media-left" href="perfil.php">
 								<img src="img/logo.png" alt="" height="50px" width="50px" class="thumbnail">
 							</a>
 							<div class="media-body">
@@ -93,7 +93,7 @@
 
 						<div class="well">
 							
-							<a class="media-left" href="#">
+							<a class="media-left" href="perfil.php">
 								<img src="img/logo.png" alt="" height="50px" width="50px" class="thumbnail">
 							</a>
 							<div class="media-body">
@@ -110,9 +110,9 @@
 			<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 hidden-xs fixed-rigth">
 				<div class="panel panel-default" style="text-align:center">
 						
-						<img src="img/logo.png" alt="" height="150px" width="90px" class="">
-						<br>
-						<img src="img/logo.png" alt="" height="150px" width="90px" class="">
+						<a href="ficha_pelicula.php"><img src="img/peliculas/hobbit.jpg" alt="" height="250px" width="150px" class=""></a>
+						<br><hr>
+						<a href="ficha_pelicula.php"><img src="img/peliculas/hobbit.jpg" alt="" height="250px" width="150px" class=""></a>
 						
 					
 				</div>

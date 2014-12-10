@@ -85,8 +85,8 @@
 
           <table class="table table-striped">
           <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
-            <tr ><td>Grupo 1</td><td>10</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
-            <tr ><td>Grupo 2</td><td>14</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
+            <tr ><td>Grupo 1</td><td>10</td><td><a href="ver_grupo.php" class="btn btn-default btn-mini btn-makesmall"> Ver </a></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
+            <tr ><td>Grupo 2</td><td>14</td><td><a href="ver_grupo.php" class="btn btn-default btn-mini btn-makesmall"> Ver </a></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
 
           </table>
         </div>

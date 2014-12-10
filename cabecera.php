@@ -13,16 +13,16 @@ function cabeceraCartelera(){
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">INICIO</a>
+							<a class="navbar-brand" href="pantallaPrincipal.php">INICIO</a>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#">Cartelera <span class="sr-only">(current)</span></a></li>
-								<li><a href="#">Amigos</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ver <span class="caret"></span></a>
+								<li class="active"><a href="catalogo.php">Catalogo <span class="sr-only">(current)</span></a></li>
+								<li><a href="amigos.php">Amigos</a></li>
+								<!--li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ver<span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">Ver Pelicula</a></li>
+										<li><a href="ficha_pelicula">Ver Peliculas</a></li>
 										<li><a href="#">Comentar Pelicula</a></li>
 										<li><a href="#">Valorar</a></li>
 										<li class="divider"></li>
@@ -30,7 +30,7 @@ function cabeceraCartelera(){
 										<li class="divider"></li>
 										<li><a href="#">HAY LEYENDA</a></li>
 									</ul>
-								</li>
+								</li-->
 							</ul>
 							<form class="navbar-form navbar-left" role="search">
 								<div class="form-group">
@@ -39,15 +39,15 @@ function cabeceraCartelera(){
 								<button type="submit" class="btn btn-default">Buscar</button>
 							</form>
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#">Mi perfil </a></li>
+								<li><a href="perfil.php">Mi perfil </a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Preferencias de cuenta <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">Borrar cuenta</a></li>
-										<li><a href="#">Modificar datos cuenta</a></li>
-										<li><a href="#">Cambiar pass</a></li>
+										<li><a href="perfil.php">Borrar cuenta</a></li>
+										<li><a href="perfil.php">Modificar datos cuenta</a></li>
+										<li><a href="perfil.php">Cambiar pass</a></li>
 										<li class="divider"></li>
-										<li><a href="#">Cerrar sesion</a></li>
+										<li><a href="index.php">Cerrar sesion</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -76,7 +76,7 @@ function cabeceraGrupos(){
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">INICIO</a>
+							<a class="navbar-brand" href="pantallaPrincipal.php">INICIO</a>
 						</div>
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							
@@ -96,27 +96,27 @@ function cabeceraGrupos(){
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="#">Ver Perfil</a></li>
-										<li><a href="#">Mis Grupos</a></li>
-										<li><a href="#">Cerrar Sesion</a></li>
+										<li><a href="perfil.php">Ver Perfil</a></li>
+										<li><a href="perfil.php">Mis Grupos</a></li>
+										<li><a href="index.php">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>
 									</li>
-									<li><a href="#">Amigos </a></li>
-									<li><a href="#">Catálogo </a></li>
+									<li><a href="amigos.php">Amigos </a></li>
+									<li><a href="catalogo.php">Catálogo </a></li>
 								</ul>
 								
 								<ul class="nav navbar-nav navbar-right">
-									<li><a href="#">Mi perfil </a></li>
+									<li><a href="perfil.php">Mi perfil </a></li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Preferencias de cuenta <span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Borrar cuenta</a></li>
-											<li><a href="#">Modificar datos cuenta</a></li>
-											<li><a href="#">Cambiar pass</a></li>
+											<li><a href="perfil.php">Borrar cuenta</a></li>
+											<li><a href="perfil.php">Modificar datos cuenta</a></li>
+											<li><a href="perfil.php">Cambiar pass</a></li>
 											<li class="divider"></li>
-											<li><a href="#">Cerrar sesion</a></li>
+											<li><a href="index.php">Cerrar sesion</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -149,7 +149,7 @@ function cabeceraGrupos(){
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-								<a class="navbar-brand" href="#">INICIO</a>
+								<a class="navbar-brand" href="pantallaPrincipal.php">INICIO</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								
@@ -171,12 +171,12 @@ function cabeceraGrupos(){
 										<ul class="dropdown-menu" role="menu">
 											<li><a href="perfil.php">Ver Perfil</a></li>
 											<li><a href="mis_grupos.php">Mis Grupos</a></li>
-											<li><a href="#">Cerrar Sesion</a></li>
+											<li><a href="index.php">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>
 									</li>
-									<li><a href="#">Amigos </a></li>
+									<li><a href="amigos.php">Amigos </a></li>
 									<li><a href="catalogo.php">Catálogo </a></li>
 								</ul>
 								

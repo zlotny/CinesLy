@@ -25,8 +25,8 @@
           <li class="media">
             <div class="col-md-12 ">
               <div class="well">
-                <a class="media-left" href="#">
-                  <img src="img/logo.png" alt="" height="140px" width="90px" class="thumbnail">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
                 </a>
                 <div class="media-body">
                   <p><b>Nombre: </b>Auxiliar</p>
@@ -42,8 +42,8 @@
           <li class="media">
             <div class="col-md-12 ">
               <div class="well">
-                <a class="media-left" href="#">
-                  <img src="img/logo.png" alt="" height="140px" width="90px" class="thumbnail">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
                 </a>
                 <div class="media-body">
                   <p><b>Nombre: </b>Auxiliar</p>
@@ -59,8 +59,8 @@
           <li class="media">
             <div class="col-md-12 ">
               <div class="well">
-                <a class="media-left" href="#">
-                  <img src="img/logo.png" alt="" height="140px" width="90px" class="thumbnail">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
                 </a>
                 <div class="media-body">
                   <p><b>Nombre: </b>Auxiliar</p>

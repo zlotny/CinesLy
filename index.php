@@ -30,10 +30,10 @@
               </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form class="navbar-form navbar-right" role="search">
+              <form action="pantallaPrincipal.php" method="#" class="navbar-form navbar-right" role="search">
                 <input type="text" class="form-control" placeholder="correo electrónico">
                 <input type="password" class="form-control" placeholder="contraseña">
-                <input type="button" class="btn btn-inverse" value="login">
+                <input type="submit" class="btn btn-inverse" value="login">
                 <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"><span class="badge badge-pers">1</span>  </input></div>
                 <a href="" data-toggle="modal" data-target="#forgetPass">¿Olvidaste tu contraseña?</a>                        
               </form>
