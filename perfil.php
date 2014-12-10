@@ -54,7 +54,9 @@
   				</div>
   			</div>
   			<div class="form-group">
+          <div class="container">
   				<label for="repita_contraseña" class="col-lg-2 control-label">Repetir Contraseña</label>
+        </div>
   				<div class="col-lg-3">
   					<input type="password" class="form-control" id="repita_contraseña" placeholder="Repetir contraseña">
   				</div>
