@@ -14,7 +14,7 @@
   </head>
   <body>
   	<?php
-  	include "cabecera.html";
+  	include "cabecera.php";
   	?>
   </body>	
 
