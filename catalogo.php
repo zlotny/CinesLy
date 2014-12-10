@@ -15,6 +15,7 @@
   <body>
   	<?php
   	include "cabecera.php";
+	cabeceraCartelera();
   	?>
   </body>	
 
