@@ -15,7 +15,7 @@
     <body>
      <?php
      include "cabecera.php";
-     cabeceraCartelera();
+     cabeceraGrupos();
      ?>
      <div class="row top-margin">
       <div class="col-sm-6">
@@ -43,14 +43,11 @@
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli2</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli3</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli4</a></li>
-
                 </ul>
               </div>
             </div>
-
             <div class="form-group">
               <label for="add_sesion">Añadir Sesión</label>
-              
               <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="buscar_ses" data-toggle="dropdown" aria-expanded="true">
                   Buscar Sesión
@@ -61,49 +58,39 @@
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses2</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses3</a></li>
                   <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses4</a></li>
-
                 </ul>
               </div>
             </div>
             <div class="form-group">
               <label for="add_amigos">Añadir Amigos</label>
-
               <table class="table table-striped">
-                <tr ><td>Amigo 1</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td><tr>
-                <tr ><td>Amigo 2</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td><tr>
-                <tr ><td>Amigo 3</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td><tr>
-                <tr ><td>Amigo 4</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td><tr>
-                <tr ><td>Amigo 5</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td><tr>
-
-            </table>
-
-
-
-
-
-
-          </div>
-          <button type="submit" class="btn btn-default pull-right">Crear</button>
-        </form>
-
-
-
-
-
-
-
-
-
-
+                <tr ><td>Amigo 1</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+                <tr ><td>Amigo 2</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+                <tr ><td>Amigo 3</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+                <tr ><td>Amigo 4</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+                <tr ><td>Amigo 5</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+              </table>
+            </div>
+            <button type="submit" class="btn btn-default pull-right">Crear</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">Grupos</div>
-      <div class="panel-body">
-        Aqui va una tabla
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Grupos</div>
+        <div class="panel-body">
+         <div class="form-group">
+
+          <table class="table table-striped">
+          <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
+            <tr ><td>Grupo 1</td><td>10</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
+            <tr ><td>Grupo 2</td><td>14</td><td><button type="button" class="btn btn-default btn-mini btn-makesmall"> Ver </button></td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Borrar&nbsp;</span></td></tr>
+
+          </table>
+          <button type="submit" class="btn btn-default pull-right">Validar</button>
+        </div>
       </div>
     </div>
   </div>

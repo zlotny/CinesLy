@@ -1,5 +1,5 @@
 body{
-	padding-top:57px;
+	padding-top:50px;
 }
 
 #test{
@@ -10,4 +10,12 @@ body{
 
 .top-margin{
 	margin-top: 50px;
+}
+
+.btn-makesmall{
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	padding: 0;
+	width: 60px;
 }
