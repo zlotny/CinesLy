@@ -12,7 +12,9 @@ body{
 	margin-top: 50px;
 }
 
-
+.margensuperior{
+	padding-top:50px;
+}
 .btn-negro{
 	margin-top:1px;
 	background-color:transparent;

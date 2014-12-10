@@ -170,48 +170,55 @@ function cabeceraCartelera(){
 								</form>
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<button type="button" class="btn-negro btn-lg">
+										<button type="button" data-toggle="modal" data-target="#reg" class="btn-negro btn-lg">
 											<span class="glyphicon glyphicon-globe btn-negro"></span>
 										</button>
 									</li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
 										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Ver Perfil</a></li>
-											<li><a href="#">Mis Grupos</a></li>
+											<li><a href="perfil.php">Ver Perfil</a></li>
+											<li><a href="mis_grupos.php">Mis Grupos</a></li>
 											<li><a href="#">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>
 									</li>
 									<li><a href="#">Amigos </a></li>
-									<li><a href="#">Catálogo </a></li>
+									<li><a href="catalogo.php">Catálogo </a></li>
 								</ul>
 								
-								<ul class="nav navbar-nav navbar-right">
-									<!--li><a href="#">Mi perfil </a></li-->
-									<!--li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Preferencias de cuenta <span class="caret"></span></a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="#">Borrar cuenta</a></li>
-											<li><a href="#">Modificar datos cuenta</a></li>
-											<li><a href="#">Cambiar pass</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Cerrar sesion</a></li>
-										</ul>
-									</li-->
-								</ul>
+
+								<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+												<h3>Notificaciones</h3>
+											</div>
+											<div class="modal-body" style="text-align:center">
+												<div class="row"></div>
+												<div class="well">
+												          <h2>Notificacion 1</h2>               
+											</div>
+											<div class="well">
+												          <h2>Notificacion 2</h2>               
+											</div>
+											<div class="well">
+												          <h2>Notificacion 3</h2>               
+											</div>
+											
+										</div>
+									</div>
+								</div>  
+								
 							</div><!-- /.navbar-collapse -->
 						</div><!-- /.container-fluid -->
 					</nav>
 				</div>
 			</div>
-			<div>
-
 			</div>
-			<div>
-
-			</div>
+			
 			<?php
 		}
 		?>
