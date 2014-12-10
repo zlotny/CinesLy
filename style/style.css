@@ -19,3 +19,14 @@ body{
 	padding: 0;
 	width: 60px;
 }
+
+.little-right{
+	margin-left: 5px;
+}
+
+.scrollable-table{
+
+    overflow-y: scroll;
+    height: 200px;
+
+}
