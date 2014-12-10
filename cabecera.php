@@ -64,18 +64,21 @@ function cabeceraCartelera(){
 		</div>
 		<?php
 	}
-<<<<<<< HEAD
+	?>
 
 
+
+	<?php
 	function cabeceraPantallaPrincipal(){
-=======
+		echo "Deixade de tocar no teléfono";
+	}
+
 	?>
 
 
 
 	<?php
 	function cabeceraGrupos(){
->>>>>>> ac9849b141045ca119e9ab7d413b0f8ef7aed019
 		?>
 		<div class="container">
 			<div class="row">
@@ -92,11 +95,8 @@ function cabeceraCartelera(){
 								<a class="navbar-brand" href="#">INICIO</a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-<<<<<<< HEAD
 								<!--ul class="nav navbar-nav">
-=======
 								<ul class="nav navbar-nav">
->>>>>>> ac9849b141045ca119e9ab7d413b0f8ef7aed019
 									<li class="active"><a href="#">Cartelera <span class="sr-only">(current)</span></a></li>
 									<li><a href="#">Amigos</a></li>
 									<li class="dropdown">
@@ -111,7 +111,6 @@ function cabeceraCartelera(){
 											<li><a href="#">HAY LEYENDA</a></li>
 										</ul>
 									</li>
-<<<<<<< HEAD
 								</ul-->
 								<form class="navbar-form navbar-left" role="search">
 									<div class="form-group">
@@ -137,7 +136,6 @@ function cabeceraCartelera(){
 									</li>
 									<li><a href="#">Amigos </a></li>
 									<li><a href="#">Catálogo </a></li>
-=======
 								</ul>
 								
 								<ul class="nav navbar-nav navbar-right">
@@ -152,7 +150,6 @@ function cabeceraCartelera(){
 											<li><a href="#">Cerrar sesion</a></li>
 										</ul>
 									</li>
->>>>>>> ac9849b141045ca119e9ab7d413b0f8ef7aed019
 								</ul>
 							</div><!-- /.navbar-collapse -->
 						</div><!-- /.container-fluid -->
@@ -167,10 +164,4 @@ function cabeceraCartelera(){
 			</div>
 			<?php
 		}
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> ac9849b141045ca119e9ab7d413b0f8ef7aed019
 		?>
