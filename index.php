@@ -1,4 +1,3 @@
-﻿
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,10 +11,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
       <![endif]-->
-  </head>
-  <body>
-    <div class="row">
-      <div class="col-md-12">
+    </head>
+    <body>
+      <div class="row">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container container-fluid pers">
             <div class="navbar-header">
@@ -78,37 +76,36 @@
           </div>
         </div>  
       </div>
-    </div>
-    <div class="banner"style="min-height: 50px;background-color:#1D1D1D">
-      <!-- Jssor Slider Begin -->
-      <!-- You can move inline styles to css file or css block. -->
-      <!-- ================================================== -->
-      <div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
-      top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
-      <!-- Loading Screen -->
-      <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+      <div class="banner"style="min-height: 50px;background-color:#1D1D1D">
+        <!-- Jssor Slider Begin -->
+        <!-- You can move inline styles to css file or css block. -->
+        <!-- ================================================== -->
+        <div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
+        <!-- Loading Screen -->
+        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+          <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
+          top: 0px; left: 0px; width: 100%; height: 100%;">
+        </div>
+        <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
         top: 0px; left: 0px; width: 100%; height: 100%;">
       </div>
-      <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
-      top: 0px; left: 0px; width: 100%; height: 100%;">
     </div>
-  </div>
-  <!-- Slides Container -->
-  <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 300px; overflow: hidden;">
-    <div>
-      <img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 300px;width:100%;"/>
+    <!-- Slides Container -->
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 300px; overflow: hidden;">
+      <div>
+        <img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 300px;width:100%;"/>
+      </div>
+      <div>
+        <img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 300px;width:100%;"/>
+      </div>
+      <div>
+        <img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 300px;width:100%;"/>
+      </div>
     </div>
-    <div>
-      <img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 300px;width:100%;"/>
-    </div>
-    <div>
-      <img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 300px;width:100%;"/>
-    </div>
-  </div>
 
-  <!-- Bullet Navigator Skin Begin -->
-  <style>
+    <!-- Bullet Navigator Skin Begin -->
+    <style>
     .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
       background: url(img/b21.png) no-repeat;
       overflow: hidden;
@@ -130,15 +127,15 @@
     .jssorb21 .dn, .jssorb21 .dn:hover {
       background-position: -95px -5px;
     }
-  </style>
-  <!-- bullet navigator container -->
-  <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
-    <!-- bullet navigator item prototype -->
-    <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
-  </div>
-  <!-- Bullet Navigator Skin End -->
-  <!-- Arrow Navigator Skin Begin -->
-  <style>
+    </style>
+    <!-- bullet navigator container -->
+    <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
+      <!-- bullet navigator item prototype -->
+      <div u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+    </div>
+    <!-- Bullet Navigator Skin End -->
+    <!-- Arrow Navigator Skin Begin -->
+    <style>
 
     .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
       position: absolute;
@@ -171,17 +168,17 @@
     .jssora21rdn {
       background-position: -303px -33px;
     }
-  </style>
-  <!-- Arrow Left -->
-  <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
-  </span>
-  <!-- Arrow Right -->
-  <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
-  </span>
-  <!-- Arrow Navigator Skin End -->
-  <a style="display: none" href="http://www.jssor.com">bootstrap carousel</a>
-</div>
-<!-- Jssor Slider End -->
+    </style>
+    <!-- Arrow Left -->
+    <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+    </span>
+    <!-- Arrow Right -->
+    <span u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+    </span>
+    <!-- Arrow Navigator Skin End -->
+    <a style="display: none" href="http://www.jssor.com">bootstrap carousel</a>
+  </div>
+  <!-- Jssor Slider End -->
 
 
 </div>
@@ -194,9 +191,9 @@
 
 <script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
 <script>
-  jQuery(document).ready(function ($) {
+jQuery(document).ready(function ($) {
 
-    var options = {
+  var options = {
                 $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
@@ -225,15 +222,15 @@
                     $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
                     $Orientation: 1,                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
                     $Scale: false,                                  //Scales bullets navigator or not while slider scale
-                },
+                  },
 
                 $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
                     $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
                     $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
                     $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
                     $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
-                }
-            };
+                  }
+                };
 
             //Make the element 'slider1_container' visible before initialize jssor slider.
             $("#slider1_container").css("display", "block");
@@ -254,8 +251,71 @@
             $(window).bind("resize", ScaleSlider);
             $(window).bind("orientationchange", ScaleSlider);
             //responsive code end
-        });
+          });
 </script>
+
+
+<section id="content" class="container">
+  <section class="cartelera-section">
+    <div class="row-fluid">       
+
+      <div class="col-lg-3">
+        <a href="./pelicula.php?id=1229" title="(HD) MARATÓN TRILOGÍA DE EL HOBBIT">
+          <div class="events-box-head z_index_999"><h5>(HD) MARATÓN TRILOGÍA DE EL HOBBIT</h5></div>
+          <img src="img/peliculas/sdla.jpg" alt="(HD) MARATÓN TRILOGÍA DE EL HOBBIT ()" title="(HD) MARATÓN TRILOGÍA DE EL HOBBIT ()">
+          <div class="fondo_animado"></div>
+        </a>
+      </div>
+      <div class="col-lg-3">
+        <a href="./pelicula.php?id=1231" title="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
+          <div class="events-box-head z_index_999"><h5>(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
+          <img src="img/peliculas/sdla.jpg" alt="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
+          <div class="fondo_animado"></div>
+        </a>
+      </div>
+      <div class="col-lg-3">
+        <a href="./pelicula.php?id=1234" title="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
+          <div class="events-box-head z_index_999"><h5>(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
+          <img src="img/peliculas/sdla.jpg" alt="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
+          <div class="fondo_animado"></div>
+        </a>
+      </div>
+      <div class="col-lg-3">
+        <a href="./pelicula.php?id=1230" title="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
+          <div class="events-box-head z_index_999"><h5>(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
+          <img src="img/peliculas/sdla.jpg" alt="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
+          <div class="fondo_animado"></div>
+        </a>
+      </div>
+
+
+
+    </div> 
+  </section>
+</section>
+
+
+
+<footer>
+ <section class="container" style="padding:10px">
+  <div class="btn-group dropup pull-right">
+    <button type="button" class="btn btn-default">Idioma</button>
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+      &nbsp
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+      &nbsp
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#">Gallego</a></li>
+      <li><a href="#">Inglés</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Español</a></li>
+    </ul>
+  </div>
+</section>
+</footer>
+
 
 </body>
 </html>
