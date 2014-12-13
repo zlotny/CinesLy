@@ -1,14 +1,14 @@
-drop database CinesLy;
+drop database if exists CinesLy;
 create database CinesLy;
 use CinesLy;
 
-drop table contiene;
-drop table evento;
-drop table sesion;
-drop table comenta;
-drop table pelicula;
-drop table agrega;
-drop table usuario;
+drop table if exists contiene;
+drop table if exists evento;
+drop table if exists sesion;
+drop table if exists comenta;
+drop table if exists pelicula;
+drop table if exists agrega;
+drop table if exists usuario;
 
 
 
