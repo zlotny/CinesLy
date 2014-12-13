@@ -1,5 +1,5 @@
 body{
-	padding-top:57px;
+	padding-top:50px;
 }
 
 #test{
@@ -36,26 +36,46 @@ body{
 
 .scrollable-table{
 
-    overflow-y: scroll;
-    height: 200px;
+	overflow-y: scroll;
+	height: 200px;
 
 }
 
 
 .divAuto{ /*auto height*/
-width: 100%;
-height: auto;
-min-height: 100.8px;
-min-width: 200px;
-background-color: #F5F5F5;
-box-shadow: 2px 7px 15px -2px rgba(0, 0, 0, 0.75);
-border-radius: 10px 10px 10px 10px;
-padding: 1%;
-margin: 3% 0% 0% 0%;
+	width: 100%;
+	height: auto;
+	min-height: 100.8px;
+	min-width: 200px;
+	background-color: #F5F5F5;
+	box-shadow: 2px 7px 15px -2px rgba(0, 0, 0, 0.75);
+	border-radius: 10px 10px 10px 10px;
+	padding: 1%;
+	margin: 3% 0% 0% 0%;
 }
 
- .custom-panel-right-fixed {
- 	position:fixed;
- 	right:0px;
- 	margin-top:10px;
- }
+.custom-panel-right-fixed {
+	position:fixed;
+	right:0px;
+	margin-top:10px;
+}
+
+.peli{
+	width: 100%;
+}
+
+.peli:hover{
+	-webkit-filter: brightness(1.5);
+	-moz-filter: brightness(1.5);
+	-o-filter: brightness(1.5);
+	-ms-filter: brightness(1.5);
+	filter: brightness(1.5);
+}
+
+
+
+
+
+
+
+

@@ -1,4 +1,3 @@
-<html>
 <head>
   <meta charset="utf-8">
   <title>CinesLy</title>
@@ -24,16 +23,16 @@
                 <span class="icon-bar"></span>
               </button>
               <a href="bootstrap-carousel.html">
-                <img class="img-circle img-responsive" src="img/logo.png" alt="" width="75px">
+                <img class="img-circle img-responsive" src="img/logo_blanco.png" alt="" width="50px">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form action="pantallaPrincipal.php" method="#" class="navbar-form navbar-right" role="search">
                 <input type="text" class="form-control" placeholder="correo electrónico">
                 <input type="password" class="form-control" placeholder="contraseña">
-                <input type="submit" class="btn btn-inverse" value="login">
-                <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"><span class="badge badge-pers">1</span>  </input></div>
-                <a href="" data-toggle="modal" data-target="#forgetPass">¿Olvidaste tu contraseña?</a>                        
+                <input type="submit" class="btn btn-success" value="login">
+                <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"></input></div>
+                <a href="" data-toggle="modal" data-target="#forgetPass" >¿Olvidaste tu contraseña?</a>                        
               </form>
             </div>
           </div>
@@ -81,7 +80,7 @@
         <!-- You can move inline styles to css file or css block. -->
         <!-- ================================================== -->
         <div id="slider1_container" style="display: none; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 300px; overflow: hidden;">
+        top: 0px; left: 0px; width: 1300px; height: 400px; overflow: hidden;">
         <!-- Loading Screen -->
         <div u="loading" style="position: absolute; top: 0px; left: 0px;">
           <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
@@ -92,41 +91,41 @@
       </div>
     </div>
     <!-- Slides Container -->
-    <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 300px; overflow: hidden;">
+    <div u="slides" style="cursor: move; position: absolute; left: 0px; top:0px; width: 1300px; height: 400px; overflow: hidden;">
       <div>
-        <img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 300px;width:100%;"/>
+        <img u="caption" src2="img/peliculas/jose.jpg" style="max-height: 400px;width:100%;"/>
       </div>
       <div>
-        <img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 300px;width:100%;"/>
+        <img u="caption" src2="img/peliculas/juan.jpg" style="max-height: 400px;width:100%;"/>
       </div>
       <div>
-        <img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 300px;width:100%;"/>
+        <img u="caption" src2="img/peliculas/pepa.jpg" style="max-height: 400px;width:100%;"/>
       </div>
     </div>
 
     <!-- Bullet Navigator Skin Begin -->
     <style>
-    .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
-      background: url(img/b21.png) no-repeat;
-      overflow: hidden;
-      cursor: pointer;
-    }
+      .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+        background: url(img/b21.png) no-repeat;
+        overflow: hidden;
+        cursor: pointer;
+      }
 
-    .jssorb21 div {
-      background-position: -5px -5px;
-    }
+      .jssorb21 div {
+        background-position: -5px -5px;
+      }
 
-    .jssorb21 div:hover, .jssorb21 .av:hover {
-      background-position: -35px -5px;
-    }
+      .jssorb21 div:hover, .jssorb21 .av:hover {
+        background-position: -35px -5px;
+      }
 
-    .jssorb21 .av {
-      background-position: -65px -5px;
-    }
+      .jssorb21 .av {
+        background-position: -65px -5px;
+      }
 
-    .jssorb21 .dn, .jssorb21 .dn:hover {
-      background-position: -95px -5px;
-    }
+      .jssorb21 .dn, .jssorb21 .dn:hover {
+        background-position: -95px -5px;
+      }
     </style>
     <!-- bullet navigator container -->
     <div u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
@@ -137,37 +136,37 @@
     <!-- Arrow Navigator Skin Begin -->
     <style>
 
-    .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
-      position: absolute;
-      cursor: pointer;
-      display: block;
-      background: url(img/a21.png) center center no-repeat;
-      overflow: hidden;
-    }
+      .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+        position: absolute;
+        cursor: pointer;
+        display: block;
+        background: url(img/a21.png) center center no-repeat;
+        overflow: hidden;
+      }
 
-    .jssora21l {
-      background-position: -3px -33px;
-    }
+      .jssora21l {
+        background-position: -3px -33px;
+      }
 
-    .jssora21r {
-      background-position: -63px -33px;
-    }
+      .jssora21r {
+        background-position: -63px -33px;
+      }
 
-    .jssora21l:hover {
-      background-position: -123px -33px;
-    }
+      .jssora21l:hover {
+        background-position: -123px -33px;
+      }
 
-    .jssora21r:hover {
-      background-position: -183px -33px;
-    }
+      .jssora21r:hover {
+        background-position: -183px -33px;
+      }
 
-    .jssora21ldn {
-      background-position: -243px -33px;
-    }
+      .jssora21ldn {
+        background-position: -243px -33px;
+      }
 
-    .jssora21rdn {
-      background-position: -303px -33px;
-    }
+      .jssora21rdn {
+        background-position: -303px -33px;
+      }
     </style>
     <!-- Arrow Left -->
     <span u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
@@ -191,9 +190,9 @@
 
 <script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
 <script>
-jQuery(document).ready(function ($) {
+  jQuery(document).ready(function ($) {
 
-  var options = {
+    var options = {
                 $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
@@ -254,47 +253,23 @@ jQuery(document).ready(function ($) {
           });
 </script>
 
+<section class="container" style="padding:10px">
+  <div class="col-sm-3">
+    <img src="img/peliculas/sdla.jpg" class="peli" />
+  </div>
+  <div class="col-sm-3">
+    <img src="img/peliculas/sdla.jpg" class="peli" />
 
-<section id="content" class="container">
-  <section class="cartelera-section">
-    <div class="row-fluid">       
+  </div>
+  <div class="col-sm-3">
+    <img src="img/peliculas/sdla.jpg" class="peli" />
 
-      <div class="col-lg-3">
-        <a href="./pelicula.php?id=1229" title="(HD) MARATÓN TRILOGÍA DE EL HOBBIT">
-          <div class="events-box-head z_index_999"><h5>(HD) MARATÓN TRILOGÍA DE EL HOBBIT</h5></div>
-          <img src="img/peliculas/sdla.jpg" alt="(HD) MARATÓN TRILOGÍA DE EL HOBBIT ()" title="(HD) MARATÓN TRILOGÍA DE EL HOBBIT ()">
-          <div class="fondo_animado"></div>
-        </a>
-      </div>
-      <div class="col-lg-3">
-        <a href="./pelicula.php?id=1231" title="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
-          <div class="events-box-head z_index_999"><h5>(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
-          <img src="img/peliculas/sdla.jpg" alt="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(HD) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
-          <div class="fondo_animado"></div>
-        </a>
-      </div>
-      <div class="col-lg-3">
-        <a href="./pelicula.php?id=1234" title="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
-          <div class="events-box-head z_index_999"><h5>(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
-          <img src="img/peliculas/sdla.jpg" alt="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(3D) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
-          <div class="fondo_animado"></div>
-        </a>
-      </div>
-      <div class="col-lg-3">
-        <a href="./pelicula.php?id=1230" title="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS">
-          <div class="events-box-head z_index_999"><h5>(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS</h5></div>
-          <img src="img/peliculas/sdla.jpg" alt="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()" title="(3D HFR) EL HOBBIT: LA BATALLA DE LOS CINCO EJÉRCITOS ()">
-          <div class="fondo_animado"></div>
-        </a>
-      </div>
+  </div>
+  <div class="col-sm-3">
+    <img src="img/peliculas/sdla.jpg" class="peli" />
 
-
-
-    </div> 
-  </section>
+  </div>
 </section>
-
-
 
 <footer>
  <section class="container" style="padding:10px">
