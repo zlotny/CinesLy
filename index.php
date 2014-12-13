@@ -22,7 +22,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="bootstrap-carousel.html">
+              <a href="index.php">
                 <img class="img-circle img-responsive" src="img/logo_blanco.png" alt="" width="50px">
               </a>
             </div>

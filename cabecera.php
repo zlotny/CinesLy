@@ -89,7 +89,7 @@ function cabeceraGrupos(){
 							</form>
 							<ul class="nav navbar-nav navbar-right">
 								<li>
-									<button type="button" class="btn-negro btn-lg">
+									<button type="button" class="btn-negro btn-lg" >
 										<span class="glyphicon glyphicon-globe btn-negro"></span>
 									</button>
 								</li>
@@ -149,22 +149,20 @@ function cabeceraGrupos(){
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-								<a class="navbar-brand" href="pantallaPrincipal.php">INICIO</a>
+								<a href="pantallaPrincipal.php"><img src="img/logo_blanco.png" alt="" style="height:50px;"></a>
 							</div>
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								
 								
 								<form class="navbar-form navbar-left" role="search">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="buscar Pelicula">
+										<input type="text" class="form-control" placeholder="Buscar Película">
 									</div>
 									<button type="submit" class="btn btn-default">Buscar</button>
 								</form>
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<button type="button" data-toggle="modal" data-target="#reg" class="btn-negro btn-lg">
-											<span class="glyphicon glyphicon-globe btn-negro"></span>
-										</button>
+										<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe btn-negro"></span>
 									</li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>

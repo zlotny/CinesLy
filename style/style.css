@@ -16,12 +16,16 @@ body{
 	padding-top:50px;
 }
 .btn-negro{
-	margin-top:1px;
 	background-color:transparent;
-	color:#43bfab;
-	border-color: #e2e2e2;
-	outline: none;
+	color: whitesmoke;
+	line-height: 50px;
+	font-size: 20px;
 }
+
+.btn-negro:hover{
+	color: green;
+}
+
 .btn-makesmall{
 	height: 20px;
 	line-height: 20px;
