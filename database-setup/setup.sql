@@ -1,6 +1,6 @@
 drop database CinesLy;
 create database CinesLy;
-use Cinesly;
+use CinesLy;
 
 drop table contiene;
 drop table evento;
