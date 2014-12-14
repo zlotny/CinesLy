@@ -15,15 +15,17 @@ body{
 .margensuperior{
 	padding-top:50px;
 }
-.btn-negro{
+.notif{
 	background-color:transparent;
 	color: whitesmoke;
 	line-height: 50px;
 	font-size: 20px;
+	margin-right: 10px;
 }
 
-.btn-negro:hover{
+.notif:hover{
 	color: green;
+	cursor: pointer;
 }
 
 .btn-makesmall{
@@ -77,9 +79,18 @@ body{
 }
 
 
+.publicacion{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 
+.inputpublicacion{
+	position: absolute;
+	bottom: 20px;
+	left: 155px;
+	width: 70%;
+}
 
-
-
-
-
+.vertical-peli-carousel{
+	margin-bottom: 10px;
+}

@@ -89,8 +89,8 @@ function cabeceraGrupos(){
 							</form>
 							<ul class="nav navbar-nav navbar-right">
 								<li>
-									<button type="button" class="btn-negro btn-lg" >
-										<span class="glyphicon glyphicon-globe btn-negro"></span>
+									<button type="button" class="notif btn-lg" >
+										<span class="glyphicon glyphicon-globe notif"></span>
 									</button>
 								</li>
 								<li class="dropdown">
@@ -162,7 +162,7 @@ function cabeceraGrupos(){
 								</form>
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe btn-negro"></span>
+										<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
 									</li>
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
