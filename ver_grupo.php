@@ -15,7 +15,7 @@
     <body>
      <?php
      include "cabecera.php";
-     cabeceraGrupos();
+     cabeceraPantallaPrincipal();
      ?>
      <div class="row top-margin">
      <div class="col-sm-3"></div>

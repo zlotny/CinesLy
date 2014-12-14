@@ -20,8 +20,111 @@
      ?>
      
      <div class="row">
-      <div class="col-md-9 ">
+       <div class="col-md-2"> </div>
+       <div class="col-md-7 ">
         <ul class="media-list">
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="media">
+            <div class="col-md-12 ">
+              <div class="well">
+                <a class="media-left" href="ficha_pelicula.php">
+                  <img src="img/peliculas/hobbit.jpg" alt="" height="140px" width="90px" class="thumbnail">
+                </a>
+                <div class="media-body">
+                  <p><b>Nombre: </b>Auxiliar</p>
+                  <p><b>Genero: </b>Acción</p>
+                  <p><b>Año: </b>2014</p>
+                  <p><b>Sinopsis: </b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim...</p>
+                </div>
+
+              </div>
+            </div>
+          </li>
+
           <li class="media">
             <div class="col-md-12 ">
               <div class="well">
@@ -79,7 +182,7 @@
 
       <!-- Barra lateral   col-md-offset-10 -->
 
-      <div class="custom-panel-right-fixed col-md-3" >
+      <div class="custom-panel-right-fixed col-md-2" >
        <div class="panel panel-default">
 
         <div class="panel-body">
@@ -88,7 +191,7 @@
 
             <div class="input-group">
 
-              <input type="text" class="form-control" placeholder="buscar Pelicula">
+              <input type="text" class="form-control" placeholder="Buscar Pelicula">
               <span class="input-group-btn">
                 <button type="submit" class="btn btn-default">Buscar</button>
               </span>

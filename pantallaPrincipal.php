@@ -54,75 +54,70 @@
 			<div class="col-md-10 col-sm-10 col-xs-12 col-lg-10 ">
 				<ul class="media-list">
 					<li class="media">
-
 						<div class="well">
-							
 							<a class="media-left" href="perfil.php">
 								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
 							</a>
 							<div class="media-body">
 								<h4 class="media-heading">Nombre de Usuario</h4>
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								
 							</div>
-							<!--div class="media-right">
-								<button type="button" class="btn-danger btn-lg">
-											<span class="glyphicon glyphicon-trash btn-danger"></span>
-										</button>
-									</div-->
-								</div>
-
-							</li>
-							<li class="media">
-
-								<div class="well">
-
-									<a class="media-left" href="perfil.php">
-										<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">Nombre de Usuario</h4>
-										<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-									</div>
-
-								</div>
-
-							</li>
-							<li class="media">
-
-								<div class="well">
-
-									<a class="media-left" href="perfil.php">
-										<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-									</a>
-									<div class="media-body">
-										<h4 class="media-heading">Nombre de Usuario</h4>
-										<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-									</div>
-
-								</div>
-
-							</li>
-						</ul>
-					</div>
-					<div class="col-sm-2">
-						<div class="" style="text-align:center">
-							<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
-							<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
 						</div>
-					</div>
+					</li>
+					<li class="media">
 
+						<div class="well">
 
+							<a class="media-left" href="perfil.php">
+								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
+							</a>
+							<div class="media-body">
+								<h4 class="media-heading">Nombre de Usuario</h4>
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+							</div>
+
+						</div>
+
+					</li>
+					<li class="media">
+
+						<div class="well">
+
+							<a class="media-left" href="perfil.php">
+								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
+							</a>
+							<div class="media-body">
+								<h4 class="media-heading">Nombre de Usuario</h4>
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+							</div>
+
+						</div>
+
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-2">
+				<div class="" style="text-align:center">
+					<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
+					<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
+					<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
+					<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
+					<a href="ficha_pelicula.php" ><img src="img/peliculas/hobbit.jpg" alt=""  width="150px" class="vertical-peli-carousel"></a>
 
 				</div>
 			</div>
 
-			<script src="javascript/jquery-2.1.1.min.js"></script>
-			<script src="bootstrap/js/bootstrap.min.js"></script>
-			<script src="javascript/docs.min.js"></script>
-			<script src="javascript/ie10-viewport-bug-workaround.js"></script>
-			<script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
-		</body>
-		</html>
+
+
+		</div>
+	</div>
+
+	<script src="javascript/jquery-2.1.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="javascript/docs.min.js"></script>
+	<script src="javascript/ie10-viewport-bug-workaround.js"></script>
+	<script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
+</body>
+</html>

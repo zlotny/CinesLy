@@ -2,15 +2,14 @@ body{
 	padding-top:50px;
 }
 
-#test{
-
-	margin-top: 50px;
-}
-
-
 .top-margin{
 	margin-top: 50px;
 }
+
+.top-margin-little{
+	margin-top: 10px;
+}
+
 
 .margensuperior{
 	padding-top:50px;
@@ -62,8 +61,8 @@ body{
 
 .custom-panel-right-fixed {
 	position:fixed;
-	right:0px;
-	margin-top:10px;
+	right:-20px;	
+	margin-top:30px;
 }
 
 .peli{
@@ -94,3 +93,21 @@ body{
 .vertical-peli-carousel{
 	margin-bottom: 10px;
 }
+
+.text-left{
+	text-align: left;
+}
+
+.inside-padding{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.table-publicaciones{
+	height: 100px;
+}
+
+.red{
+	background-color: red;
+}
+
