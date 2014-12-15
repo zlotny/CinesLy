@@ -27,10 +27,10 @@
               </a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form action="pantallaPrincipal.php" method="#" class="navbar-form navbar-right" role="search">
-                <input type="text" class="form-control" placeholder="correo electrónico">
-                <input type="password" class="form-control" placeholder="contraseña">
-                <input type="submit" class="btn btn-success" value="login">
+              <form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
+                <input type="text" name="email" class="form-control" placeholder="correo electrónico">
+                <input type="password" name="pass" class="form-control" placeholder="contraseña">
+                <input type="submit" name="accion" class="btn btn-success" value="entrar">
                 <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"></input></div>
                 <a href="" data-toggle="modal" data-target="#forgetPass" >¿Olvidaste tu contraseña?</a>                        
               </form>
@@ -38,6 +38,7 @@
           </div>
         </nav>
         <div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <form action="controladoras/procesarUsuario.php" method="POST">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -45,19 +46,21 @@
                 <h3>Registro</h3>
               </div>
               <div class="modal-body">
-                <input type="text" class="form-control form-pers" placeholder="nombre de usuario">
-                <input type="text" class="form-control form-pers" placeholder="correo electrónico">
-                <input type="password" class="form-control form-pers" placeholder="contraseña">   
+                <input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="nombre de usuario">
+                <input type="text" name="email" class="form-control form-pers" placeholder="correo electrónico">
+                <input type="password" name="pass" class="form-control form-pers" placeholder="contraseña">   
                 <input type="password" class="form-control form-pers" placeholder="repita la contraseña">              
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-success">Registrarse</button>
+                <input type="submit" name="accion" class="btn btn-success" value="registrar">
                 <button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>
+          </form>
         </div>  
         <div id="forgetPass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <form action="controladoras/procesarUsuario.php" method="POST">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -65,14 +68,15 @@
                 <h3>Recuperar contraseña</h3>
               </div>
               <div class="modal-body">
-                <input type="text" class="form-control form-pers" placeholder="correo electrónico">          
+                <input type="text" name="email" class="form-control form-pers" placeholder="correo electrónico">          
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-success">Enviar</button>
+                <input type="submit" name="accion" class="btn btn-success" value="recuperar">
                 <button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
               </div>
             </div>
           </div>
+        </form>
         </div>  
       </div>
       <div class="banner"style="min-height: 50px;background-color:#1D1D1D">
