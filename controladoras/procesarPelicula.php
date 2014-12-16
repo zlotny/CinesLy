@@ -197,6 +197,13 @@ if($accion == "nueva"){
 				            </div>
 
 					 		<?php
+					}else{
+						if($accion=="valorarPelicula"){
+							$idPelicula = $_REQUEST['idPelicula']; 
+							$valoracion = $_REQUEST['valoracion']; 
+							 
+							Pelicula::valorarPelicula( $idPelicula, $valoracion );
+						}
 					}
 				}
 			}

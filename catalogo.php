@@ -1,5 +1,6 @@
 <html>
 <head>
+  
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -238,6 +239,50 @@
 
     </div>
   </div>
+  <!--li><span data-toggle="modal" data-target="#idioma"class="glyphicon glyphicon-list-alt"></span></li-->
+
+<!--div id="idioma" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Seleccionar idioma</h3>
+      </div>
+      <div class="modal-body">
+        <form action="CambioIdioma.php" method="get">
+            <?php echo $textosc[3]; ?>
+            <select name="idioma" onChange='this.form.submit()'>
+              <option value="ENGLISH">........</option>
+              <option value="ENGLISH">ENGLISH</option>
+              <option value="ESPANHOL">ESPANHOL</option>
+              <option value="GALEGO">GALEGO</option>
+            </select>
+        </form>
+      </div>
+    </div>
+  </div>
+</div-->
+
+<footer>
+ <section class="container" style="padding:10px">
+  <div class="btn-group dropup pull-left">
+    <button type="button" class="btn btn-default">Idioma</button>
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+      &nbsp
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+      &nbsp
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <form action="CambioIdioma.php" method="get">
+        <input type="submit" name="accion"  value="ENGLISH">
+        <input type="submit" name="accion"  value="GALEGO">
+        <input type="submit" name="accion"  value="ESPANHOL">
+      </form>
+    </ul>
+  </div>
+</section>
+</footer>
 </body>	
 
 <script src="javascript/jquery-2.1.1.min.js"></script>
