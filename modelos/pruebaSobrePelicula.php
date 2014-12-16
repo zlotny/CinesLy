@@ -25,6 +25,7 @@
 		<input type="submit" name="accion" class="btn btn-success" value="eliminar">
 		<input type="submit" name="accion" class="btn btn-success" value="mostrarPeliculas">
 		<input type="submit" name="accion" class="btn btn-success" value="mostrarPelicula">
+		<input type="submit" name="accion" class="btn btn-success" value="valorarPelicula">
 		                       
 	</form>
 
