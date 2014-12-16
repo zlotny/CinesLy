@@ -10,7 +10,7 @@ class Sesion{
 
 
 
-	function __construct($idSesion,$sala,$fechaSesion,$capacidad,$idPelicula){
+	function __construct($idPelicula,$idSesion,$sala,$fechaSesion,$capacidad){
 		
 		$this->idSesion=$idSesion;
 		$this->sala=$sala;
@@ -102,8 +102,22 @@ class Sesion{
 
 	function anhadirSesion($idPelicula,$Sesion){
 
+		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
+		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
 
+		$sql="INSERT INTO sesion (idPelicula,idSesion,sala,fechaSesion,capacidad)
+		 VALUES ('$pelicula->idPelicula', '$pelicula->idSesion' , '$pelicula->sala' , '$pelicula->fechaSesion' , '$pelicula->capacidad')";
+
+		echo $sql;
+		$resultado=Pelicula::consultaBD($sql);	
+
+		if($resultado){
+			echo "Sesion añadida";
+		}	 
+	
 	}
+
+	
 
 	function eliminarSesion($idPelicula,$idSesion){
 
@@ -115,7 +129,49 @@ class Sesion{
 
 	function modificarSesion($idPelicula,$idSesion){
 
+		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
+		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
 		
+		echo " <br>conectado BD <br>";
+				$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
+		echo $sql;
+				$resultado=Sesion::consultaBD($sql);
+		echo " <br>select hecho <br>";
+				$original=mysql_fetch_array($resultado);
+
+				$sesion1=new Sesion($original[idPelicula],$original[idSesion],$original[sala],$original[fechaSesion],
+					$original[capacidad]);
+		echo "<br>";
+		echo "Sesion de la base de datos";
+		echo "<br>";
+		/*echo $peli1->fechaEstreno;*/
+		echo "<br>";
+		/*echo $peli1->titulo;*/
+		echo "<br>";
+
+		echo "<br>";
+
+		echo "creado objeto sesion <br>";
+
+
+		if($sesion->sala!=""){
+			echo "sala modificada";
+			$sesion1->sala=$sesion->sala;
+		}
+		if($sesion->fechaSesion!=""){
+			$sesion1->fechaSesion=$sesion->fechaSesion;
+		}
+		if($sesion->capacidad!=""){
+			$sesion1->capacidad=$sesion->capacidad;
+		}
+		
+		
+		echo "pelicula creada";
+				$sql2="UPDATE sesion SET  sala ='$sesion1->sala', fechaSesion = '$sesion1->fechaSesion', capacidad ='$sesion1->capacidad'";
+				echo "<br>";
+				echo $sql2;
+				echo "<br>";
+				Sesion::consultaBD($sql2);
 	}
 
 	function consultarSesion($idSesion,$idPelicula){
