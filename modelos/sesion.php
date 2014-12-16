@@ -122,13 +122,15 @@ class Sesion{
 
 
 		$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
+	
+		$resultado=Sesion::consultaBD($sql);
 
 		$resultado=Sesion::consultaBD($sql);
 
 		$original=mysql_fetch_array($resultado);
 
 		$sesion1=new Sesion($original["idPelicula"],$original["idSesion"],$original["fecha"],$original["sala"],$original["capacidad"]);
-
+		
 
 		if($sesion->fecha!=""){
 			$sesion1->fecha=$sesion->fecha;
@@ -140,10 +142,12 @@ class Sesion{
 			$sesion1->capacidad=$sesion->capacidad;
 		}
 		
-		$sql2="UPDATE pelicula SET  fecha ='$sesion1->fecha', sala = '$sesion1->sala', capacidad ='$sesion1->capacidad', 
+		$sql2="UPDATE sesion SET fecha ='$sesion1->fecha', sala = '$sesion1->sala', capacidad ='$sesion1->capacidad' 
 		WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
+		echo $sql2;
+		$resultado=Sesion::consultaBD($sql);
 			
-		Pelicula::consultaBD($sql2);
+		Sesion::consultaBD($sql2);
 	}
 
 	function consultarSesion($idSesion,$idPelicula){

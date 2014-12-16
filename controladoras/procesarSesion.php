@@ -1,9 +1,10 @@
 <?php
 
-	echo "test";
+
 include "../modelos/sesion.php";
 
 $accion = $_REQUEST['accion'];
+
 
 
 
@@ -17,6 +18,7 @@ if($accion == "Nueva"){
 	
 	$sesion = new Sesion($idPelicula,$idSesion,$fecha,$sala,$capacidad);
 	Sesion::anhadirSesion($sesion);
+	echo "string";
 	
 } else { 
 		if($accion=="Modificar") { 
@@ -43,7 +45,8 @@ if($accion == "Nueva"){
 			echo "request hecho <br>";
 			$sesion = new Sesion($idPelicula,$idSesion,$sala,$fecha,$capacidad);
 			echo "peli creada";
-			Pelicula::modificarSesion($sesion->idPelicula,$sesion->idSesion,$sesion);
+			Sesion::modificarSesion($sesion->idPelicula,$sesion->idSesion,$sesion);
+			echo "string";
 
 
 		}
