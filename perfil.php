@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <form action="ejemploFormularioIdioma.php" method="get"></form>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -137,10 +138,26 @@
 
 
     </div>
-
+    <footer>
+     <section class="container" style="padding:10px">
+      <div class="btn-group dropup pull-rigth ">
+        <button type="button" class="btn btn-default">Idioma</button>
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+          &nbsp
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+          &nbsp
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Gallego</a></li>
+          <li><a href="#">Inglés</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Español</a></li>
+        </ul>
+      </div>
+    </section>
+    </footer>
     <div class="col-md-2" ></div>
-
-
   </body>
 
 

@@ -1,0 +1,512 @@
+#
+# CodPag 0 || index.php
+#
+CodPag0
+CodTexto1
+Nombre :  
+CodTexto2
+Genero :  
+CodTexto3
+Año :
+CodTexto4
+Desconectar
+CodTexto5
+GETracer<br>
+Bienvenido
+CodTexto6
+GETracer
+CodTexto7
+Registrarse
+CodTexto8
+Autenticarse
+CodTexto9
+Administrador
+CodTexto10
+Universitario
+CodTexto11
+Personal Docente e Investigador
+CodTexto12
+Deportista federado
+#
+# CodPag 1 || Login.php
+#
+CodPag1
+CodTexto1
+Usuario
+CodTexto2
+Contraseña
+CodTexto3
+Validar
+CodTexto4
+Limpiar
+#
+# CodPag 2 || Autenticar.php
+#
+CodPag2
+CodTexto1
+Registrar
+CodTexto2
+Validar
+#
+# CodPag 3 || Mensajes.php
+#
+CodPag3
+CodTexto1
+El usuario ha sido registrado correctamente.<br><a href=Login.php>Volver al login</a>
+CodTexto2
+La contraseña no es correcta.<br><a href=Login.php>Volver al login</a>
+CodTexto3
+Ya está registrado ese login.<br><a href=Login.php>Volver al login</a>
+CodTexto4
+El login no existe.<br><a href='Login.php'>Volver al Login</a>
+CodTexto5
+No tiene permisos para acceder a esta p&aacute;gina
+#
+# CodPag 4 || Menu Lateral de opciones
+#
+CodPag4
+CodTexto1
+<br>Funcionalidades privadas<br>
+CodTexto2
+Gesti&oacute;n de Usuarios
+CodTexto3
+<br>Funcionalidades p&uacute;blicas<br>
+CodTexto81
+Funcionalidades Administrador<br>
+CodTexto8
+Gesti&oacute;n de Funcionalidades
+CodTexto4
+Gestion de Equipos
+CodTexto5
+Gestion de Paginas
+CodTexto6
+Gestion de Usuarios-Funcionalidad
+#
+# CodPag 5 || Registrar.php
+#
+CodPag5
+CodTexto1
+Usuario 
+CodTexto2
+ContraseÃ±a
+CodTexto3
+DNI
+CodTexto4
+Nombre
+CodTexto5
+Primer Apellido
+CodTexto6
+Segundo Apellido
+CodTexto7
+Registrar
+CodTexto8
+Limpiar
+CodTexto9
+Registro de Usuario
+#
+# CodPag 6 || Gestion_Usuarios.php
+#
+CodPag6
+CodTexto1
+Usuario
+CodTexto2
+Contraseña
+CodTexto3
+DNI
+CodTexto4
+Nombre
+CodTexto5
+Primer Apellido
+CodTexto6
+Segundo Apellido
+CodTexto7
+Insertar
+CodTexto8
+Consultar
+CodTexto9
+Limpiar
+CodTexto10
+Tipo de Usuario
+CodTexto11
+Acciones
+CodTexto12
+Modificar
+CodTexto13
+Borrar
+CodTexto14
+Fecha Registro
+CodTexto15
+Gesti&oacute;n de Usuarios
+CodTexto16
+Consulta de Usuarios
+CodTexto17
+<center>Ayuda</center><br>
+Esta es la ayuda del formulario de consulta
+CodTexto18
+Resultados de la consulta de usuarios
+CodTexto19
+<center>Ayuda</center><br>
+Esta es la ayuda del resultado de consulta
+CodTexto20
+Insertar Usuario
+CodTexto21
+<center>Ayuda</center><br>
+Esta es la ayuda de la inserci&oacute;n de usuario
+CodTexto22
+Ayuda
+#
+# CodPag 7 || ModBorrUsu.php
+#
+CodPag7
+CodTexto1
+Modificar
+CodTexto2
+Borrar
+CodTexto3
+Usuario
+CodTexto4
+Contraseña
+CodTexto5
+DNI
+CodTexto6
+Nombre
+CodTexto7
+Primer Apellido
+CodTexto8
+Segundo Apellido
+CodTexto9
+Tipo de Usuario
+CodTexto10
+Modifica
+CodTexto11
+Limpiar
+CodTexto12
+Borra
+CodTexto13
+Fecha Registro
+#
+# CodPag 8 || Gestion_Funcionalidades.php
+#
+CodPag8
+CodTexto1
+Gesti&oacute;n de Funcionalidades
+CodTexto2
+Resultados de la consulta de Funcionalidades
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+<center>Ayuda</center><br>
+CodTexto6
+Ayuda
+CodTexto7
+Consulta de Funcionalidades
+CodTexto8
+codfunc
+CodTexto9
+nomfunc
+CodTexto10
+numtexidioma
+CodTexto11
+nompagprincipal
+CodTexto12
+Limpiar
+#
+# CodPag 9 || Class_equipo.php
+#
+CodPag9
+CodTexto1
+Nombre
+CodTexto2
+Descipci&oacute;n
+CodTexto3
+Id del padre de este elemento
+CodTexto4
+Nº De orden dentro de los hijos del padre
+CodTexto5
+Modificar
+CodTexto6
+Borrar
+CodTexto7
+Acciones
+CodTexto8
+ID Equipo
+CodTexto9
+Modifica
+CodTexto10
+Limpiar
+CodTexto11
+Borra
+#
+# CodPag 10 || Gestion_Equipos.php
+#
+CodPag10
+CodTexto1
+Gesti&oacute;n de Equipos
+CodTexto2
+Resultados de la consulta de Equipos
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+Modificar
+CodTexto6
+Borrar
+CodTexto7
+<center>Ayuda</center><br>
+CodTexto8
+Ayuda
+CodTexto9
+Consulta de Usuarios
+CodTexto10
+Nombre
+CodTexto11
+Descripcion
+CodTexto12
+Id del padre de este elemento
+CodTexto13
+Nº De orden dentro de los hijos del padre
+CodTexto14
+Limpiar
+CodTexto15
+Insertar Usuario
+CodTexto16
+ID Equipo
+#
+# CodPag 11 || ModBorrEquipo.php
+#
+CodPag11
+CodTexto1
+Modificar
+CodTexto2
+Borrar
+CodTexto3
+Modifica
+CodTexto4
+Borra
+#
+# CodPag 12 || Class_Paginas.php
+#
+CodPag12
+CodTexto1
+Código de Pagina
+CodTexto2
+Nombre de la Pagina
+CodTexto3
+Acciones
+CodTexto4
+Modificar
+CodTexto5
+Borrar
+CodTexto6
+NOMBPAG
+CodTexto7
+Modifica
+CodTexto8
+Limpiar
+CodTexto9
+Borra
+#
+# CodPag 13 || ModBorrPag.php
+#
+CodPag13
+CodTexto1
+Modificar
+CodTexto2
+Borrar
+CodTexto3
+Modifica
+CodTexto4
+Borra
+#
+# CodPag 14 || Gestion_Paginas.php
+#
+CodPag14
+CodTexto1
+Gesti&oacute;n de P&aacute;ginas
+CodTexto2
+Resultados de la consulta de P&aacute;ginas
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+Modificar
+CodTexto6
+Borrar
+CodTexto7
+<center>Ayuda</center><br>
+CodTexto8
+Ayuda
+CodTexto9
+Consulta de P&aacute;ginas
+CodTexto10
+Nombre P&aacute;gina
+CodTexto11
+Descripcion
+CodTexto14
+Limpiar
+CodTexto15
+Insertar P&aacute;ginas
+CodTexto16
+Codigo P&aacute;gina
+#
+# CodPag 15 || Insertar_Paginas.php
+#
+CodPag15
+CodTexto1
+Gestion de Paginas
+CodTexto2
+Insertar Pagina
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+<center>Ayuda</center><br>
+CodTexto6
+Ayuda
+CodTexto7
+CODPAG
+CodTexto8
+NOMBPAG
+CodTexto9
+Limpiar
+#
+# CodPag 16 || Class_UsuFunc.php
+#
+CodPag16
+CodTexto1
+CODFUNC
+CodTexto2
+LOGIN
+CodTexto3
+Modificar
+CodTexto4
+Borrar
+CodTexto5
+Modifica
+CodTexto6
+Limpia
+CodTexto7
+Borra
+#
+# CodPag 17 || Gestion_UsuFunc.php
+#
+CodPag17
+CodTexto1
+Gesti&oacute;n de Funcionalidades de Usuarios
+CodTexto2
+Resultados de la consulta de usuarios
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+<center>Ayuda</center><br>
+CodTexto6
+Ayuda
+CodTexto7
+Consulta de Funcionalidades de Usuarios
+CodTexto8
+CODFUNC
+CodTexto9
+LOGIN
+#
+# CodPag 18 || Insertar_UsuFunc.php
+#
+CodPag18
+CodTexto1
+Gesti&oacute;n de Usuarios
+CodTexto2
+Consultar Funcionalidad de Usuarios
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+<center>Ayuda</center><br>
+CodTexto6
+Ayuda
+CodTexto7
+CODFUNC
+CodTexto8
+LOGIN
+CodTexto9
+Limpiar
+#
+# CodPag 19 || ModBorrUsuFunc.php
+#
+CodPag19
+CodTexto1
+Modificar
+CodTexto2
+Borrar
+CodTexto3
+Modifica
+CodTexto4
+Borra
+#
+# CodPag 20 || Class_Funcionalidades.php
+#
+CodPag20
+CodTexto1
+codfunc
+CodTexto2
+nomfunc
+CodTexto3
+numtexidioma
+CodTexto4
+nompagprincipal
+CodTexto5
+Acciones
+CodTexto6
+Modificar
+CodTexto7
+Borrar
+CodTexto8
+Modifica
+CodTexto9
+Limpiar
+CodTexto10
+Borra
+#
+# CodPag 21 || ModBorrFunc.php
+#
+CodPag21
+CodTexto1
+Modificar
+CodTexto2
+Borrar
+CodTexto3
+Modifica
+CodTexto4
+Borra
+#
+# CodPag 22 || Insertar_Funcionalidad.php
+#
+CodPag22
+CodTexto1
+Gesti&oacute;n de Funcionalidades
+CodTexto2
+Insertar Funcionalidad
+CodTexto3
+Consultar
+CodTexto4
+Insertar
+CodTexto5
+<center>Ayuda</center><br>
+CodTexto6
+Ayuda
+CodTexto7
+codfunc
+CodTexto8
+nomfunc
+CodTexto9
+numtexidioma
+CodTexto10
+nompagprincipal
+CodTexto11
+Limpiar
