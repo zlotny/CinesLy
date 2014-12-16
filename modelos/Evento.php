@@ -12,7 +12,8 @@ class Evento
 	private var $idPelicula;
 	private var $nombre;
 
-	public function __construct($id, $descripcion, $pelicula, $correo, $sesion, $nombre)
+	//usar constructor por defecto
+	/*public function __construct($id, $descripcion, $pelicula, $correo, $sesion, $nombre)
 	{
 		$this->idEvento = $idEvento;
 		$this->idPelicula = $pelicula;
@@ -20,7 +21,7 @@ class Evento
 		$this->mail = $mail;
 		$this->descripcion = $descripcion;
 		$this->nombre = $nombre;
-	}
+	}*/
 
 	public function conectarBD()//función que conecta con la base de datos, será llamada de forma estática
 	{
@@ -28,8 +29,29 @@ class Evento
 		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
 	}
 
-	public function altaEvento($idEvento, $descripcion, $fechaInicio, $fechaCreacion, $arrayComponentesGrupo())
-	{}
+	public	function consultaBD($consulta)
+	{
+		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
+		
+		return $resultado;
+	}
+
+	public function altaEvento($id, $descripcion, $pelicula, $correo, $sesion, $nombre)
+	{
+
+		Evento::conectarBD();
+
+		 $insertar=INSERT INTO `CinesLy`.`evento` (`id_evento` ,`idPelicula` ,`idSesion` ,`email` ,`descripcion` ,`nombre`)VALUES 
+		 ('$idEvento', '$pelicula', '$sesion', '$correo', '$descripcion', '$nombre')
+
+		 $resultado=Evento::consultaBD($insertar);
+
+		 if($resultado){
+		 	
+			echo "Evento creado";
+		}	 
+	}
+
 
 	/*public function getIdEvento()
 	{
