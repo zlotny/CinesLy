@@ -1,27 +1,25 @@
 <?php
 
+	echo "test";
 include "../modelos/sesion.php";
 
 $accion = $_REQUEST['accion'];
 
 
 
-if($accion == "nueva"){
+if($accion == "Nueva"){
 	
-	$idSesion = $_REQUEST['idSesion'];
-	$fechaSesion = $_REQUEST['fechaSesion'];
-	$capacidad = $_REQUEST['capacidad'];
-	$idSesion = $_REQUEST['idSesion'];
 	$idPelicula = $_REQUEST['idPelicula'];
+	$idSesion = $_REQUEST['idSesion'];
+	$fecha = $_REQUEST['fecha'];
+	$sala = $_REQUEST['sala'];
+	$capacidad = $_REQUEST['capacidad'];
 	
-	
-
-	$sesion = new Sesion($idSesion,$fechaSesion,$capacidad,$idSesion,$idPelicula);
-	
+	$sesion = new Sesion($idPelicula,$idSesion,$fecha,$sala,$capacidad);
 	Sesion::anhadirSesion($sesion);
 	
 } else { 
-		if($accion=="modificar") { 
+		if($accion=="Modificar") { 
 
 			$idPelicula = $_REQUEST['idPelicula'];
 			$idSesion = $_REQUEST['idSesion'];
@@ -31,10 +29,10 @@ if($accion == "nueva"){
 			}else{
 				$capacidad="";
 			}
-			if(isset($_REQUEST['fechaSesion'])){
-				$fechaSesion = $_REQUEST['fechaSesion'];
+			if(isset($_REQUEST['fecha'])){
+				$fecha = $_REQUEST['fecha'];
 			}else{
-				$fechaSesion="";
+				$fecha="";
 			}
 			if(isset($_REQUEST['sala'])){
 				$sala = $_REQUEST['sala'];
@@ -43,10 +41,25 @@ if($accion == "nueva"){
 			}
 			
 			echo "request hecho <br>";
-			$sesion = new Sesion($idPelicula,$idSesion,$sala,$fechaSesion,$capacidad);
+			$sesion = new Sesion($idPelicula,$idSesion,$sala,$fecha,$capacidad);
 			echo "peli creada";
-			Pelicula::modificarSesion($sesion->idPelicula,$sesion->idSesion,$sesionn,$sesion);
+			Pelicula::modificarSesion($sesion->idPelicula,$sesion->idSesion,$sesion);
 
+
+		}
+		else{
+			if($accion=="Eliminar"){
+				$idPelicula = $_REQUEST['idPelicula'];
+				$idSesion = $_REQUEST['idSesion'];
+
+				Sesion::eliminarSesion($idPelicula,$idSesion,$sesion);
+				
+			}
+			else{
+				if($accion=="Consultar"){
+
+				}
+			}
 
 		}
 	}
