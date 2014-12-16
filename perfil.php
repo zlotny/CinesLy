@@ -1,4 +1,6 @@
-<?php include "cabecera.php"; ?>
+<?php include_once "cabecera.php";
+  include_once "modelos/usuario.php";
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,6 +24,12 @@
     <body>
       <?php cabeceraPantallaPrincipal(); ?>
 
+<?php 
+session_start();
+
+ if(!(isset($_SESSION['usuario']->email))) {
+      echo "error";
+    }?>
       <div class="col-md-2" ></div>
       <!-- 1º COLUMNA -->
       <div class="col-md-4">
@@ -32,8 +40,8 @@
 
           <div class="col-md-2" id="test">
             <table>
-              <tr><td><label for="Nombre Usuario" class="col-lg control-label">Nombre Usuario</label></td></tr>
-              <tr><td><label for="Correo" class="col-lg control-label">Correo</label></td></tr>
+              <tr><td><label for="Nombre Usuario" class="col-lg control-label"><?php echo $_SESSION['usuario']->nombreUsuario; ?></label></td></tr>
+              <tr><td><label for="Correo" class="col-lg control-label"><?php echo $_SESSION['usuario']->email; ?></label></td></tr>
             </table>
           </div>
         </div>
@@ -132,7 +140,26 @@
         </tr>
       </table>
 
-      <a href="perfil.html" class="btn btn-info" >Eliminar Cuenta</a>
+      <input type="button" class="btn btn-info" data-toggle="modal" data-target="#del" value="Eliminar cuenta">
+      <div id="del" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <form action=<?php echo "controladoras/procesarUsuario.php?email=".$_SESSION['usuario']->email ?> method="POST">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Eliminar cuenta</h3>
+              </div>
+              <div class="modal-body"> 
+                <input type="text" name="pass" class="form-control form-pers" placeholder="Introduzca su contraseña">          
+              </div>
+              <div class="modal-footer">
+                <input type="submit" name="accion" class="btn btn-success" value="eliminar">
+                <button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div> 
       <a href="amigos.html" class="btn btn-info">Validar</a>
 
 
