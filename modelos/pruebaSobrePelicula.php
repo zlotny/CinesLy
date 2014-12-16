@@ -1,4 +1,4 @@
-	
+
 
 	<form action="../controladoras/procesarPelicula.php" method="POST" class="" role="">
 
@@ -22,7 +22,9 @@
 		
 		<input type="submit" name="accion" class="btn btn-success" value="nueva">
 		<input type="submit" name="accion" class="btn btn-success" value="modificar">
-		
+		<input type="submit" name="accion" class="btn btn-success" value="eliminar">
+		<input type="submit" name="accion" class="btn btn-success" value="mostrarPeliculas">
+		<input type="submit" name="accion" class="btn btn-success" value="mostrarPelicula">
 		                       
 	</form>
 

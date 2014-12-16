@@ -53,9 +53,9 @@ class Usuario{
 		if($row==1){
 			$row=mysql_fetch_array($resultado);
 			return new Usuario($row['nombreUsuario'],$row['email'],$row['pass'],$row['tipoUsuario'],$row['foto'],$row['preferencia1'],$row['preferencia2'],$row['preferencia3'],$row['estado'],$row['ciudadActual'],$row['fechaNacimiento'],$row['eslogan']);
-		//return new Usuario($row['email'],$row['pass'],$row['tipoUsuario']);
 		}else{
 			echo "El usuario no se encuentra registrado.";
+			
 		}
 	}
 
@@ -68,8 +68,8 @@ class Usuario{
 			$row=mysql_fetch_array($resultado);
 			session_start();
 
-		//$_SESSION['usuario'] = $this->getObjetoUsuario($row['email'],$row['pass']);
-			$_SESSION['usuario'] = $this->getObjetoUsuario($this->email);
+			//$_SESSION['usuario'] = $this->getObjetoUsuario($row['email'],$row['pass']);
+			$_SESSION['usuario'] = Usuario::getObjetoUsuario($this->email);
 
 			if (!(isset($_SESSION['usuario']->nombreUsuario))) {
 				echo "error";
@@ -88,8 +88,12 @@ class Usuario{
 		$this->conectarBD();
 		$sql="INSERT INTO usuario(nombreUsuario, email, pass, tipoUsuario) VALUES ('".$this->nombreUsuario."','".$this->email."','".$this->pass."',0)";
 		$this->consultaBD($sql);
+		//header("Location:../index.php");
+		$message = "El usuario ha sido registrado correctamente.";
+		echo "<script type='text/javascript'>alert('$message');</script>";
 		header("Location:../index.php");
 	}
+
 
 /*
 function recuperarUsuario(){
@@ -101,9 +105,9 @@ function recuperarUsuario(){
 
 function bajaUsuario(){
 	$this->conectarBD();
-	$sql="DELETE FROM usuario WHERE email ='".$this->email."'";
+	$sql="DELETE FROM usuario WHERE email = '".$this->email."' AND pass = '".$this->pass."'";
 	$this->consultaBD($sql);
-	header("location:index.php");
+	header("location:../index.php");
 }
 
 function actualizarUsuario($email) {
