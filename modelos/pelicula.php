@@ -103,7 +103,7 @@ class Pelicula{
 
 	function modificarPelicula($idPelicula,$pelicula){
 		$this->conectarBD();
-		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula"'";
+		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
 		$resultado=$this->consultaBD($sql);
 		$original=mysql_fetch_array($resultado);
 		$peli1=new Pelicula($original["idPelicula"],$original["titulo"],$original["director"],$original["distribuidora"],
@@ -111,17 +111,20 @@ class Pelicula{
 			$original["genero"],$original["pais"],$original["votos"],$original["valoracion"],$original["tipo"],$original["contValoracion"]);
 
 		for($i=1;$i<15; $i++){
-			if($pelicula[$i]=""){
+			if($pelicula[$i]==""){
 
 			}else{
 				$peli1[$i]=$pelicula[$i];
 			}
 		}
 		echo "pelicula creada";
-		$sql2="INSERT INTO pelicula ( titulo, director, distribuidora, duracion, sinopsis, actores, año, fecha_estreno, genero, pais, votos, valoracion, tipo, cont_valoracion)
-		 VALUES ('".$peli1.titulo."','".$peli1.director."','".$peli1.distribuidora."','".$peli1.duracion."',
-		 	'".$peli1.sinopsis."','".$peli1.actores."',".$peli1.anho.",".$peli1.fechaEstreno.",'".$peli1.genero."','".$peli1.pais."',
-		 	".$peli1.votos.",".$peli1.valoracion.",'".$peli1.tipo."',".$peli1.contValoracion.")";
+		$sql2="UPDATE pelicula SET  titulo ='".$peli1.titulo."', director = '".$peli1.director."', distribuidora ='".$peli1.distribuidora."', 
+		duracion = '".$peli1.duracion."', sinopsis ='".$peli1.sinopsis."' , actores = '".$peli1.actores."', año = ".$peli1.anho.",
+		 fecha_estreno =".$peli1.fechaEstreno." , genero ='".$peli1.genero."' , pais ='".$peli1.pais."' , votos =".$peli1.votos." ,
+		  valoracion = ".$peli1.valoracion.", tipo = '".$peli1.tipo."' , cont_valoracion = ".$peli1.contValoracion."
+		   WHERE idPelicula = '".$peli1.idPelicula."'";
+		
+		consultaBD($sql2);
 	}
 
 	function mostrarPeliculas(){
@@ -129,7 +132,7 @@ class Pelicula{
 		$sql="SELECT * FROM pelicula";
 		$resultado=$consultaBD($sql);
 		$i=0;
-		while (  $row=mysql_fetch_row($resultado) {
+		while (  $row=mysql_fetch_row($resultado)) {
 			$peliculas[$i]=$row;
 		}
 		return $peliculas;
@@ -137,7 +140,7 @@ class Pelicula{
 
 	function mostrarPelicula($idPelicula){
 		$this->conectarBD();
-		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula"'";
+		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
 		$resultado=$consultaBD($sql);
 		$peli=mysql_fetch_array($resultado);
 		$peli1=new Pelicula($peli["idPelicula"],$peli["titulo"],$peli["director"],$peli["distribuidora"],
