@@ -2,22 +2,23 @@
 
 class Sesion{
 
+	var $idPelicula;
+	var $idSesion;
 	var $sala;
 	var $fechaSesion;
 	var $capacidad;
-	var $idSesion;
-	var $idPelicula;
+	
 
 
 
 	function __construct($idPelicula,$idSesion,$sala,$fechaSesion,$capacidad){
 		
+		$this->idPelicula=$idPelicula;
 		$this->idSesion=$idSesion;
 		$this->sala=$sala;
 		$this->fechaSesion=$fechaSesion;
 	 	$this->capacidad=$capacidad;
-	 	$this->idPelicula=$idPelicula;
-
+	 	
 	}
 
 	/*GETTERS*/
@@ -41,24 +42,7 @@ class Sesion{
 		return $capacidad;
 	}
 
-	/*
-	function getObjetoSesion($titulo,$director){
-		$this->conectarBD();
-		$sql_1="SELECT * FROM sesion WHERE titulo= '".$titulo."' AND director ='".$director."'";
-		$resultado=$this->consulta($sql);
-
-		$row=mysql_num_rows($resultado);
-		if($row=0){
-			echo "Sesion no encontrada";
-		}
-		else{
-			$row=mysql_fetch_array($resultado);
-			$sesion=new sesion($row["titulo"],$row["director"],$row["sala"],$row["fechaSesion"],$row["capacidad"]);
-			return $sesion;
-		}
-	}
-	*/
-
+	
 	/*SETTERS*/
 
 	function setIdSesion($idSesion){
@@ -86,11 +70,12 @@ class Sesion{
 
 
 	function conectarBD(){
-		mysql_connect("localhost","Usuario","Contraseña") or die ('No se pudo conectar'.mysql_error());
+		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
 		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
 	}
 
 	function consulta($consulta){
+		
 		$resultado=mysql_query($consulta);
 		if($resultado){
 			echo 'MySql Error' .mysql_error();
@@ -102,14 +87,18 @@ class Sesion{
 
 	function anhadirSesion($idPelicula,$Sesion){
 
+		
+		Sesion::conectarBD();
+		/*
 		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
 		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
-
-		$sql="INSERT INTO sesion (idPelicula,idSesion,sala,fechaSesion,capacidad)
-		 VALUES ('$pelicula->idPelicula', '$pelicula->idSesion' , '$pelicula->sala' , '$pelicula->fechaSesion' , '$pelicula->capacidad')";
+		*/
+		
+		$sql="INSERT INTO sesion (idPelicula,idSesion,fecha,sala,capacidad)
+		 VALUES ('$sesion->idPelicula', '$sesion->idSesion' , '$sesion->fecha' ,'$sesion->sala' , '$sesion->capacidad')";
 
 		echo $sql;
-		$resultado=Pelicula::consultaBD($sql);	
+		$resultado=Sesion::consultaBD($sql);	
 
 		if($resultado){
 			echo "Sesion añadida";
@@ -121,7 +110,7 @@ class Sesion{
 
 	function eliminarSesion($idPelicula,$idSesion){
 
-		$this->conectarBD();
+		Sesion::conectarBD();
 		$sql="DELETE FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
 		$this->consultaBD($sql);
 		header("location:sesion.php");
@@ -129,8 +118,7 @@ class Sesion{
 
 	function modificarSesion($idPelicula,$idSesion){
 
-		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
-		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
+		Sesion::conectarBD();
 		
 		echo " <br>conectado BD <br>";
 				$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
@@ -176,7 +164,7 @@ class Sesion{
 
 	function consultarSesion($idSesion,$idPelicula){
 
-		$this->conectarBD();
+		Sesion::conectarBD();
 		$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
 		$resultado=mysql_query($sql);
 		$row=mysql_num_rows($resultado);
