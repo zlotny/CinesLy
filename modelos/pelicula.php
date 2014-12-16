@@ -82,12 +82,18 @@ class Pelicula{
 
 	function registrarPelicula($pelicula)
 	{
-		$this->conectarBD();
-		$sql="INSERT INTO pelicula (idPelicula, titulo, director, distribuidora, duracion, sinopsis, actores, año, fecha_estreno, genero, pais, votos, valoracion, tipo, cont_valoracion)
-		 VALUES ('".$pelicula.idPelicula."','".$pelicula.titulo."','".$pelicula.director."','".$pelicula.distribuidora."','".$pelicula.duracion."',
-		 	'".$pelicula.sinopsis."','".$pelicula.actores."',".$pelicula.anho.",".$pelicula.fechaEstreno.",'".$pelicula.genero."','".$pelicula.pais."',
-		 	".$pelicula.votos.",".$pelicula.valoracion.",'".$pelicula.tipo."',".$pelicula.contValoracion.")";
-		$resultado=$this->consultaBD($sql);	
+
+		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
+		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
+		
+		
+
+$sql="INSERT INTO pelicula (idPelicula, titulo, director, distribuidora, duracion, sinopsis, actores, anho, fecha_estreno, genero, pais, votos, valoracion, tipo, cont_valoracion)
+		 VALUES ($pelicula->idPelicula,$pelicula->titulo,$pelicula->director,$pelicula->distribuidora,$pelicula->duracion,$pelicula->sinopsis,
+		 	$pelicula->actores,$pelicula->anho,$pelicula->fechaEstreno,$pelicula->genero,$pelicula->pais,$pelicula->votos,$pelicula->valoracion,$pelicula->tipo,$pelicula->contValoracion)";
+
+
+		$resultado=Pelicula::consultaBD($sql);	
 		if($resultado){
 			echo "pelicula registrada";
 		}	 
@@ -118,11 +124,11 @@ class Pelicula{
 			}
 		}
 		echo "pelicula creada";
-		$sql2="UPDATE pelicula SET  titulo ='".$peli1.titulo."', director = '".$peli1.director."', distribuidora ='".$peli1.distribuidora."', 
-		duracion = '".$peli1.duracion."', sinopsis ='".$peli1.sinopsis."' , actores = '".$peli1.actores."', año = ".$peli1.anho.",
-		 fecha_estreno =".$peli1.fechaEstreno." , genero ='".$peli1.genero."' , pais ='".$peli1.pais."' , votos =".$peli1.votos." ,
-		  valoracion = ".$peli1.valoracion.", tipo = '".$peli1.tipo."' , cont_valoracion = ".$peli1.contValoracion."
-		   WHERE idPelicula = '".$peli1.idPelicula."'";
+		$sql2="UPDATE pelicula SET  titulo ='$peli1->titulo', director = '$peli1->director', distribuidora ='$peli1->distribuidora', 
+		duracion = '$peli1->duracion', sinopsis ='$peli1->sinopsis' , actores = '$peli1->actores', año = $peli1->anho,
+		 fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos =$peli1->votos ,
+		  valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion
+		   WHERE idPelicula = '$peli1->idPelicula'";
 		
 		consultaBD($sql2);
 	}
@@ -150,12 +156,9 @@ class Pelicula{
 	}
 
 	function consultaBD($consulta){
-
-		$resultado= mysql_query($consulta);
-		if(!$resultado){
-			echo 'MySql Error en consultaBD' .mysql_error();
-			return 0;
-		}
+echo "pis";
+		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
+		
 		return $resultado;
 	}
 
