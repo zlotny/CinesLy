@@ -39,8 +39,8 @@
     </div>-->
           
           <!-- 1ºAmigo-->
-          <div class="col-md-12" id="test1">
-            <div class="container">
+          <div class="col-md-12" id="test">
+            <div class="container top-margin">
               <div class="col-md-2">
                 <img src="img/logo.png" width="150px" height="150px" class="img-rounded">
               </div>
@@ -59,8 +59,8 @@
           </div>
 
           <!-- 2º Amigo-->
-          <div class="col-md-12" id="test1">
-            <div class="container">
+          <div class="col-md-12" id="test">
+            <div class="container top-margin">
               <div class="col-md-2">
                 <img src="img/logo.png" width="150px" height="150px" class="img-rounded">
               </div>
@@ -79,8 +79,8 @@
           </div>
   
           <!-- Boton de mierda-->
-          <div class="col-md-12" id="test1">
-            <div class="container">
+          <div class="col-md-12" id="test">
+            <div class="container top-margin">
               <div class="col-md-2 col-md-offset-10" id="test">
                   <a href="eliminar.html" class="btn btn-info" >Añadir Amigo</a>
               </div>
