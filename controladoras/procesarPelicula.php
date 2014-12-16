@@ -105,12 +105,101 @@ if($accion == "nueva"){
 				$contValoracion="";
 			}
 			
-			echo "request hecho <br>";
 			$peli = new Pelicula($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion);
-	echo "peli creada";
+	
 			Pelicula::modificarPelicula($peli->idPelicula,$peli);
 
 
+		}else{
+			if($accion=="eliminar"){
+				$idPelicula = $_REQUEST['idPelicula'];
+				Pelicula::eliminarPelicula($idPelicula);
+			}else{
+				if($accion=="mostrarPeliculas"){
+					$array=Pelicula::mostrarPeliculas();
+
+					 foreach ($array as $peliMostrar){
+					 	/*echo $peliMostrar['idPelicula']."____".$peliMostrar['titulo']."____".$peliMostrar['director']."____".
+					 	$peliMostrar['distribuidora']."____".$peliMostrar['duracion']."____".$peliMostrar['sinopsis']."____".
+					 	$peliMostrar['actores']."____".$peliMostrar['anho']."____".$peliMostrar['fechaEstreno']."____".
+					 	$peliMostrar['genero']."____".$peliMostrar['pais']."____".$peliMostrar['votos']."____".$peliMostrar['valoracion']."____"
+					 	.$peliMostrar['tipo']."____".$peliMostrar['contValoracion']."<br>";*/
+					 	?> 
+					 		<meta charset="utf-8">
+							<title>CinesLy</title>
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-responsive.css">
+							<link rel="stylesheet" type="text/css" href="../style/style.css">
+
+				            <div class="well">
+				            	
+				            		<div class="col-md-1">
+				            			<?php echo $peliMostrar['titulo']; ?>
+				            		</div>
+				            		<div class="col-md-1">
+				            			<?php echo $peliMostrar['director']; ?>
+				            		</div>
+				            		<div class="col-md-1">
+				            			<p><?php echo $peliMostrar['distribuidora']; ?></p>
+				            			
+				            		</div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['duracion']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['sinopsis']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['actores']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['anho']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['fechaEstreno']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['genero']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['pais']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['votos']; ?></div>
+				            		<div class="col-md-1"><?php echo $peliMostrar['contValoracion']; ?></div>
+				            	
+				            </div>
+
+					 		<?php
+					 }
+
+					
+				}else{
+					if($accion=="mostrarPelicula"){
+						$idPelicula = $_REQUEST['idPelicula']; 
+						$array=Pelicula::mostrarPelicula($idPelicula);
+							?> 
+					 		<meta charset="utf-8">
+							<title>CinesLy</title>
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-responsive.css">
+							<link rel="stylesheet" type="text/css" href="../style/style.css">
+
+				            <div class="well">
+				            	
+				            		<div class="col-md-1">
+				            			<?php echo $array['titulo']; ?>
+				            		</div>
+				            		<div class="col-md-1">
+				            			<?php echo $array['director']; ?>
+				            		</div>
+				            		<div class="col-md-1">
+				            			<p><?php echo $array['distribuidora']; ?></p>
+				            			
+				            		</div>
+				            		<div class="col-md-1"><?php echo $array['duracion']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['sinopsis']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['actores']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['anho']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['fechaEstreno']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['genero']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['pais']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['votos']; ?></div>
+				            		<div class="col-md-1"><?php echo $array['contValoracion']; ?></div>
+				            	
+				            </div>
+
+					 		<?php
+					}
+				}
+			}
 		}
 	}
 ?> 
