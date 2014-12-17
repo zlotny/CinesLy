@@ -1,7 +1,7 @@
 <?php include "cabecera.php"; ?>
 
 	<?php
-		include_once "modelos/usuario.php"	
+		include_once "modelos/usuario.php";		
 	?>
 	
 <html lang="en">
@@ -32,15 +32,16 @@
 						<table class="table table-striped">
 							<?php 					
 								$arrayAmigos=$_SESSION["usuario"]->getAmigos();
-									for($arrayAmigos as $filaAmigo){
+								
+									foreach($arrayAmigos as $filaAmigo){
 										
-										 if(isset($_SESSION['usuario']->foto)){
-											echo "<tr><td class='col-md-1'><img src='".$_SESSION['usuario']->foto."' width='50px'/></td>"
-										 }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>"}
+										 if(isset($filaAmigo->foto)){
+											echo "<tr><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+										 }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
 										
-										echo "<td class='col-md-4'>".$_SESSION['usuario']->nombreUsuario."<br/>".$_SESSION['usuario']->email."</td>
+										echo "<td class='col-md-4'>".$filaAmigo->nombreUsuario."<br/>".$filaAmigo->email."</td>
 										<td class='col-md-1'><a href='#' class='btn btn-info'>Eliminar</a></td>
-										</tr>"
+										</tr>";
 									}
 							?>
 						</table>						
