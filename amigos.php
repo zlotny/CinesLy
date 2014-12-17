@@ -40,7 +40,7 @@
 										 }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
 										
 										echo "<td class='col-md-4'>".$filaAmigo->nombreUsuario."<br/>".$filaAmigo->email."</td>
-										<td class='col-md-1'><a href='#' class='btn btn-info'>Eliminar</a></td>
+										<td class='col-md-1'><a href='controladoras/eliminaramigo.php?email=$filaAmigo->email' class='btn btn-info'>Eliminar</a></td>
 										</tr>";
 									}
 							?>

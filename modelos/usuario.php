@@ -162,6 +162,15 @@ function getAmigos(){
 
 }
 
+
+function eliminarAmigo($emailamigo){
+	echo "hola";
+	$this->conectarBD();
+	$sql = "DELETE FROM agrega WHERE (email1='$emailamigo' and email2='$this->email') or (email2='$emailamigo' and email1='$this->email')";
+	return mysql_query($sql);
+
+
+}
 }
 
 ?>
