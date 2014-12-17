@@ -19,7 +19,9 @@
  
 </head>
 <body>
-  <?php cabeceraPantallaPrincipal(); ?>
+  <?php cabeceraPantallaPrincipal(); 
+		session_start();
+  ?>
   <div class="row top-margin">
   <div class="col-md-3"> </div>
           <div class="col-md-6">
@@ -28,18 +30,19 @@
 					<div class="panel panel-body"> 
 						<div class="form-group">
 						<table class="table table-striped">
-							<tr><td class="col-md-1"><img src="img/default_user.png" width="50px"/></td>
-								<td class="col-md-4">Nombre Amigo<br/>Correo Amigo</td>
-								<td class="col-md-1"><a href="#" class="btn btn-info">Eliminar</a></td>
-							</tr>
-							<tr><td class="col-md-1"><img src="img/default_user.png" width="50px"/></td>
-								<td class="col-md-4">Nombre Amigo<br/>Correo Amigo</td>
-								<td class="col-md-1"><a href="#" class="btn btn-info">Eliminar</a></td>
-							</tr>
-							<tr><td class="col-md-1"><img src="img/default_user.png" width="50px"/></td>
-								<td class="col-md-4">Nombre Amigo<br/>Correo Amigo</td>
-								<td class="col-md-1"><a href="#" class="btn btn-info">Eliminar</a></td>
-							</tr>
+							<?php 					
+								$arrayAmigos=$_SESSION["usuario"]->getAmigos();
+									for($arrayAmigos as $filaAmigo){
+										
+										 if(isset($_SESSION['usuario']->foto)){
+											echo "<tr><td class='col-md-1'><img src='".$_SESSION['usuario']->foto."' width='50px'/></td>"
+										 }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>"}
+										
+										echo "<td class='col-md-4'>".$_SESSION['usuario']->nombreUsuario."<br/>".$_SESSION['usuario']->email."</td>
+										<td class='col-md-1'><a href='#' class='btn btn-info'>Eliminar</a></td>
+										</tr>"
+									}
+							?>
 						</table>						
 						</div>					
 					</div>				
@@ -48,7 +51,7 @@
           
   <div class="col-md-3"> </div> 
   
-  </div>   
+  </div">   
       <footer>
      <section class="container" style="padding:10px">
       <div class="btn-group dropup pull-rigth ">
