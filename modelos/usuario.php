@@ -162,6 +162,35 @@ function getAmigos(){
 
 }
 
+
+function eliminarAmigo($emailamigo){
+	$this->conectarBD();
+	$sql = "DELETE FROM agrega WHERE (email1='$emailamigo' and email2='$this->email') or (email2='$emailamigo' and email1='$this->email')";
+	return mysql_query($sql);
+
+
+}
+
+function addAmigo($emailAmigo){
+	$this->conectarBD();
+	$sql = "SELECT email FROM usuario where email='$emailAmigo'";
+
+
+	if(mysql_num_rows(mysql_query($sql)) == 0){
+		return "noexiste";
+
+	}
+	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo',NULL)";
+	
+	if(mysql_query($sql)){
+		return "insertado";
+	}
+	return "error";
+}
+
+
+
+
 }
 
 ?>
