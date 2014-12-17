@@ -180,7 +180,8 @@ function addAmigo($emailAmigo){
 		return "noexiste";
 
 	}
-	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo',NULL)";
+	//Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
+	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
 	
 	if(mysql_query($sql)){
 		return "insertado";
@@ -188,6 +189,9 @@ function addAmigo($emailAmigo){
 	return "error";
 }
 
+function confirmarAmigo($usuarioTarget){
+	return mysql_query("UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget' ");
+}
 
 
 
