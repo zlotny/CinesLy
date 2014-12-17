@@ -1,7 +1,9 @@
 <html>
 <head>
 	<?php
-	include "cabecera.php" ?>
+	include_once "cabecera.php";
+	include_once "modelos/usuario.php";
+	?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +15,31 @@
 <body>
 	<?php
 	cabeceraPantallaPrincipal();
+	session_start();
 	?>
 	<div class="top-margin">
 		<div class="col-md-3" >
-				<div class="col-md-1" ></div>
-				<div class="col-md-10 divPerfil">
-					<img src="img/default_user.png" width="150px" class="img-rounded">
-				<div><p><br><strong>Nombre</p></div>	
-				<div><p><br><strong>Correo</p><br></div>
+			<div class="col-md-1" ></div>
+			<div class="col-md-10 divPerfil">
+				<?php
+				
+				if (isset($_SESSION['usuario']->foto)){
+
+					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-rounded'>";
+
+				}else{
+					echo "<img src='img/default_user.png' width='150px' class='img-rounded'>";
+				}
+
+
+
+				?>
+				<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>
+
+				<div><p><br><strong><?php echo $_SESSION['usuario']->email; ?></p><br></div>
 				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar Cuenta">
-				</div>
-				<div class="col-md-1" ></div>
+			</div>
+			<div class="col-md-1" ></div>
 			
 		</div>
 
