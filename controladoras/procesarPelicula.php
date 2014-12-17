@@ -203,6 +203,13 @@ if($accion == "nueva"){
 							$valoracion = $_REQUEST['valoracion']; 
 							 
 							Pelicula::valorarPelicula( $idPelicula, $valoracion );
+						}else{
+							if($accion=="comentarPelicula"){
+								$idPelicula = $_REQUEST['idPelicula']; 
+								$email = $_REQUEST['email']; 
+								$comentario = $_REQUEST['comentario'];
+								Pelicula::comentarPelicula($idPelicula,$email,$comentario); 
+							}
 						}
 					}
 				}
