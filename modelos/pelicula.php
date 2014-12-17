@@ -51,10 +51,11 @@ class Pelicula{
 
 	}
 
-	
-
-	function comentarPelicula($idPelicula,$comentario){
-
+	function comentarPelicula($idPelicula,$email,$comentario){
+		Pelicula::conectarBD();
+		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
+		mysql_query($sql);
+		
 	}
 
 	function valorarPelicula($idPelicula,$valoracion){
@@ -189,6 +190,7 @@ function modificarPelicula($idPelicula,$pelicula)
 	function mostrarPeliculas(){
 		Pelicula::conectarBD();
 		
+		
 		 $sql = "SELECT * FROM pelicula";
         $result = Pelicula::consultaBD($sql);
 
@@ -203,11 +205,14 @@ function modificarPelicula($idPelicula,$pelicula)
 
 	function mostrarPelicula($idPelicula){
 		Pelicula::conectarBD();
+		
 		$sql="SELECT * FROM pelicula WHERE idPelicula= '".$idPelicula."'";
 		$resultado=Pelicula::consultaBD($sql);
 		$toRet=mysql_fetch_array($resultado, MYSQL_ASSOC);
 		return $toRet;
 	}
+	
+	
 
 	function consultaBD($consulta){
 		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
