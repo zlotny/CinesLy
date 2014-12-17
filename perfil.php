@@ -4,6 +4,7 @@
 	include_once "cabecera.php";
 	include_once "modelos/usuario.php" ?>
 
+
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
@@ -24,8 +25,7 @@
 				<div><p><br><strong><?php echo $_SESSION['usuario']->email ?></p><br></div>
 				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar perfil">
 				</div>
-				<div class="col-md-1" ></div>
-			
+				<div class="col-md-1" ></div>			
 		</div>
 
 		<div class="col-md-5" >
