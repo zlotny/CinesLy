@@ -51,11 +51,20 @@ class Pelicula{
 
 	}
 
+<<<<<<< HEAD:modelos/pelicula.php
 	function comentarPelicula($idPelicula,$email,$comentario){
 		Pelicula::conectarBD();
 		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
 		mysql_query($sql);
 		
+=======
+	
+
+	function comentarPelicula($idPelicula,$email,$comentario){
+		Pelicula::conectarBD();
+		$sql="INSERT INTO comenta (idPelicula, email, comentario) VALUES ('$idPelicula','$email','$comentario')";
+		$resultado=Pelicula::consultaBD($sql);
+>>>>>>> 67c74729e4d6823d1453b1a7caa45cf3df8bcbea:modelos/pruebas con idioma/pelicula.php
 	}
 
 	function valorarPelicula($idPelicula,$valoracion){

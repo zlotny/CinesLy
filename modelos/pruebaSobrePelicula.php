@@ -18,6 +18,8 @@
 		<input type="text" name="tipo" class="form-control" placeholder="tipo">
 		<input type="text" name="contValoracion" class="form-control" placeholder="contValoracion">
 		
+		<input type="text" name="email" class="form-control" placeholder="email">
+		<input type="text" name="comentario" class="form-control" placeholder="comentario">
 <br>
 		
 		<input type="submit" name="accion" class="btn btn-success" value="nueva">
@@ -26,6 +28,7 @@
 		<input type="submit" name="accion" class="btn btn-success" value="mostrarPeliculas">
 		<input type="submit" name="accion" class="btn btn-success" value="mostrarPelicula">
 		<input type="submit" name="accion" class="btn btn-success" value="valorarPelicula">
+		<input type="submit" name="accion" class="btn btn-success" value="comentarPelicula">
 		                       
 	</form>
 
