@@ -1,7 +1,8 @@
 <html>
 <head>
 	<?php
-	include "cabecera.php" ?>
+	include_once "cabecera.php";
+	include_once "modelos/usuario.php" ?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,16 @@
 </head>
 <body>
 	<?php
-	cabeceraPantallaPrincipal();
+	cabeceraPantallaPrincipal();session_start();
 	?>
 	<div class="top-margin">
 		<div class="col-md-3" >
 				<div class="col-md-1" ></div>
 				<div class="col-md-10 divPerfil">
-					<img src="img/default_user.png" width="150px" class="img-rounded">
-				<div><p><br><strong>Nombre</p></div>	
-				<div><p><br><strong>Correo</p><br></div>
-				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar Cuenta">
+					<img src="img/default_user.png" width="150px" class="img-thumbnail">
+				<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario ?></p></div>	
+				<div><p><br><strong><?php echo $_SESSION['usuario']->email ?></p><br></div>
+				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar perfil">
 				</div>
 				<div class="col-md-1" ></div>
 			
@@ -69,25 +70,25 @@
 
 
 
-		<div class="col-md-3" >
+		<div class="col-md-4" >
 
 
 			<div class="panel panel-default">
 				<div class="panel-heading">Últimas Películas Vistas</div>
 				<div class="panel-body scrollable-table-perfilD">
 					<table class="table table-striped ">
-						<tr><td>Película Vista 1</td></tr>
-						<tr><td>Película Vista 2</td></tr>
-						<tr><td>Película Vista 3</td></tr>
-						<tr><td>Película Vista 4</td></tr>
-						<tr><td>Película Vista 5</td></tr>
-						<tr><td>Película Vista 6</td></tr>
-						<tr><td>Película Vista 7</td></tr>
-						<tr><td>Película Vista 8</td></tr>
-						<tr><td>Película Vista 9</td></tr>
-						<tr><td>Película Vista 10</td></tr>
-						<tr><td>Película Vista 11</td></tr>
-						<tr><td>Película Vista 12</td></tr>
+						<tr><td>Película Vista 1</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 2</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 3</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 4</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 5</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 6</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 7</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 8</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 9</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 10</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 11</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
+						<tr><td>Película Vista 12</td><td><input type="button" class="btn btn-danger" value="borrar"></td></tr>
 
 
 					</table>
@@ -117,7 +118,6 @@
 			</div>
 		</div>
 
-		<div class="col-md-1"></div>
 
 
 	</div>
