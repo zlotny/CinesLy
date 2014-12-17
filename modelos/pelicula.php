@@ -1,4 +1,5 @@
 <?php
+
 class Pelicula{
 
 	var $idPelicula;
@@ -50,14 +51,31 @@ class Pelicula{
 		
 
 	}
-
+	
+	//No retorna nada. Insera un comentario en la base de datos
 	function comentarPelicula($idPelicula,$email,$comentario){
 		Pelicula::conectarBD();
 		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
 		mysql_query($sql);
 		
 	}
-
+	
+	//Retorna un array de comentarios de una película de la base de datos
+	function getComentariosPelicula($idPelicula){
+		Pelicula::conectarBD();
+		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."'";
+		$resultado = mysql_query($sql);
+		$toRet = array();
+		$toRet['usuario'] = array();
+		$toRet['comentario'] = array();
+		
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet['usuario'], $row['email']);
+			array_push($toRet['comentario'], $row['comentario']);
+	}
+	return $toRet;
+	}
+	
 	function valorarPelicula($idPelicula,$valoracion){
 		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
