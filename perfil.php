@@ -33,10 +33,56 @@
 
 
 				?>
-				<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>
-
+				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>-->
+				<a href="" data-toggle="modal" data-target="#modificarPerfil" ><?php echo $_SESSION['usuario']->nombreUsuario; ?></a>
 				<div><p><br><strong><?php echo $_SESSION['usuario']->email; ?></p><br></div>
-				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar Cuenta">
+				<input type="button" class="btn btn-info" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">
+				<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<form action="controladoras/procesarUsuario.php" method="POST">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h3>Editar cuenta</h3>
+								</div>
+								<div class="modal-body">
+									<label for="nombreUsuario" class="">Nombre de usuario</label>
+									<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario">          
+								
+									<label for="email" class="">Correo electrónico</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">     
+									<hr>
+
+									<h6>Cambiar contraseña</h6>
+									<label for="pass1" class="">Introduzca contraseña</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> 
+
+									<label for="email" class="">Repita contraseña</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Repita su nueva contraseña"> 
+									<hr>
+
+									<label for="email" class="">Cambiar idioma</label>
+									<select class="form-control form-pers">
+									  <option>Selecciona un idioma...</option>
+									  <option value="de">Deutsch - Alemán</option>
+									  <option value="en">English - Inglés</option>
+									  <option value="es">Español</option>
+									  <option value="fr">Français - Francés</option>
+									</select>
+               						<hr>
+					                
+					                <a href="" style="color:red;">Eliminar mi cuenta</a>   
+								</div>
+								<div class="modal-footer">
+									<input type="submit" name="accion" class="btn btn-success" value="recuperar">
+									<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>         
+
+
 			</div>
 			<div class="col-md-1" ></div>
 			
