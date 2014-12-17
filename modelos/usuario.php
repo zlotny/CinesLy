@@ -148,7 +148,7 @@ function getAmigos(){
 	$toRet = array();
 	while($row = mysql_fetch_array($resultado)){
 
-		array_push($toRet, $row["email2"]);
+		array_push($toRet, $this->getObjetoUsuario($row["email2"]));
 	}
 
 	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email'";
@@ -156,7 +156,7 @@ function getAmigos(){
 
 	while($row = mysql_fetch_array($resultado)){
 
-		array_push($toRet, $row["email1"]);
+		array_push($toRet, $this->getObjetoUsuario($row["email1"]));
 	}
 	return $toRet;
 
