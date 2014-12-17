@@ -140,6 +140,56 @@ function modificarUsuarioAdmin($email){
 }
 */
 
+
+function getAmigos(){
+	$this->conectarBD();
+	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email'";
+	$resultado= mysql_query($sql);
+	$toRet = array();
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $this->getObjetoUsuario($row["email2"]));
+	}
+
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email'";
+	$resultado= mysql_query($sql);
+
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $this->getObjetoUsuario($row["email1"]));
+	}
+	return $toRet;
+
+}
+
+
+function eliminarAmigo($emailamigo){
+	$this->conectarBD();
+	$sql = "DELETE FROM agrega WHERE (email1='$emailamigo' and email2='$this->email') or (email2='$emailamigo' and email1='$this->email')";
+	return mysql_query($sql);
+
+
+}
+
+function addAmigo($emailAmigo){
+	$this->conectarBD();
+	$sql = "SELECT email FROM usuario where email='$emailAmigo'";
+
+
+	if(mysql_num_rows(mysql_query($sql)) == 0){
+		return "noexiste";
+
+	}
+	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo',NULL)";
+	
+	if(mysql_query($sql)){
+		return "insertado";
+	}
+	return "error";
+}
+
+
+
 }
 
 ?>
