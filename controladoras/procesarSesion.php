@@ -18,9 +18,9 @@ if($accion == "Nueva"){
 	
 	$sesion = new Sesion($idPelicula,$idSesion,$fecha,$sala,$capacidad);
 	Sesion::anhadirSesion($sesion);
-	echo "string";
 	
-} else { 
+	
+	} else { 
 		if($accion=="Modificar") { 
 
 			$idPelicula = $_REQUEST['idPelicula'];
@@ -42,9 +42,9 @@ if($accion == "Nueva"){
 				$sala="";
 			}
 			
-			echo "request hecho <br>";
-			$sesion = new Sesion($idPelicula,$idSesion,$sala,$fecha,$capacidad);
-			echo "peli creada";
+			
+			$sesion = new Sesion($idPelicula,$idSesion,$fecha,$sala,$capacidad);
+			
 			Sesion::modificarSesion($sesion->idPelicula,$sesion->idSesion,$sesion);
 			echo "string";
 
@@ -55,12 +55,31 @@ if($accion == "Nueva"){
 				$idPelicula = $_REQUEST['idPelicula'];
 				$idSesion = $_REQUEST['idSesion'];
 
-				Sesion::eliminarSesion($idPelicula,$idSesion,$sesion);
+				Sesion::eliminarSesion($idPelicula,$idSesion);
 				
 			}
 			else{
 				if($accion=="Consultar"){
+						$idPelicula = $_REQUEST['idPelicula'];
+						$idSesion = $_REQUEST['idSesion'];
 
+						$array=Sesion::consultarSesion($idSesion,$idPelicula);
+							?> 
+							<meta charset="utf-8">
+							<title>CinesLy</title>
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0">
+							<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-responsive.css">
+							<link rel="stylesheet" type="text/css" href="../style/style.css">
+
+						    <div class="well">
+						    <div class="col-md-1"><?php echo $array['fecha']; ?></div>
+						    <div class="col-md-1"><?php echo $array['capacidad']; ?></div>
+						    <div class="col-md-1"><?php echo $array['sala']; ?></div>
+						    </div>
+
+							 <?php
+						
 				}
 			}
 

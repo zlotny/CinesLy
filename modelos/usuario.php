@@ -141,9 +141,25 @@ function modificarUsuarioAdmin($email){
 */
 
 
-function getAmigos(){
+function getAmigosParaConfirmar(){
 	$this->conectarBD();
-	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email'";
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email' and estado = '1' ";
+	$resultado= mysql_query($sql);
+	$toRet = array();
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $this->getObjetoUsuario($row["email1"]));
+	}
+
+	return $toRet;
+
+
+}
+
+function getAmigosSinConfirmar(){
+
+	$this->conectarBD();
+	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '1' ";
 	$resultado= mysql_query($sql);
 	$toRet = array();
 	while($row = mysql_fetch_array($resultado)){
@@ -151,7 +167,22 @@ function getAmigos(){
 		array_push($toRet, $this->getObjetoUsuario($row["email2"]));
 	}
 
-	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email'";
+	return $toRet;
+
+
+}
+
+function getAmigos(){
+	$this->conectarBD();
+	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
+	$resultado= mysql_query($sql);
+	$toRet = array();
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $this->getObjetoUsuario($row["email2"]));
+	}
+
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email' and estado='0' ";
 	$resultado= mysql_query($sql);
 
 	while($row = mysql_fetch_array($resultado)){
@@ -180,12 +211,26 @@ function addAmigo($emailAmigo){
 		return "noexiste";
 
 	}
-	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo',NULL)";
+	//Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
+	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
 	
 	if(mysql_query($sql)){
 		return "insertado";
 	}
 	return "error";
+}
+
+function confirmarAmigo($usuarioTarget){
+	$this->conectarBD();
+	$sql = "UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget'";
+	mysql_query($sql) or die(mysql_error());
+
+}
+
+function denegarAmigo($usuarioTarget){
+	$this->conectarBD();
+	
+	return mysql_query("Delete FROM agrega WHERE email1 = '$usuarioTarget' or email2 = '$usuarioTarget'");
 }
 
 

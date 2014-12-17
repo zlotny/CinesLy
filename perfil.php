@@ -14,8 +14,8 @@
 </head>
 <body>
 	<?php
-	cabeceraPantallaPrincipal();
 	session_start();
+	cabeceraPantallaPrincipal();
 	?>
 	<div class="top-margin">
 		<div class="col-md-3" >

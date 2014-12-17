@@ -53,8 +53,10 @@ class Pelicula{
 
 	
 
-	function comentarPelicula($idPelicula,$comentario){
-
+	function comentarPelicula($idPelicula,$email,$comentario){
+		Pelicula::conectarBD();
+		$sql="INSERT INTO comenta (idPelicula, email, comentario) VALUES ('$idPelicula','$email','$comentario')";
+		$resultado=Pelicula::consultaBD($sql);
 	}
 
 	function valorarPelicula($idPelicula,$valoracion){
