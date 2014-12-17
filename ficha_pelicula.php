@@ -1,8 +1,9 @@
 <?php 
-include	"cabecera.php"
+include	"cabecera.php";
+include "modelos/pelicula.php";
+include "modelos/usuario.php";
 ?>
 
-<DOCTYPE html>
     <html lang="es">
     <head>
        <meta charset="utf-8">
@@ -16,11 +17,25 @@ include	"cabecera.php"
    </head>
 
    <body>
-    <?php cabeceraPantallaPrincipal(); ?>
+    <?php 
+		cabeceraPantallaPrincipal(); 
+		session_start();	
+		$IdPeli=$_REQUEST["IdPeli"];
+		//$ObjPeli=Pelicula::getObjetoPelicula($IdPeli);
+		$ObjPeli=new Pelicula('00001','Hay Leyenda','Isaac González',' ','120 min',' ','Andoni Da Silva',2014,'18/12//2014','Comedia','España',' ',' ',' ',0);
+		//Pelicula::comentarPelicula('00001','user@user.com','Hola mis putos amigos');
+	?>
     <div class="container">
         <div class="row">
             <div class="col-lg-3 top-margin">
-             <img src="img/peliculas/hobbit.jpg" alt="null" height="360px" width="100%" class="thumbnail">
+			
+			<?php 
+				if(isset($filaAmigo->foto)){
+				echo "<img src='".$ObjPeli->foto."' alt='null' height='360px' width='100%' class='thumbnail'>";
+				}else {echo "<tr><td class='col-md-1'><img src='img/HayLeyenda.jpg' width='100%' /></td>";}
+			?>
+		   
+             
          </div>
          <div class="col-lg-9">
          <div class="panel panel-default top-margin inside-padding">
@@ -29,28 +44,43 @@ include	"cabecera.php"
                     <div class="span6">
                       <div class="direction-box top-margin-little">
                         <ul>
-                            <li><strong class="step">Título:</strong>El hobbit - Trilogía</li>
-                            <li><strong class="step">Director:</strong>Peter Jackson</li>
-                            <li><strong class="step">Actores:</strong>Martin Freeman, Ian McKellen, Richard Armitage, Luke Evans, James Nesbitt, Aidan Turner, Evangeline Lilly, Ken Stott, Graham McTavish, Jed Brophy, Stephen Hunter, John Callen, Adam Brown, Dean O'Gorman, William Kircher, Peter Hambleton, Mark Hadlow, Cate Blanchett, Lee Pace, Orlando Bloom, Hugo Weaving, Billy Connolly, Christopher Lee, Stephen Fry, Ryan Gage, Ian Holm, Sylvester McCoy, Manu Bennett</li>
-                            <li><strong class="step">Distribuidora:</strong>Warner</li>
-                            <li><strong class="step">Duración:</strong>224 minutos</li>
-                            <li><strong>Apta</strong> para todos los públicos.</li></ul>
+                            <li><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
+                            <li><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
+                            <li><strong class="step">Actores: </strong><?php echo "$ObjPeli->actores"; ?></li>
+                            <li><strong class="step">Distribuidora: </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
+                            <li><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
+                            <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="input-group col-md-6 pull-right" style="margin:0px 0px 3px 0px">
-                <input type="text" class="form-control" placeholder="Escribe un comentario">
+            <div class="input-group col-md-6 " style="margin:0px 0px 3px 0px">
                 <span class="input-group-btn">
 
-                    <a href="" class="btn btn-info">Publicar</a>
+                    <form method="POST" class="pull-right" action="controladoras/inserComentPelControlador.php" >
+						<input type="hidden" value="<?php echo $ObjPeli->idPelicula; ?>" name="idPeli"/>
+						<input type="text" class="form-control" placeholder="Escribe un comentario" name="coments"/>
+						<input type="submit" class="btn btn-info" value="Publicar"/>					
+					</form>
                 </span>
             </div>
-            <div class="top-margin">
+			    <div class="top-margin">
                 <div class="share-box-outer">
                     <h4>Comentarios película</h4>
                 </div>
                 <ul class="media-list">
+				<?php 					
+				
+				$arrayComentarios=Pelicula::getComentariosPelicula($ObjPeli->idPelicula);
+				$arrayUsuarios=$arrayComentarios['usuario'];
+				$arrayComents=$arrayComentarios['comentario'];
+		
+				for($i=0; $i<sizeof($arrayComents); $i++){
+					$usuActual = Usuario::getObjetoUsuario($arrayUsuarios[$i]);
+					$cmtActual = $arrayComents[$i];
+					
+				?>
+				
                     <li class="media">
 
                         <div class="well">
@@ -58,68 +88,17 @@ include	"cabecera.php"
                             <a class="media-left" href="#">
                                 <img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
                             </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nombre de Usuario</h4>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+                            
+							<div class="media-body">
+                                <h4 class="media-heading"><?php echo $usuActual->nombreUsuario; ?></h4>
+                                <p><?php echo $cmtActual; ?></p>
                             </div>
-
                         </div>
-
                     </li>
-                    <li class="media">
-
-                        <div class="well">
-
-                            <a class="media-left" href="#">
-                                <img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nombre de Usuario</h4>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                    <li class="media">
-
-                        <div class="well">
-
-                            <a class="media-left" href="#">
-                                <img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nombre de Usuario</h4>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                    <li class="media">
-
-                        <div class="well">
-
-                            <a class="media-left" href="#">
-                                <img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">Nombre de Usuario</h4>
-                                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-
-
+				
+				<?php
+				}
+				?>
                 </ul>
             </div>
 

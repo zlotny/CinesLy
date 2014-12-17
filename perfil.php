@@ -11,6 +11,24 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
 	<link rel="stylesheet" href="style/style.css">
 
+
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+$(document).ready(function()
+	{
+	$("#boton01").click(function () {
+	//saco el valor accediendo a un input de tipo text y name = nombre
+	alert($('input:text[name=eslogan]').val());
+	//saco el valor accediendo al id del input = nombre
+	alert($("#eslogan").val());
+	//saco el valor accediendo al class del input = nombre   
+	alert($(".eslogan").val());
+	});
+});
+</script>
+
+
 </head>
 <body>
 	<?php
@@ -20,23 +38,73 @@
 	<div class="top-margin">
 		<div class="col-md-3" >
 			<div class="col-md-1" ></div>
-			<div class="col-md-10 divPerfil">
+			<div class="col-md-10 divPerfil" style="text-align:center; padding-top: 120px;">
 				<?php
 				if (isset($_SESSION['usuario']->foto)){
 
-					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-rounded'>";
+					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-circle'>";
 
 				}else{
-					echo "<img src='img/default_user.png' width='150px' class='img-rounded'>";
+					echo "<img src='img/default_user.png' width='150px' class='img-circle'>";
 				}
 
 
 
 				?>
-				<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>
+				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>-->
+				<div><p><br><strong><a href="" data-toggle="modal" data-target="#modificarPerfil" ><?php echo $_SESSION['usuario']->nombreUsuario; ?></a></p></div>
+				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->eslogan; ?></p></div>-->
+				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->ciudadActual; ?></p><br></div>-->
+				<div><input style="border:none;background-color:transparent;" value="<?php echo $_SESSION['usuario']->email; ?>"></div>
+				<div><textarea style="border-style:solid;background-color:transparent;color:#337ab7;max-width:281px;min-width:281px;max-height:128px;min-height:128px;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea></div>
+				<!--<div><p><br><strong>Ourense</p><br></div>--><br><br>
+				<input type="button" class="btn btn-warning" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">
+				<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<form action="controladoras/procesarUsuario.php" method="POST">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h3>Editar cuenta</h3>
+								</div>
+								<div class="modal-body">
+									<label for="nombreUsuario" class="">Nombre de usuario</label>
+									<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario">          
+								
+									<label for="email" class="">Correo electrónico</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">     
+									<hr>
 
-				<div><p><br><strong><?php echo $_SESSION['usuario']->email; ?></p><br></div>
-				<input type="button" class "btn btn-info" data-toggle="modal" data-target="#del" value="Editar Cuenta">
+									<h6>Cambiar contraseña</h6>
+									<label for="pass1" class="">Introduzca contraseña</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> 
+
+									<label for="email" class="">Repita contraseña</label>
+									<input type="text" name="email" class="form-control form-pers" placeholder="Repita su nueva contraseña"> 
+									<hr>
+
+									<label for="email" class="">Cambiar idioma</label>
+									<select class="form-control form-pers">
+									  <option>Selecciona un idioma...</option>
+									  <option value="de">Deutsch - Alemán</option>
+									  <option value="en">English - Inglés</option>
+									  <option value="es">Español</option>
+									  <option value="fr">Français - Francés</option>
+									</select>
+               						<hr>
+					                
+					                <a href="" style="color:red;">Eliminar mi cuenta</a>   
+								</div>
+								<div class="modal-footer">
+									<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+									<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>         
+
+
 			</div>
 			<div class="col-md-1" ></div>
 			
