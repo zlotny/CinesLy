@@ -36,8 +36,14 @@
             echo '<li class="media">';
               echo '<div class="col-md-12 ">';
                 echo '<div class="well">';
-                  echo '<a class="media-left" href="ficha_pelicula.php">';
-                    echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+                  echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
+                  if( substr($panelPelicula["foto"], 0,3) == "img"){
+
+                    echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" class="thumbnail">';
+                  }else{
+                    echo '<img src="img/movie_no_poster.jpg" alt="" height="140px"  class="thumbnail">';
+
+                  }
                   echo '</a>';  
                   echo '<div class="media-body">';
                     echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';

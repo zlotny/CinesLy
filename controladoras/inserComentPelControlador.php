@@ -5,6 +5,6 @@ session_start();
 
 
 	Pelicula::comentarPelicula($_REQUEST['idPeli'],$_SESSION["usuario"]->email,$_REQUEST['coments']);
-	header("Location: ../ficha_pelicula.php");
+	header("Location: ../ficha_pelicula.php?insertado=true&id=".$_REQUEST['idPeli']);
 
 ?>

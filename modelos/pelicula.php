@@ -57,6 +57,7 @@ class Pelicula{
 	function comentarPelicula($idPelicula,$email,$comentario){
 		Pelicula::conectarBD();
 		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
+		echo $sql;
 		mysql_query($sql);
 		
 	}
@@ -294,10 +295,11 @@ function modificarPelicula($idPelicula,$pelicula)
 	}
 
 	function getObjetoPelicula($idPelicula){
-		$this->conectarBD();
+		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula= '".$idPelicula."'";
-		$resultado=$this->consultaBD($sql);
+		$resultado=Pelicula::consultaBD($sql);
 		$row=mysql_num_rows($resultado);
+		
 
 		if($row=0){
 			echo "Pelicula no encontrada";
