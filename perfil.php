@@ -22,7 +22,6 @@
 			<div class="col-md-1" ></div>
 			<div class="col-md-10 divPerfil">
 				<?php
-				echo $_SESSION['usuario']->getAmigos();
 				if (isset($_SESSION['usuario']->foto)){
 
 					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-rounded'>";
