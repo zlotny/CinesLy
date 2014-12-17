@@ -140,6 +140,28 @@ function modificarUsuarioAdmin($email){
 }
 */
 
+
+function getAmigos(){
+	$this->conectarBD();
+	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email'";
+	$resultado= mysql_query($sql);
+	$toRet = array();
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $row["email2"]);
+	}
+
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email'";
+	$resultado= mysql_query($sql);
+
+	while($row = mysql_fetch_array($resultado)){
+
+		array_push($toRet, $row["email1"]);
+	}
+	return $toRet;
+
+}
+
 }
 
 ?>
