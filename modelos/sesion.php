@@ -93,7 +93,7 @@ class Sesion{
 		$sql="INSERT INTO sesion (idPelicula,idSesion,fecha,sala,capacidad)
 		 VALUES ('$sesion->idPelicula', '$sesion->idSesion' , '$sesion->fecha' ,'$sesion->sala' , '$sesion->capacidad')";
 
-		echo $sql;
+		//echo $sql;
 		$resultado=Sesion::consultaBD($sql);	
 		
 		if($resultado){
@@ -104,7 +104,7 @@ class Sesion{
 
 	
 
-	function eliminarSesion($idPelicula,$idSesion,$sesion){
+	function eliminarSesion($idPelicula,$idSesion){
 
 		Sesion::conectarBD();
 		$sql="DELETE FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
@@ -148,20 +148,17 @@ class Sesion{
 		$resultado=Sesion::consultaBD($sql);
 			
 		Sesion::consultaBD($sql2);
+
+			
 	}
 
 	function consultarSesion($idSesion,$idPelicula){
 
 		Sesion::conectarBD();
 		$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
-		$resultado=mysql_query($sql);
-		$row=mysql_num_rows($resultado);
-		if($row==1){
-			$row=mysql_fetch_array($resultado);
-			return new Sesion($sesi["idPelicula"],$sesi["idSesion"],$sesi["sala"],$sesi["fecha"],$sesi["capacidad"]);
-		}else{
-			echo "La sesion no existe.";
-		}
+		$resultado=Sesion::consultaBD($sql);
+		$sesion=mysql_fetch_array($resultado,MYSQL_ASSOC);
+		return $sesion;
 		
 	}
 
