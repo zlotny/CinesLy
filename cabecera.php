@@ -1,4 +1,10 @@
+
+error_reporting(E_ERROR | E_PARSE);
+
 <?php
+
+
+
 function cabeceraCartelera(){
 	?>
 	<div class="container">
