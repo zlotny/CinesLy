@@ -3,10 +3,10 @@
 function cambioIdioma($idioma){
 	switch ($idioma) {
     case "es":
-        include_once"pruebaIdiomaEsp.php";
+        return "pruebaIdiomaEsp";
         break;
     case "en":
-        include_once "";
+        
         break;
     case "gal":
         	
