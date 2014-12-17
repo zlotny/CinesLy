@@ -39,6 +39,15 @@ body{
 	margin-left: 5px;
 }
 
+.medium-right{
+	margin-left: 10px;
+}
+
+.high-right{
+	margin-left: 15px;
+}
+
+
 .scrollable-table{
 
 	overflow-y: scroll;

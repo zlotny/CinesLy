@@ -15,6 +15,8 @@ if(isset($_REQUEST["email"])){
 
 
 
+}else{
+	echo "Ha habido un error al eliminar un amigo";
 }
 
 
