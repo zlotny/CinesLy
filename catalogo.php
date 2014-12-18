@@ -6,7 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
 	<link href="style/style.css" rel="stylesheet" />
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <script src="js/alertify/lib/alertify.min.js"> </script>
+  <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+
+
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -17,8 +23,11 @@
 
      <?php
 
+     error_reporting(E_ERROR | E_PARSE);
+
      include_once "modelos/pelicula.php";
      include_once "cabecera.php";
+     
      
      cabeceraCartelera();
      session_start();
@@ -29,6 +38,9 @@
 
     ?>
 
+
+
+    
 
     <div class="col-md-2"> </div>
     <div class="col-md-7 ">
@@ -77,6 +89,7 @@
             echo '</li>';
           }
 
+
         }
 
         ?> 
@@ -115,16 +128,18 @@
             <label >Género</label>
 
             <table class="table table-striped">
+
               <tr ><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
               <tr ><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" onclick="alertify.error('En que pinchas picaron?')"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
               <tr ><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+
             </table>
           </div>
 
@@ -138,7 +153,7 @@
 
 </body>	
 
-<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 
 </html>

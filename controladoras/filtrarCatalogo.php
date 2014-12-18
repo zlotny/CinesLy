@@ -37,7 +37,7 @@
 	
 	$pelisFiltradas=Pelicula::peliculasFiltradas($_REQUEST["busqueda"], $_REQUEST["tipo"], $genero);
 	$_SESSION["filtro"]=$pelisFiltradas;
-	//header("Location: ../catalogo.php?filtrado=true");
+	header("Location: ../catalogo.php?filtrado=true");
 ?>
 
 	
