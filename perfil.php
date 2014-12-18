@@ -147,12 +147,15 @@ while($row=mysql_fetch_array($resultado))
 	<ul class="pagination">
 	
 
-<?php
+		<?php
 
-	if( $num_pag >= 1)
-	{ ?>
+		if( $num_pag > 2)
+			{ ?>
 		<li><a href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a></li>
-	<?php } 
+		<?php	} else { ?>
+		<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
+		<?php
+	}
 	for ($i=1; $i<=$total_paginas; $i++) 
 	{ 
 		if ($num_pag == $i) 
@@ -167,14 +170,14 @@ while($row=mysql_fetch_array($resultado))
 			<?php
 		} 
 	}  	
-		if(($num_pag+1)<=$total_paginas) 
-	{ ?>
-		<li><a href="perfil.php?pagina=<?php echo ($num_pag+1) ?>">Prev</a></li>
-<?php	} else { ?>
-<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
-<?php
+	if(($num_pag+1)<=$total_paginas) 
+		{ ?>
+	<li><a href="perfil.php?pagina=<?php echo ($num_pag+1) ?>">Sig</a></li>
+	<?php	} else { ?>
+	<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Sig</a></li>
+	<?php
 }	
-	?>	</ul>
+?>	</ul>
 						<!--	<ul class="pagination">
   <li><a href="#">&laquo;</a></li>
   <li><a href="#">1</a></li>
