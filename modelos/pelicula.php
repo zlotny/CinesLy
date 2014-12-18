@@ -317,46 +317,46 @@ function modificarPelicula($idPelicula,$pelicula)
 		$this->titulo=$titulo;
 	}
 	function setDirector($director){
-		$this->director;
+		$this->director = $director;
 	}
 	function setDistribuidora($distribuidora){
-		$this->distribuidora;
+		$this->distribuidora = $distribuidora;
 	}
 	function setDuracion($duracion){
-		$this->duracion;
+		$this->duracion = $duracion;
 	}
 	function setSinopsis($sinopsis){
-		$this->sinopsis;
+		$this->sinopsis = $sinopsis;
 	}
 	function setActores($actores){
-		$this->actores;
+		$this->actores = $actores;
 	}
 	function setAnho($anho){
-		$this->anho;
+		$this->anho = $anho;
 	}
 	function setFechaEstreno($fechaEstreno){
-		$this->fechaEstreno;
+		$this->fechaEstreno = $fechaEstreno;
 	}
 	function setGenero($genero){
-		$this->genero;
+		$this->genero = $genero;
 	}
 	function setPais($pais){
-		$this->pais;
+		$this->pais = $pais;
 	}
 	function setVotos($votos){
-		$this->votos;
+		$this->votos = $votos;
 	}
 	function setValoracion($valoracion){
-		$this->valoracion;
+		$this->valoracion = $valoracion;
 	}
 	function setTipo($tipo){
-		$this->tipo;
+		$this->tipo = $tipo;
 	}
 	function setContValoracion($contValoracion){
-		$this->contValoracion;
+		$this->contValoracion = $contValoracion;
 	}
 	function setFoto($foto){
-		$this->foto;
+		$this->foto = $foto;
 	}
 
 
