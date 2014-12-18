@@ -16,10 +16,11 @@
     <body>
 
      <?php
-     cabeceraCartelera();
+     error_reporting(E_ERROR | E_PARSE);
      include "modelos/pelicula.php";
      include "filtrarCatalogo.php";
      include "cabecera.php";
+     cabeceraCartelera();
      ?>
      
    
