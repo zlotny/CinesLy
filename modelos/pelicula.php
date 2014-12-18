@@ -1,5 +1,4 @@
 <?php
-
 class Pelicula{
 
 	var $idPelicula;
@@ -52,31 +51,13 @@ class Pelicula{
 		
 
 	}
+
 	
-	//No retorna nada. Insera un comentario en la base de datos
-	function comentarPelicula($idPelicula,$email,$comentario){
-		Pelicula::conectarBD();
-		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
-		mysql_query($sql);
-		
+
+	function comentarPelicula($idPelicula,$comentario){
+
 	}
-	
-	//Retorna un array de comentarios de una película de la base de datos
-	function getComentariosPelicula($idPelicula){
-		Pelicula::conectarBD();
-		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."'";
-		$resultado = mysql_query($sql);
-		$toRet = array();
-		$toRet['usuario'] = array();
-		$toRet['comentario'] = array();
-		
-		while($row = mysql_fetch_array($resultado)){
-			array_push($toRet['usuario'], $row['email']);
-			array_push($toRet['comentario'], $row['comentario']);
-	}
-	return $toRet;
-	}
-	
+
 	function valorarPelicula($idPelicula,$valoracion){
 		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
@@ -210,9 +191,8 @@ function modificarPelicula($idPelicula,$pelicula)
 	}
 
 	function mostrarPeliculas(){
-		
+
 		Pelicula::conectarBD();
-		
 		
 		 $sql = "SELECT * FROM pelicula";
         $result = Pelicula::consultaBD($sql);
@@ -228,14 +208,11 @@ function modificarPelicula($idPelicula,$pelicula)
 
 	function mostrarPelicula($idPelicula){
 		Pelicula::conectarBD();
-		
 		$sql="SELECT * FROM pelicula WHERE idPelicula= '".$idPelicula."'";
 		$resultado=Pelicula::consultaBD($sql);
 		$toRet=mysql_fetch_array($resultado, MYSQL_ASSOC);
 		return $toRet;
 	}
-	
-	
 
 	function consultaBD($consulta){
 		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
@@ -360,7 +337,36 @@ function modificarPelicula($idPelicula,$pelicula)
 	}
 
 
+	function peliculasFiltradas($titulo, $tipo, $arrayGeneros){
+		Pelicula::conectarBD();
+		if($tipo == ""){
+			$tipo = "*";
+		}
 
+		$sql="select * from pelicula where titulo like '%".$titulo."%' and tipo = '".$tipo."' and genero like '";
+		foreach ($arrayGeneros as $singleGenero){
+			if($sql=="select * from pelicula where titulo like '%".$titulo."%' and tipo = '".$tipo."' and genero like '"){
+				$sql=$sql."%".$singleGenero."%' ";
+			
+			}
+
+			else{
+				$sql=$sql." and genero like '%".$singleGenero."%' ";
+			}
+			
+		}
+		if($sql=="select * from pelicula where titulo like '%".$titulo."%' and tipo = '".$tipo."' and genero like '"){
+			$sql="select * from pelicula where titulo like '%".$titulo."%' and tipo = '".$tipo."'";
+		}
+		$resultado=mysql_query($sql);
+		echo $sql;
+		while($fila=mysql_fetch_array($resultado)){
+			$toRet[$fila["idPelicula"]]=$fila;
+		}
+		print_r($toRet);
+		return $toRet;
+
+	}
 	
 
 }

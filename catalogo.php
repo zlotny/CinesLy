@@ -16,42 +16,70 @@
     <body>
 
      <?php
-     include "modelos/pelicula.php";
-     include "filtrarCatalogo.php";
-     include "cabecera.php";
-     cabeceraCartelera();
-     ?>
+
+     include_once "modelos/pelicula.php";
+     include_once "cabecera.php";
      
-   
-       <div class="col-md-2"> </div>
-       <div class="col-md-7 ">
-        <ul class="media-list">
+     cabeceraCartelera();
+     session_start();
+     if($_REQUEST["filtrado"]==true){
+      $filtro=$_SESSION["filtro"];
+      unset($_SESSION["filtro"]);
+    }
 
-          <!-- Paneles de los cines -->
-          <?php
-          
-          $arrayPeliculas=Pelicula::mostrarPeliculas();
+    ?>
 
+
+    <div class="col-md-2"> </div>
+    <div class="col-md-7 ">
+      <ul class="media-list">
+
+        <!-- Paneles de los cines -->
+        <?php
+        if(isset($filtro) ){
+          echo "<br>";
+          $arrayPeliculas=$filtro;
           foreach($arrayPeliculas as $panelPelicula){
             echo '<li class="media">';
-              echo '<div class="col-md-12 ">';
-                echo '<div class="well">';
-                  echo '<a class="media-left" href="ficha_pelicula.php">';
-                    echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
-                  echo '</a>';  
-                  echo '<div class="media-body">';
-                    echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-                    echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-                    echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-                    echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
-                  echo '</div>';
-
-                echo '</div>';
-              echo '</div>';
+            echo '<div class="col-md-12 ">';
+            echo '<div class="well">';
+            echo '<a class="media-left" href="ficha_pelicula.php">';
+            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+            echo '</a>';  
+            echo '<div class="media-body">';
+            echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
+            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
+            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
+            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</li>';
+          }
+        }
+        else{
+          $arrayPeliculas=Pelicula::mostrarPeliculas();
+          foreach($arrayPeliculas as $panelPelicula){
+            echo '<li class="media">';
+            echo '<div class="col-md-12 ">';
+            echo '<div class="well">';
+            echo '<a class="media-left" href="ficha_pelicula.php">';
+            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+            echo '</a>';  
+            echo '<div class="media-body">';
+            echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
+            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
+            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
+            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
             echo '</li>';
           }
 
-          ?> 
+        }
+
+        ?> 
 
       </ul>
     </div>
@@ -74,37 +102,29 @@
           </div>            
           <br>
           <div class="form-group">
-            <label for="tipo_peli">Tipo de Peliculas</label>
-
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="buscar_peli" data-toggle="dropdown" aria-expanded="true">
-                Tipo de Peliculas
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="buscar_peli">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Todas las peliculas</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">En Cartelera</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Especiales</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Proximamente</a></li>
-
-              </ul>
-            </div>
+            <label for="tipo_peli">Tipo de Peliculas</label><br>
+            <select name="tipo" aria-labelledby="buscar_peli">
+              <option  value="">Todas las peliculas</option>
+              <option  value="cartelera">En Cartelera</option>
+              <option  value="especiales">Especiales</option>
+              <option  value="proximamente">Proximamente</option>
+            </select>
 
           </div>
           <div class="form-group">
             <label >Género</label>
 
             <table class="table table-striped">
-              <tr ><td>Acción</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
-              <tr ><td>Aventura</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Comedia</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Drama</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Fantasía</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Ficción</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Pornografía</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Romántica</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Suspense</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Terror</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
+              <tr ><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
             </table>
           </div>
 
