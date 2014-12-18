@@ -186,13 +186,13 @@
 
 </div>
 
-<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="javascript/docs.min.js"></script>
-<script src="javascript/ie10-viewport-bug-workaround.js"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/ie10-viewport-bug-workaround.js"></script>
 
 
-<script type="text/javascript" src="javascript/jssor.slider.min.js"></script>
+<script type="text/javascript" src="js/jssor.slider.min.js"></script>
 <script>
   jQuery(document).ready(function ($) {
 
@@ -259,72 +259,22 @@
 
 <section class="container" style="padding:10px">
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
 </section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
 
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
 
 <footer>
  <section class="container" style="padding:10px">

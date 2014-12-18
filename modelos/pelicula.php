@@ -16,8 +16,9 @@ class Pelicula{
 	var $valoracion;
 	var $tipo;
 	var $contValoracion;
+	var $foto;
 
-	function __construct($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion){
+	function __construct($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion,$foto){
 
 		$this->idPelicula=$idPelicula;
 		$this->titulo=$titulo;
@@ -34,7 +35,7 @@ class Pelicula{
 		$this->valoracion=$valoracion;
 		$this->tipo=$tipo;
 		$this->contValoracion=$contValoracion;
-
+		$this->foto=$foto;
 	}
 	function conectarBD(){
 		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
@@ -51,20 +52,32 @@ class Pelicula{
 
 	}
 
-<<<<<<< HEAD:modelos/pelicula.php
+	
+
+	//No retorna nada. Insera un comentario en la base de datos
 	function comentarPelicula($idPelicula,$email,$comentario){
 		Pelicula::conectarBD();
 		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
+		echo $sql;
 		mysql_query($sql);
 		
-=======
+	}
 	
-
-	function comentarPelicula($idPelicula,$email,$comentario){
+	//Retorna un array de comentarios de una película de la base de datos
+	function getComentariosPelicula($idPelicula){
 		Pelicula::conectarBD();
-		$sql="INSERT INTO comenta (idPelicula, email, comentario) VALUES ('$idPelicula','$email','$comentario')";
-		$resultado=Pelicula::consultaBD($sql);
->>>>>>> 67c74729e4d6823d1453b1a7caa45cf3df8bcbea:modelos/pruebas con idioma/pelicula.php
+		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."'";
+		$resultado = mysql_query($sql);
+		$toRet = array();
+		$toRet['usuario'] = array();
+		$toRet['comentario'] = array();
+		
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet['usuario'], $row['email']);
+			array_push($toRet['comentario'], $row['comentario']);
+	}
+	return $toRet;
+
 	}
 
 	function valorarPelicula($idPelicula,$valoracion){
@@ -76,7 +89,7 @@ class Pelicula{
 echo "string";
 		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
 		$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
-		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion']);
+		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
 echo "<br>";
 		$val=$valoracion+$peli1->valoracion;
 		echo $peli1->contValoracion;
@@ -97,10 +110,10 @@ echo "<br>";
 		Pelicula::conectarBD();
 
 
-		$sql="INSERT INTO pelicula (idPelicula, titulo, director, distribuidora, duracion, sinopsis, actores, anho, fecha_estreno, genero, pais, votos, valoracion, tipo, cont_valoracion)
+		$sql="INSERT INTO pelicula (idPelicula, titulo, director, distribuidora, duracion, sinopsis, actores, anho, fecha_estreno, genero, pais, votos, valoracion, tipo, cont_valoracion, foto)
 		VALUES ('$pelicula->idPelicula', '$pelicula->titulo' , '$pelicula->director' , '$pelicula->distribuidora' , '$pelicula->duracion' ,
 			'$pelicula->sinopsis' ,	'$pelicula->actores' , '$pelicula->anho' , '$pelicula->fechaEstreno' , '$pelicula->genero' ,
-			'$pelicula->pais' , '$pelicula->votos' , '$pelicula->valoracion' , '$pelicula->tipo' , '$pelicula->contValoracion')";
+			'$pelicula->pais' , '$pelicula->votos' , '$pelicula->valoracion' , '$pelicula->tipo' , '$pelicula->contValoracion', '$pelicula->foto')";
 
 
 		$resultado=Pelicula::consultaBD($sql);	
@@ -132,7 +145,7 @@ function modificarPelicula($idPelicula,$pelicula)
 
 	$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
 		$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
-		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion']);
+		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
 
 
 	if($pelicula->titulo!=""){
@@ -178,6 +191,9 @@ function modificarPelicula($idPelicula,$pelicula)
 	if($pelicula->contValoracion!=""){
 		$peli1->contValoracion=$pelicula->contValoracion;
 	}
+	if($pelicula->foto!=""){
+		$peli1->foto=$pelicula->foto;
+	}
 		/*for($i=1;$i<15; $i++){
 			if($pelicula[$i]==""){
 				echo "no se cambia el campo".$i;
@@ -190,15 +206,15 @@ function modificarPelicula($idPelicula,$pelicula)
 		$sql2="UPDATE pelicula SET  titulo ='$peli1->titulo', director = '$peli1->director', distribuidora ='$peli1->distribuidora', 
 		duracion = '$peli1->duracion', sinopsis ='$peli1->sinopsis' , actores = '$peli1->actores', anho = $peli1->anho,
 		fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos =$peli1->votos ,
-		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion
+		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion, foto = $peli1->foto
 		WHERE idPelicula = '$peli1->idPelicula'";
 		echo $sql2;
 		Pelicula::consultaBD($sql2);
 	}
 
 	function mostrarPeliculas(){
+
 		Pelicula::conectarBD();
-		
 		
 		 $sql = "SELECT * FROM pelicula";
         $result = Pelicula::consultaBD($sql);
@@ -214,14 +230,11 @@ function modificarPelicula($idPelicula,$pelicula)
 
 	function mostrarPelicula($idPelicula){
 		Pelicula::conectarBD();
-		
 		$sql="SELECT * FROM pelicula WHERE idPelicula= '".$idPelicula."'";
 		$resultado=Pelicula::consultaBD($sql);
 		$toRet=mysql_fetch_array($resultado, MYSQL_ASSOC);
 		return $toRet;
 	}
-	
-	
 
 	function consultaBD($consulta){
 		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
@@ -275,18 +288,22 @@ function modificarPelicula($idPelicula,$pelicula)
 	function getcontValoracion(){
 		return $contValoracion;
 	}
+	function getFoto(){
+		return $foto;
+	}
 
 	function getObjetoPelicula($idPelicula){
-		$this->conectarBD();
+		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula= '".$idPelicula."'";
-		$resultado=$this->consultaBD($sql);
+		$resultado=Pelicula::consultaBD($sql);
 		$row=mysql_num_rows($resultado);
+		
 
 		if($row=0){
 			echo "Pelicula no encontrada";
 		}else{
 			$row=mysql_fetch_array($resultado);
-			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["contValoracion"]);
+			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["contValoracion"],$row["foto"]);
 			return $pelicula;
 		}
 	}
@@ -338,9 +355,41 @@ function modificarPelicula($idPelicula,$pelicula)
 	function setContValoracion($contValoracion){
 		$this->contValoracion;
 	}
+	function setFoto($foto){
+		$this->foto;
+	}
 
 
+	function peliculasFiltradas($titulo, $tipo, $arrayGeneros){
+		Pelicula::conectarBD();
+		if($tipo == ""){
+			$tipo = "cartelera' or tipo = 'especial' or tipo = 'proximamente";
+		}
 
+		$sql="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."') and genero like '";
+		foreach ($arrayGeneros as $singleGenero){
+			if($sql=="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."') and genero like '"){
+				$sql=$sql."%".$singleGenero."%' ";
+			
+			}
+
+			else{
+				$sql=$sql." and genero like '%".$singleGenero."%' ";
+			}
+			
+		}
+		if($sql=="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."') and genero like '"){
+			$sql="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."')";
+		}
+		$resultado=mysql_query($sql);
+		echo $sql;
+		while($fila=mysql_fetch_array($resultado)){
+			$toRet[$fila["idPelicula"]]=$fila;
+		}
+		
+		return $toRet;
+
+	}
 	
 
 }

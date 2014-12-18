@@ -9,14 +9,14 @@ include_once "modelos/usuario.php";
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="javascript/alertify/lib/alertify.min.js"> </script>
-  <script src="javascript/general.js"> </script>
+  <script src="js/alertify/lib/alertify.min.js"> </script>
+  <script src="js/general.js"> </script>
   <title>Amigos</title>
 
 
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-  <link rel="stylesheet" href="javascript/alertify/themes/alertify.core.css" />
-  <link rel="stylesheet" href="javascript/alertify/themes/alertify.default.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
   <link href="style/style.css" rel="stylesheet" />
 
 </head>
@@ -167,5 +167,5 @@ include_once "modelos/usuario.php";
 
 
 
-<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
