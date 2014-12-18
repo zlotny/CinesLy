@@ -16,10 +16,10 @@
     <body>
 
      <?php
+     cabeceraCartelera();
      include "modelos/pelicula.php";
      include "filtrarCatalogo.php";
      include "cabecera.php";
-     cabeceraCartelera();
      ?>
      
    
