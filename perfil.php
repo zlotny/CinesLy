@@ -34,10 +34,10 @@
 	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
 	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
 
-	$sql="SELECT * FROM usuario";
+	$sql="SELECT * FROM publicacion";
 	$resultado = mysql_query($sql); 
 	$total_registros = mysql_num_rows($resultado);
-	$sql="SELECT nombreUsuario, email, pass FROM usuario ORDER BY nombreUsuario LIMIT ".$comienzo.", ".$cant_reg;
+	$sql="SELECT publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
 	$resultado = mysql_query($sql); 
 
 	$total_paginas = ceil($total_registros/$cant_reg);
@@ -129,11 +129,9 @@
 while($row=mysql_fetch_array($resultado)) 
 	{ ;
 
-		$username=$row["nombreUsuario"]; 
-		$password=$row["pass"]; 
-		$correo=$row["email"]; ?>
+		$publicacion=$row["publica"]; ?>
 
-						<tr class="table-publicaciones"><td><p><?php echo "Nombre de usuario: ".$username." pass: ".$password." email: ".$correo ?></p></td>
+						<tr class="table-publicaciones"><td><p class="lead"><?php echo $publicacion; ?></p></td>
 						</tr>
 
 <?php } ?>
