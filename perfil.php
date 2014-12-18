@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="style/style.css">
 
 
+
 </head>
 <body>
 	<?php
@@ -121,12 +122,12 @@
 		</div>
 
 		<div class="col-md-5" >
-			<div class="panel panel-default">
+			<div class="panel panel-default" style="text-align:center;">
 				<div class="panel-heading">Publicaciones</div>
 					<table class="table table-striped">
 <?php						
 while($row=mysql_fetch_array($resultado)) 
-	{ 
+	{ ;
 
 		$username=$row["nombreUsuario"]; 
 		$password=$row["pass"]; 
@@ -149,9 +150,9 @@ while($row=mysql_fetch_array($resultado))
 
 		<?php
 
-		if( $num_pag > 2)
+		if( $num_pag > 1)
 			{ ?>
-		<li><a href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a></li>
+		<li><a accesskey="a" href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a></li>
 		<?php	} else { ?>
 		<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
 		<?php
@@ -172,21 +173,13 @@ while($row=mysql_fetch_array($resultado))
 	}  	
 	if(($num_pag+1)<=$total_paginas) 
 		{ ?>
-	<li><a href="perfil.php?pagina=<?php echo ($num_pag+1) ?>">Sig</a></li>
+	<li><a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
 	<?php	} else { ?>
 	<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Sig</a></li>
 	<?php
 }	
 ?>	</ul>
-						<!--	<ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>-->
+			
 			</div>
 		</div>
 
@@ -243,7 +236,39 @@ while($row=mysql_fetch_array($resultado))
 		<div class="col-md-1"></div>
 
 
+
+
 	</div>
+
+
+
+
+<script type="text/javascript">
+	function leftArrowPressed() {
+		if(<?php echo $num_pag; ?> > 1) {
+		location.replace("perfil.php?pagina=<?php echo ($num_pag-1); ?>");
+		}
+	}
+
+	function rightArrowPressed() {		
+		if((<?php echo $num_pag; ?>+1)<= <?php echo $total_paginas;?>) {
+		location.replace("perfil.php?pagina=<?php echo ($num_pag+1); ?>");
+		} 	
+	}
+
+	document.onkeydown = function(evt) {
+	    evt = evt || window.event;
+	    switch (evt.keyCode) {
+	        case 37:
+	            leftArrowPressed();
+	            break;
+	        case 39:
+	            rightArrowPressed();
+	            break;
+	    }
+	};
+</script>
+
 </body>
 
 <script src= "js/jquery-2.1.1.min.js"></script>
