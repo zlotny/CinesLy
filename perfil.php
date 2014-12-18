@@ -12,29 +12,39 @@
 	<link rel="stylesheet" href="style/style.css">
 
 
-<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
- 
-<script type="text/javascript">
-$(document).ready(function()
-	{
-	$("#boton01").click(function () {
-	//saco el valor accediendo a un input de tipo text y name = nombre
-	alert($('input:text[name=eslogan]').val());
-	//saco el valor accediendo al id del input = nombre
-	alert($("#eslogan").val());
-	//saco el valor accediendo al class del input = nombre   
-	alert($(".eslogan").val());
-	});
-});
-</script>
-
-
 </head>
 <body>
 	<?php
 	session_start();
 	cabeceraPantallaPrincipal();
+
+
+
+	$cant_reg = 3; 
+	$num_pag = $_GET['pagina']; 
+	if (!$num_pag) { 
+		$comienzo = 0; 
+		$num_pag = 1; 
+	} else { 
+		$comienzo = ($num_pag-1)  * $cant_reg; 
+	}
+ 
+
+	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
+	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
+
+	$sql="SELECT * FROM usuario";
+	$resultado = mysql_query($sql); 
+	$total_registros = mysql_num_rows($resultado);
+	$sql="SELECT nombreUsuario, email, pass FROM usuario ORDER BY nombreUsuario LIMIT ".$comienzo.", ".$cant_reg;
+	$resultado = mysql_query($sql); 
+
+	$total_paginas = ceil($total_registros/$cant_reg);
+	
 	?>
+
+
+
 	<div class="top-margin">
 		<div class="col-md-3" >
 			<div class="col-md-1" ></div>
@@ -56,7 +66,7 @@ $(document).ready(function()
 				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->eslogan; ?></p></div>-->
 				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->ciudadActual; ?></p><br></div>-->
 				<div><input style="border:none;background-color:transparent;" value="<?php echo $_SESSION['usuario']->email; ?>"></div>
-				<div><textarea style="border-style:solid;background-color:transparent;color:#337ab7;max-width:281px;min-width:281px;max-height:128px;min-height:128px;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea></div>
+				<div><textarea id="eslogan" class="eslogan" style="border-style:solid;background-color:transparent;color:#337ab7;max-width:281px;min-width:281px;max-height:128px;min-height:128px;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea></div>
 				<!--<div><p><br><strong>Ourense</p><br></div>--><br><br>
 				<input type="button" class="btn btn-warning" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">
 				<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -113,40 +123,67 @@ $(document).ready(function()
 		<div class="col-md-5" >
 			<div class="panel panel-default">
 				<div class="panel-heading">Publicaciones</div>
-				<div class="panel-body scrollable-table-perfilC">
 					<table class="table table-striped">
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
+<?php						
+while($row=mysql_fetch_array($resultado)) 
+	{ 
+
+		$username=$row["nombreUsuario"]; 
+		$password=$row["pass"]; 
+		$correo=$row["email"]; ?>
+
+						<tr class="table-publicaciones"><td><p><?php echo "Nombre de usuario: ".$username." pass: ".$password." email: ".$correo ?></p></td>
 						</tr>
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>
-						<tr class="table-publicaciones"><td><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>
+
+<?php } ?>
+
+						
 					</table>
-				</div>
+
+
+
+
+
+	<ul class="pagination">
+	
+
+<?php
+
+	if( $num_pag >= 1)
+	{ ?>
+		<li><a href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a></li>
+	<?php } 
+	for ($i=1; $i<=$total_paginas; $i++) 
+	{ 
+		if ($num_pag == $i) 
+		{ 
+			?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
+			<?php 
+		} 
+		else 
+		{ 
+
+			?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
+			<?php
+		} 
+	}  	
+		if(($num_pag+1)<=$total_paginas) 
+	{ ?>
+		<li><a href="perfil.php?pagina=<?php echo ($num_pag+1) ?>">Prev</a></li>
+<?php	} else { ?>
+<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
+<?php
+}	
+	?>	</ul>
+						<!--	<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>-->
 			</div>
 		</div>
 
