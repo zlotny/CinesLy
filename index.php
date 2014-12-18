@@ -259,72 +259,22 @@
 
 <section class="container" style="padding:10px">
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
   <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
   </div>
 </section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
 
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
-<section class="container" style="padding:10px">
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-  <div class="col-sm-3">
-    <img src="img/peliculas/sdla.jpg" class="peli" />
-
-  </div>
-</section>
 
 <footer>
  <section class="container" style="padding:10px">
