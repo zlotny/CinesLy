@@ -88,7 +88,7 @@
       </div>
     </div>
 	<div class="col-sm-3"></div>
-  <script src="javascript/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 <footer>
      <section class="container" style="padding:10px">

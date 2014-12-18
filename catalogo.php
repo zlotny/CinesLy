@@ -124,7 +124,7 @@
 
 </body>	
 
-<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 
 </html>

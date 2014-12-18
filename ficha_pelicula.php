@@ -13,9 +13,9 @@ include "modelos/usuario.php";
  <meta name="viewport" content="width=device-width, initial-scale=1">    
  <link rel="stylesheet" href="bootstrap/css/bootstrap.css"  />     
  <link rel="stylesheet" href="style/style.css"  />
- <link rel="stylesheet" href="javascript/alertify/themes/alertify.core.css" />
- <link rel="stylesheet" href="javascript/alertify/themes/alertify.default.css" />
- <script src="javascript/alertify/lib/alertify.min.js"> </script>
+ <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+ <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+ <script src="js/alertify/lib/alertify.min.js"> </script>
 
 </head>
 
@@ -29,7 +29,7 @@ include "modelos/usuario.php";
   if($_REQUEST["insertado"] == true){
     ?>
     <script>
-    alertify.log('Se ha insertado el comentario correctamente', 'success', 3000);
+      alertify.log('Se ha insertado el comentario correctamente', 'success', 3000);
     </script>
     <?php
   }
@@ -118,10 +118,10 @@ include "modelos/usuario.php";
   </div>
 </div>
 </div>
-<script src="javascript/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="javascript/docs.min.js"></script>
-<script src="javascript/ie10-viewport-bug-workaround.js"></script>
+<script src="js/docs.min.js"></script>
+<script src="js/ie10-viewport-bug-workaround.js"></script>
 <footer>
  <section class="container" style="padding:10px">
   <div class="btn-group dropup pull-rigth ">
