@@ -80,7 +80,7 @@
 								<div class="modal-body">
 									<label for="nombreUsuario" class="">Nombre de usuario</label>
 									<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario">          
-								
+									
 									<label for="email" class="">Correo electrónico</label>
 									<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">     
 									<hr>
@@ -95,15 +95,15 @@
 
 									<label for="email" class="">Cambiar idioma</label>
 									<select class="form-control form-pers">
-									  <option>Selecciona un idioma...</option>
-									  <option value="de">Deutsch - Alemán</option>
-									  <option value="en">English - Inglés</option>
-									  <option value="es">Español</option>
-									  <option value="fr">Français - Francés</option>
+										<option>Selecciona un idioma...</option>
+										<option value="de">Deutsch - Alemán</option>
+										<option value="en">English - Inglés</option>
+										<option value="es">Español</option>
+										<option value="fr">Français - Francés</option>
 									</select>
-               						<hr>
-					                
-					                <a href="" style="color:red;">Eliminar mi cuenta</a>   
+									<hr>
+									
+									<a href="" style="color:red;">Eliminar mi cuenta</a>   
 								</div>
 								<div class="modal-footer">
 									<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
@@ -243,7 +243,7 @@ while($row=mysql_fetch_array($resultado))
 	</div>
 </body>
 
-<script src= "javascript/jquery-2.1.1.min.js"></script>
+<script src= "js/jquery-2.1.1.min.js"></script>
 <script src= "bootstrap/js/bootstrap.js"></script>
 
 </html>
