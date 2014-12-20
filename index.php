@@ -257,7 +257,14 @@
           });
 </script>
 
-<section class="container" style="padding:10px">
+
+
+
+
+<div id="third" >
+<div id="second" >
+<div id="first" >
+<section class="container" style="padding:10px;background-color: white;">
   <div class="col-sm-3">
     <img src="img/HayLeyenda.jpg" class="peli" />
   </div>
@@ -274,10 +281,80 @@
 
   </div>
 </section>
+<section class="container" style="padding:10px;background-color: white;">
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
 
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+</section>
+<section class="container" style="padding:10px;background-color: white;">
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+</section>
+<section class="container" style="padding:10px;background-color: white;">
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+  <div class="col-sm-3">
+    <img src="img/HayLeyenda.jpg" class="peli" />
+
+  </div>
+</section>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  
+  //.parallax(xPosition, speedFactor, outerHeight) options:
+  //xPosition - Horizontal position of the element
+  //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+  //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+
+  $('#first').parallax("50%", 0.5);
+  $('#second').parallax("50%", 0.75);
+  $('#third').parallax("50%", 1);
+
+})
+</script>
 
 <footer>
- <section class="container" style="padding:10px">
+ <section class="container" style="padding:10px;">
   <div class="btn-group dropup pull-right">
     <button type="button" class="btn btn-default">Idioma</button>
     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
