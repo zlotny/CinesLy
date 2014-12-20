@@ -8,12 +8,12 @@ include "cabecera.php";
   <title>CinesLy</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="js/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/jssor.slider.min.js"></script>
   <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
   <script src="js/alertify/lib/alertify.min.js"> </script>
   <script type="text/javascript" src="js/general.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="style/style.css" rel="stylesheet" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
