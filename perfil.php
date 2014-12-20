@@ -155,20 +155,40 @@ while($row=mysql_fetch_array($resultado))
 		<li class="disabled" ><a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
 		<?php
 	}
-	for ($i=1; $i<=$total_paginas; $i++) 
-	{ 
-		if ($num_pag == $i) 
+	if($num_pag<=5){
+		for ($i=1; $i<=5; $i++) 
 		{ 
-			?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
-			<?php 
-		} 
-		else 
-		{ 
+			if ($num_pag == $i) 
+			{ 
+				?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
+				<?php 
+			} 
+			else 
+			{ 
 
-			?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
-			<?php
-		} 
-	}  	
+				?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php if ($i<=$total_paginas){echo $i;}else{echo "&nbsp";} ?></a></li> 
+				<?php
+			} 
+		}
+	} else {
+		for ($i=$num_pag-4; $i<=$num_pag; $i++) 
+		{ 
+			if ($num_pag == $i) 
+			{ 
+				?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
+				<?php 
+			} 
+			else 
+			{ 
+
+				?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
+				<?php
+			} 
+		}
+		
+	}
+
+
 	if(($num_pag+1)<=$total_paginas) 
 		{ ?>
 	<li><a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
