@@ -83,7 +83,7 @@
           });
 
 
-   $(document).ready(function(){
+ $(document).ready(function(){
 
   //.parallax(xPosition, speedFactor, outerHeight) options:
   //xPosition - Horizontal position of the element

@@ -1,9 +1,5 @@
-
-
 <?php
 error_reporting(E_ERROR | E_PARSE);
-
-
 
 function cabeceraCartelera(){
 	?>
@@ -80,13 +76,10 @@ function cabeceraCartelera(){
 	
 	<?php
 }
-
 ?>
 
 
 <?php
-
-
 function cabeceraPantallaPrincipal(){
 	?>
 	<div class="container">
@@ -171,8 +164,6 @@ function cabeceraPantallaPrincipal(){
 
 
 <?php
-
-
 function cabeceraIndex(){
 	?>
 
@@ -192,10 +183,10 @@ function cabeceraIndex(){
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
-					<input type="text" name="email" class="form-control" placeholder="correo electrónico">
-					<input type="password" name="pass" class="form-control" placeholder="contraseña">
-					<input type="submit" name="accion" class="btn btn-success" value="entrar">
-					<div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"></input></div>
+					<input type="email" name="email" class="form-control" placeholder="Correo electrónico">
+					<input type="password" name="pass" class="form-control" placeholder="Contraseña">
+					<input type="submit" name="accion" class="btn btn-success" value="Entrar">
+					<div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="Registro"></input></div>
 					<a href="" data-toggle="modal" data-target="#forgetPass" >¿Olvidaste tu contraseña?</a>                        
 				</form>
 			</div>

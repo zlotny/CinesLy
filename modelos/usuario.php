@@ -80,7 +80,7 @@ class Usuario{
 				header("Location:../administrador.php");
 			}
 		} else {
-			header("Location:../index.php");
+			header("Location:../index.php?login=bad");
 		}
 	} 
 
@@ -231,6 +231,16 @@ function denegarAmigo($usuarioTarget){
 	$this->conectarBD();
 	
 	return mysql_query("Delete FROM agrega WHERE email1 = '$usuarioTarget' or email2 = '$usuarioTarget'");
+}
+
+function insertarPublicacion($publi){
+	$this->conectarBD();
+
+	$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
+	return mysql_query($sql);
+
+
+	
 }
 
 

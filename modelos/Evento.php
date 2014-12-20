@@ -41,13 +41,13 @@ class Evento
 
 		Evento::conectarBD();
 
-		 $insertar=INSERT INTO `CinesLy`.`evento` (`id_evento` ,`idPelicula` ,`idSesion` ,`email` ,`descripcion` ,`nombre`)VALUES 
-		 ('$idEvento', '$pelicula', '$sesion', '$correo', '$descripcion', '$nombre')
+		$insertar=INSERT INTO `CinesLy`.`evento` (`id_evento` ,`idPelicula` ,`idSesion` ,`email` ,`descripcion` ,`nombre`)VALUES 
+		('$idEvento', '$pelicula', '$sesion', '$correo', '$descripcion', '$nombre')
 
-		 $resultado=Evento::consultaBD($insertar);
+		$resultado=Evento::consultaBD($insertar);
 
-		 if($resultado){
-		 	
+		if($resultado){
+			
 			echo "Evento creado";
 		}	 
 	}
