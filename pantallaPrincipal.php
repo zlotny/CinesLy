@@ -1,5 +1,6 @@
 <?php
 include_once "modelos/usuario.php";
+include_once "sesion_segura.php";
 session_start();
 
 ?>

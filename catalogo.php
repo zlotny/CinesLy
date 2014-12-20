@@ -1,3 +1,7 @@
+<?php
+include_once "sesion_segura.php";
+?>
+
 <html>
 <head>
 
@@ -135,7 +139,7 @@
             <select name="tipo" aria-labelledby="buscar_peli">
               <option  value="">Todas las peliculas</option>
               <option  value="cartelera">En Cartelera</option>
-              <option  value="especiales">Especiales</option>
+              <option  value="especial">Especiales</option>
               <option  value="proximamente">Proximamente</option>
             </select>
 

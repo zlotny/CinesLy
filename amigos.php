@@ -1,7 +1,7 @@
-<?php include "cabecera.php"; ?>
-
-<?php
+<?php 
+include "cabecera.php";
 include_once "modelos/usuario.php";		
+include_once "sesion_segura.php";
 ?>
 
 <html lang="en">

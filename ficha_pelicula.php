@@ -1,7 +1,8 @@
 <?php 
-include	"cabecera.php";
-include "modelos/pelicula.php";
-include "modelos/usuario.php";
+include "cabecera.php";
+include_once "modelos/pelicula.php";
+include_once "modelos/usuario.php";
+include_once "sesion_segura.php";
 ?>
 
 <html lang="es">

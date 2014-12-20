@@ -3,6 +3,8 @@
 	<?php
 	include_once "cabecera.php";
 	include_once "modelos/usuario.php";
+	include_once "sesion_segura.php";
+	
 	?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">

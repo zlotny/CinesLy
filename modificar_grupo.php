@@ -1,3 +1,8 @@
+<?php
+include_once "sesion_segura.php";
+
+?>
+
 <html>
 <head>
   <meta charset="utf-8">

@@ -47,10 +47,20 @@ class Evento
 		$resultado=Evento::consultaBD($insertar);
 
 		if($resultado){
-			
+
 			echo "Evento creado";
 		}	 
 	}
+
+
+
+
+
+
+
+
+
+
 
 
 	/*public function getIdEvento()

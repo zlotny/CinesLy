@@ -30,7 +30,7 @@ function cabeceraCartelera(){
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="perfil.php">Ver Perfil</a></li>
 										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li><a href="index.php">Cerrar Sesion</a></li>
+										<li><a href="controladoras/cerrarSesion.php">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>
@@ -114,7 +114,7 @@ function cabeceraPantallaPrincipal(){
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="perfil.php">Ver Perfil</a></li>
 										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li><a href="index.php">Cerrar Sesion</a></li>
+										<li><a href="controladoras/cerrarSesion.php">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>

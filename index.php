@@ -31,6 +31,12 @@ include "cabecera.php";
       </script>";
     }
 
+    if($_REQUEST["sesion"] == "bad"){
+      echo "<script>
+      alertify.log('Para utilizar CinesLy, primero debes iniciar sesión', 'error', 5000);
+      </script>";
+    }
+
     ?>
   </div>
 
