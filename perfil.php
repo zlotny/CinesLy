@@ -18,9 +18,6 @@
 	<?php
 	session_start();
 	cabeceraPantallaPrincipal();
-
-
-
 	$cant_reg = 3; 
 	$num_pag = $_GET['pagina']; 
 	if (!$num_pag) { 
@@ -30,44 +27,36 @@
 		$comienzo = ($num_pag-1)  * $cant_reg; 
 	}
  
-
 	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
 	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
-
 	$sql="SELECT * FROM publicacion";
 	$resultado = mysql_query($sql); 
 	$total_registros = mysql_num_rows($resultado);
 	$sql="SELECT publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
 	$resultado = mysql_query($sql); 
-
 	$total_paginas = ceil($total_registros/$cant_reg);
 	
 	?>
 
 
 
-	<div class="top-margin">
+	<div style="margin-top:7.5px">
 		<div class="col-md-3" >
 			<div class="col-md-1" ></div>
 			<div class="col-md-10 divPerfil" style="text-align:center; padding-top: 120px;">
 				<?php
 				if (isset($_SESSION['usuario']->foto)){
-
 					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-circle'>";
-
 				}else{
 					echo "<img src='img/default_user.png' width='150px' class='img-circle'>";
 				}
-
-
-
 				?>
 				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>-->
 				<div><p><br><strong><a href="" data-toggle="modal" data-target="#modificarPerfil" ><?php echo $_SESSION['usuario']->nombreUsuario; ?></a></p></div>
 				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->eslogan; ?></p></div>-->
 				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->ciudadActual; ?></p><br></div>-->
 				<div><input style="border:none;background-color:transparent;" value="<?php echo $_SESSION['usuario']->email; ?>"></div>
-				<div><textarea id="eslogan" class="eslogan" style="border-style:solid;background-color:transparent;color:#337ab7;max-width:281px;min-width:281px;max-height:128px;min-height:128px;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea></div>
+				<textarea id="eslogan" class="eslogan" style="border-style:solid;background-color:transparent;color:#337ab7;max-width:100%;min-width:100%;max-height:30%;min-height:30%;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
 				<!--<div><p><br><strong>Ourense</p><br></div>--><br><br>
 				<input type="button" class="btn btn-warning" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">
 				<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -128,10 +117,9 @@
 <?php						
 while($row=mysql_fetch_array($resultado)) 
 	{ ;
-
 		$publicacion=$row["publica"]; ?>
 
-						<tr class="table-publicaciones"><td><p class="lead"><?php echo $publicacion; ?></p></td>
+						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?></p></td>
 						</tr>
 
 <?php } ?>
@@ -147,7 +135,6 @@ while($row=mysql_fetch_array($resultado))
 	
 
 		<?php
-
 		if( $num_pag > 1)
 			{ ?>
 		<li><a accesskey="a" href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a></li>
@@ -165,7 +152,6 @@ while($row=mysql_fetch_array($resultado))
 			} 
 			else 
 			{ 
-
 				?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php if ($i<=$total_paginas){echo $i;}else{echo "&nbsp";} ?></a></li> 
 				<?php
 			} 
@@ -180,15 +166,12 @@ while($row=mysql_fetch_array($resultado))
 			} 
 			else 
 			{ 
-
 				?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
 				<?php
 			} 
 		}
 		
 	}
-
-
 	if(($num_pag+1)<=$total_paginas) 
 		{ ?>
 	<li><a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
@@ -267,13 +250,11 @@ while($row=mysql_fetch_array($resultado))
 		location.replace("perfil.php?pagina=<?php echo ($num_pag-1); ?>");
 		}
 	}
-
 	function rightArrowPressed() {		
 		if((<?php echo $num_pag; ?>+1)<= <?php echo $total_paginas;?>) {
 		location.replace("perfil.php?pagina=<?php echo ($num_pag+1); ?>");
 		} 	
 	}
-
 	document.onkeydown = function(evt) {
 	    evt = evt || window.event;
 	    switch (evt.keyCode) {
