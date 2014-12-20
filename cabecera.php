@@ -167,3 +167,82 @@ function cabeceraPantallaPrincipal(){
 	<?php
 }
 ?>
+
+
+
+<?php
+
+
+function cabeceraIndex(){
+	?>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container container-fluid pers">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.php">
+					<img class="img-circle img-responsive" src="img/logo_blanco.png" alt="" width="50px">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
+					<input type="text" name="email" class="form-control" placeholder="correo electrónico">
+					<input type="password" name="pass" class="form-control" placeholder="contraseña">
+					<input type="submit" name="accion" class="btn btn-success" value="entrar">
+					<div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="registro"></input></div>
+					<a href="" data-toggle="modal" data-target="#forgetPass" >¿Olvidaste tu contraseña?</a>                        
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<form action="controladoras/procesarUsuario.php" method="POST">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3>Registro</h3>
+					</div>
+					<div class="modal-body">
+						<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="nombre de usuario">
+						<input type="text" name="email" class="form-control form-pers" placeholder="correo electrónico">
+						<input type="password" name="pass" class="form-control form-pers" placeholder="contraseña">   
+						<input type="password" class="form-control form-pers" placeholder="repita la contraseña">              
+					</div>
+					<div class="modal-footer">
+						<input type="submit" name="accion" class="btn btn-success" value="registrar">
+						<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>  
+	<div id="forgetPass" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<form action="controladoras/procesarUsuario.php" method="POST">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3>Recuperar contraseña</h3>
+					</div>
+					<div class="modal-body">
+						<input type="text" name="email" class="form-control form-pers" placeholder="correo electrónico">          
+					</div>
+					<div class="modal-footer">
+						<input type="submit" name="accion" class="btn btn-success" value="recuperar">
+						<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>  
+</div>	
+<?php
+}
+?>
