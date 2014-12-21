@@ -52,8 +52,8 @@ include_once "sesion_segura.php";
          foreach($arrayAmigos as $filaAmigo){
 
            if(isset($filaAmigo->foto)){
-             echo "<tr class='warning'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-           }else {echo "<tr class='warning'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+             echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+           }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
 
            ?>
            <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
@@ -72,8 +72,8 @@ include_once "sesion_segura.php";
       foreach($arrayAmigos as $filaAmigo){
 
        if(isset($filaAmigo->foto)){
-         echo "<tr class='warning'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-       }else {echo "<tr class='warning'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+         echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+       }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
 
        ?>
        <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
@@ -111,6 +111,28 @@ include_once "sesion_segura.php";
 
 <div class="col-md-3"> </div> 
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
 </div>
 
 <div id="addfriend" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -134,32 +156,12 @@ include_once "sesion_segura.php";
 
 
 
-
       </div>
     </div>
   </div>  
 
-  </div
-
-  <footer>
-   <section class="container" style="padding:10px">
-    <div class="btn-group dropup pull-rigth ">
-      <button type="button" class="btn btn-default">Idioma</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-        &nbsp
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-        &nbsp
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Gallego</a></li>
-        <li><a href="#">Inglés</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Español</a></li>
-      </ul>
-    </div>
-  </section>
-</footer>
+</div>
+<?php footer(); ?>
 
 </body>
 

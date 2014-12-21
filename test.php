@@ -1,6 +1,6 @@
 <?php
 
 
-echo date("Y-m-d H:i:s"); 
+mail('anvieiravazquez@gmail.com', 'Test', "probando cosas");
 
 ?>

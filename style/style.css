@@ -1,9 +1,10 @@
 body{
-	padding-top:50px;
+	padding-top:42px;
+	overflow-x:hidden;
 }
 
 .top-margin{
-	margin-top: 50px;
+	margin-top: 42px;
 }
 
 .top-margin-little{
@@ -17,7 +18,7 @@ body{
 .notif{
 	background-color:transparent;
 	color: whitesmoke;
-	line-height: 50px;
+	line-height: 42px;
 	font-size: 20px;
 	margin-right: 10px;
 }
@@ -117,15 +118,14 @@ body{
 
 
 .publicacion{
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
 .inputpublicacion{
 	position: absolute;
 	bottom: 20px;
-	left: 155px;
-	width: 70%;
+	left: 192px;
+	width: 67%;
 }
 
 .vertical-peli-carousel{
@@ -178,5 +178,49 @@ body{
 	margin: 0 auto;
 	overflow: hidden;
 	padding: 0;
+}
+
+#index_body{
+	background-color: whitesmoke;
+}
+
+.main-logo{
+	height: 42px;
+}
+
+.text-color-black{
+	color:black;
+}
+
+.dropdown-danger{
+	background-color: #d9534f;
+}
+
+.text-color-red{
+	color:#d9534f;
+}
+
+.text-weight-bold{
+	font-weight: bold;
+}
+
+.clickable{
+	cursor: pointer;
+}
+
+.footer{
+	width: 100%;
+	margin-bottom: 0px;
+	background-color: #101112;
+	height: 40px;
+}
+
+.align-right-footer{
+	margin-left:301px;
+}
+
+.footer-fixed{
+	position: fixed;
+	bottom: 0;
 }
 

@@ -21,124 +21,107 @@ include "cabecera.php";
 
 
 </head>
-<body>
+<body id="index_body">
   <div class="row">
     <?php  
     cabeceraIndex(); 
     if($_REQUEST["login"] == "bad"){
       echo "<script>
       alertify.log('Inicio de sesión erróneo, comprueba que has introducido bien todos tus datos', 'error', 5000);
-      </script>";
-    }
+    </script>";
+  }
 
-    if($_REQUEST["sesion"] == "bad"){
-      echo "<script>
-      alertify.log('Para utilizar CinesLy, primero debes iniciar sesión', 'error', 5000);
-      </script>";
-    }
+  if($_REQUEST["sesion"] == "bad"){
+    echo "<script>
+    alertify.log('Para utilizar CinesLy, primero debes iniciar sesión', 'error', 5000);
+  </script>";
+}
 
-    ?>
-  </div>
+?>
+</div>
 
-  <div class="row">
-    <?php  include "slider/slider.php"; ?>
-  </div>
+<div class="row">
+  <?php  include "slider/slider.php"; ?>
+</div>
 
-  <div id="third" >
-    <div id="second" >
-      <div id="first" >
-        <section class="container" style="padding:10px;background-color: white;">
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+<div id="third" >
+  <div id="second" >
+    <div id="first" >
+      <section class="container" style="padding:10px;">
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-        </section>
-        <section class="container" style="padding:10px;background-color: white;">
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+      </section>
+      <section class="container" style="padding:10px;">
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-        </section>
-        <section class="container" style="padding:10px;background-color: white;">
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+      </section>
+      <section class="container" style="padding:10px;">
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-        </section>
-        <section class="container" style="padding:10px;background-color: white;">
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+      </section>
+      <section class="container" style="padding:10px;">
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-          <div class="col-sm-3">
-            <img src="img/HayLeyenda.jpg" class="peli" />
+        </div>
+        <div class="col-sm-3">
+          <img src="img/HayLeyenda.jpg" class="peli" />
 
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   </div>
+</div>
 
 
-  <footer>
-   <section class="container" style="padding:10px;">
-    <div class="btn-group dropup pull-right">
-      <button type="button" class="btn btn-default">Idioma</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-        &nbsp
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-        &nbsp
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Gallego</a></li>
-        <li><a href="#">Inglés</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Español</a></li>
-      </ul>
-    </div>
-  </section>
-</footer>
+
+<?php footer(); ?>
 
 
 </body>

@@ -169,6 +169,7 @@ include_once "sesion_segura.php";
 
   </div>
 
+<?php footer(); ?>
 
 
 </body>	

@@ -4,7 +4,7 @@
 	include_once "cabecera.php";
 	include_once "modelos/usuario.php";
 	include_once "sesion_segura.php";
-	
+
 	?>
 
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
@@ -12,7 +12,6 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
 	<link rel="stylesheet" href="style/style.css">
-
 
 
 </head>
@@ -42,7 +41,7 @@
 
 
 
-	<div style="margin-top:7.5px">
+	<div class="margensuperior">
 		<div class="col-md-3" >
 			<div class="col-md-1" ></div>
 			<div class="col-md-10 divPerfil" style="text-align:center; padding-top: 120px;">
@@ -269,6 +268,15 @@
 				}
 			};
 		</script>
+
+
+
+
+
+<?php footer(); ?>
+
+
+
 
 	</body>
 

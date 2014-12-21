@@ -10,7 +10,7 @@ echo "pis";
 	$usuario = new Usuario("",$email,$pass,"","","","","","","","","");
 	$usuario->loguearUsuario();
 } else { 
-	if($accion=="Registrar") { 
+	if($accion=="Registrarse") { 
 
 		$nombreUsuario = $_REQUEST['nombreUsuario'];
 		$email = $_REQUEST['email'];
@@ -28,7 +28,7 @@ echo "pis";
 			$usuario->bajaUsuario();
 
 		} else { 
-			if($accion=="recuperar"){
+			if($accion=="Recuperar"){
 				$email =$_REQUEST['email']; 
 				$usuario = Usuario::getObjetoUsuario($email);
 				$usuario->recuperarUsuario(); 	

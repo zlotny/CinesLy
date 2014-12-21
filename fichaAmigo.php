@@ -181,24 +181,7 @@
 <script src= "js/jquery-2.1.1.min.js"></script>
 <script src= "bootstrap/js/bootstrap.js"></script>
 
-<footer>
-	<section class="container" style="padding:10px">
-		<div class="btn-group dropup pull-rigth ">
-			<button type="button" class="btn btn-default">Idioma</button>
-			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-				&nbsp
-				<span class="caret"></span>
-				<span class="sr-only">Toggle Dropdown</span>
-				&nbsp
-			</button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">Gallego</a></li>
-				<li><a href="#">Inglés</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Español</a></li>
-			</ul>
-		</div>
-	</section>
-</footer>
+<?php footer(); ?>
+
 
 </html>
