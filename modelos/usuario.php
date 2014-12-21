@@ -238,12 +238,32 @@ function insertarPublicacion($publi){
 
 	$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
 	return mysql_query($sql);
+}
 
+function editarPerfil($newName, $newPass){
 
-	
+	$this->conectarBD();
+
+	$sql = "UPDATE usuario SET nombreUsuario = '$newName' , pass = '$newPass' WHERE email = '$this->email' ";
+	return mysql_query($sql);
+}
+
+function actualizaBio($newBio){
+	$this->conectarBD();
+
+	$sql = "UPDATE usuario SET eslogan = '$newBio' WHERE email = '$this->email' ";
+	return mysql_query($sql);
 }
 
 
+function eliminarCuenta(){
+	$this->conectarBD();
+
+	$sql = "DELETE FROM usuario WHERE email = '$this->email' ";
+	return mysql_query($sql);
+
+
+}
 
 }
 

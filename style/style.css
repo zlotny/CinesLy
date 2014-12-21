@@ -70,20 +70,6 @@ body{
 
 }
 
-.divPerfil{
-	border: 2px #000000 solid;
-	height: 650px;
-	background-image: url("../img/texture.jpg");
-	border-color: cornsilk;
-	-webkit-border-radius: 14px 14px 14px 14px;
-	-moz-border-radius: 14px 14px 14px 14px;
-	border-radius: 14px 14px 14px 14px;
-
-
-	-moz-box-shadow: 0px 0px 5px 3px #CCCCCC;
-	-webkit-box-shadow: 0px 0px 5px 3px #CCCCCC;
-	box-shadow: 0px 0px 5px 3px #CCCCCC;
-}
 
 
 .divAuto{ /*auto height*/
@@ -224,3 +210,14 @@ body{
 	bottom: 0;
 }
 
+.standard-div-height{
+	height: 845px;
+}
+
+.eslogan{
+	resize: none;
+	font-size: 12px;
+	padding: 2px;
+	height: 100px !important;
+	background-color: #95a5a6;
+}
