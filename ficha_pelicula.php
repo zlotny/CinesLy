@@ -49,17 +49,18 @@ include_once "sesion_segura.php";
 
     </div>
     <div class="col-lg-9">
-     <div class="panel panel-default top-margin inside-padding">
-       <div>
+     <div class="panel panel-default top-margin">
+     <div class="panel-heading text-weight-bold">Ficha de la Película</div>
+       <div class="panel-body">
         <div class="row-fluid">
           <div class="span6">
             <div class="direction-box top-margin-little">
               <ul>
-                <li><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
-                <li><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
-                <li><strong class="step">Actores: </strong><?php echo "$ObjPeli->actores"; ?></li>
-                <li><strong class="step">Distribuidora: </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
-                <li><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
+                <li class="list-no-deco"><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
+                <li class="list-no-deco"><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
+                <li class="list-no-deco"><strong class="step">Actores: </strong><?php echo "$ObjPeli->actores"; ?></li>
+                <li class="list-no-deco"><strong class="step">Distribuidora: </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
+                <li class="list-no-deco"><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
               </div>
             </div>

@@ -251,7 +251,7 @@ function footer(){
 					<label>CinesLy - Proyecto de Interfaces de Usuario. <span style="cursor:pointer; color: red;" onclick="location.replace('https://github.com/ndrs92/CinesLy');">Página en GitHub</span></label>
 				</a>
 				<div class="dropdown dropup">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
+					<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
 						Idioma
 						<span class="caret"></span>
 					</button>

@@ -14,9 +14,11 @@ include_once "sesion_segura.php";
   <title>Amigos</title>
 
 
-  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="style/style.css" rel="stylesheet" />
 
 </head>

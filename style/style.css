@@ -221,3 +221,7 @@ body{
 	height: 100px !important;
 	background-color: #95a5a6;
 }
+
+.list-no-deco{
+	list-style: none;
+}

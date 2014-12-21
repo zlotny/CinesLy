@@ -26,7 +26,7 @@
 	cabeceraPantallaPrincipal();
 
 	if($_REQUEST["update"] == "bad"){
-		echo "<script>alertify.error('Ha ocurrido un error en el cambio de perfil. Comprueba que los campos son correctos');</script>";
+		echo "<script>alertify.error('Ha ocurrido un error en el cambio de perfil. Comprueba que los campos son correctos. Recuerda que tanto el nombre de usuario como la contraseña deben tener al menos 6 caracteres');</script>";
 	}
 	if($_REQUEST["update"] == "good"){
 		echo "<script>alertify.success('Su perfil se ha actualizado correctamente');</script>";
@@ -92,8 +92,8 @@
 										<label for="nombreUsuario" class="">Cambiar el nombre de usuario</label>
 										<input type="text" name="newName" class="form-control form-pers" value="<?php echo $_SESSION['usuario']->nombreUsuario;?>"><br/>      
 										<label for="pass1" class="">Cambiar contraseña</label>
-										<input type="text" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> <br/>
-										<input type="text" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña"> <br/>
+										<input type="password" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> <br/>
+										<input type="password" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña"> <br/>
 
 										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
 										<div class="clearfix"></div>

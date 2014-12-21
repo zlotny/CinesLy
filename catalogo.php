@@ -130,7 +130,7 @@ include_once "sesion_segura.php";
 
             <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-default">Buscar</button>
+              <button type="submit" class="btn btn-success">Buscar</button>
             </span>
           </div>            
           <br>

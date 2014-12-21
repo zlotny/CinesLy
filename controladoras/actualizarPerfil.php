@@ -5,7 +5,7 @@ session_start();
 
 
 
-	if( $_REQUEST["pass1"] != $_REQUEST["pass2"] ){
+	if( ($_REQUEST["pass1"] != $_REQUEST["pass2"]) or (strlen($_REQUEST["pass2"]) < 6) or  (strlen($_REQUEST["newName"]) < 6) ){
 		$resultado = false;
 	}else{
 		$resultado = $_SESSION["usuario"]->editarPerfil($_REQUEST["newName"], $_REQUEST["pass2"]);
