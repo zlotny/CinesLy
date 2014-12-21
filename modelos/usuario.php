@@ -256,7 +256,14 @@ function actualizaBio($newBio){
 }
 
 
+function eliminarCuenta(){
+	$this->conectarBD();
 
+	$sql = "DELETE FROM usuario WHERE email = '$this->email' ";
+	return mysql_query($sql);
+
+
+}
 
 }
 

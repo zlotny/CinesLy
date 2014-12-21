@@ -11,10 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
-	<link rel="stylesheet" href="style/style.css">
 	<script src="js/alertify/lib/alertify.min.js"> </script>
+	<script src="js/general.js"> </script>
+
 	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
 	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+	<link rel="stylesheet" href="style/style.css">
 
 
 </head>
@@ -73,13 +75,13 @@
 					<small><?php echo $_SESSION['usuario']->email; ?></small>
 					<h5>Biografía:</h5>
 					<form id="bio-form" action="controladoras/actualizaBio.php" method="post">
-					<textarea class="form-control eslogan" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
+						<textarea class="form-control eslogan" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
 					</form>
 				</div>	
 				<div class="panel-footer">
 					<input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">       
 					<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<form action="controladoras/actualizarPerfil.php" method="POST">
+						<form id="form-edit-perfil" action="controladoras/actualizarPerfil.php" method="POST">
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -93,7 +95,7 @@
 										<input type="text" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> <br/>
 										<input type="text" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña"> <br/>
 
-										<input type="submit" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta"></input>  
+										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
 										<div class="clearfix"></div>
 
 									</div>

@@ -95,3 +95,24 @@
   $('#third').parallax("50%", 1);
 
 })
+
+
+ function eliminarPerfil (email) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres eliminar tu perfil", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/eliminarPerfil.php?email=" + email;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
