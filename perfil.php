@@ -12,6 +12,9 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
 	<link rel="stylesheet" href="style/style.css">
+	<script src="js/alertify/lib/alertify.min.js"> </script>
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
 
 
 </head>
@@ -19,6 +22,14 @@
 	<?php
 	session_start();
 	cabeceraPantallaPrincipal();
+
+	if($_REQUEST["update"] == "bad"){
+		echo "<script>alertify.error('Ha ocurrido un error en el cambio de perfil. Comprueba que los campos son correctos');</script>";
+	}
+	if($_REQUEST["update"] == "good"){
+		echo "<script>alertify.success('Su perfil se ha actualizado correctamente');</script>";
+	}
+
 	$cant_reg = 3; 
 	$num_pag = $_GET['pagina']; 
 	if (!$num_pag) { 
@@ -36,83 +47,72 @@
 	$sql="SELECT publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
 	$resultado = mysql_query($sql); 
 	$total_paginas = ceil($total_registros/$cant_reg);
-	
+
 	?>
 
 
 
 	<div class="margensuperior">
-		<div class="col-md-3" >
-			<div class="col-md-1" ></div>
-			<div class="col-md-10 divPerfil" style="text-align:center; padding-top: 120px;">
-				<?php
-				if (isset($_SESSION['usuario']->foto)){
-					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='img-circle'>";
-				}else{
-					echo "<img src='img/default_user.png' width='150px' class='img-circle'>";
-				}
-				?>
-				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->nombreUsuario; ?></p></div>-->
-				<div><p><br><strong><a href="" data-toggle="modal" data-target="#modificarPerfil" ><?php echo $_SESSION['usuario']->nombreUsuario; ?></a></p></div>
-				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->eslogan; ?></p></div>-->
-				<!--<div><p><br><strong><?php echo $_SESSION['usuario']->ciudadActual; ?></p><br></div>-->
-				<div><input style="border:none;background-color:transparent;" value="<?php echo $_SESSION['usuario']->email; ?>"></div>
-				<textarea id="eslogan" class="eslogan" style="border-style:solid;background-color:transparent;color:#337ab7;max-width:100%;min-width:100%;max-height:30%;min-height:30%;" name="eslogan"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
-				<!--<div><p><br><strong>Ourense</p><br></div>--><br><br>
-				<input type="button" class="btn btn-warning" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">
-				<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<form action="controladoras/procesarUsuario.php" method="POST">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-									<h3>Editar cuenta</h3>
-								</div>
-								<div class="modal-body">
-									<label for="nombreUsuario" class="">Nombre de usuario</label>
-									<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario">          
-									
-									<label for="email" class="">Correo electrónico</label>
-									<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">     
-									<hr>
+		<div class="col-md-1"></div>
+		<div class="col-md-2" >
 
-									<h6>Cambiar contraseña</h6>
-									<label for="pass1" class="">Introduzca contraseña</label>
-									<input type="text" name="email" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> 
+			<div class="panel panel-default " >
+				<div class="panel-heading text-weight-bold ">Perfil</div>
+				<div class="panel-body">
 
-									<label for="email" class="">Repita contraseña</label>
-									<input type="text" name="email" class="form-control form-pers" placeholder="Repita su nueva contraseña"> 
-									<hr>
+					<?php
+					if (isset($_SESSION['usuario']->foto)){
+						echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='center-block'>";
+					}else{
+						echo "<img src='img/default_user.png' width='150px' class='center-block'>";
+					}
+					?>
+					<h5>Nombre de Usuario:</h5>
+					<small><?php echo $_SESSION['usuario']->nombreUsuario; ?></small>
+					<h5>Correo Electrónico:</h5>
+					<small><?php echo $_SESSION['usuario']->email; ?></small>
+					<h5>Biografía:</h5>
+					<form id="bio-form" action="controladoras/actualizaBio.php" method="post">
+					<textarea class="form-control eslogan" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
+					</form>
+				</div>	
+				<div class="panel-footer">
+					<input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">       
+					<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<form action="controladoras/actualizarPerfil.php" method="POST">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										<h4>Editar cuenta</h4>
+									</div>
+									<div class="modal-body">
+										<label for="nombreUsuario" class="">Cambiar el nombre de usuario</label>
+										<input type="text" name="newName" class="form-control form-pers" value="<?php echo $_SESSION['usuario']->nombreUsuario;?>"><br/>      
+										<label for="pass1" class="">Cambiar contraseña</label>
+										<input type="text" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña"> <br/>
+										<input type="text" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña"> <br/>
 
-									<label for="email" class="">Cambiar idioma</label>
-									<select class="form-control form-pers">
-										<option>Selecciona un idioma...</option>
-										<option value="de">Deutsch - Alemán</option>
-										<option value="en">English - Inglés</option>
-										<option value="es">Español</option>
-										<option value="fr">Français - Francés</option>
-									</select>
-									<hr>
-									
-									<a href="" style="color:red;">Eliminar mi cuenta</a>   
-								</div>
-								<div class="modal-footer">
-									<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
-									<button type="button" class="btn btn-prmary" data-dismiss="modal">Cerrar</button>
+										<input type="submit" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta"></input>  
+										<div class="clearfix"></div>
+
+									</div>
+									<div class="modal-footer">
+										<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+									</div>
 								</div>
 							</div>
-						</div>
-					</form>
-				</div>         
+						</form>
+					</div>  
+					<div class="clearfix"></div>
+				</div>	
+			</div>			
 
-
-			</div>
-			<div class="col-md-1" ></div>
-			
 		</div>
 
 		<div class="col-md-5" >
-			<div class="panel panel-default" style="text-align:center;">
+			<div class="panel panel-default" >
 				<div class="panel-heading">Publicaciones</div>
 				<table class="table table-striped">
 					<?php						
@@ -173,7 +173,7 @@
 							}
 
 						}
-						if(($num_pag+1)<=$total_paginas) 
+						if(($num_pag+1)<$total_paginas) 
 							{ ?>
 						<li><a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
 						<?php	} else { ?>
@@ -252,7 +252,7 @@
 				}
 			}
 			function rightArrowPressed() {		
-				if((<?php echo $num_pag; ?>+1)<= <?php echo $total_paginas;?>) {
+				if((<?php echo $num_pag; ?>+1) < <?php echo $total_paginas;?>) {
 					location.replace("perfil.php?pagina=<?php echo ($num_pag+1); ?>");
 				} 	
 			}
@@ -273,7 +273,7 @@
 
 
 
-<?php footer(); ?>
+		<?php footer(); ?>
 
 
 

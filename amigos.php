@@ -110,28 +110,6 @@ include_once "sesion_segura.php";
 </div> </div>
 
 <div class="col-md-3"> </div> 
-
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
 <br/>
 </div>
 
@@ -151,7 +129,7 @@ include_once "sesion_segura.php";
             <label>Email del amigo a añadir</label>
             <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="Introduzca el email del amigo a añadir">
           </div>
-          <button type="submit" class="btn btn-default">Añadir amigo</button>
+          <button type="submit" class="btn btn-primary">Añadir amigo</button>
         </form>
 
 
