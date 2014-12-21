@@ -254,7 +254,9 @@
 				}
 			}
 			function rightArrowPressed() {		
+
 				if((<?php echo $num_pag; ?>+1) < <?php echo $total_paginas;?>) {
+
 					location.replace("perfil.php?pagina=<?php echo ($num_pag+1); ?>");
 				} 	
 			}

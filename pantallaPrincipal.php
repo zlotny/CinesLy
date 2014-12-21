@@ -65,49 +65,28 @@ session_start();
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-xs-12 col-lg-10 ">
 				<ul class="media-list">
+
+			
+				<?php $publicaciones=$_SESSION['usuario']->consultarPublicacion(); 
+				for($i=0;$i<sizeof($publicaciones[0]);$i++){
+				?>
+
 					<li class="media">
 						<div class="well">
 							<a class="media-left" href="perfil.php">
 								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
 							</a>
 							<div class="media-body">
-								<h4 class="media-heading">Nombre de Usuario</h4>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
+								<p><?php echo $publicaciones[1][$i]; ?><br><?php echo $publicaciones[2][$i]; ?></p>
+							</div>
+							<div class="clearfix">
+								<input type="submit" class="btn btn-xs btn-danger pull-right little-right" value="Eliminar"/>
+								<input type="submit" class="btn btn-xs btn-primary pull-right" value="Editar"/>
 							</div>
 						</div>
 					</li>
-					<li class="media">
-
-						<div class="well">
-
-							<a class="media-left" href="perfil.php">
-								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">Nombre de Usuario</h4>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-							</div>
-
-						</div>
-
-					</li>
-					<li class="media">
-
-						<div class="well">
-
-							<a class="media-left" href="perfil.php">
-								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">Nombre de Usuario</h4>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-							</div>
-
-						</div>
-
-					</li>
+					<?php  }?>
 				</ul>
 			</div>
 			<div class="col-sm-2">
