@@ -173,7 +173,7 @@
 							}
 
 						}
-						if(($num_pag+1)<=$total_paginas) 
+						if(($num_pag+1)<$total_paginas) 
 							{ ?>
 						<li><a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
 						<?php	} else { ?>
@@ -252,7 +252,7 @@
 				}
 			}
 			function rightArrowPressed() {		
-				if((<?php echo $num_pag; ?>+1)<= <?php echo $total_paginas;?>) {
+				if((<?php echo $num_pag; ?>+1)< <?php echo $total_paginas;?>) {
 					location.replace("perfil.php?pagina=<?php echo ($num_pag+1); ?>");
 				} 	
 			}

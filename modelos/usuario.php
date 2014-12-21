@@ -238,12 +238,23 @@ function insertarPublicacion($publi){
 
 	$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
 	return mysql_query($sql);
-
-
-	
 }
 
-
+function consultarPublicacion(){
+	$this->conectarBD();
+	$toRet = array();
+	$toRet[0] = array();
+	$toRet[1] = array();
+	$toRet[2] = array();
+	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
+	$resultado=mysql_query($sql);
+	while($row = mysql_fetch_array($resultado)){
+	 	array_push($toRet[0], $row["nombreUsuario"]);
+	 	array_push($toRet[1], $row["fecha"]);
+	 	array_push($toRet[2], $row["publica"]);	 		 	
+	}
+	return $toRet;
+}
 
 }
 
