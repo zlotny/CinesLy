@@ -58,17 +58,7 @@ include_once "sesion_segura.php";
        <div class="panel-body">
         <div class="row-fluid">
           <div class="span6">
-            <strong class="choice">Valora :D</strong>
-            <div class="direction-box top-margin-little">
-              
-               <span class="star-rating">
-                <input type="radio" name="rating" value="1"><i></i>
-                <input type="radio" name="rating" value="2"><i></i>
-                <input type="radio" name="rating" value="3"><i></i>
-                <input type="radio" name="rating" value="4"><i></i>
-                <input type="radio" name="rating" value="5"><i></i>
-              </span>
-              
+            <div class="direction-box top-margin-little">    
               <ul>
                 <li class="list-no-deco"><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
                 <li class="list-no-deco"><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
