@@ -225,3 +225,18 @@ body{
 .list-no-deco{
 	list-style: none;
 }
+
+.very-small{
+	font-size: 8px;
+}
+
+.near-top{
+	position:relative;
+	top:-12px;
+}
+
+
+
+
+
+

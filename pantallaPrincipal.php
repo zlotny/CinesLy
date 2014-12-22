@@ -87,7 +87,7 @@ session_start();
 								</a>
 								<div class="media-body">
 									<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
-									<p><?php echo $publicaciones[1][$i]; ?><br><?php echo $publicaciones[2][$i]; ?></p>
+									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span><p><br><?php echo $publicaciones[2][$i]; ?></p>
 								</div>
 								<div class="clearfix">
 									<?php

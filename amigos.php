@@ -40,68 +40,73 @@ include_once "sesion_segura.php";
       </script>";
     }
 
-    ?> 
-    <div class="panel panel-body"> 
-      <div class="form-group">
-        <table class="table table-striped">
-         <?php 					
-
-
-
-
-         $arrayAmigos=$_SESSION["usuario"]->getAmigosParaConfirmar();
-
-         foreach($arrayAmigos as $filaAmigo){
-
-           if(isset($filaAmigo->foto)){
-             echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-           }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
-
-           ?>
-           <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-           <td class='col-md-1'> <span >
-            <a class="btn btn-success boton-cuadrado" href="controladoras/aceptarUsuario.php?action=accept&email=<?php echo $filaAmigo->email;?>">V</a>
-            <a class="btn btn-danger boton-cuadrado" href="controladoras/aceptarUsuario.php?action=deny&email=<?php echo $filaAmigo->email;?>">X</a>
-          </span></td>
-        </tr>
-        <?php
-
-      }
-
-
-      $arrayAmigos=$_SESSION["usuario"]->getAmigosSinConfirmar();
-
-      foreach($arrayAmigos as $filaAmigo){
-
-       if(isset($filaAmigo->foto)){
-         echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-       }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
-
-       ?>
-       <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-       <td class='col-md-1'> <span >
-        <label>Pendiente de confirmación</label>
-      </span></td>
-    </tr>
-    <?php
-
+    if($_REQUEST["error_existent"] == true){
+      echo "<script>
+      alertify.log('El usuario que has indicado ya está solicitado como amigo (o en tu lista de amigos). En caso contrario, ha ocurrido un error grave', 'error', 5000);
+    </script>";
   }
+  ?> 
+  <div class="panel panel-body"> 
+    <div class="form-group">
+      <table class="table table-striped">
+       <?php 					
 
 
 
-  $arrayAmigos=$_SESSION["usuario"]->getAmigos();
 
-  foreach($arrayAmigos as $filaAmigo){
+       $arrayAmigos=$_SESSION["usuario"]->getAmigosParaConfirmar();
 
-   if(isset($filaAmigo->foto)){
-     echo "<tr><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-   }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+       foreach($arrayAmigos as $filaAmigo){
 
-   ?>
-   <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-   <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
- </tr>
- <?php
+         if(isset($filaAmigo->foto)){
+           echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+         }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+
+         ?>
+         <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+         <td class='col-md-1'> <span >
+          <a class="btn btn-success boton-cuadrado" href="controladoras/aceptarUsuario.php?action=accept&email=<?php echo $filaAmigo->email;?>">V</a>
+          <a class="btn btn-danger boton-cuadrado" href="controladoras/aceptarUsuario.php?action=deny&email=<?php echo $filaAmigo->email;?>">X</a>
+        </span></td>
+      </tr>
+      <?php
+
+    }
+
+
+    $arrayAmigos=$_SESSION["usuario"]->getAmigosSinConfirmar();
+
+    foreach($arrayAmigos as $filaAmigo){
+
+     if(isset($filaAmigo->foto)){
+       echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+     }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+
+     ?>
+     <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+     <td class='col-md-1'> <span >
+      <label>Pendiente de confirmación</label>
+    </span></td>
+  </tr>
+  <?php
+
+}
+
+
+
+$arrayAmigos=$_SESSION["usuario"]->getAmigos();
+
+foreach($arrayAmigos as $filaAmigo){
+
+ if(isset($filaAmigo->foto)){
+   echo "<tr><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
+ }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+
+ ?>
+ <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+ <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
+</tr>
+<?php
 
 }
 ?>
