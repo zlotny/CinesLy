@@ -262,6 +262,22 @@ body{
 	text-align: center;
 }
 
+.publication-body {
+  display: table-cell;
+  vertical-align: top;
+  width: 1000px;
+}
+
+.publi{
+	resize: none;
+	font-size: 12px;
+	padding: 2px;
+	height: 100px !important;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+
 
 
 

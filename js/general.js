@@ -137,3 +137,24 @@
                                 });
 
                               }
+
+
+function ocultar(id) {
+
+    var divObject = document.getElementById(id); 
+    divObject.style.visibility = "hidden";
+}
+
+function mostrar(id) {
+
+    var divObject = document.getElementById(id); 
+    divObject.style.visibility = "visible";
+    
+}
+
+function ro(id){
+
+     var divObject = document.getElementById(id); 
+     divObject.readOnly = false;
+}
+

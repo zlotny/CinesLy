@@ -90,16 +90,17 @@ session_start();
 
 
 								</a>
-								<div class="media-body">
+								<div class="publication-body" >
 									<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
-									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span><p><br><?php echo $publicaciones[2][$i]; ?></p>
+									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span><textarea readonly id= "<?php echo "1".$publicaciones[4][$i]; ?>" class="form-control publi" ><?php echo $publicaciones[2][$i]; ?></textarea>
 								</div>
 								<div class="clearfix">
 									<?php
 									if($_SESSION["usuario"]->email == $usuRow->email){
 
 										echo "<input type='submit' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
-										echo "<input type='submit' class='btn btn-xs btn-primary pull-right' value='Editar'/>";
+										echo "<input type='submit' onclick='mostrar(".$publicaciones[4][$i]."),ro(1".$publicaciones[4][$i].")' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
+										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
 									}
 									?>
 

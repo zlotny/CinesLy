@@ -305,6 +305,15 @@ function eliminarPublicacion($idP){
 
 }
 
+/*
+function editarPublicacion($idP){
+
+	$this->conectarBD();
+
+	$sql = "UPDATE publicacion SET publica = '$newName' , pass = '$newPass' WHERE email = '$this->email' ";
+	return mysql_query($sql);
+}
+*/
 }
 
 ?>
