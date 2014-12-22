@@ -46,7 +46,7 @@ class Pelicula{
 	function recomendarPelicula($idPelicula,$listaAmigos)
 	{
 		Pelicula::conectarBD();
-	
+		
 		
 		
 
@@ -75,8 +75,8 @@ class Pelicula{
 		while($row = mysql_fetch_array($resultado)){
 			array_push($toRet['usuario'], $row['email']);
 			array_push($toRet['comentario'], $row['comentario']);
-	}
-	return $toRet;
+		}
+		return $toRet;
 
 	}
 
@@ -86,11 +86,11 @@ class Pelicula{
 		$resultado=Pelicula::consultaBD($sql);
 		
 		$original=mysql_fetch_array($resultado);
-echo "string";
+		echo "string";
 		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
-		$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
-		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
-echo "<br>";
+			$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
+			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
+		echo "<br>";
 		$val=$valoracion+$peli1->valoracion;
 		echo $peli1->contValoracion;
 		echo "<br>";
@@ -116,11 +116,11 @@ echo "<br>";
 			'$pelicula->pais' , '$pelicula->votos' , '$pelicula->valoracion' , '$pelicula->tipo' , '$pelicula->contValoracion', '$pelicula->foto')";
 
 
-		$resultado=Pelicula::consultaBD($sql);	
-		if($resultado){
-			echo "pelicula registrada";
-		}	 
-	}
+$resultado=Pelicula::consultaBD($sql);	
+if($resultado){
+	echo "pelicula registrada";
+}	 
+}
 
 function eliminarPelicula($idPelicula){
 	Pelicula::conectarBD();
@@ -216,14 +216,14 @@ function modificarPelicula($idPelicula,$pelicula)
 
 		Pelicula::conectarBD();
 		
-		 $sql = "SELECT * FROM pelicula";
-        $result = Pelicula::consultaBD($sql);
+		$sql = "SELECT * FROM pelicula";
+		$result = Pelicula::consultaBD($sql);
 
-        while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
-            $toRet[$tuplas["idPelicula"]] = $tuplas;
-        }
+		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$toRet[$tuplas["idPelicula"]] = $tuplas;
+		}
 
-        return $toRet;
+		return $toRet;
 
 
 	}
@@ -317,46 +317,46 @@ function modificarPelicula($idPelicula,$pelicula)
 		$this->titulo=$titulo;
 	}
 	function setDirector($director){
-		$this->director;
+		$this->director = $director;
 	}
 	function setDistribuidora($distribuidora){
-		$this->distribuidora;
+		$this->distribuidora = $distribuidora;
 	}
 	function setDuracion($duracion){
-		$this->duracion;
+		$this->duracion = $duracion;
 	}
 	function setSinopsis($sinopsis){
-		$this->sinopsis;
+		$this->sinopsis = $sinopsis;
 	}
 	function setActores($actores){
-		$this->actores;
+		$this->actores = $actores;
 	}
 	function setAnho($anho){
-		$this->anho;
+		$this->anho = $anho;
 	}
 	function setFechaEstreno($fechaEstreno){
-		$this->fechaEstreno;
+		$this->fechaEstreno = $fechaEstreno;
 	}
 	function setGenero($genero){
-		$this->genero;
+		$this->genero = $genero;
 	}
 	function setPais($pais){
-		$this->pais;
+		$this->pais = $pais;
 	}
 	function setVotos($votos){
-		$this->votos;
+		$this->votos = $votos;
 	}
 	function setValoracion($valoracion){
-		$this->valoracion;
+		$this->valoracion = $valoracion;
 	}
 	function setTipo($tipo){
-		$this->tipo;
+		$this->tipo = $tipo;
 	}
 	function setContValoracion($contValoracion){
-		$this->contValoracion;
+		$this->contValoracion = $contValoracion;
 	}
 	function setFoto($foto){
-		$this->foto;
+		$this->foto = $foto;
 	}
 
 
@@ -370,7 +370,7 @@ function modificarPelicula($idPelicula,$pelicula)
 		foreach ($arrayGeneros as $singleGenero){
 			if($sql=="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."') and genero like '"){
 				$sql=$sql."%".$singleGenero."%' ";
-			
+				
 			}
 
 			else{

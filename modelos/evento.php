@@ -209,89 +209,89 @@ public function modificarEvento($evento, $eventoNuevo)
 
 		 	echo '<div align="center">
 		 	<h2>No existe el evento</h2>
-		 	</div>';
+		 </div>';
 
-		 }else{
+		}else{
 
-		 	$idEvento=$result[0];
-		 	$idPelicula=$result[1];
-		 	$idSesion=$result[2];
-		 	$mail=$result[3];
-		 	$descripcion=$result[4];
-		 	$nombre = $result[5];
+			$idEvento=$result[0];
+			$idPelicula=$result[1];
+			$idSesion=$result[2];
+			$mail=$result[3];
+			$descripcion=$result[4];
+			$nombre = $result[5];
 
-		 	
-		 	
-		 	if($idEvento == ""){
+			
+			
+			if($idEvento == ""){
 
-		 		$actualizado=mysql_query("UPDATE `evento` SET `id_evento`=eventoNuevo->getIdEvento() WHERE `id_evento` = idEvento");
-		 	}
+				$actualizado=mysql_query("UPDATE `evento` SET `id_evento`=eventoNuevo->getIdEvento() WHERE `id_evento` = idEvento");
+			}
 
-		 	if($idPelicula == "" or $idSesion == ""){
+			if($idPelicula == "" or $idSesion == ""){
 
-		 		$actualizado=mysql_query("UPDATE `evento` SET `idPelicula`=eventoNuevo->getIdPelicula(), `idSesion`=eventoNuevo->getIdSesion() WHERE `id_evento` = $idEvento");
-		 	}
+				$actualizado=mysql_query("UPDATE `evento` SET `idPelicula`=eventoNuevo->getIdPelicula(), `idSesion`=eventoNuevo->getIdSesion() WHERE `id_evento` = $idEvento");
+			}
 
-		 	
-		 	if($mail == ""){
+			
+			if($mail == ""){
 
-		 		$actualizado=mysql_query("UPDATE `evento` SET `email`=eventoNuevo->getMail() WHERE `id_evento` = idEvento");
-		 	}
+				$actualizado=mysql_query("UPDATE `evento` SET `email`=eventoNuevo->getMail() WHERE `id_evento` = idEvento");
+			}
 
-		 	if($descripcion == ""){
+			if($descripcion == ""){
 
-		 		$actualizado=mysql_query("UPDATE `evento` SET `descripcion`=eventoNuevo->getDescripcion() WHERE `id_evento` = idEvento");
-		 	}
+				$actualizado=mysql_query("UPDATE `evento` SET `descripcion`=eventoNuevo->getDescripcion() WHERE `id_evento` = idEvento");
+			}
 
-		 	if($mail == ""){
+			if($mail == ""){
 
-		 		$actualizado=mysql_query("UPDATE `evento` SET `nombre`=eventoNuevo->getNombre() WHERE `id_evento` = idEvento");
-		 	}
-
-		 }
-
-		}
-
-		public function eliminarEvento($evento)
-		{
-
-			$eliminar = mysql_query("DELETE FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
-
-			if ($consulta == ""){
-
-				echo '<div align="center">
-				<h2>El evento no existe</h2>
-				</div>';
-
-			}else{
-
-				echo '<div align="center">
-				<h2>El evento se ha eliminado con éxito</h2>
-				</div>';
-
+				$actualizado=mysql_query("UPDATE `evento` SET `nombre`=eventoNuevo->getNombre() WHERE `id_evento` = idEvento");
 			}
 
 		}
 
-		public function consultarEvento($evento)
-		{
+	}
 
-			$consultar = mysql_query("SELECT * FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
+	public function eliminarEvento($evento)
+	{
 
-			if ($consulta == ""){
+		$eliminar = mysql_query("DELETE FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
 
-				echo '<div align="center">
-				<h2>El evento no existe</h2>
-				</div>';
+		if ($consulta == ""){
 
-			}else{
+			echo '<div align="center">
+			<h2>El evento no existe</h2>
+		</div>';
 
-				$numeroCampos = mysql_num_rows($consultar);
+	}else{
 
-				if ($consultar == 0){
+		echo '<div align="center">
+		<h2>El evento se ha eliminado con éxito</h2>
+	</div>';
 
-					return false;
-				}
+}
+
+}
+
+public function consultarEvento($evento)
+{
+
+	$consultar = mysql_query("SELECT * FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
+
+	if ($consulta == ""){
+
+		echo '<div align="center">
+		<h2>El evento no existe</h2>
+	</div>';
+
+}else{
+
+	$numeroCampos = mysql_num_rows($consultar);
+
+	if ($consultar == 0){
+
+		return false;
+	}
 
 		 $consultar = result_to_array($consultar); //metemos la consulta en un array
 

@@ -19,8 +19,8 @@ if(isset($_REQUEST["email"])){
 	}
 
 
-//si llego aquí ya existe el usuario asi que error tambien, por ahora no lo pongo
-	echo "Ha ocurrido un error en addamigo.php";
+//si llego aquí ya existe el usuario en tus amigos o ha ocurrido
+	header("Location: ../amigos.php?error_existent=true");
 
 
 

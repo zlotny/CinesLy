@@ -1,3 +1,7 @@
+<?php
+include_once "sesion_segura.php";
+?>
+
 <html>
 <head>
 
@@ -41,22 +45,32 @@
 
 
     
-
-    <div class="col-md-2"> </div>
-    <div class="col-md-7 ">
-      <ul class="media-list">
+<h1 class="tackle-right">Catálogo de Películas</h1>
+<p class="tackle-right">Busca y comenta tus películas favoritas. Haz click sobre el póster de una película para ver su ficha detallada</p>
+    <div class="col-md-1"> </div>
+    <div class="col-md-8 ">
+      <ul class="media-list" style="margin-left:-20px;">
 
         <!-- Paneles de los cines -->
         <?php
+
         if(isset($filtro) ){
-          echo "<br>";
           $arrayPeliculas=$filtro;
           foreach($arrayPeliculas as $panelPelicula){
-            echo '<li class="media">';
+
+            echo '<li class="media" style="margin-top: 15px;">';
             echo '<div class="col-md-12 ">';
             echo '<div class="well">';
-            echo '<a class="media-left" href="ficha_pelicula.php">';
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+            echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
+
+            if(substr($panelPelicula["foto"],0,3) == "img"){
+              echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+
+            }else{
+              echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
+
+            }
+
             echo '</a>';  
             echo '<div class="media-body">';
             echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
@@ -75,8 +89,14 @@
             echo '<li class="media">';
             echo '<div class="col-md-12 ">';
             echo '<div class="well">';
-            echo '<a class="media-left" href="ficha_pelicula.php">';
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+            echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
+            if(substr($panelPelicula["foto"],0,3) == "img"){
+              echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+
+            }else{
+              echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
+
+            }
             echo '</a>';  
             echo '<div class="media-body">';
             echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
@@ -110,7 +130,7 @@
 
             <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-default">Buscar</button>
+              <button type="submit" class="btn btn-success">Buscar</button>
             </span>
           </div>            
           <br>
@@ -119,7 +139,7 @@
             <select name="tipo" aria-labelledby="buscar_peli">
               <option  value="">Todas las peliculas</option>
               <option  value="cartelera">En Cartelera</option>
-              <option  value="especiales">Especiales</option>
+              <option  value="especial">Especiales</option>
               <option  value="proximamente">Proximamente</option>
             </select>
 
@@ -149,6 +169,7 @@
 
   </div>
 
+<?php footer(); ?>
 
 
 </body>	

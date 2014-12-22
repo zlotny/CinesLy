@@ -1,9 +1,10 @@
 body{
-	padding-top:50px;
+	padding-top:42px;
+	overflow-x:hidden;
 }
 
 .top-margin{
-	margin-top: 50px;
+	margin-top: 42px;
 }
 
 .top-margin-little{
@@ -17,7 +18,7 @@ body{
 .notif{
 	background-color:transparent;
 	color: whitesmoke;
-	line-height: 50px;
+	line-height: 42px;
 	font-size: 20px;
 	margin-right: 10px;
 }
@@ -69,20 +70,6 @@ body{
 
 }
 
-.divPerfil{
-border: 2px #000000 solid;
-height: 650px;
-background-image: url("../img/texture.jpg");
-border-color: cornsilk;
--webkit-border-radius: 14px 14px 14px 14px;
--moz-border-radius: 14px 14px 14px 14px;
-border-radius: 14px 14px 14px 14px;
-
-
--moz-box-shadow: 0px 0px 5px 3px #CCCCCC;
--webkit-box-shadow: 0px 0px 5px 3px #CCCCCC;
-box-shadow: 0px 0px 5px 3px #CCCCCC;
-}
 
 
 .divAuto{ /*auto height*/
@@ -100,7 +87,7 @@ box-shadow: 0px 0px 5px 3px #CCCCCC;
 .custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:30px;
+	margin-top:15px;
 }
 
 .peli{
@@ -117,15 +104,14 @@ box-shadow: 0px 0px 5px 3px #CCCCCC;
 
 
 .publicacion{
-	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
 .inputpublicacion{
 	position: absolute;
 	bottom: 20px;
-	left: 155px;
-	width: 70%;
+	left: 192px;
+	width: 67%;
 }
 
 .vertical-peli-carousel{
@@ -144,19 +130,138 @@ box-shadow: 0px 0px 5px 3px #CCCCCC;
 .table-publicaciones{
 	height: 100px;
 }
+.table-publicaciones177{
+	height: 177px;
+}
 
 .red{
 	background-color: red;
 }
 
 .alertify-logs {
-    top: 60px;
-    left: 10px;
-    width: 400px;
-    height: 300px;
-    font-size: 30px;
+	top: 60px;
+	left: 10px;
+
 }
 
 .boton-cuadrado{
 	width: 35px;
 }
+
+#first{
+	background: url(../img/parallax/bg3.png) 50% 0 repeat fixed;
+	color: white;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0;s
+}
+
+#second{
+	background: url(../img/parallax/bg2.png) 50% 0 repeat fixed;
+	color: white;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 0;
+}
+
+#index_body{
+	background-color: whitesmoke;
+}
+
+.main-logo{
+	height: 42px;
+}
+
+.text-color-black{
+	color:black;
+}
+
+.dropdown-danger{
+	background-color: #d9534f;
+}
+
+.text-color-red{
+	color:#d9534f;
+}
+
+.text-weight-bold{
+	font-weight: bold;
+}
+
+.clickable{
+	cursor: pointer;
+}
+
+.footer{
+	width: 100%;
+	margin-bottom: 0px;
+	background-color: #101112;
+	height: 40px;
+}
+
+.align-right-footer{
+	margin-left:301px;
+}
+
+.footer-fixed{
+	position: fixed;
+	bottom: 0;
+}
+
+.standard-div-height{
+	height: 845px;
+}
+
+.eslogan{
+	resize: none;
+	font-size: 12px;
+	padding: 2px;
+	height: 100px !important;
+	background-color: #95a5a6;
+}
+
+.list-no-deco{
+	list-style: none;
+}
+
+.very-small{
+	font-size: 8px;
+}
+
+.near-top{
+	position:relative;
+	top:-12px;
+}
+
+.tackle-right{
+	margin-left: 9.3%;
+}
+
+.navbar{
+	border-bottom:solid 1px; 
+	border-color: #2c3e50;
+}
+
+.seccion{
+	background-color: #2b3e50; 
+	height: 300px;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.seccion-small{
+	background-color: #2b3e50; 
+	height: 120px;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.center-text{
+	text-align: center;
+}
+
+
+
+

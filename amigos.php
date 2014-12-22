@@ -1,7 +1,7 @@
-<?php include "cabecera.php"; ?>
-
-<?php
+<?php 
+include "cabecera.php";
 include_once "modelos/usuario.php";		
+include_once "sesion_segura.php";
 ?>
 
 <html lang="en">
@@ -14,9 +14,11 @@ include_once "modelos/usuario.php";
   <title>Amigos</title>
 
 
-  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="style/style.css" rel="stylesheet" />
 
 </head>
@@ -25,6 +27,9 @@ include_once "modelos/usuario.php";
   <?php cabeceraPantallaPrincipal(); 
   session_start();
   ?>
+
+  <h1 class="tackle-right">Lista de amigos</h1>
+  <p class="tackle-right">En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado. </p>
   <div class="row top-margin">
     <div class="col-md-3"> </div>
     <div class="col-md-6">
@@ -38,46 +43,57 @@ include_once "modelos/usuario.php";
       </script>";
     }
 
-    ?> 
-    <div class="panel panel-body"> 
-      <div class="form-group">
-        <table class="table table-striped">
-         <?php 					
+    if($_REQUEST["error_existent"] == true){
+      echo "<script>
+      alertify.log('El usuario que has indicado ya está solicitado como amigo (o en tu lista de amigos). En caso contrario, ha ocurrido un error grave', 'error', 5000);
+    </script>";
+  }
+  ?> 
+  <div class="panel panel-body"> 
+    <div class="form-group">
+      <table class="table table-striped">
+       <?php 					
 
 
 
 
-         $arrayAmigos=$_SESSION["usuario"]->getAmigosParaConfirmar();
+       $arrayAmigos=$_SESSION["usuario"]->getAmigosParaConfirmar();
 
-         foreach($arrayAmigos as $filaAmigo){
+       foreach($arrayAmigos as $filaAmigo){
 
-           if(isset($filaAmigo->foto)){
-             echo "<tr class='warning'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-           }else {echo "<tr class='warning'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+         if(isset($filaAmigo->foto)){
+          echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+        }
+        else {
+          echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+        }
 
-           ?>
-           <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-           <td class='col-md-1'> <span >
-            <a class="btn btn-success boton-cuadrado" href="controladoras/aceptarUsuario.php?action=accept&email=<?php echo $filaAmigo->email;?>">V</a>
-            <a class="btn btn-danger boton-cuadrado" href="controladoras/aceptarUsuario.php?action=deny&email=<?php echo $filaAmigo->email;?>">X</a>
-          </span></td>
-        </tr>
-        <?php
 
+        ?>
+        <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+        <td class='col-md-1'> <span >
+          <a class="btn btn-success boton-cuadrado" href="controladoras/aceptarUsuario.php?action=accept&email=<?php echo $filaAmigo->email;?>">V</a>
+          <a class="btn btn-danger boton-cuadrado" href="controladoras/aceptarUsuario.php?action=deny&email=<?php echo $filaAmigo->email;?>">X</a>
+        </span></td>
+      </tr>
+      <?php
+
+    }
+
+
+    $arrayAmigos=$_SESSION["usuario"]->getAmigosSinConfirmar();
+
+    foreach($arrayAmigos as $filaAmigo){
+
+      if(isset($filaAmigo->foto)){
+        echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
       }
-
-
-      $arrayAmigos=$_SESSION["usuario"]->getAmigosSinConfirmar();
-
-      foreach($arrayAmigos as $filaAmigo){
-
-       if(isset($filaAmigo->foto)){
-         echo "<tr class='warning'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-       }else {echo "<tr class='warning'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
-
-       ?>
-       <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-       <td class='col-md-1'> <span >
+      else {
+        echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+      }
+      ?>
+      <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+      <td class='col-md-1'> <span >
         <label>Pendiente de confirmación</label>
       </span></td>
     </tr>
@@ -91,15 +107,17 @@ include_once "modelos/usuario.php";
 
   foreach($arrayAmigos as $filaAmigo){
 
-   if(isset($filaAmigo->foto)){
-     echo "<tr><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-   }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
-
-   ?>
-   <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-   <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
- </tr>
- <?php
+    if(isset($filaAmigo->foto)){
+      echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+    }
+    else {
+      echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+    }
+    ?>
+    <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+    <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
+  </tr>
+  <?php
 
 }
 ?>
@@ -110,7 +128,7 @@ include_once "modelos/usuario.php";
 </div> </div>
 
 <div class="col-md-3"> </div> 
-
+<br/>
 </div>
 
 <div id="addfriend" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -129,9 +147,8 @@ include_once "modelos/usuario.php";
             <label>Email del amigo a añadir</label>
             <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="Introduzca el email del amigo a añadir">
           </div>
-          <button type="submit" class="btn btn-default">Añadir amigo</button>
+          <button type="submit" class="btn btn-primary">Añadir amigo</button>
         </form>
-
 
 
 
@@ -139,27 +156,8 @@ include_once "modelos/usuario.php";
     </div>
   </div>  
 
-  </div
-
-  <footer>
-   <section class="container" style="padding:10px">
-    <div class="btn-group dropup pull-rigth ">
-      <button type="button" class="btn btn-default">Idioma</button>
-      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-        &nbsp
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-        &nbsp
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Gallego</a></li>
-        <li><a href="#">Inglés</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Español</a></li>
-      </ul>
-    </div>
-  </section>
-</footer>
+</div>
+<?php footer(); ?>
 
 </body>
 
