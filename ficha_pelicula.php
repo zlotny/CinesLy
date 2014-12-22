@@ -8,7 +8,7 @@ include_once "sesion_segura.php";
 <html lang="es">
 <head>
  <meta charset="utf-8">
- <title>Ficha de Película - CinesLy</title>
+ <title>Ficha de Película</title>
 
  <meta http-equiv="X-UA-Compatible" content="IE=edge">     
  <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -23,7 +23,7 @@ include_once "sesion_segura.php";
 <body>
   <?php 
   cabeceraPantallaPrincipal(); 
-  session_start();	
+  session_start();  
   $idPeli=$_REQUEST["id"];
   $ObjPeli=Pelicula::getObjetoPelicula($idPeli);
 
@@ -58,7 +58,17 @@ include_once "sesion_segura.php";
        <div class="panel-body">
         <div class="row-fluid">
           <div class="span6">
+            <strong class="choice">Valora :D</strong>
             <div class="direction-box top-margin-little">
+              
+               <span class="star-rating">
+                <input type="radio" name="rating" value="1"><i></i>
+                <input type="radio" name="rating" value="2"><i></i>
+                <input type="radio" name="rating" value="3"><i></i>
+                <input type="radio" name="rating" value="4"><i></i>
+                <input type="radio" name="rating" value="5"><i></i>
+              </span>
+              
               <ul>
                 <li class="list-no-deco"><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
                 <li class="list-no-deco"><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
@@ -66,6 +76,7 @@ include_once "sesion_segura.php";
                 <li class="list-no-deco"><strong class="step">Distribuidora: </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
                 <li class="list-no-deco"><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
+              </ul>
               </div>
             </div>
           </div>
@@ -87,7 +98,7 @@ include_once "sesion_segura.php";
                 </div>
               </div>
               <ul class="media-list">
-                <?php 					
+                <?php           
 
                 $arrayComentarios=Pelicula::getComentariosPelicula($ObjPeli->idPelicula);
                 $arrayUsuarios=$arrayComentarios['usuario'];
@@ -137,10 +148,7 @@ include_once "sesion_segura.php";
 </div>
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
-
-<?php footer(); ?>
+<script src="js/valoracion.min.js"></script>
 
 
 
