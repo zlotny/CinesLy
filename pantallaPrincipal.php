@@ -20,6 +20,7 @@ session_start();
 	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/general.js"></script>
 	<?php include "cabecera.php";?>
 
 
@@ -96,7 +97,8 @@ session_start();
 								<div class="clearfix">
 									<?php
 									if($_SESSION["usuario"]->email == $usuRow->email){
-										echo "<input type='submit' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+
+										echo "<input type='submit' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
 										echo "<input type='submit' class='btn btn-xs btn-primary pull-right' value='Editar'/>";
 									}
 									?>

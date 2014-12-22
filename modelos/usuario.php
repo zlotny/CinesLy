@@ -248,21 +248,23 @@ function consultarPublicacion(){
 	$toRet[1] = array();
 	$toRet[2] = array();
 	$toRet[3] = array();
+	$toRet[4] = array();	
 
 //	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
 $sql= "\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
     . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
     . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
+    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
 
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
 	 	array_push($toRet[0], $row["nombreUsuario"]);
 	 	array_push($toRet[1], $row["fecha"]);
 	 	array_push($toRet[2], $row["publica"]);	
-	 	array_push($toRet[3], $row["email"]);	
+	 	array_push($toRet[3], $row["email"]);			
+	 	array_push($toRet[4], $row["idPublicacion"]);
 
 	}
 	return $toRet;
@@ -289,6 +291,15 @@ function eliminarCuenta(){
 	$this->conectarBD();
 
 	$sql = "DELETE FROM usuario WHERE email = '$this->email' ";
+	return mysql_query($sql);
+
+
+}
+
+
+function eliminarPublicacion($idP){
+	$this->conectarBD();
+	$sql = "DELETE FROM publicacion WHERE idPublicacion=$idP";
 	return mysql_query($sql);
 
 
