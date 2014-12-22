@@ -255,7 +255,7 @@ $sql= "\n"
     . "UNION\n"
     . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
     . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY p.fecha desc";
+    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
 
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
