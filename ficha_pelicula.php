@@ -67,10 +67,18 @@ include_once "sesion_segura.php";
                 <li class="list-no-deco"><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
               </ul>
+              <strong>Valoración:</strong>
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">1</button>
+                <button type="button" class="btn btn-default">2</button>
+                <button type="button" class="btn btn-default">3</button>
+                <button type="button" class="btn btn-default">4</button>
+                <button type="button" class="btn btn-default">5</button>
               </div>
             </div>
           </div>
-
+        </div>
+      </div>
           
           <div class="top-margin">
             <div class="share-box-outer">
