@@ -390,6 +390,17 @@ function modificarPelicula($idPelicula,$pelicula)
 		return $toRet;
 
 	}
+
+	function getPeliculasCartelera(){
+		Pelicula::conectarBD();
+		$sql="select titulo from pelicula where tipo='cartelera'";
+		$resultado = mysql_query($sql);
+		$toRet = array();
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet, $row['titulo']);
+		}
+		return $toRet;
+	}
 	
 
 }

@@ -96,8 +96,9 @@
 									<div class="modal-body">
 										<label for="nombreUsuario" class="">Cambiar el nombre de usuario</label>
 										<input type="text" name="newName" class="form-control form-pers" value="<?php echo $_SESSION['usuario']->nombreUsuario;?>"><br/>      
-										<label for="pass1" class="">Cambiar contraseña</label>
+										<label for="pass1" class="">Contraseña nueva:</label>
 										<input type="password" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
+										<label for="pass1" class="">Repetir contraseña nueva:</label>
 										<input type="password" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
 
 										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  

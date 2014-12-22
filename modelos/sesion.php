@@ -17,8 +17,8 @@ class Sesion{
 		$this->idSesion=$idSesion;
 		$this->fecha=$fecha;
 		$this->sala=$sala;
-	 	$this->capacidad=$capacidad;
-	 	
+		$this->capacidad=$capacidad;
+
 	}
 
 	/*GETTERS*/
@@ -91,7 +91,7 @@ class Sesion{
 		Sesion::conectarBD();
 		
 		$sql="INSERT INTO sesion (idPelicula,idSesion,fecha,sala,capacidad)
-		 VALUES ('$sesion->idPelicula', '$sesion->idSesion' , '$sesion->fecha' ,'$sesion->sala' , '$sesion->capacidad')";
+		VALUES ('$sesion->idPelicula', '$sesion->idSesion' , '$sesion->fecha' ,'$sesion->sala' , '$sesion->capacidad')";
 
 		//echo $sql;
 		$resultado=Sesion::consultaBD($sql);	
@@ -99,7 +99,7 @@ class Sesion{
 		if($resultado){
 			echo "Sesion anhadida";
 		}	 
-	
+
 	}
 
 	
@@ -122,7 +122,7 @@ class Sesion{
 
 
 		$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
-	
+
 		$resultado=Sesion::consultaBD($sql);
 
 		$resultado=Sesion::consultaBD($sql);
@@ -146,10 +146,10 @@ class Sesion{
 		WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
 		echo $sql2;
 		$resultado=Sesion::consultaBD($sql);
-			
+
 		Sesion::consultaBD($sql2);
 
-			
+
 	}
 
 	function consultarSesion($idSesion,$idPelicula){
@@ -162,6 +162,18 @@ class Sesion{
 		
 	}
 
+	function getFuturasSesiones(){
+		Sesion::conectarBD();
+		$sql="SELECT * FROM sesion WHERE fecha >= '".date("Y-m-d H:i:s")."'";
+		$resultado = mysql_query($sql);
+		$toRet = array();
+
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet, new Sesion($row["idPelicula"],$row["idSesion"],$row["fecha"],$row["sala"],$row["capacidad"]));
+		}
+
+		return $toRet;
+	}
 
 
 
