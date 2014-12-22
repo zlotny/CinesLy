@@ -34,8 +34,6 @@ session_start();
 
 }
 ?>
-
-
 <div class="container margensuperior">
 	<div class="row">
 		<div class="col-md-12">
@@ -65,48 +63,56 @@ session_start();
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-xs-12 col-lg-10 ">
 				<ul class="media-list">
+					<?php $publicaciones=$_SESSION['usuario']->consultarPublicacion(); 
+					for($i=0;$i<sizeof($publicaciones[0]);$i++){
+						$usuRow = Usuario::getObjetoUsuario($publicaciones[3][$i]);
+						?>
 
-			
-				<?php $publicaciones=$_SESSION['usuario']->consultarPublicacion(); 
-				for($i=0;$i<sizeof($publicaciones[0]);$i++){
-				?>
+						<li class="media">
+							<div class="well">
+								<a class="media-left" href="perfilAmigo.php?email=<?php echo $usuRow->email ?>">
 
-					<li class="media">
-						<div class="well">
-							<a class="media-left" href="perfil.php">
-								<img src="img/default_user.png" alt="" height="50px" width="50px" class="thumbnail">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
-								<p><?php echo $publicaciones[1][$i]; ?><br><?php echo $publicaciones[2][$i]; ?></p>
+									<?php
+									if(isset($usuRow->foto)){
+										echo "<img src='$usuRow->foto' alt='' height='50px' width='50px' class='thumbnail'>";
+
+									}else{
+										echo "<img src='img/default_user.png' alt='' height='50px' width='50px' class='thumbnail'>";
+
+									}
+
+									?>
+
+
+								</a>
+								<div class="media-body">
+									<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
+									<p><?php echo $publicaciones[1][$i]; ?><br><?php echo $publicaciones[2][$i]; ?></p>
+								</div>
+								<div class="clearfix">
+									<?php
+									if($_SESSION["usuario"]->email == $usuRow->email){
+										echo "<input type='submit' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+										echo "<input type='submit' class='btn btn-xs btn-primary pull-right' value='Editar'/>";
+									}
+									?>
+
+								</div>
 							</div>
-							<div class="clearfix">
-								<input type="submit" class="btn btn-xs btn-danger pull-right little-right" value="Eliminar"/>
-								<input type="submit" class="btn btn-xs btn-primary pull-right" value="Editar"/>
-							</div>
-						</div>
-					</li>
-					<?php  }?>
-				</ul>
-			</div>
-			<div class="col-sm-2">
-				<div class="" style="text-align:center">
-					<a href="ficha_pelicula.php" ><img src="img/HayLeyenda" alt=""  width="150px" class="vertical-peli-carousel"></a>
-					<a href="ficha_pelicula.php" ><img src="img/HayLeyenda" alt=""  width="150px" class="vertical-peli-carousel"></a>
-					<a href="ficha_pelicula.php" ><img src="img/HayLeyenda" alt=""  width="150px" class="vertical-peli-carousel"></a>
-					<a href="ficha_pelicula.php" ><img src="img/HayLeyenda" alt=""  width="150px" class="vertical-peli-carousel"></a>
-					<a href="ficha_pelicula.php" ><img src="img/HayLeyenda" alt=""  width="150px" class="vertical-peli-carousel"></a>
-
+						</li>
+						<?php  }?>
+					</ul>
 				</div>
+				<div class="col-sm-2">
+				</div>
+
+
+
 			</div>
-
-
-
 		</div>
-	</div>
 
-	<?php footer(); ?>
+		<?php footer(); ?>
 
 
-</body>
-</html>
+	</body>
+	</html>
