@@ -8,7 +8,7 @@ include_once "sesion_segura.php";
 <html lang="es">
 <head>
  <meta charset="utf-8">
- <title>Ficha de Película - CinesLy</title>
+ <title>Ficha de Película</title>
 
  <meta http-equiv="X-UA-Compatible" content="IE=edge">     
  <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -23,7 +23,7 @@ include_once "sesion_segura.php";
 <body>
   <?php 
   cabeceraPantallaPrincipal(); 
-  session_start();	
+  session_start();  
   $idPeli=$_REQUEST["id"];
   $ObjPeli=Pelicula::getObjetoPelicula($idPeli);
 
@@ -98,7 +98,7 @@ include_once "sesion_segura.php";
                 </div>
               </div>
               <ul class="media-list">
-                <?php 					
+                <?php           
 
                 $arrayComentarios=Pelicula::getComentariosPelicula($ObjPeli->idPelicula);
                 $arrayUsuarios=$arrayComentarios['usuario'];
