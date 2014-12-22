@@ -74,8 +74,10 @@ include_once "sesion_segura.php";
                 <button type="button" class="btn btn-default">3</button>
                 <button type="button" class="btn btn-default">4</button>
                 <button type="button" class="btn btn-default">5</button>
-              </div>
+              </div>   
+                <button type="button" class="btn btn-default"><strong>Recomendar<strong></button>     
             </div>
+           
           </div>
         </div>
       </div>
