@@ -302,5 +302,6 @@ public function modificarEvento($evento, $eventoNuevo)
 
 		}
 	}
+
+
 }
-?>
