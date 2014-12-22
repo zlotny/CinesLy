@@ -8,7 +8,7 @@ include_once "sesion_segura.php";
 <html lang="es">
 <head>
  <meta charset="utf-8">
- <title>Ficha de Película</title>
+ <title>Ficha de Película - CinesLy</title>
 
  <meta http-equiv="X-UA-Compatible" content="IE=edge">     
  <meta name="viewport" content="width=device-width, initial-scale=1">    

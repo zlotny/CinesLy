@@ -10,7 +10,7 @@ session_start();
 <html lang="es">
 <head>
 	<meta charset="utf-8">
-	<title>CinesLy</title>
+	<title>Muro - CinesLy</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="js/alertify/lib/alertify.min.js"> </script>

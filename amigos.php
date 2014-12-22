@@ -11,7 +11,7 @@ include_once "sesion_segura.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/alertify/lib/alertify.min.js"> </script>
   <script src="js/general.js"> </script>
-  <title>Amigos</title>
+  <title>Amigos - CinesLy</title>
 
 
   <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
