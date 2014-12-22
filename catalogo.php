@@ -13,6 +13,7 @@ include_once "sesion_segura.php";
   <script src="js/alertify/lib/alertify.min.js"> </script>
   <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
   <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+  <title>Catálogo de Películas - CinesLy</title>
 
 
 

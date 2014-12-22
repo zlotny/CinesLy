@@ -17,6 +17,7 @@
 
 	?>
 
+<title>Perfil de Amigo - CinesLy</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
