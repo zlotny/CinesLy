@@ -44,10 +44,16 @@ session_start();
 					}else{
 						echo "<img src='img/default_user.png' width='150px' >";
 					}
+
 					?></a>
 
 				</div>
 				<div class="col-sm-9 inputpublicacion">
+				<?php
+				$primerNombre = explode(" ", $_SESSION["usuario"]->nombreUsuario)[0];
+				?>
+				<h1>Bienvenido a CinesLy, <?php echo $primerNombre; ?></h1>
+				<p>Éste es tu muro. Aquí verás tanto tus publicaciones como las de tus amigos. ¡Dí algo!</p>
 					<form action="controladoras/insertarPublicacion.php" method="POST">
 						<div class="input-group">
 							<input type="text" class="form-control" name="publicacion" placeholder="Escribe una publicación....">
@@ -74,11 +80,9 @@ session_start();
 
 									<?php
 									if(isset($usuRow->foto)){
-										echo "<img src='$usuRow->foto' alt='' height='50px' width='50px' class='thumbnail'>";
-
+										echo "<img src='$usuRow->foto' alt=''  width='50px' class='thumbnail'>";
 									}else{
-										echo "<img src='img/default_user.png' alt='' height='50px' width='50px' class='thumbnail'>";
-
+										echo "<img src='img/default_user.png' alt='' width='50px' class='thumbnail'>";
 									}
 
 									?>

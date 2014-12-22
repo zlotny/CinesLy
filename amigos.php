@@ -27,6 +27,9 @@ include_once "sesion_segura.php";
   <?php cabeceraPantallaPrincipal(); 
   session_start();
   ?>
+
+  <h1 class="tackle-right">Lista de amigos</h1>
+  <p class="tackle-right">En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado. </p>
   <div class="row top-margin">
     <div class="col-md-3"> </div>
     <div class="col-md-6">
@@ -59,12 +62,16 @@ include_once "sesion_segura.php";
        foreach($arrayAmigos as $filaAmigo){
 
          if(isset($filaAmigo->foto)){
-           echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-         }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+          echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+        }
+        else {
+          echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+        }
 
-         ?>
-         <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-         <td class='col-md-1'> <span >
+
+        ?>
+        <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+        <td class='col-md-1'> <span >
           <a class="btn btn-success boton-cuadrado" href="controladoras/aceptarUsuario.php?action=accept&email=<?php echo $filaAmigo->email;?>">V</a>
           <a class="btn btn-danger boton-cuadrado" href="controladoras/aceptarUsuario.php?action=deny&email=<?php echo $filaAmigo->email;?>">X</a>
         </span></td>
@@ -78,35 +85,39 @@ include_once "sesion_segura.php";
 
     foreach($arrayAmigos as $filaAmigo){
 
-     if(isset($filaAmigo->foto)){
-       echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
-     }else {echo "<tr class='warning text-color-black'><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
+      if(isset($filaAmigo->foto)){
+        echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+      }
+      else {
+        echo "<tr class='warning text-color-black'><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+      }
+      ?>
+      <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+      <td class='col-md-1'> <span >
+        <label>Pendiente de confirmación</label>
+      </span></td>
+    </tr>
+    <?php
 
-     ?>
-     <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-     <td class='col-md-1'> <span >
-      <label>Pendiente de confirmación</label>
-    </span></td>
+  }
+
+
+
+  $arrayAmigos=$_SESSION["usuario"]->getAmigos();
+
+  foreach($arrayAmigos as $filaAmigo){
+
+    if(isset($filaAmigo->foto)){
+      echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+    }
+    else {
+      echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+    }
+    ?>
+    <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+    <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
   </tr>
   <?php
-
-}
-
-
-
-$arrayAmigos=$_SESSION["usuario"]->getAmigos();
-
-foreach($arrayAmigos as $filaAmigo){
-
- if(isset($filaAmigo->foto)){
-   echo "<tr><td class='col-md-1'><img src='".$filaAmigo->foto."' width='50px'/></td>";
- }else {echo "<tr><td class='col-md-1'><img src='img/default_user.png' width='50px'/></td>";}
-
- ?>
- <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
- <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
-</tr>
-<?php
 
 }
 ?>

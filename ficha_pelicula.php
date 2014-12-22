@@ -36,6 +36,10 @@ include_once "sesion_segura.php";
   }
 
   ?>
+
+<h1 class="tackle-right">Ficha de "<?php echo "$ObjPeli->titulo"; ?>"</h1>
+<p class="tackle-right">En la ficha detallada de la película puedes ver su información, su póster y los comentarios de los usuarios. ¡Anímate a decir algo!</p>
+
   <div class="container">
     <div class="row">
       <div class="col-lg-3 top-margin">

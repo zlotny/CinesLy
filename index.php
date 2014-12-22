@@ -40,89 +40,76 @@ include "cabecera.php";
 ?>
 </div>
 
+
 <div class="row">
   <?php  include "slider/slider.php"; ?>
 </div>
 
+
+
 <div id="third" >
   <div id="second" >
     <div id="first" >
-      <section class="container" style="padding:10px;">
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
+
+      <div class="seccion center-text" style="opacity: 0.95;">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <h1>CinesLy</h1>
+          <h3 class="near-top">Disfruta del cine, en compañía</h3>
+          <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+            Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libris consulatu. No mei ferri graeco dicunt, ad cum veri accommodare. </p>
+          </div>
+          <div class="col-md-1"></div>
         </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
+
+        <div class="seccion-small center-text" style="background-color:rgba(44, 62, 80,0.2); color:black; ">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <h1 class="text-weight-bold">Actualmente en cartelera</h1>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+
+
+        <section class="container" style="padding:10px;">
+          <div class="col-md-1"></div>
+          <div class="col-sm-2">
+            <img src="img/HayLeyenda.jpg" class="peli" />
+          </div>
+          <div class="col-sm-2">
+            <img src="img/HayLeyenda.jpg" class="peli" />
+          </div>
+          <div class="col-sm-2">
+            <img src="img/HayLeyenda.jpg" class="peli" />
+          </div>
+          <div class="col-sm-2">
+            <img src="img/HayLeyenda.jpg" class="peli" />
+          </div>
+          <div class="col-sm-2">
+            <img src="img/HayLeyenda.jpg" class="peli" />
+          </div>
+          <div class="col-md-1"></div>
+        </section>
+
+        <div class="seccion center-text" style="opacity: 0.95;">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <h1>CinesLy</h1>
+            <h3 class="near-top">Disfruta del cine, en compañía</h3>
+            <p>Lorem ipsum ad his scripta blandit partiendo, eum fastidii accumsan euripidis in, eum liber hendrerit an. Qui ut wisi vocibus suscipiantur, quo dicit ridens inciderint id. Quo mundi lobortis reformidans eu, legimus senserit definiebas an eos. Eu sit tincidunt incorrupte definitionem, vis mutat affert percipit cu, eirmod consectetuer signiferumque eu per. In usu latine equidem dolores. Quo no falli viris intellegam, ut fugit veritus placerat per.
+              Ius id vidit volumus mandamus, vide veritus democritum te nec, ei eos debet libris consulatu. No mei ferri graeco dicunt, ad cum veri accommodare. </p>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
 
         </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-      </section>
-      <section class="container" style="padding:10px;">
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-      </section>
-      <section class="container" style="padding:10px;">
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-      </section>
-      <section class="container" style="padding:10px;">
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-        <div class="col-sm-3">
-          <img src="img/HayLeyenda.jpg" class="peli" />
-
-        </div>
-      </section>
+      </div>
     </div>
-  </div>
-</div>
 
 
 
-<?php footer(); ?>
+    <?php footer(); ?>
 
 
-</body>
-</html>
+  </body>
+  </html>

@@ -54,14 +54,17 @@
 
 	?>
 
+		
+		<h1 class="tackle-right">Perfil de <?php echo $_SESSION['usuario']->nombreUsuario; ?></h1>
+		<p class="tackle-right">Éste es tu perfil. En esta página puedes ver tu información y editar tus datos.</p>
+		
 
 
-	<div class="margensuperior">
 		<div class="col-md-1"></div>
 		<div class="col-md-2" >
 
 			<div class="panel panel-default " >
-				<div class="panel-heading text-weight-bold ">Perfil</div>
+				<div class="panel-heading ">Perfil</div>
 				<div class="panel-body">
 
 					<?php
@@ -240,11 +243,6 @@
 			</div>
 
 			<div class="col-md-1"></div>
-
-
-
-
-		</div>
 
 
 

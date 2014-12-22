@@ -87,7 +87,7 @@ body{
 .custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:30px;
+	margin-top:15px;
 }
 
 .peli{
@@ -235,7 +235,32 @@ body{
 	top:-12px;
 }
 
+.tackle-right{
+	margin-left: 9.3%;
+}
 
+.navbar{
+	border-bottom:solid 1px; 
+	border-color: #2c3e50;
+}
+
+.seccion{
+	background-color: #2b3e50; 
+	height: 300px;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.seccion-small{
+	background-color: #2b3e50; 
+	height: 120px;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.center-text{
+	text-align: center;
+}
 
 
 
