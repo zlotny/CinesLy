@@ -1,11 +1,15 @@
 <?php
 include_once "sesion_segura.php";
+include_once "modelos/pelicula.php";
+include_once "modelos/usuario.php";
+include_once "modelos/sesion.php";
+session_start();
 
 ?>
 
 <html>
 <head>
-<title>Mis Grupos - CinesLy</title>
+  <title>Mis Grupos - CinesLy</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,51 +38,46 @@ include_once "sesion_segura.php";
             <form role="form">
               <div class="form-group">
                 <label for="nombre_grupo">Nombre del Grupo</label>
-                <input type="email" class="form-control" id="nombre_grupo"
+                <input class="form-control" id="nombre_grupo"
                 placeholder="Nombre de tu grupo">
               </div>
               <div class="form-group">
-                <label for="add_peli">Añadir Película</label>
+                <label for="add_peli">Añadir Película</label><br/>
 
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="buscar_peli" data-toggle="dropdown" aria-expanded="true">
-                    Buscar Película
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="buscar_peli">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli1</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli2</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli3</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Peli4</a></li>
-                  </ul>
-                </div>
+                <select class="form-control">
+                  <?php
+                  $pelis = Pelicula::getPeliculasCartelera();
+                  foreach($pelis as $titulo){
+                    echo "<option>$titulo</option>";
+                  }
+                  ?>
+                </select>
               </div>
               <div class="form-group">
-                <label for="add_sesion">Añadir Sesión</label>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="buscar_ses" data-toggle="dropdown" aria-expanded="true">
-                    Buscar Sesión
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="buscar_ses">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses1</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses2</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses3</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Ses4</a></li>
-                  </ul>
-                </div>
+                <label for="add_sesion">Añadir Sesión</label><br/>
+                <select class="form-control">
+                  <?php
+                  $sesiones = Sesion::getFuturasSesiones();
+                  foreach($sesiones as $sesion){
+                    $peliReferencia = Pelicula::getObjetoPelicula($sesion->idPelicula);
+                    echo "<option>$sesion->idSesion: $peliReferencia->titulo</option>";
+                  }
+                  
+                  ?>
+                </select>
               </div>
               <label for="add_amigos">Añadir Amigos</label>
               <div class="form-group scrollable-table">
                 <table class="table table-striped">
-                  <tr ><td>Amigo 1</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
-                  <tr ><td>Amigo 2</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
-                  <tr ><td>Amigo 3</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
-                  <tr ><td>Amigo 4</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
-                  <tr ><td>Amigo 5</td><td><input  class="pull-right" type="checkbox"> <span class="pull-right">Añadir&nbsp;</span></td></tr>
+                  <?php
+                  $amigos = $_SESSION["usuario"]->getAmigos();
+                  foreach($amigos as $amigo){
+                    echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' type='checkbox'> <span class='pull-right'>Añadir&nbsp;</span></td></tr>";
+                  }
+                  ?>
                 </table>
               </div>
-              <button type="submit" class="btn btn-default pull-right">Crear</button>
+              <button type="submit" class="btn btn-success pull-right">Crear</button>
             </form>
           </div>
         </div>
