@@ -250,12 +250,12 @@ function consultarPublicacion(){
 	$toRet[3] = array();
 
 //	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
-$sql=$sql = "\n"
+$sql= "\n"
     . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
     . "UNION\n"
     . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
     . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 2 desc";
+    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY p.fecha desc";
 
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
