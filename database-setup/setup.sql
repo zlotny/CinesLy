@@ -102,7 +102,7 @@ create table evento(
 
 
   create table contiene(
-  id_evento	int,
+  id_evento	int not null,
   email		varchar(50),
   primary key(id_evento, email),
   foreign key(id_evento) references evento(id_evento) on delete cascade on update cascade,
