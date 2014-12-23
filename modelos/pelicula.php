@@ -55,9 +55,9 @@ class Pelicula{
 	
 
 	//No retorna nada. Insera un comentario en la base de datos
-	function comentarPelicula($idPelicula,$email,$comentario){
+	function comentarPelicula($idPelicula,$email,$comentario, $fecha){
 		Pelicula::conectarBD();
-		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
+		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario', '$fecha')";
 		echo $sql;
 		mysql_query($sql);
 		
@@ -66,7 +66,7 @@ class Pelicula{
 	//Retorna un array de comentarios de una película de la base de datos
 	function getComentariosPelicula($idPelicula){
 		Pelicula::conectarBD();
-		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."'";
+		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."' ORDER BY fecha DESC";
 		$resultado = mysql_query($sql);
 		$toRet = array();
 		$toRet['usuario'] = array();
