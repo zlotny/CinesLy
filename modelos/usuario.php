@@ -77,7 +77,7 @@ class Usuario{
 				//echo $_SESSION['usuario']->email;
 				header("Location:../pantallaPrincipal.php");
 			} else if($_SESSION['usuario']->tipoUsuario==1) { 
-				header("Location:../administrador.php");
+				header("Location:../adminModificarUsuario.php");
 			}
 		} else {
 			header("Location:../index.php?login=bad");

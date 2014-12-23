@@ -108,7 +108,7 @@
           echo '<li class="media">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
+          echo '<a class="media-left" href="#">';
           if(substr($panelUsuario["foto"],0,3) == "img"){
             echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
@@ -124,23 +124,13 @@
           
           ?>
 
-          <!-- boton para editar e eliminar
-          <div class="col-md-8"></div>
-          <div class="col-md-4">
+       
 
-            <button type="button" class="btn btn-primary" aria-label="Left Align">
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
-            </button>
-            <button type="button" class="btn btn-danger" aria-label="Left Align">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-            </button>
-          </div>
-        -->
-
-        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar">     
+        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarUsuario" value="Editar">     
          
-        <div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <form id="form-edit-perfil" action="" method="POST">
+        <div id="modificarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -149,6 +139,7 @@
                 </div>
                 <div class="modal-body">
                   <label for="nuevoNombre" class="">Cambiar el nombre del Usuario</label>
+
                   <input type="text" name="nuevoNombre" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
 
                   <label for="tipoUsuario" class="">Cambiar tipoUsuario:</label>
@@ -170,7 +161,7 @@
                   <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
                   
                   <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
-                  <textarea class="form-control eslogan" name="ciudadActual" onblur="document.getElementById('bio-form').submit()"><?php echo $panelUsuario["ciudadActual"]; ?></textarea><br/>
+                  <input type="text" name="ciudadActual" class="form-control form-pers" placeholder="Introduzca su ciudadActual" value="<?php echo $panelUsuario["ciudadActual"]; ?>"> <br/>
                   
                   <label for="fechaNacimiento" class="">Cambiar fechaNacimiento:</label>
                   <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="Introduzca su fechaNacimiento" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
