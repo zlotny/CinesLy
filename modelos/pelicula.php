@@ -43,11 +43,11 @@ class Pelicula{
 	}
 
 
-	function recomendarPelicula($idPelicula,$listaAmigos)
+	function recomendarPelicula($email,$idPelicula)
 	{
 		Pelicula::conectarBD();
-		
-		
+		$sql="INSERT INTO recomendada VALUES ('$email','$idPelicula')";
+		mysql_query($sql);
 		
 
 	}
@@ -58,7 +58,7 @@ class Pelicula{
 	function comentarPelicula($idPelicula,$email,$comentario, $fecha){
 		Pelicula::conectarBD();
 		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario', '$fecha')";
-		echo $sql;
+		
 		mysql_query($sql);
 		
 	}
