@@ -117,6 +117,28 @@ function actualizarUsuario($email) {
 	header("Location:index.php");
 }
 
+function modificarUsuario($email,$usuario) {
+	Usuario::conectarBD();
+	$sql="UPDATE usuario SET nombreUsuario='".$usuario->nombreUsuario."' , email='".$usuario->email."' , pass='".$usuario->pass."', foto='".$usuario->foto."',
+							preferencia1='".$usuario->preferencia1."',preferencia2='".$usuario->preferencia2."',preferencia3='".$usuario->preferencia3."',
+							estado='".$usuario->estado."', ciudadActual='".$usuario->ciudadActual."',fechaNacimiento='".$usuario->fechaNacimiento."',
+							tipoUsuario='".$usuario->tipoUsuario."',eslogan='".$usuario->eslogan."' WHERE email='".$email."'";	
+	$this->consultaBD($sql);
+	header("Location:index.php");
+}
+
+$this->email=$email;
+		$this->pass=$pass;
+		$this->tipoUsuario=$tipoUsuario;
+		$this->foto=$foto;
+		$this->preferencia1=$preferencia1;
+		$this->preferencia2=$preferencia2;
+		$this->preferencia3=$preferencia3;
+		$this->estado=$estado;
+		$this->ciudadActual=$ciudadActual;
+		$this->fechaNacimiento=$fechaNacimiento;
+		$this->eslogan=$eslogan;
+
 /*
 function registrarUsuarioAdmin($nombreUsuario,$email,$pass,$tipoUsuario){
 	$this->conectarBD();
@@ -304,6 +326,23 @@ function eliminarPublicacion($idP){
 
 
 }
+
+//devuelve array asociativo con todos los usuarios
+function mostrarUsuarios(){
+
+		Usuario::conectarBD();
+		
+		$sql = "SELECT * FROM usuario";
+		$result = Usuario::consultaBD($sql);
+
+		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$toRet[$tuplas["email"]] = $tuplas;
+		}
+
+		return $toRet;
+
+
+	}
 
 /*
 function editarPublicacion($idP){
