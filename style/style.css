@@ -90,6 +90,12 @@ body{
 	margin-top:15px;
 }
 
+.admin-custom-panel-right-fixed {
+	position:fixed;
+	right:-20px;	
+	margin-top:-39px;
+}
+
 .peli{
 	width: 100%;
 }
