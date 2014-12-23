@@ -273,3 +273,51 @@ function footer(){
 	<?php
 }
 ?>
+
+
+<?php
+function cabeceraAdministrador(){
+	?>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container container-fluid pers">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="pantalla de admin principal">
+					<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				
+				<ul class="nav navbar-nav navbar-right">
+					
+					
+					
+						<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
+						<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
+						<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
+				</ul>
+								
+
+						
+			</div>
+		</div>
+	</nav>
+
+
+
+
+
+
+<?php
+}
+?>
