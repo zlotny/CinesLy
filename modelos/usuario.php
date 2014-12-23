@@ -127,17 +127,6 @@ function modificarUsuario($email,$usuario) {
 	header("Location:index.php");
 }
 
-$this->email=$email;
-		$this->pass=$pass;
-		$this->tipoUsuario=$tipoUsuario;
-		$this->foto=$foto;
-		$this->preferencia1=$preferencia1;
-		$this->preferencia2=$preferencia2;
-		$this->preferencia3=$preferencia3;
-		$this->estado=$estado;
-		$this->ciudadActual=$ciudadActual;
-		$this->fechaNacimiento=$fechaNacimiento;
-		$this->eslogan=$eslogan;
 
 /*
 function registrarUsuarioAdmin($nombreUsuario,$email,$pass,$tipoUsuario){
