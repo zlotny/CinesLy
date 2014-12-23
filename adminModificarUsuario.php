@@ -50,7 +50,7 @@
 
 
 
-  <h1 class="tackle-right">Catálogo de Películas</h1>
+  <h1 class="tackle-right">Lista de Usuarios</h1>
   
   <div class="col-md-1"> </div>
   <div class="col-md-8 ">
@@ -60,16 +60,16 @@
       <?php
 
       if(isset($filtro) ){
-        $arrayPeliculas=$filtro;
-        foreach($arrayPeliculas as $panelPelicula){
+        $arrayUsuarios=$filtro;
+        foreach($arrayUsuarios as $panelUsuario){
 
           echo '<li class="media" style="margin-top: 15px;">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
+          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
 
-          if(substr($panelPelicula["foto"],0,3) == "img"){
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+          if(substr($panelUsuario["foto"],0,3) == "img"){
+            echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
           }else{
             echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
@@ -78,10 +78,10 @@
 
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+          echo '<p><b>Nombre: </b>'.$panelUsuario["titulo"].'</p>';
+          echo '<p><b>Genero: </b>'.$panelUsuario["genero"].'</p>';
+          echo '<p><b>Año: </b>'.$panelUsuario["anho"].'</p>';
+          echo '<p><b>Sinopsis: </b>'.$panelUsuario["sinopsis"].'</p>';
           ;?>
           <!-- boton para editar e eliminar-->
           <div class="col-md-8"></div>
@@ -103,26 +103,26 @@
         }
       }
       else{
-        $arrayPeliculas=Pelicula::mostrarPeliculas();
-        foreach($arrayPeliculas as $panelPelicula){
+        $arrayUsuarios=Usuario::mostrarUsuarios();
+        foreach($arrayUsuarios as $panelUsuario){
           echo '<li class="media">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
-          if(substr($panelPelicula["foto"],0,3) == "img"){
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
+          if(substr($panelUsuario["foto"],0,3) == "img"){
+            echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
           }else{
-            echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
+            echo '<img src="" alt="usuario sin foto" height="140px" width="90px" class="thumbnail">';
 
           }
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>'
-          ;?>
+          echo '<p><b>Nombre: </b>'.$panelUsuario["nombreUsuario"].'</p>';
+          echo '<p><b>Email: </b>'.$panelUsuario["email"].'</p>';
+          echo '<p><b>Tipo Usuario: </b>'.$panelUsuario["tipoUsuario"].'</p>';
+          
+          ?>
 
           <!-- boton para editar e eliminar
           <div class="col-md-8"></div>
@@ -137,28 +137,46 @@
           </div>
         -->
 
-        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar">      
+        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar">     
+         
         <div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <form id="form-edit-perfil" action="controladoras/actualizarPerfil.php" method="POST">
+          <form id="form-edit-perfil" action="" method="POST">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4>Editar Pelicula</h4>
+                  <h4>Editar Usuario</h4>
                 </div>
                 <div class="modal-body">
-                  <label for="tituloPelicula" class="">Cambiar el titulo de la pelicula</label>
-                  <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
-                  <label for="director" class="">Cambiar Director:</label>
-                  <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
-                  <label for="actores" class="">Cambiar Actores:</label>
-                  <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los Actores" value="<?php echo $panelPelicula["Actores"]; ?>"> <br/>
-                  <label for="distribuidora" class="">Cambiar Distribuidora:</label>
-                  <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
-                  <label for="duracion" class="">Cambiar Duracion:</label>
-                  <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su el duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
-                  <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
-                  <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
+                  <label for="nuevoNombre" class="">Cambiar el nombre del Usuario</label>
+                  <input type="text" name="nuevoNombre" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
+
+                  <label for="tipoUsuario" class="">Cambiar tipoUsuario:</label>
+                  <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="Introduzca nuevo tipo" value="<?php echo $panelUsuario["email"]; ?>"> <br/>
+                  
+                  <label for="pass" class="">Cambiar pass:</label>
+                  <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
+                  
+                  <label for="preferencia1" class="">Cambiar preferencia1:</label>
+                  <input type="text" name="preferencia1" class="form-control form-pers" placeholder="Introduzca su preferencia1" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
+                  
+                  <label for="preferencia2" class="">Cambiar preferencia2:</label>
+                  <input type="text" name="preferencia2" class="form-control form-pers" placeholder="Introduzca su preferencia2" value="<?php echo $panelUsuario["preferencia2"]; ?>"> <br/>
+
+                  <label for="preferencia3" class="">Cambiar preferencia3:</label>
+                  <input type="text" name="preferencia3" class="form-control form-pers" placeholder="Introduzca su preferencia3" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
+
+                  <label for="estado" class="">Cambiar estadp:</label>
+                  <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
+                  
+                  <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
+                  <textarea class="form-control eslogan" name="ciudadActual" onblur="document.getElementById('bio-form').submit()"><?php echo $panelUsuario["ciudadActual"]; ?></textarea><br/>
+                  
+                  <label for="fechaNacimiento" class="">Cambiar fechaNacimiento:</label>
+                  <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="Introduzca su fechaNacimiento" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
+  
+                  <label for="eslogan" class="">Cambiar eslogan:</label>
+                  <input type="text" name="eslogan" class="form-control form-pers" placeholder="Introduzca su eslogan" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
                   <label for="foto" class="">Cambiar foto:</label>
 
 
