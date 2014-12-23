@@ -316,6 +316,7 @@ function eliminarPublicacion($idP){
 
 }
 
+
 //devuelve array asociativo con todos los usuarios
 function mostrarUsuarios(){
 
@@ -333,15 +334,15 @@ function mostrarUsuarios(){
 
 	}
 
-/*
-function editarPublicacion($idP){
+
+function editarPublicacion($id,$publi){
+
 
 	$this->conectarBD();
-
-	$sql = "UPDATE publicacion SET publica = '$newName' , pass = '$newPass' WHERE email = '$this->email' ";
+	$sql = "UPDATE publicacion SET publica='".$publi."' WHERE idPublicacion=".$id;
 	return mysql_query($sql);
 }
-*/
+
 }
 
 ?>
