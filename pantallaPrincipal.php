@@ -92,7 +92,7 @@ session_start();
 								</a>
 								<div class="publication-body" >
 									<h4 class="media-heading"><?php echo $publicaciones[0][$i]; ?></h4>
-									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span><textarea readonly id= "<?php echo "1".$publicaciones[4][$i]; ?>" class="form-control publi" ><?php echo $publicaciones[2][$i]; ?></textarea>
+									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span><textarea readonly id= "<?php echo "1".$publicaciones[4][$i]; ?>" class="form-control publi publicacion-text" ><?php echo $publicaciones[2][$i]; ?></textarea>
 								</div>
 								<div class="clearfix">
 									<?php
