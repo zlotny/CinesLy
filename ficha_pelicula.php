@@ -67,18 +67,31 @@ include_once "sesion_segura.php";
                 <li class="list-no-deco"><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
               </ul>
-              <strong>Valoración:</strong>
+              <strong>Valorar:</strong>
               <div class="btn-group" role="group" aria-label="...">
-                <button type="button" class="btn btn-default">1</button>
-                <button type="button" class="btn btn-default">2</button>
-                <button type="button" class="btn btn-default">3</button>
-                <button type="button" class="btn btn-default">4</button>
-                <button type="button" class="btn btn-default">5</button>
+                <form action="controladoras/procesarValoracion.php" method="POST">
+                  <?php $_SESSION['idPelicula']=$ObjPeli->idPelicula;?>
+                  <input type="submit" name="Valor" value="1">
+                  <input type="submit" name="Valor" value="2">
+                  <input type="submit" name="Valor" value="3">
+                  <input type="submit" name="Valor" value="4"> 
+                  <input type="submit" name="Valor" value="5">    
+                </form>
+
               </div>   
                 <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong>Recomendar <strong></button>  
-                <?php 
-                   Pelicula::recomendarPelicula($_SESSION["usuario"]->email, $ObjPeli->idPelicula);
+                
+               <div>
+                <?php
+                
+                    $valoracionMedia = $ObjPeli->valoracion / $ObjPeli->contValoracion;
+                    echo "La valoración media es: ".round($valoracionMedia,2);
+                    
                 ?>
+              </div> 
+                <!--<?php 
+                   Pelicula::recomendarPelicula($_SESSION["usuario"]->email, $ObjPeli->idPelicula);
+                ?>-->
             </div>
            
           </div>

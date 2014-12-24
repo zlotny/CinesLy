@@ -81,6 +81,7 @@ class Pelicula{
 	}
 	//incrementa en 1 en cont_valoracion y suma la valoracion a la valoracion total
 	function valorarPelicula($idPelicula,$valoracion){
+		
 		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
 		$resultado=Pelicula::consultaBD($sql);
@@ -94,7 +95,7 @@ class Pelicula{
 		$val=$valoracion+$peli1->valoracion;
 		
 		$cont_val=$peli1->contValoracion+1;
-		
+		//echo $val/$cont_val;
 		$peli1->valoracion=$val;
 		$peli1->contValoracion=$cont_val;
 		Pelicula::modificarPelicula($idPelicula,$peli1);
@@ -197,9 +198,8 @@ class Pelicula{
 		$sql2="UPDATE pelicula SET  titulo ='$peli1->titulo', director = '$peli1->director', distribuidora ='$peli1->distribuidora', 
 		duracion = '$peli1->duracion', sinopsis ='$peli1->sinopsis' , actores = '$peli1->actores', anho = $peli1->anho,
 		fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos =$peli1->votos ,
-		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion, foto = $peli1->foto
+		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion, foto = '$peli1->foto'
 		WHERE idPelicula = '$peli1->idPelicula'";
-		echo $sql2;
 		Pelicula::consultaBD($sql2);
 	}
 
@@ -294,7 +294,7 @@ class Pelicula{
 			echo "Pelicula no encontrada";
 		}else{
 			$row=mysql_fetch_array($resultado);
-			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["contValoracion"],$row["foto"]);
+			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["cont_valoracion"],$row["foto"]);
 			return $pelicula;
 		}
 	}
