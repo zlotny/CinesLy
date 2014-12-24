@@ -170,7 +170,15 @@ function ocultar(id) {
 function mostrar(id) {
 
     var divObject = document.getElementById(id); 
-    divObject.style.visibility = "visible";
+  
+    if(divObject.style.visibility == "hidden"){
+      divObject.style.visibility = "visible";
+      editar.value = "Dejar de editar";
+    }else{
+      divObject.style.visibility = "hidden";
+      editar.value = "Editar";
+      
+    }
     
 }
 
