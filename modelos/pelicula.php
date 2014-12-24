@@ -294,7 +294,7 @@ class Pelicula{
 			echo "Pelicula no encontrada";
 		}else{
 			$row=mysql_fetch_array($resultado);
-			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["contValoracion"],$row["foto"]);
+			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["cont_valoracion"],$row["foto"]);
 			return $pelicula;
 		}
 	}
