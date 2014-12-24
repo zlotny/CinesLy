@@ -224,19 +224,15 @@
 				<div class="panel-heading">Películas Recomendadas</div>
 				<div class="panel-body scrollable-table-perfilD">
 					<table class="table table-striped ">
-						<tr><td>Película Recomendada 1</td></tr>
-						<tr><td>Película Recomendada 2</td></tr>
-						<tr><td>Película Recomendada 3</td></tr>
-						<tr><td>Película Recomendada 4</td></tr>
-						<tr><td>Película Recomendada 5</td></tr>
-						<tr><td>Película Recomendada 6</td></tr>
-						<tr><td>Película Recomendada 7</td></tr>
-						<tr><td>Película Recomendada 8</td></tr>
-						<tr><td>Película Recomendada 9</td></tr>
-						<tr><td>Película Recomendada 10</td></tr>
-						<tr><td>Película Recomendada 11</td></tr>
-						<tr><td>Película Recomendada 12</td></tr>
+						<?php 
+							$rec=$_SESSION['usuario']->consultarRecomendadas(); 
+							for($i=0;$i<sizeof($rec[0]);$i++){
+							
+						?>
 
+						<tr><td><?php echo $rec[0][$i]; ?></td><td><?php echo $rec[2][$i]; ?></td></tr>
+
+						<?php } ?>
 
 					</table>
 				</div>
