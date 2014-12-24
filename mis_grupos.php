@@ -105,7 +105,7 @@ session_start();
         <?php
         $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
         foreach ($grupos as $grupo){
-          echo "<tr ><td>$grupo->nombre</td><td>10</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-default btn-mini btn-makesmall'> Ver </a></td><td><input  class='pull-right' type='checkbox'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
+          echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-default btn-mini btn-makesmall'> Ver </a></td><td><input  class='pull-right' type='checkbox'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
 
         }
         ?>

@@ -61,6 +61,11 @@ class Evento{
 	 	return $resultado["id_evento"];
 	 }
 
+	 //Retorna numero de integrantes en un grupo dado
+	 function getNumIntegrantes($idEvento){
+	 	return mysql_fetch_array(mysql_query("SELECT COUNT( * ) FROM contiene WHERE id_evento = $idEvento"))[0];
+	 }
+
 // 	function modificarEvento($evento, $eventoNuevo)
 // 	{
 // 		Evento::conectarBD();
