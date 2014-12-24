@@ -125,7 +125,7 @@
           echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>'
           ;?>
 
-          <!-- boton para editar e eliminar
+          <!-- boton para editar e eliminar       
           <div class="col-md-8"></div>
           <div class="col-md-4">
 
@@ -136,14 +136,25 @@
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
           </div>
-        -->
-
+ 
+-->
         <!-- Modificar una pelicula -->
-        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" value="<?php echo $panelPelicula["idPelicula"]; ?>"> 
+        <div class="col-md-8"> </div>
+        <div class="col-md-4">
+        <!--editar perfil-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
         </button>
 
+        <!--EliminarPerfil-->
+        <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+        </button>
+        <!--<input type="button" id="eliminar-boton" class="btn btn-danger pull-right" value="Eliminar" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
+      -->
+        </div>
         
+        <!-- Pagina modal para modificar perfil -->
         <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <!--enctype="multipart/form-data" añadido por min-->
           <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php?idPelicula=<?php echo $panelPelicula["idPelicula"]; ?>" method="POST">
@@ -154,7 +165,6 @@
                   <h4>Editar Pelicula</h4>
                 </div>
                 <div class="modal-body">
-                  <?php echo $a->idPelicula; echo $a->titulo;?>
                   <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
                   <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
                   
@@ -209,20 +219,20 @@
           </form>
         </div>  
         <div class="clearfix"></div>
-        
-        <?php  
-        echo '</div>';
-        echo '</div>';
-        echo '</div>';
-        echo '</li>';
-      }
 
-
+      <?php  
+      echo '</div>';
+      echo '</div>';
+      echo '</div>';
+      echo '</li>';
     }
 
-    ?> 
 
-  </ul>
+  }
+
+  ?> 
+
+</ul>
 </div>
 
 <!-- Barra lateral   col-md-offset-10 -->
