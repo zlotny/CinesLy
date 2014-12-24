@@ -116,6 +116,25 @@
                                 });
 
                               }
+  function eliminarPublicacionPerfil (id) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("¿Seguro que quieres eliminar tu publicación?", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/eliminarPublicacionPerfil.php?id=" + id;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
 
 
  function eliminarPerfil (email) {
@@ -137,6 +156,7 @@
                                 });
 
                               }
+
 
 
 function ocultar(id) {
