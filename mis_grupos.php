@@ -43,6 +43,18 @@ session_start();
 }
 }
 
+ if($_GET["operation"] == "error"){
+  echo "<script>
+  alertify.log('Ha habido un problema eliminando los grupos. Disculpa las molestias', 'error', 5000);
+</script>";
+
+}else{
+  if($_GET["operation"] == "success"){
+    echo "<script>
+    alertify.log('Los grupos seleccionados se han borrado correctamente', 'success', 5000);
+  </script>";
+}
+}
 
 
 ?>
@@ -98,20 +110,20 @@ session_start();
   <div class="panel panel-default">
     <div class="panel-heading">Grupos</div>
     <div class="panel-body">
-     <div class="form-group scrollable-table">
-
-      <table class="table table-striped">
-        <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
-        <?php
-        $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
-        foreach ($grupos as $grupo){
-          echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-default btn-mini btn-makesmall'> Ver </a></td><td><input  class='pull-right' type='checkbox'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
-
-        }
-        ?>
-      </table>
-    </div>
-    <button type="submit" class="btn btn-default pull-right">Validar</button>
+      <form action="controladoras/eliminarGrupos.php" method="POST">   
+       <div class="form-group scrollable-table">
+        <table class="table table-striped">
+          <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
+          <?php
+          $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
+          foreach ($grupos as $grupo){
+            echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> Ver </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
+          }
+          ?>
+        </table>
+      </div>
+      <input type="submit" class="btn btn-success pull-right" value="Validar"/>
+    </form>
   </div>
 </div>
 </div>

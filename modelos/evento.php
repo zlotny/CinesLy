@@ -61,9 +61,22 @@ class Evento{
 	 	return $resultado["id_evento"];
 	 }
 
+	 function getGrupoById($id){
+	 	Evento::conectarBD();
+	 	$sql = "SELECT * FROM evento WHERE id_evento = '$id'";
+	 	$resultado = mysql_fetch_array(mysql_query($sql));
+	 	return new Evento($resultado["id_evento"], $resultado["descripcion"], $resultado["idSesion"], $resultado["email"], $resultado["nombre"]);
+	 }
+
 	 //Retorna numero de integrantes en un grupo dado
 	 function getNumIntegrantes($idEvento){
 	 	return mysql_fetch_array(mysql_query("SELECT COUNT( * ) FROM contiene WHERE id_evento = $idEvento"))[0];
+	 }
+
+	 function eliminar(){
+	 	Evento::conectarBD();
+	 	$sql = "DELETE FROM evento WHERE id_evento='$this->idEvento'";
+	 	return mysql_query($sql);
 	 }
 
 // 	function modificarEvento($evento, $eventoNuevo)
@@ -130,26 +143,6 @@ class Evento{
 
 // 	}
 
-// 	function eliminarEvento($evento)
-// 	{
-
-// 		$eliminar = mysql_query("DELETE FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
-
-// 		if ($consulta == ""){
-
-// 			echo '<div align="center">
-// 			<h2>El evento no existe</h2>
-// 		</div>';
-
-// 	}else{
-
-// 		echo '<div align="center">
-// 		<h2>El evento se ha eliminado con éxito</h2>
-// 	</div>';
-
-// }
-
-// }
 
 // function consultarEvento($evento)
 // {
