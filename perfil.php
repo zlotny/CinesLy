@@ -140,7 +140,7 @@
 									<?php
 									if($_SESSION["usuario"]->email == $usuRow->email){
 										
-										echo "<input type='button' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+										echo "<input type='button' onclick='eliminarPublicacionPerfil(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
 										echo "<input type='button' onclick='mostrar(".$publicaciones[4][$i].",1".$publicaciones[4][$i].")' id='editar' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
 										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
 									}
