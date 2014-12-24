@@ -34,24 +34,12 @@
 
 	$cant_reg = 3; 
 	$num_pag = $_GET['pagina']; 
-	if (!$num_pag) { 
+	if ($num_pag<1) { 
 		$comienzo = 0; 
 		$num_pag = 1; 
 	} else { 
 		$comienzo = ($num_pag-1)  * $cant_reg; 
 	}
-
-	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
-	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
-	$sql="SELECT * FROM publicacion";
-	$resultado = mysql_query($sql); 
-	$total_registros = mysql_num_rows($resultado);
-	$sql="SELECT publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
-	$resultado = mysql_query($sql); 
-	$total_paginas = ceil($total_registros/$cant_reg);
-
-
-
 	?>
 
 	
@@ -123,35 +111,42 @@
 		<div class="panel panel-default" >
 
 <ul class="media-list">
-					<?php $publicaciones=$_SESSION['usuario']->consultarPublicacionPerfil(); 
-					for($i=0;$i<sizeof($publicaciones[0]);$i++){
-						$usuRow = Usuario::getObjetoUsuario($publicaciones[3][$i]);
-						?>
+					<?php 
+						$total_registros = $_SESSION['usuario']->numPublicaciones();
+						$publicaciones=$_SESSION['usuario']->paginadorPublicacionesPerfil($comienzo,$cant_reg); 
 
+						$total_paginas = ceil($total_registros/$cant_reg);
+
+					while($row = mysql_fetch_array($publicaciones)){
+						$usuRow = $row['email'];
+						?>
 						<li class="media">
 							<div class="well">
-								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $publicaciones[4][$i]; ?>" method="POST">
+								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $row['idPublicacion']; ?>" method="POST">
 
 								<div class="publication-body" >
-									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span>
-									<textarea name="publi" readonly id= "<?php echo "1".$publicaciones[4][$i]; ?>" class="form-control publi publicacion-text" ><?php echo $publicaciones[2][$i]; ?></textarea>
+									<span class="very-small near-top"><?php echo $row['fecha']; ?></span>
+									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text" ><?php echo $row['publica']; ?></textarea>
 								</div>
+
 								<div class="clearfix">
 									<?php
-									if($_SESSION["usuario"]->email == $usuRow->email){
+									if($_SESSION["usuario"]->email == $usuRow){ ?>
+									
 										
-										echo "<input type='button' onclick='eliminarPublicacionPerfil(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
-										echo "<input type='button' onclick='mostrar(".$publicaciones[4][$i].",1".$publicaciones[4][$i].")' id='editar' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
-										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
-									}
-									?>
-								
+								<input type='button' onclick='eliminarPublicacionPerfil(<?php echo $row['idPublicacion']; ?>)' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>
+								<input type='button' onclick='mostrar(<?php echo $row['idPublicacion'].",1".$row['idPublicacion'].",editar".$row['idPublicacion']; ?>)' id='<?php echo "editar".$row['idPublicacion']; ?>' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>
+								<input type='submit' onclick='ocultar(<?php echo $row['idPublicacion']; ?>)' style='visibility: hidden;'  id='<?php echo $row['idPublicacion']; ?>' class='btn btn-xs btn-success pull-right' value='Guardar'/>
+	
+								<?php  } ?>
 
-								</div></form>
+								</div>
+								
+								</form>
 
 							</div>
-						</li>
-						<?php  }?>
+
+						</li><?php  } ?>
 					</ul>
 
 
@@ -178,8 +173,12 @@
 							} 
 							else 
 							{ 
-								?><li><a href="perfil.php?pagina=<?php echo $i ?>"><?php if ($i<=$total_paginas){echo $i;}else{echo "&nbsp";} ?></a></li> 
-								<?php
+								 if ($i<=$total_paginas){?>
+								<li><a href="perfil.php?pagina=<?php echo $i ?>"><?php echo $i; ?></a></li> 
+								<?php	}else{  ?>
+										<li class="disabled"><a href="perfil.php?pagina=<?php echo $i ?>" ><?php echo "&nbsp"; ?></a></li> 
+										
+								<?php }
 							} 
 						}
 					} else {

@@ -175,17 +175,17 @@ function rw(id){
      divObject.readOnly = true;
 }
 
-function mostrar(id,idPubli) {
+function mostrar(id,idPubli,edit) {
 
     var divObject = document.getElementById(id); 
   
     if(divObject.style.visibility == "hidden"){
       divObject.style.visibility = "visible";
-      editar.value = "Dejar de editar";
+      edit.value = "Dejar de editar";
       ro(idPubli);
     }else{
       divObject.style.visibility = "hidden";
-      editar.value = "Editar";
+      edit.value = "Editar";
       rw(idPubli);
   window.location.reload();
     }
