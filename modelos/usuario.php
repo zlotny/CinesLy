@@ -282,6 +282,31 @@ $sql= "\n"
 
 }
 
+function consultarPublicacionPerfil(){
+	$this->conectarBD();
+	$toRet = array();
+	$toRet[0] = array();
+	$toRet[1] = array();
+	$toRet[2] = array();
+	$toRet[3] = array();
+	$toRet[4] = array();	
+
+//	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
+$sql= "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
+
+	$resultado=mysql_query($sql);
+	while($row = mysql_fetch_array($resultado)){
+	 	array_push($toRet[0], $row["nombreUsuario"]);
+	 	array_push($toRet[1], $row["fecha"]);
+	 	array_push($toRet[2], $row["publica"]);	
+	 	array_push($toRet[3], $row["email"]);			
+	 	array_push($toRet[4], $row["idPublicacion"]);
+
+	}
+	return $toRet;
+
+}
+
 function editarPerfil($newName, $newPass){
 
 	$this->conectarBD();
