@@ -74,7 +74,22 @@ include_once "sesion_segura.php";
                 <button type="button" class="btn btn-default">3</button>
                 <button type="button" class="btn btn-default">4</button>
                 <button type="button" class="btn btn-default">5</button>
-              </div>   
+              </div>  
+              <div>
+                <?php
+                echo "$ObjPeli->valoracion"; 
+                echo "<br>";
+                echo "$ObjPeli->tipo";
+                echo "<br>";
+                echo "$ObjPeli->foto";
+                echo "<br>";
+                $cont=$ObjPeli->getcontValoracion();
+                echo "$ObjPeli->contValoracion";
+                //$val=;
+
+
+                ?>
+              </div> 
                 <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong>Recomendar <strong></button>  
                 <?php 
                    Pelicula::recomendarPelicula($_SESSION["usuario"]->email, $ObjPeli->idPelicula);
