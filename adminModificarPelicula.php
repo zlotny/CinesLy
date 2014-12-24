@@ -136,10 +136,12 @@
             </button>
           </div>
         -->
-
-        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar">      
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar"> 
+          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+        </button>
         <div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <form id="form-edit-perfil" action="controladoras/actualizarPerfil.php" method="POST">
+          <!--enctype="multipart/form-data" añadido por min-->
+          <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php" method="POST">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -147,24 +149,53 @@
                   <h4>Editar Pelicula</h4>
                 </div>
                 <div class="modal-body">
-                  <label for="tituloPelicula" class="">Cambiar el titulo de la pelicula</label>
+                  <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
                   <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
+                  
                   <label for="director" class="">Cambiar Director:</label>
                   <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
+                  
                   <label for="actores" class="">Cambiar Actores:</label>
                   <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los Actores" value="<?php echo $panelPelicula["Actores"]; ?>"> <br/>
+                  
                   <label for="distribuidora" class="">Cambiar Distribuidora:</label>
                   <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
+                  
                   <label for="duracion" class="">Cambiar Duracion:</label>
-                  <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su el duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+                  <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+                  
+                  <label for="anho" class="">Cambiar Año:</label>
+                  <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
+                  
+                  <label for="genero" class="">Cambiar Genero:</label>
+                  <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
+                  
+                  <label for="pais" class="">Cambiar País:</label>
+                  <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
+                  
+                  <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
+                  <select name="tipoPeli" aria-labelledby="buscar_peli">
+                    <option  value="">Todas las peliculas</option>
+                    <option  value="cartelera">En Cartelera</option>
+                    <option  value="especial">Especiales</option>
+                    <option  value="proximamente">Proximamente</option>
+                  </select>
+                  <br/><br/>
+
                   <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
                   <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
+                  
                   <label for="foto" class="">Cambiar foto:</label>
+                  <!-- subir foto a implemetar en un futuro-->
+                  <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
+                  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                  <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
+                  <input name="userfile" type="file" />
 
 
                 </div>
                 <div class="modal-footer">
-                  <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+                  <button type="submit" name="idPelicula" class="btn btn-success" value="<?php echo $panelPelicula["idPelicula"]; ?>">Guardar Cambios</button>
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                 </div>
               </div>
@@ -196,7 +227,7 @@
   <div class="panel-body">
     <!-- formulario para inserta pelicula-->
     <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
-      <button type="submit" class="btn btn-success">Inserte una Pelicula</button>
+      <button type="submit" class="btn btn-success ">Inserte una Pelicula</button>
     </form>
     <p>o busquela </p>
 
@@ -226,16 +257,16 @@
 
         <table class="table table-striped">
 
-          <tr ><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
-          <tr ><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" onclick="alertify.error('En que pinchas picaron?')"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr ><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
+          <tr><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" onclick="alertify.error('En que pinchas picaron?')"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+          <tr><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
 
         </table>
       </div>

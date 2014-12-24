@@ -20,7 +20,7 @@ class Pelicula{
 
 	function __construct($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion,$foto){
 
-		$this->idPelicula=$idPelicula;
+		$this->idPelicula=$idPelicula; echo "  |".$idPelicula."|  ";
 		$this->titulo=$titulo;
 		$this->director=$director;
 		$this->distribuidora=$distribuidora;
