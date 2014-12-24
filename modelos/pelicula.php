@@ -19,7 +19,7 @@ class Pelicula{
 	var $foto;
 
 	function __construct($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion,$foto){
-
+		
 		$this->idPelicula=$idPelicula;
 		$this->titulo=$titulo;
 		$this->director=$director;
@@ -200,7 +200,7 @@ class Pelicula{
 		fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos =$peli1->votos ,
 		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion, foto = '$peli1->foto'
 		WHERE idPelicula = '$peli1->idPelicula'";
-		Pelicula::consultaBD($sql2);
+		return Pelicula::consultaBD($sql2);
 	}
 
 	function mostrarPeliculas(){
