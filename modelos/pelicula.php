@@ -123,8 +123,7 @@ class Pelicula{
 	function eliminarPelicula($idPelicula){
 		Pelicula::conectarBD();
 		$sql="DELETE FROM pelicula WHERE idPelicula ='".$idPelicula."'";
-		Pelicula::consultaBD($sql);
-
+		return Pelicula::consultaBD($sql);
 
 	}
 
