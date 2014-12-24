@@ -1,4 +1,6 @@
 <?php
+include_once "usuario.php";
+
 class Evento{	
 
 	var $idEvento;
@@ -70,7 +72,20 @@ class Evento{
 
 	 //Retorna numero de integrantes en un grupo dado
 	 function getNumIntegrantes($idEvento){
+	 	Evento::conectarBD();
 	 	return mysql_fetch_array(mysql_query("SELECT COUNT( * ) FROM contiene WHERE id_evento = $idEvento"))[0];
+	 }
+
+	 function getArrayIntegrantes($idEvento){
+	 	Evento::conectarBD();
+	 	$sql = "SELECT email FROM contiene WHERE id_evento = '$idEvento'";
+	 	$resultado = mysql_query($sql);
+	 	$toRet = array();
+	 	while ($row = mysql_fetch_array($resultado)){
+
+	 		array_push($toRet, Usuario::getObjetoUsuario($row["email"]));
+	 	}
+	 	return $toRet;
 	 }
 
 	 function eliminar(){
