@@ -189,6 +189,7 @@ function mostrar(id,idPubli) {
       divObject.style.visibility = "hidden";
       editar.value = "Editar";
       rw(idPubli);
+  window.location.reload();
     }
     
 }
