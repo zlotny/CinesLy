@@ -10,8 +10,14 @@
 <body>
  <?php
  include "cabecera.php";
+ include_once "modelos/evento.php";
+ include_once "modelos/usuario.php";
+ include_once "modelos/sesion.php";
  cabeceraPantallaPrincipal();
  session_start();
+ $grupoActual = Evento::getGrupoById($_REQUEST["id"]);
+ $usuariosDelGrupo =  Evento::getArrayIntegrantes($_REQUEST["id"]);
+
  ?>
  <div class="row top-margin">
    <div class="col-sm-3"></div>
@@ -23,27 +29,36 @@
 
         <form role="form">
           <div class="form-group">
-            <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right">Nombre de mi grupo</span>
+            <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
           </div>
           <div class="form-group">
-            <label for="grupo_peli">Pelicula</label><span class="little-right">Nombre de la película</span>
+            <label for="grupo_peli">Pelicula</label><span class="little-right"><?php  
+            $peli = Sesion::getPeliSesion($grupoActual->idSesion);
+            echo $peli->titulo;
+            ?></span>
             
             
           </div>
           <div class="form-group">
-            <label for="grupo_sesion">Sesión:</label><span class="little-right">Nombre de la sesión</span>
+            <label for="grupo_sesion">Sesión:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
             
           </div>
           <label for="grupo_amigos">Amigos del grupo: </label>
           <div class="form-group scrollable-table">
             <table class="table table-striped ">
-              <tr ><td>Amigo 1</td></tr>
-              <tr ><td>Amigo 2</td></tr>
-              <tr ><td>Amigo 3</td></tr>
-              <tr ><td>Amigo 4</td></tr>
+              <?php
+              foreach($usuariosDelGrupo as $user){
+                echo "<tr ><td>$user->nombreUsuario</td></tr>";
+              }
+
+              ?>
+
+
+              
+
             </table>
           </div>
-          <button onclick="window.history.back()" type="submit" class="btn btn-default pull-right">Volver</button>
+          <a href="mis_grupos.php"  class="btn btn-success pull-right">Volver</a>
         </form>
       </div>
     </div>

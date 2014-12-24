@@ -1,5 +1,7 @@
 <?php
 
+include_once "pelicula.php";
+
 class Sesion{
 
 	var $idPelicula;
@@ -172,6 +174,14 @@ class Sesion{
 			array_push($toRet, new Sesion($row["idPelicula"],$row["idSesion"],$row["fecha"],$row["sala"],$row["capacidad"]));
 		}
 
+		return $toRet;
+	}
+
+	function getPeliSesion($idSesion){
+		Sesion::conectarBD();
+		$sql="SELECT idPelicula FROM sesion WHERE idSesion = '$idSesion'";
+		$resultado = mysql_query($sql);
+		$toRet = Pelicula::getObjetoPelicula(mysql_fetch_array($resultado)[0]);
 		return $toRet;
 	}
 
