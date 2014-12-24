@@ -35,32 +35,32 @@ session_start();
            <div class="panel-body">
 
 
-            <form role="form">
+            <form action="controladoras/crearGrupo.php" role="form">
               <div class="form-group">
                 <label for="nombre_grupo">Nombre del Grupo</label>
-                <input class="form-control" id="nombre_grupo"
+                <input name="nombreGrupo" class="form-control" id="nombre_grupo"
                 placeholder="Nombre de tu grupo">
               </div>
               <div class="form-group">
                 <label for="add_peli">Añadir Película</label><br/>
 
-                <select class="form-control">
+                <select name="peliculaID" class="form-control">
                   <?php
                   $pelis = Pelicula::getPeliculasCartelera();
-                  foreach($pelis as $titulo){
-                    echo "<option>$titulo</option>";
+                  foreach($pelis as $peli){
+                    echo "<option value='$peli->idPelicula' >$peli->titulo</option>";
                   }
                   ?>
                 </select>
               </div>
               <div class="form-group">
                 <label for="add_sesion">Añadir Sesión</label><br/>
-                <select class="form-control">
+                <select name="idSesion" class="form-control">
                   <?php
                   $sesiones = Sesion::getFuturasSesiones();
                   foreach($sesiones as $sesion){
                     $peliReferencia = Pelicula::getObjetoPelicula($sesion->idPelicula);
-                    echo "<option>$sesion->idSesion: $peliReferencia->titulo</option>";
+                    echo "<option value='$sesion->idSesion'>$sesion->idSesion: $peliReferencia->titulo</option>";
                   }
                   
                   ?>
@@ -72,7 +72,7 @@ session_start();
                   <?php
                   $amigos = $_SESSION["usuario"]->getAmigos();
                   foreach($amigos as $amigo){
-                    echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' type='checkbox'> <span class='pull-right'>Añadir&nbsp;</span></td></tr>";
+                    echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'>Añadir&nbsp;</span></td></tr>";
                   }
                   ?>
                 </table>
