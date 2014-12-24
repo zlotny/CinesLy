@@ -94,6 +94,18 @@ class Usuario{
 		header("Location:../index.php");
 	}
 
+	function insertarUsuario($usuario){
+		Usuario::conectarBD();
+		$sql="INSERT INTO usuario (nombreUsuario, email, pass, foto, preferencia1, preferencia2, preferencia3, estado, ciudadActual, fechaNacimiento, tipoUsuario, eslogan)
+		VALUES ('$usuario->nombreUsuario', '$usuario->email' , '$usuario->pass' , '$usuario->foto' , '$usuario->preferencia1' ,
+			'$usuario->preferencia2' ,	'$usuario->preferencia3' , '$usuario->estado' , '$usuario->ciudadActual' , '$usuario->fechaNacimiento' ,
+			 '$usuario->tipoUsuario' , '$usuario->eslogan')";
+Usuario::consultaBD($sql);
+		//header("Location:../index.php");
+		
+		
+	}
+
 
 /*
 function recuperarUsuario(){
