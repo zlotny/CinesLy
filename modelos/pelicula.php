@@ -83,21 +83,21 @@ class Pelicula{
 	function valorarPelicula($idPelicula,$valoracion){
 		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
-		$resultado=Pelicula::consultaBD($sql);
+		$resultado=Pelicula::consultaBD($sql); //guardamos la consulta
 		
-		$original=mysql_fetch_array($resultado);
+		$original=mysql_fetch_array($resultado);//metemos la salida de la consulta en un array
 		echo "string";
 		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
 			$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
 			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
+		echo "<br>";//llamamos al constructor de pelicula y le pasamos como atributos los campos del array
+		$val=$valoracion+$peli1->valoracion;//sumamos las valoraciones
+		echo $peli1->contValoracion;//enseñamos el numero de valoraciones
 		echo "<br>";
-		$val=$valoracion+$peli1->valoracion;
-		echo $peli1->contValoracion;
-		echo "<br>";
-		$cont_val=$peli1->contValoracion+1;
-		echo $cont_val;
-		$peli1->valoracion=$val;
-		$peli1->contValoracion=$cont_val;
+		$cont_val=$peli1->contValoracion+1;//incrementamos el contador de las valoraciones
+		echo $cont_val;//eseñamos el contador posterior
+		$peli1->valoracion=$val;//guardamos la valoracion
+		$peli1->contValoracion=$cont_val;//guardamos el contador
 		Pelicula::modificarPelicula($idPelicula,$peli1);
 	}
 
