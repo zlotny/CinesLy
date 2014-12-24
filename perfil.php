@@ -1,4 +1,4 @@
-<html>
+	<html>
 <head>
 	<?php
 	include_once "cabecera.php";
