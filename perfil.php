@@ -121,32 +121,38 @@
 
 	<div class="col-md-5" >
 		<div class="panel panel-default" >
-			<div class="panel-heading">Publicaciones</div>
-			<table class="table table-striped">
-				<?php						
-				while($row=mysql_fetch_array($resultado)) 
-					{ ;
-						$publicacion=$row["publica"]; ?>
 
-						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?>
-						<div class="clearfix">
-									<?php
+<ul class="media-list">
+					<?php $publicaciones=$_SESSION['usuario']->consultarPublicacionPerfil(); 
+					for($i=0;$i<sizeof($publicaciones[0]);$i++){
+						$usuRow = Usuario::getObjetoUsuario($publicaciones[3][$i]);
+						?>
 
-										echo "<input type='submit' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
-										echo "<input type='submit' onclick='mostrar(".$publicaciones[4][$i]."),ro(1".$publicaciones[4][$i].")' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
-										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
-									
-									?>
+						<li class="media">
+							<div class="well">
+								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $publicaciones[4][$i]; ?>" method="POST">
 
+								<div class="publication-body" >
+									<span class="very-small near-top"><?php echo $publicaciones[1][$i]; ?></span>
+									<textarea name="publi" readonly id= "<?php echo "1".$publicaciones[4][$i]; ?>" class="form-control publi publicacion-text" ><?php echo $publicaciones[2][$i]; ?></textarea>
 								</div>
-						</p></td>
-						</tr>
+								<div class="clearfix">
+									<?php
+									if($_SESSION["usuario"]->email == $usuRow->email){
+										
+										echo "<input type='button' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+										echo "<input type='button' onclick='mostrar(".$publicaciones[4][$i].",1".$publicaciones[4][$i].")' id='editar' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
+										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
+									}
+									?>
+								
 
-						<?php } ?>
+								</div></form>
 
-
-					</table>
-
+							</div>
+						</li>
+						<?php  }?>
+					</ul>
 
 
 
