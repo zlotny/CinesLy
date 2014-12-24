@@ -118,13 +118,98 @@ function actualizarUsuario($email) {
 }
 
 function modificarUsuario($email,$usuario) {
-	Usuario::conectarBD();
-	$sql="UPDATE usuario SET nombreUsuario='".$usuario->nombreUsuario."' , email='".$usuario->email."' , pass='".$usuario->pass."', foto='".$usuario->foto."',
-							preferencia1='".$usuario->preferencia1."',preferencia2='".$usuario->preferencia2."',preferencia3='".$usuario->preferencia3."',
-							estado='".$usuario->estado."', ciudadActual='".$usuario->ciudadActual."',fechaNacimiento='".$usuario->fechaNacimiento."',
-							tipoUsuario='".$usuario->tipoUsuario."',eslogan='".$usuario->eslogan."' WHERE email='".$email."'";	
-	$this->consultaBD($sql);
-	header("Location:index.php");
+
+	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
+	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
+
+	$sql1="SELECT * FROM usuario WHERE email='".$email."'";
+
+	echo "$sql1";
+	echo "<br>";
+
+	$resultado=mysql_query($sql1);
+
+	echo "$resultado";
+	echo "<br>";
+
+	$original=mysql_fetch_array($resultado);
+
+	echo "consultaBD realizada";
+	echo "<br>";
+//	($nombreUsuario,$email,$pass,$tipoUsuario,$foto,$preferencia1,$preferencia2,$preferencia3,$estado,$ciudadActual,$fechaNacimiento,$eslogan)
+echo $original['nombreUsuario'];
+	echo "<br>";
+	
+	$usuarioAntiguo = new Usuario($original['nombreUsuario'],$original['email'],$original['pass'],$original['tipoUsuario'],$original['foto'],
+		$original['preferencia1'],$original['preferencia2'],$original['preferencia3'],$original['estado'],$original['ciudadActual'],
+		$original['fechaNacimiento'],$original['eslogan']);
+
+	echo "$usuarioAntiguo->email";
+	echo "<br>";
+		if($usuario->nombreUsuario!=""){
+
+			$usuarioAntiguo->nombreUsuario=$usuario->nombreUsuario;
+		}elseif($usuario->nombreUsuario=="" && $usuarioAntiguo->nombreUsuario==""){
+			$usuarioAntiguo->nombreUsuario="campo Vacio";
+		}
+		if($usuario->email!=""){
+			$usuarioAntiguo->email=$usuario->email;
+		}
+		if($usuario->pass!=""){
+			$usuarioAntiguo->pass=$usuario->pass;
+		}
+		if($usuario->tipoUsuario!=""){
+			$usuarioAntiguo->tipoUsuario=$usuario->tipoUsuario;
+		}
+		if($usuario->foto!=""){
+			$usuarioAntiguo->foto=$usuario->foto;
+		}elseif($usuario->foto=="" && $usuarioAntiguo->foto==""){
+			$usuarioAntiguo->foto="campo Vacio";
+		}
+		if($usuario->preferencia1!=""){
+			$usuarioAntiguo->preferencia1=$usuario->preferencia1;
+		}elseif($usuario->preferencia1=="" && $usuarioAntiguo->preferencia1==""){
+			$usuarioAntiguo->preferencia1="campo Vacio";
+		}
+		if($usuario->preferencia2!=""){
+			$usuarioAntiguo->preferencia2=$usuario->preferencia2;
+		}elseif($usuario->preferencia2=="" && $usuarioAntiguo->preferencia2==""){
+			$usuarioAntiguo->preferencia2="campo Vacio";
+		}
+		if($usuario->preferencia3!=""){
+			$usuarioAntiguo->preferencia3=$usuario->preferencia3;
+		}elseif($usuario->preferencia3=="" && $usuarioAntiguo->preferencia3==""){
+			$usuarioAntiguo->preferencia3="campo Vacio";
+		}
+		if($usuario->estado!=""){
+			$usuarioAntiguo->estado=$usuario->estado;
+		}elseif($usuario->estado=="" && $usuarioAntiguo->estado==""){
+			$usuarioAntiguo->estado="campo Vacio";
+		}
+		if($usuario->ciudadActual!=""){
+			$usuarioAntiguo->ciudadActual=$usuario->ciudadActual;
+		}elseif($usuario->ciudadActual=="" && $usuarioAntiguo->ciudadActual==""){
+			$usuarioAntiguo->ciudadActual="campo Vacio";
+		}
+		if($usuario->fechaNacimiento!=""){
+			$usuarioAntiguo->fechaNacimiento=$usuario->fechaNacimiento;
+		}elseif($usuario->fechaNacimiento=="" && $usuarioAntiguo->fechaNacimiento==""){
+			$usuarioAntiguo->fechaNacimiento="campo Vacio";
+		}
+		if($usuario->eslogan!=""){
+			$usuarioAntiguo->eslogan=$usuario->eslogan;
+		}elseif($usuario->eslogan=="" && $usuarioAntiguo->eslogan==""){
+			$usuarioAntiguo->eslogan="campo Vacio";
+		}
+		
+
+	$sql2="UPDATE usuario SET nombreUsuario='".$usuarioAntiguo->nombreUsuario."' , email='".$usuarioAntiguo->email."' , pass='".$usuarioAntiguo->pass."', foto='".$usuarioAntiguo->foto."',
+							preferencia1='".$usuarioAntiguo->preferencia1."',preferencia2='".$usuarioAntiguo->preferencia2."',preferencia3='".$usuarioAntiguo->preferencia3."',
+							estado='".$usuarioAntiguo->estado."', ciudadActual='".$usuarioAntiguo->ciudadActual."',fechaNacimiento='".$usuarioAntiguo->fechaNacimiento."',
+							tipoUsuario='".$usuarioAntiguo->tipoUsuario."',eslogan='".$usuarioAntiguo->eslogan."' WHERE email='".$email."'";	
+	echo "$sql2";
+	Usuario::consultaBD($sql2);
+	//header("Location:index.php");
 }
 
 

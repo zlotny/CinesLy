@@ -143,7 +143,8 @@ class Pelicula{
 
 		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
 			$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
-			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
+			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],
+			$original['cont_valoracion'],$original['foto']);
 
 
 		if($pelicula->titulo!=""){

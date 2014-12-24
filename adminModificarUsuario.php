@@ -104,7 +104,9 @@
       }
       else{
         $arrayUsuarios=Usuario::mostrarUsuarios();
+        $i=0;
         foreach($arrayUsuarios as $panelUsuario){
+
           echo '<li class="media">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
@@ -126,9 +128,9 @@
 
        
 
-        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarUsuario" value="Editar">     
+        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarUsuario<?php echo $i; ?>" value="Editar">     
          
-        <div id="modificarUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="modificarUsuario<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
             <div class="modal-dialog">
@@ -138,16 +140,21 @@
                   <h4>Editar Usuario</h4>
                 </div>
                 <div class="modal-body">
-                  <label for="nuevoNombre" class="">Cambiar el nombre del Usuario</label>
-
-                  <input type="text" name="nuevoNombre" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
-
-                  <label for="tipoUsuario" class="">Cambiar tipoUsuario:</label>
-                  <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="Introduzca nuevo tipo" value="<?php echo $panelUsuario["email"]; ?>"> <br/>
+                  <label for="nombreUsuario" class="">Cambiar el nombre del Usuario</label>
+                  <input type="text" name="nombreUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
                   
+                  <label for="email" class="">Cambiar el correo</label>
+                  <input type="text" name="email" class="form-control form-pers" value="<?php echo $panelUsuario["email"];?>"><br/> 
+
                   <label for="pass" class="">Cambiar pass:</label>
                   <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
                   
+                  <label for="foto" class="">Cambiar foto:</label>
+                  <input type="text" name="foto" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
+                  
+                  <label for="tipoUsuario" class="">Cambiar el tipo de usuario(0 usuario normal, 1 admin):</label>
+                  <input type="text" name="tipoUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["tipoUsuario"];?>"><br/> 
+
                   <label for="preferencia1" class="">Cambiar preferencia1:</label>
                   <input type="text" name="preferencia1" class="form-control form-pers" placeholder="Introduzca su preferencia1" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
                   
@@ -187,6 +194,7 @@
         echo '</div>';
         echo '</div>';
         echo '</li>';
+        $i=$i+1;
       }
 
 
