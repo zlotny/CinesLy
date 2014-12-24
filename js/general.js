@@ -192,5 +192,27 @@ function mostrar(id,idPubli,edit) {
     
 }
 
+function eliminarPelicula (idPelicula) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres eliminar esta pelicula", function (e) {
+                                  if (e) {
+                                    
+                                    document.location.href = "controladoras/eliminarPelicula.php?idPelicula=" + idPelicula;
+                                    
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
+
 
 

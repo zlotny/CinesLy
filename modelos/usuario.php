@@ -94,6 +94,18 @@ class Usuario{
 		header("Location:../index.php");
 	}
 
+	function insertarUsuario($usuario){
+		Usuario::conectarBD();
+		$sql="INSERT INTO usuario (nombreUsuario, email, pass, foto, preferencia1, preferencia2, preferencia3, estado, ciudadActual, fechaNacimiento, tipoUsuario, eslogan)
+		VALUES ('$usuario->nombreUsuario', '$usuario->email' , '$usuario->pass' , '$usuario->foto' , '$usuario->preferencia1' ,
+			'$usuario->preferencia2' ,	'$usuario->preferencia3' , '$usuario->estado' , '$usuario->ciudadActual' , '$usuario->fechaNacimiento' ,
+			'$usuario->tipoUsuario' , '$usuario->eslogan')";
+Usuario::consultaBD($sql);
+		//header("Location:../index.php");
+
+
+}
+
 
 /*
 function recuperarUsuario(){
@@ -118,90 +130,79 @@ function actualizarUsuario($email) {
 }
 
 function modificarUsuario($email,$usuario) {
-
 	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
 	mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
-
 	$sql1="SELECT * FROM usuario WHERE email='".$email."'";
-
 	
-
 	$resultado=mysql_query($sql1);
-
 	
-
 	$original=mysql_fetch_array($resultado);
-
 	
 //	($nombreUsuario,$email,$pass,$tipoUsuario,$foto,$preferencia1,$preferencia2,$preferencia3,$estado,$ciudadActual,$fechaNacimiento,$eslogan)
-
 	
 	$usuarioAntiguo = new Usuario($original['nombreUsuario'],$original['email'],$original['pass'],$original['tipoUsuario'],$original['foto'],
 		$original['preferencia1'],$original['preferencia2'],$original['preferencia3'],$original['estado'],$original['ciudadActual'],
 		$original['fechaNacimiento'],$original['eslogan']);
-
 	
-		if($usuario->nombreUsuario!=""){
-
-			$usuarioAntiguo->nombreUsuario=$usuario->nombreUsuario;
-		}elseif($usuario->nombreUsuario=="" && $usuarioAntiguo->nombreUsuario==""){
-			$usuarioAntiguo->nombreUsuario="campo Vacio";
-		}
-		if($usuario->email!=""){
-			$usuarioAntiguo->email=$usuario->email;
-		}
-		if($usuario->pass!=""){
-			$usuarioAntiguo->pass=$usuario->pass;
-		}
-		if($usuario->tipoUsuario!=""){
-			$usuarioAntiguo->tipoUsuario=$usuario->tipoUsuario;
-		}
-		if($usuario->foto!=""){
-			$usuarioAntiguo->foto=$usuario->foto;
-		}elseif($usuario->foto=="" && $usuarioAntiguo->foto==""){
-			$usuarioAntiguo->foto="campo Vacio";
-		}
-		if($usuario->preferencia1!=""){
-			$usuarioAntiguo->preferencia1=$usuario->preferencia1;
-		}elseif($usuario->preferencia1=="" && $usuarioAntiguo->preferencia1==""){
-			$usuarioAntiguo->preferencia1="campo Vacio";
-		}
-		if($usuario->preferencia2!=""){
-			$usuarioAntiguo->preferencia2=$usuario->preferencia2;
-		}elseif($usuario->preferencia2=="" && $usuarioAntiguo->preferencia2==""){
-			$usuarioAntiguo->preferencia2="campo Vacio";
-		}
-		if($usuario->preferencia3!=""){
-			$usuarioAntiguo->preferencia3=$usuario->preferencia3;
-		}elseif($usuario->preferencia3=="" && $usuarioAntiguo->preferencia3==""){
-			$usuarioAntiguo->preferencia3="campo Vacio";
-		}
-		if($usuario->estado!=""){
-			$usuarioAntiguo->estado=$usuario->estado;
-		}elseif($usuario->estado=="" && $usuarioAntiguo->estado==""){
-			$usuarioAntiguo->estado="campo Vacio";
-		}
-		if($usuario->ciudadActual!=""){
-			$usuarioAntiguo->ciudadActual=$usuario->ciudadActual;
-		}elseif($usuario->ciudadActual=="" && $usuarioAntiguo->ciudadActual==""){
-			$usuarioAntiguo->ciudadActual="campo Vacio";
-		}
-		if($usuario->fechaNacimiento!=""){
-			$usuarioAntiguo->fechaNacimiento=$usuario->fechaNacimiento;
-		}elseif($usuario->fechaNacimiento=="" && $usuarioAntiguo->fechaNacimiento==""){
-			$usuarioAntiguo->fechaNacimiento="campo Vacio";
-		}
-		if($usuario->eslogan!=""){
-			$usuarioAntiguo->eslogan=$usuario->eslogan;
-		}elseif($usuario->eslogan=="" && $usuarioAntiguo->eslogan==""){
-			$usuarioAntiguo->eslogan="campo Vacio";
-		}
-		
-
+	if($usuario->nombreUsuario!=""){
+		$usuarioAntiguo->nombreUsuario=$usuario->nombreUsuario;
+	}elseif($usuario->nombreUsuario=="" && $usuarioAntiguo->nombreUsuario==""){
+		$usuarioAntiguo->nombreUsuario="campo Vacio";
+	}
+	if($usuario->email!=""){
+		$usuarioAntiguo->email=$usuario->email;
+	}
+	if($usuario->pass!=""){
+		$usuarioAntiguo->pass=$usuario->pass;
+	}
+	if($usuario->tipoUsuario!=""){
+		$usuarioAntiguo->tipoUsuario=$usuario->tipoUsuario;
+	}
+	if($usuario->foto!=""){
+		$usuarioAntiguo->foto=$usuario->foto;
+	}elseif($usuario->foto=="" && $usuarioAntiguo->foto==""){
+		$usuarioAntiguo->foto="campo Vacio";
+	}
+	if($usuario->preferencia1!=""){
+		$usuarioAntiguo->preferencia1=$usuario->preferencia1;
+	}elseif($usuario->preferencia1=="" && $usuarioAntiguo->preferencia1==""){
+		$usuarioAntiguo->preferencia1="campo Vacio";
+	}
+	if($usuario->preferencia2!=""){
+		$usuarioAntiguo->preferencia2=$usuario->preferencia2;
+	}elseif($usuario->preferencia2=="" && $usuarioAntiguo->preferencia2==""){
+		$usuarioAntiguo->preferencia2="campo Vacio";
+	}
+	if($usuario->preferencia3!=""){
+		$usuarioAntiguo->preferencia3=$usuario->preferencia3;
+	}elseif($usuario->preferencia3=="" && $usuarioAntiguo->preferencia3==""){
+		$usuarioAntiguo->preferencia3="campo Vacio";
+	}
+	if($usuario->estado!=""){
+		$usuarioAntiguo->estado=$usuario->estado;
+	}elseif($usuario->estado=="" && $usuarioAntiguo->estado==""){
+		$usuarioAntiguo->estado="campo Vacio";
+	}
+	if($usuario->ciudadActual!=""){
+		$usuarioAntiguo->ciudadActual=$usuario->ciudadActual;
+	}elseif($usuario->ciudadActual=="" && $usuarioAntiguo->ciudadActual==""){
+		$usuarioAntiguo->ciudadActual="campo Vacio";
+	}
+	if($usuario->fechaNacimiento!=""){
+		$usuarioAntiguo->fechaNacimiento=$usuario->fechaNacimiento;
+	}elseif($usuario->fechaNacimiento=="" && $usuarioAntiguo->fechaNacimiento==""){
+		$usuarioAntiguo->fechaNacimiento="campo Vacio";
+	}
+	if($usuario->eslogan!=""){
+		$usuarioAntiguo->eslogan=$usuario->eslogan;
+	}elseif($usuario->eslogan=="" && $usuarioAntiguo->eslogan==""){
+		$usuarioAntiguo->eslogan="campo Vacio";
+	}
+	
 	$sql2="UPDATE usuario SET nombreUsuario='".$usuarioAntiguo->nombreUsuario."' , email='".$usuarioAntiguo->email."' , pass='".$usuarioAntiguo->pass."', foto='".$usuarioAntiguo->foto."',
-							preferencia1='".$usuarioAntiguo->preferencia1."',preferencia2='".$usuarioAntiguo->preferencia2."',preferencia3='".$usuarioAntiguo->preferencia3."',
-							estado='".$usuarioAntiguo->estado."', ciudadActual='".$usuarioAntiguo->ciudadActual."',fechaNacimiento='".$usuarioAntiguo->fechaNacimiento."',
-							tipoUsuario='".$usuarioAntiguo->tipoUsuario."',eslogan='".$usuarioAntiguo->eslogan."' WHERE email='".$email."'";	
+	preferencia1='".$usuarioAntiguo->preferencia1."',preferencia2='".$usuarioAntiguo->preferencia2."',preferencia3='".$usuarioAntiguo->preferencia3."',
+	estado='".$usuarioAntiguo->estado."', ciudadActual='".$usuarioAntiguo->ciudadActual."',fechaNacimiento='".$usuarioAntiguo->fechaNacimiento."',
+	tipoUsuario='".$usuarioAntiguo->tipoUsuario."',eslogan='".$usuarioAntiguo->eslogan."' WHERE email='".$email."'";	
 	
 	Usuario::consultaBD($sql2);
 	//header("Location:index.php");
@@ -342,20 +343,20 @@ function consultarPublicacion(){
 	$toRet[4] = array();	
 
 //	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
-$sql= "\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
-    . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
-    . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
+	$sql= "\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
 
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
-	 	array_push($toRet[0], $row["nombreUsuario"]);
-	 	array_push($toRet[1], $row["fecha"]);
-	 	array_push($toRet[2], $row["publica"]);	
-	 	array_push($toRet[3], $row["email"]);			
-	 	array_push($toRet[4], $row["idPublicacion"]);
+		array_push($toRet[0], $row["nombreUsuario"]);
+		array_push($toRet[1], $row["fecha"]);
+		array_push($toRet[2], $row["publica"]);	
+		array_push($toRet[3], $row["email"]);			
+		array_push($toRet[4], $row["idPublicacion"]);
 
 	}
 	return $toRet;
@@ -369,6 +370,7 @@ $this->conectarBD();
 $sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
 //echo $sql;
 return mysql_query($sql);
+
 
 }
 
@@ -418,19 +420,19 @@ function eliminarPublicacion($idP){
 //devuelve array asociativo con todos los usuarios
 function mostrarUsuarios(){
 
-		Usuario::conectarBD();
-		
-		$sql = "SELECT * FROM usuario";
-		$result = Usuario::consultaBD($sql);
+	Usuario::conectarBD();
+	
+	$sql = "SELECT * FROM usuario";
+	$result = Usuario::consultaBD($sql);
 
-		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$toRet[$tuplas["email"]] = $tuplas;
-		}
-
-		return $toRet;
-
-
+	while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+		$toRet[$tuplas["email"]] = $tuplas;
 	}
+
+	return $toRet;
+
+
+}
 
 
 function editarPublicacion($id,$publi){
@@ -451,19 +453,19 @@ function consultarRecomendadas(){
 
 	//	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
 	$sql= "\n"
-	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
-	    . "UNION\n"
-	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
-	  
+	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
+	
 
 	
 	
 	$resultado=mysql_query($sql);
 
 	while($row = mysql_fetch_array($resultado)){
- 	array_push($toRet[0], $row["nombreUsuario"]);
- 	array_push($toRet[1], $row["email"]);	
- 	array_push($toRet[2], $row["titulo"]);			
+		array_push($toRet[0], $row["nombreUsuario"]);
+		array_push($toRet[1], $row["email"]);	
+		array_push($toRet[2], $row["titulo"]);			
 	}
 	return $toRet;
 	

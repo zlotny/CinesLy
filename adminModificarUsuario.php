@@ -212,9 +212,39 @@
 
   <div class="panel-body">
     <!-- formulario para inserta pelicula-->
-    <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
-      <button type="submit" class="btn btn-success">Inserte una Pelicula</button>
+    <form role="form" action="controladoras/" method="post">
+      <input type="button" class="btn btn-info" data-toggle="modal" data-target="#nuevoUsuario" value="Nuevo Usuario"/>
     </form>
+<div id="nuevoUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <form action="controladoras/administrarUsuario.php" method="POST">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Nuevo Usuario</h4> 
+            <small>Introduce los siguientes datos para introducir un nuevo usuario.</small>
+          </div>
+          <div class="modal-body">
+            <h6> Nombre de usuario: </h6>
+            <input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" >
+            <h6> Correo electrónico: </h6>
+            <input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">
+            <h6> Contraseña: </h6>
+            <input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" >
+            <h6> Tipo de Usuario: </h6>
+            <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="0->User 1->Admin" ><br/>
+            <label>Podrá cambiar otros detalles de este usuario en la opción de editar.
+              Ten en cuenta que te <span class="text-color-red text-weight-bold"> ES posible cambiar todo</span>, pues eres el administrador, joder.</label>
+            </div>
+            <div class="modal-footer">
+              
+              <input type="submit" name="accion" class="btn btn-success" value="Insertar Usuario">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div> 
     <p>o busquela </p>
 
     <!-- formulario para buscar pelicula-->

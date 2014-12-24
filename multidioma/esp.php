@@ -3,7 +3,7 @@
 
 //Cabecera.php - Cabecera Index
 $textos["email"]="Correo Electronico";
-$textos["pass"]="Puto Isaac";
+$textos["pass"]="Contraseña";
 $textos["loguear"]="Entrar";
 $textos["registro"]="Registrarse";
 $textos["forgetPass"]="Recuperar contraseña";
@@ -78,6 +78,99 @@ $textos["film"]="Película";
 $textos["sesion"]="Sesión";
 $textos["friendsGroup"]="Amigos del Grupo";
 $textos["volver"]="Volver";
+
+
+//Amigos.php
+$textos["h1Amigos"]="Lista de amigos";
+$textos["pAmigos"]="En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado.";
+$textos["misAmigos"]="Mis amigos";
+$textos["addFriend"]="Añadir un Amigo";
+
+//Catalogo.php
+$textos["h1Catalogo"]="Catálogo de Películas";
+$textos["pAmigos"]="Busca y comenta tus películas favoritas. Haz click sobre el póster de una película para ver su ficha detallada";
+$textos["titulo"]="Título";
+$textos["genero"]="Género";
+$textos["anho"]="Año";
+$textos["sinopsis"]="Sinopsis";
+$textos["typeFilm"]="Tipo de películas";
+$textos["allFilms"]="Todas las películas";
+$textos["carteleras"]="En Cartelera";
+$textos["especial"]="Especiales";
+$textos["proximamente"]="Proximamente";
+$textos["accion"]="Acción";
+$textos["aventura"]="Aventura";
+$textos["comedia"]="Comedia";
+$textos["drama"]="Drama";
+$textos["fantasia"]="Fantasía";
+$textos["ficcion"]="Ficción";
+$textos["porn"]="Pornografía";
+$textos["romantica"]="Romántica";
+$textos["suspense"]="Suspense";
+$textos["terror"]="Terror";
+
+//Ficha Pelicula
+$textos["h1FichaPel"]="Ficha de ";
+$textos["pFichaPel"]="En la ficha detallada de la película puedes ver su información, su póster y los comentarios de los usuarios. ¡Anímate a decir algo!";
+$textos["divFichaPel"]="Ficha de la pelicula ";
+$textos["director"]="Director: ";
+$textos["actores"]="Actores: ";
+$textos["distr"]="Distribuidora: ";
+$textos["duracion"]="Duración: ";
+$textos["valorar"]="Valorar: ";
+$textos["recomendar"]="Recomendar";
+$textos["valMed"]="La valoración media es:";
+$textos["comentarios"]="Comentarios";
+$textos["writeComen"]="Escribe un comentario";
+
+//adminModificarusuario.php
+$textos["h1AdModPel"]="Catálogo de Películas";
+$textos["catalogPelis"]="List of Movies";
+$textos["editPeli"]="Editar Pelicula";
+$textos["cambTitPeli"]="Cambiar el titulo de la pelicula";
+$textos["cambDirect"]="Cambiar Director:";
+$textos["cambActo"]="Cambiar Actores:";
+$textos["cambDist"]="Cambiar Distribuidora:";
+$textos["cambDur"]="Cambiar Duracion:";
+$textos["cambAnho"]="Cambiar Año:";
+$textos["cambGen"]="Cambiar Genero:";
+$textos["cambPais"]="Cambiar País:";
+$textos["cambTipo"]="Cambiar Tipo:";
+$textos["cambSinop"]="Cambiar Sinopsis:";
+$textos["cambFoto"]="Cambiar Foto:";
+$textos["guardCamb"]="Guardar Cambios";
+$textos["inserMov"]="Inserte una Pelicula";
+$textos["pBusq"]=" busquela";
+
+//AdminModificarUsuario.php
+$textos["h1ListUsu"]="Lista de Usuarios";
+$textos["catalogPelis"]="List of Movies";
+$textos["editPeli"]="Editar Pelicula";
+$textos["cambNomUsu"]="Cambiar el nombre del Usuario";
+$textos["cambEmail"]="Cambiar el correo";
+$textos["cambPass"]="Cambiar pass:";
+$textos["cambTipUsu"]="Cambiar el tipo de usuario(0 usuario normal, 1 admin):";
+$textos["cambPref1"]="Cambiar preferencia1:";
+$textos["cambPref2"]="Cambiar preferencia2:";
+$textos["cambFechNac"]="Cambiar fechaNacimiento:";
+$textos["cambEslo"]="Cambiar eslogan:";
+$textos["h4NewUsu"]="Nuevo Usuario";
+$textos["smallAMU"]="Introduce los siguientes datos para introducir un nuevo usuario.";
+$textos["h4NewUsu"]="Nuevo Usuario";
+$textos["typeUser"]="Tipo de Usuario:";
+$textos["labelAMU"]="Podrá cambiar otros detalles de este usuario en la opción de editar.Ten en cuenta que te ES posible cambiar todo, pues eres el administrador, joder.";
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

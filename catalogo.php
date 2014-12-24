@@ -100,7 +100,7 @@ include_once "sesion_segura.php";
             }
             echo '</a>';  
             echo '<div class="media-body">';
-            echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
+            echo '<p><b>Título: </b>'.$panelPelicula["titulo"].'</p>';
             echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
             echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
             echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';

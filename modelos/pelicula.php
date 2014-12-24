@@ -123,8 +123,7 @@ class Pelicula{
 	function eliminarPelicula($idPelicula){
 		Pelicula::conectarBD();
 		$sql="DELETE FROM pelicula WHERE idPelicula ='".$idPelicula."'";
-		Pelicula::consultaBD($sql);
-
+		return Pelicula::consultaBD($sql);
 
 	}
 
@@ -385,11 +384,11 @@ class Pelicula{
 
 	function getPeliculasCartelera(){
 		Pelicula::conectarBD();
-		$sql="select titulo from pelicula where tipo='cartelera'";
+		$sql="select idPelicula from pelicula where tipo='cartelera'";
 		$resultado = mysql_query($sql);
 		$toRet = array();
 		while($row = mysql_fetch_array($resultado)){
-			array_push($toRet, $row['titulo']);
+			array_push($toRet, Pelicula::getObjetoPelicula($row["idPelicula"]));
 		}
 		return $toRet;
 	}
