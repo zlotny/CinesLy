@@ -166,25 +166,32 @@ function ocultar(id) {
     var divObject = document.getElementById(id); 
     divObject.style.visibility = "hidden";
 }
+function ro(id){
 
-function mostrar(id) {
+     var divObject = document.getElementById(id); 
+     divObject.readOnly = false;
+}
+function rw(id){
+
+     var divObject = document.getElementById(id); 
+     divObject.readOnly = true;
+}
+
+function mostrar(id,idPubli) {
 
     var divObject = document.getElementById(id); 
   
     if(divObject.style.visibility == "hidden"){
       divObject.style.visibility = "visible";
       editar.value = "Dejar de editar";
+      ro(idPubli);
     }else{
       divObject.style.visibility = "hidden";
       editar.value = "Editar";
-      
+      rw(idPubli);
     }
     
 }
 
-function ro(id){
 
-     var divObject = document.getElementById(id); 
-     divObject.readOnly = false;
-}
 
