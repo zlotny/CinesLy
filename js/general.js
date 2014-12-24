@@ -138,6 +138,28 @@
 
                               }
 
+function editarPublicacion (id,publi) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres editar tu publicacion", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/editarPublicacion.php?id="+id+"&publi="+publi;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
+
+
+
 
 function ocultar(id) {
 

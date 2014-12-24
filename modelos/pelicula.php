@@ -43,11 +43,11 @@ class Pelicula{
 	}
 
 
-	function recomendarPelicula($idPelicula,$listaAmigos)
+	function recomendarPelicula($email,$idPelicula)
 	{
 		Pelicula::conectarBD();
-		
-		
+		$sql="INSERT INTO recomendada VALUES ('$email','$idPelicula')";
+		mysql_query($sql);
 		
 
 	}
@@ -55,10 +55,10 @@ class Pelicula{
 	
 
 	//No retorna nada. Insera un comentario en la base de datos
-	function comentarPelicula($idPelicula,$email,$comentario){
+	function comentarPelicula($idPelicula,$email,$comentario, $fecha){
 		Pelicula::conectarBD();
-		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario')";
-		echo $sql;
+		$sql="INSERT INTO comenta VALUES ('$idPelicula','$email','$comentario', '$fecha')";
+		
 		mysql_query($sql);
 		
 	}
@@ -66,7 +66,7 @@ class Pelicula{
 	//Retorna un array de comentarios de una película de la base de datos
 	function getComentariosPelicula($idPelicula){
 		Pelicula::conectarBD();
-		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."'";
+		$sql="SELECT email,comentario FROM comenta WHERE idPelicula='".$idPelicula."' ORDER BY fecha DESC";
 		$resultado = mysql_query($sql);
 		$toRet = array();
 		$toRet['usuario'] = array();
@@ -79,34 +79,30 @@ class Pelicula{
 		return $toRet;
 
 	}
-
+	//incrementa en 1 en cont_valoracion y suma la valoracion a la valoracion total
 	function valorarPelicula($idPelicula,$valoracion){
 		Pelicula::conectarBD();
 		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
-		$resultado=Pelicula::consultaBD($sql); //guardamos la consulta
+		$resultado=Pelicula::consultaBD($sql);
 		
-		$original=mysql_fetch_array($resultado);//metemos la salida de la consulta en un array
-		echo "string";
+		$original=mysql_fetch_array($resultado);
+		
 		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
 			$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
 			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
-		echo "<br>";//llamamos al constructor de pelicula y le pasamos como atributos los campos del array
-		$val=$valoracion+$peli1->valoracion;//sumamos las valoraciones
-		echo $peli1->contValoracion;//enseñamos el numero de valoraciones
-		echo "<br>";
-		$cont_val=$peli1->contValoracion+1;//incrementamos el contador de las valoraciones
-		echo $cont_val;//eseñamos el contador posterior
-		$peli1->valoracion=$val;//guardamos la valoracion
-		$peli1->contValoracion=$cont_val;//guardamos el contador
+		
+		$val=$valoracion+$peli1->valoracion;
+		
+		$cont_val=$peli1->contValoracion+1;
+		
+		$peli1->valoracion=$val;
+		$peli1->contValoracion=$cont_val;
 		Pelicula::modificarPelicula($idPelicula,$peli1);
 	}
 
 	function registrarPelicula($pelicula)
 	{
-/*
-		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
-		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
-		*/
+
 		Pelicula::conectarBD();
 
 
@@ -116,91 +112,86 @@ class Pelicula{
 			'$pelicula->pais' , '$pelicula->votos' , '$pelicula->valoracion' , '$pelicula->tipo' , '$pelicula->contValoracion', '$pelicula->foto')";
 
 
-$resultado=Pelicula::consultaBD($sql);	
-if($resultado){
-	echo "pelicula registrada";
-}	 
-}
+		$resultado=Pelicula::consultaBD($sql);	
 
-function eliminarPelicula($idPelicula){
-	Pelicula::conectarBD();
-	$sql="DELETE FROM pelicula WHERE idPelicula ='".$idPelicula."'";
-	Pelicula::consultaBD($sql);
+		if($resultado){
+			echo "pelicula registrada";
+		}	 
+	}
 
-
-}
-
-function modificarPelicula($idPelicula,$pelicula)
-{
-
-	mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
-	mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
+	function eliminarPelicula($idPelicula){
+		Pelicula::conectarBD();
+		$sql="DELETE FROM pelicula WHERE idPelicula ='".$idPelicula."'";
+		Pelicula::consultaBD($sql);
 
 
-	$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
+	}
 
-	$resultado=Pelicula::consultaBD($sql);
+	function modificarPelicula($idPelicula,$pelicula)
+	{
 
-	$original=mysql_fetch_array($resultado);
-
-	$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
-		$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
-		$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
+		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar'.mysql_error());
+		mysql_select_db("CinesLy") or die ('No se pudo conectar a la base de datos');
 
 
-	if($pelicula->titulo!=""){
+		$sql="SELECT * FROM pelicula WHERE idPelicula='".$idPelicula."'";
 
-		$peli1->titulo=$pelicula->titulo;
-	}
-	if($pelicula->director!=""){
-		$peli1->director=$pelicula->director;
-	}
-	if($pelicula->distribuidora!=""){
-		$peli1->distribuidora=$pelicula->distribuidora;
-	}
-	if($pelicula->duracion!=""){
-		$peli1->duracion=$pelicula->duracion;
-	}
-	if($pelicula->sinopsis!=""){
-		$peli1->sinopsis=$pelicula->sinopsis;
-	}
-	if($pelicula->actores!=""){
-		$peli1->actores=$pelicula->actores;
-	}
-	if($pelicula->anho!=""){
-		$peli1->anho=$pelicula->anho;
-	}
-	if($pelicula->fechaEstreno!=""){
-		$peli1->fechaEstreno=$pelicula->fechaEstreno;
-	}
-	if($pelicula->genero!=""){
-		$peli1->genero=$pelicula->genero;
-	}
-	if($pelicula->pais!=""){
-		$peli1->pais=$pelicula->pais;
-	}
-	if($pelicula->votos!=""){
-		$peli1->votos=$pelicula->votos;
-	}
-	if($pelicula->valoracion!=""){
-		$peli1->valoracion=$pelicula->valoracion;
-	}
-	if($pelicula->tipo!=""){
-		$peli1->tipo=$pelicula->tipo;
-	}
-	if($pelicula->contValoracion!=""){
-		$peli1->contValoracion=$pelicula->contValoracion;
-	}
-	if($pelicula->foto!=""){
-		$peli1->foto=$pelicula->foto;
-	}
-		/*for($i=1;$i<15; $i++){
-			if($pelicula[$i]==""){
-				echo "no se cambia el campo".$i;
-			}else{
-				$peli1[$i]=$pelicula[$i];
-			}
-		}*/
+		$resultado=Pelicula::consultaBD($sql);
+
+		$original=mysql_fetch_array($resultado);
+
+		$peli1=new Pelicula($original['idPelicula'],$original['titulo'],$original['director'],$original['distribuidora'],
+			$original['duracion'],$original['sinopsis'],$original['actores'],$original['anho'],$original['fecha_estreno'],
+			$original['genero'],$original['pais'],$original['votos'],$original['valoracion'],$original['tipo'],$original['cont_valoracion'],$original['foto']);
+
+
+		if($pelicula->titulo!=""){
+
+			$peli1->titulo=$pelicula->titulo;
+		}
+		if($pelicula->director!=""){
+			$peli1->director=$pelicula->director;
+		}
+		if($pelicula->distribuidora!=""){
+			$peli1->distribuidora=$pelicula->distribuidora;
+		}
+		if($pelicula->duracion!=""){
+			$peli1->duracion=$pelicula->duracion;
+		}
+		if($pelicula->sinopsis!=""){
+			$peli1->sinopsis=$pelicula->sinopsis;
+		}
+		if($pelicula->actores!=""){
+			$peli1->actores=$pelicula->actores;
+		}
+		if($pelicula->anho!=""){
+			$peli1->anho=$pelicula->anho;
+		}
+		if($pelicula->fechaEstreno!=""){
+			$peli1->fechaEstreno=$pelicula->fechaEstreno;
+		}
+		if($pelicula->genero!=""){
+			$peli1->genero=$pelicula->genero;
+		}
+		if($pelicula->pais!=""){
+			$peli1->pais=$pelicula->pais;
+		}
+		if($pelicula->votos!=""){
+			$peli1->votos=$pelicula->votos;
+		}
+		if($pelicula->valoracion!=""){
+			$peli1->valoracion=$pelicula->valoracion;
+		}
+		if($pelicula->tipo!=""){
+			$peli1->tipo=$pelicula->tipo;
+		}
+		if($pelicula->contValoracion!=""){
+			$peli1->contValoracion=$pelicula->contValoracion;
+		}
+		if($pelicula->foto!=""){
+			$peli1->foto=$pelicula->foto;
+		}
+		
 
 
 		$sql2="UPDATE pelicula SET  titulo ='$peli1->titulo', director = '$peli1->director', distribuidora ='$peli1->distribuidora', 
