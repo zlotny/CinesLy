@@ -120,9 +120,9 @@ function actualizarUsuario($email) {
 function modificarUsuario($email,$usuario) {
 	Usuario::conectarBD();
 	$sql="UPDATE usuario SET nombreUsuario='".$usuario->nombreUsuario."' , email='".$usuario->email."' , pass='".$usuario->pass."', foto='".$usuario->foto."',
-							preferencia1='".$usuario->preferencia1."',preferencia2='".$usuario->preferencia2."',preferencia3='".$usuario->preferencia3."',
-							estado='".$usuario->estado."', ciudadActual='".$usuario->ciudadActual."',fechaNacimiento='".$usuario->fechaNacimiento."',
-							tipoUsuario='".$usuario->tipoUsuario."',eslogan='".$usuario->eslogan."' WHERE email='".$email."'";	
+	preferencia1='".$usuario->preferencia1."',preferencia2='".$usuario->preferencia2."',preferencia3='".$usuario->preferencia3."',
+	estado='".$usuario->estado."', ciudadActual='".$usuario->ciudadActual."',fechaNacimiento='".$usuario->fechaNacimiento."',
+	tipoUsuario='".$usuario->tipoUsuario."',eslogan='".$usuario->eslogan."' WHERE email='".$email."'";	
 	$this->consultaBD($sql);
 	header("Location:index.php");
 }
@@ -262,20 +262,20 @@ function consultarPublicacion(){
 	$toRet[4] = array();	
 
 //	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
-$sql= "\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
-    . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
-    . "UNION\n"
-    . "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
+	$sql= "\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
 
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
-	 	array_push($toRet[0], $row["nombreUsuario"]);
-	 	array_push($toRet[1], $row["fecha"]);
-	 	array_push($toRet[2], $row["publica"]);	
-	 	array_push($toRet[3], $row["email"]);			
-	 	array_push($toRet[4], $row["idPublicacion"]);
+		array_push($toRet[0], $row["nombreUsuario"]);
+		array_push($toRet[1], $row["fecha"]);
+		array_push($toRet[2], $row["publica"]);	
+		array_push($toRet[3], $row["email"]);			
+		array_push($toRet[4], $row["idPublicacion"]);
 
 	}
 	return $toRet;
@@ -320,19 +320,19 @@ function eliminarPublicacion($idP){
 //devuelve array asociativo con todos los usuarios
 function mostrarUsuarios(){
 
-		Usuario::conectarBD();
-		
-		$sql = "SELECT * FROM usuario";
-		$result = Usuario::consultaBD($sql);
+	Usuario::conectarBD();
+	
+	$sql = "SELECT * FROM usuario";
+	$result = Usuario::consultaBD($sql);
 
-		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$toRet[$tuplas["email"]] = $tuplas;
-		}
-
-		return $toRet;
-
-
+	while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+		$toRet[$tuplas["email"]] = $tuplas;
 	}
+
+	return $toRet;
+
+
+}
 
 
 function editarPublicacion($id,$publi){
@@ -353,19 +353,19 @@ function consultarRecomendadas(){
 
 	//	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
 	$sql= "\n"
-	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
-	    . "UNION\n"
-	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
-	  
+	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
+	
 
 	
 	
 	$resultado=mysql_query($sql);
 
 	while($row = mysql_fetch_array($resultado)){
- 	array_push($toRet[0], $row["nombreUsuario"]);
- 	array_push($toRet[1], $row["email"]);	
- 	array_push($toRet[2], $row["titulo"]);			
+		array_push($toRet[0], $row["nombreUsuario"]);
+		array_push($toRet[1], $row["email"]);	
+		array_push($toRet[2], $row["titulo"]);			
 	}
 	return $toRet;
 	

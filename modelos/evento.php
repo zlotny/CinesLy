@@ -7,9 +7,9 @@ class Evento{
 	var $idSesion;
 	var $nombre;
 
-	function __construct($descripcion, $sesion, $email, $nombre)
+	function __construct($id, $descripcion, $sesion, $email, $nombre)
 	{
-		$this->idEvento = "No se usa";
+		$this->idEvento = $id;
 		$this->idSesion = $sesion;
 		$this->email = $email;
 		$this->descripcion = $descripcion;
@@ -25,19 +25,41 @@ class Evento{
 
 	 }
 
-	 function altaEvento()//inserta un evento en la bd
+	 function altaEvento($integrantes)//inserta un evento en la bd
 	 {
-
 	 	Evento::conectarBD();
 
-	 	$insertar="INSERT INTO evento (idSesion, email, descripcion, nombre) VALUES
-	 	('$this->idSesion', '$this->email', '$this->descripcion', '$this->nombre')";
+	 	$sql="INSERT INTO evento (idSesion, email, descripcion, nombre) VALUES ('$this->idSesion', '$this->email', '$this->descripcion', '$this->nombre')";
+	 	$toRet = mysql_query($sql);
 
 
-	 	return mysql_query($insertar);
-	}
+	 	foreach($integrantes as $integrante){
+	 		$id = Evento::getIdByName($this->nombre);
+	 		$sql = "INSERT INTO contiene VALUES('$id', '$integrante')";
+	 		$toRet = mysql_query($sql);
+	 	}
+	 	
+	 	return $toRet;
+	 }
 
+//Devuelve un array con los objetos grupo creados por el usuario que se pasa por parámetro
+	 function listarGrupos($emailTarget){
+	 	Evento::conectarBD();
+	 	$sql = "SELECT id_evento, idSesion, email, descripcion, nombre FROM evento WHERE email = '$emailTarget'";
+	 	$resultado = mysql_query($sql);
+	 	$toRet = array();
+	 	while($row = mysql_fetch_array($resultado)){
+	 		array_push($toRet, new Evento($row["id_evento"], $row["descripcion"], $row["idSesion"], $emailTarget, $row["nombre"]));
+	 	}
+	 	return $toRet;
+	 }
 
+	 function getIdByName($name){
+	 	Evento::conectarBD();
+	 	$sql = "SELECT id_evento FROM evento WHERE nombre = '$name'";
+	 	$resultado = mysql_fetch_array(mysql_query($sql));
+	 	return $resultado["id_evento"];
+	 }
 
 // 	function modificarEvento($evento, $eventoNuevo)
 // 	{
@@ -71,8 +93,8 @@ class Evento{
 // 			$descripcion=$result[4];
 // 			$nombre = $result[5];
 
-			
-			
+
+
 // 			if($idEvento == ""){
 
 // 				$actualizado=mysql_query("UPDATE `evento` SET `id_evento`=eventoNuevo->getIdEvento() WHERE `id_evento` = idEvento");
@@ -83,7 +105,7 @@ class Evento{
 // 				$actualizado=mysql_query("UPDATE `evento` SET `idPelicula`=eventoNuevo->getIdPelicula(), `idSesion`=eventoNuevo->getIdSesion() WHERE `id_evento` = $idEvento");
 // 			}
 
-			
+
 // 			if($mail == ""){
 
 // 				$actualizado=mysql_query("UPDATE `evento` SET `email`=eventoNuevo->getMail() WHERE `id_evento` = idEvento");
@@ -147,7 +169,7 @@ class Evento{
 // 		 $consultar = result_to_array($consultar); //metemos la consulta en un array
 
 // 		 foreach ($consultar as $valor) {
-		 	
+
 // 		 	echo "$valor";
 // 		 }
 
@@ -155,4 +177,4 @@ class Evento{
 // 	}
 
 
-}
+	}
