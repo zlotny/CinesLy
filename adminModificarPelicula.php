@@ -105,6 +105,7 @@
       else{
         $arrayPeliculas=Pelicula::mostrarPeliculas();
         foreach($arrayPeliculas as $panelPelicula){
+          $a=Pelicula::getObjetoPelicula($panelPelicula["idPelicula"]);
           echo '<li class="media">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
@@ -138,12 +139,12 @@
         -->
 
         <!-- Modificar una pelicula -->
-        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="<?php echo $panelPelicula["idPelicula"]; ?>"> 
+        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" value="<?php echo $panelPelicula["idPelicula"]; ?>"> 
           <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
-          
         </button>
-        <?php $a=$panelPelicula["idPelicula"];echo $a ?>
-        <div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        
+        <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <!--enctype="multipart/form-data" añadido por min-->
           <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php?idPelicula=<?php echo $panelPelicula["idPelicula"]; ?>" method="POST">
             <div class="modal-dialog">
@@ -153,7 +154,7 @@
                   <h4>Editar Pelicula</h4>
                 </div>
                 <div class="modal-body">
-                  <?php echo $a; ?>
+                  <?php echo $a->idPelicula; echo $a->titulo;?>
                   <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
                   <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
                   
