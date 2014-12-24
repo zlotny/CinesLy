@@ -27,19 +27,14 @@ session_start();
 	echo $_REQUEST["tipoPeli"];
 	echo $_REQUEST["sinopsis"];
  	echo $_REQUEST["userfile"];*/
- 	echo $_REQUEST["idPelicula"]."       ";
+ 	$idPelicula=$_GET["idPelicula"];
  
- 	
- 	$pelicula= new pelicula($_REQUEST["$idPelicula"],$_REQUEST["nuevoTitulo"],$_REQUEST["director"],$_REQUEST["distribuidora"],$_REQUEST["duracion"],$_REQUEST["sinopsis"],$_REQUEST["actores"],$_REQUEST["anho"],"",$_REQUEST["genero"],$_REQUEST["pais"],"","",$_REQUEST["tipoPeli"],"",  "");//este ultimo parametro e a foto
- 	//echo $pelicula["idPelicula"];
- 	echo "hola";
-	$vars_clase = get_class_vars(get_class($pelicula));
+ 	$pelicula= new Pelicula($idPelicula,$_REQUEST["nuevoTitulo"],$_REQUEST["director"],$_REQUEST["distribuidora"],$_REQUEST["duracion"],$_REQUEST["sinopsis"],$_REQUEST["actores"],$_REQUEST["anho"],"",$_REQUEST["genero"],$_REQUEST["pais"],"","",$_REQUEST["tipoPeli"],"",  "");//este ultimo parametro e a foto
 
-	foreach ($vars_clase as $nombre => $valor) {
-    	echo "$nombre : $valor\n";
-	}
- 	modificarPelicula($_REQUEST["idPelicula"],$pelicula);
- 	echo "hola3";
- 	$aux=Pelicula::mostrarPelicula($_REQUEST["idPelicula"]);
+ 	Pelicula::modificarPelicula($idPelicula,$pelicula);
+ 	
+ 	/*$aux=Pelicula::mostrarPelicula($idPelicula);
  	print_r($aux);
+ 	*/
+ 	header("Location: ../adminModificarPelicula.php?update=good");
 ?> 
