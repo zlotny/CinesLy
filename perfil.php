@@ -1,4 +1,4 @@
-<html>
+	<html>
 <head>
 	<?php
 	include_once "cabecera.php";
@@ -128,7 +128,18 @@
 					{ ;
 						$publicacion=$row["publica"]; ?>
 
-						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?></p></td>
+						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?>
+						<div class="clearfix">
+									<?php
+
+										echo "<input type='submit' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+										echo "<input type='submit' onclick='mostrar(".$publicaciones[4][$i]."),ro(1".$publicaciones[4][$i].")' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
+										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
+									
+									?>
+
+								</div>
+						</p></td>
 						</tr>
 
 						<?php } ?>

@@ -20,7 +20,7 @@ class Pelicula{
 
 	function __construct($idPelicula,$titulo,$director,$distribuidora,$duracion,$sinopsis,$actores,$anho,$fechaEstreno,$genero,$pais,$votos,$valoracion,$tipo,$contValoracion,$foto){
 
-		$this->idPelicula=$idPelicula;
+		$this->idPelicula=$idPelicula; echo "  |".$idPelicula."|  ";
 		$this->titulo=$titulo;
 		$this->director=$director;
 		$this->distribuidora=$distribuidora;
@@ -294,7 +294,7 @@ class Pelicula{
 			echo "Pelicula no encontrada";
 		}else{
 			$row=mysql_fetch_array($resultado);
-			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["contValoracion"],$row["foto"]);
+			$pelicula=new Pelicula($row["idPelicula"],$row["titulo"],$row["director"],$row["distribuidora"],$row["duracion"],$row["sinopsis"],$row["actores"],$row["anho"],$row["fechaEstreno"],$row["genero"],$row["pais"],$row["votos"],$row["valoracion"],$row["tipo"],$row["cont_valoracion"],$row["foto"]);
 			return $pelicula;
 		}
 	}
