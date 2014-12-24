@@ -124,28 +124,23 @@ function modificarUsuario($email,$usuario) {
 
 	$sql1="SELECT * FROM usuario WHERE email='".$email."'";
 
-	echo "$sql1";
-	echo "<br>";
+	
 
 	$resultado=mysql_query($sql1);
 
-	echo "$resultado";
-	echo "<br>";
+	
 
 	$original=mysql_fetch_array($resultado);
 
-	echo "consultaBD realizada";
-	echo "<br>";
+	
 //	($nombreUsuario,$email,$pass,$tipoUsuario,$foto,$preferencia1,$preferencia2,$preferencia3,$estado,$ciudadActual,$fechaNacimiento,$eslogan)
-echo $original['nombreUsuario'];
-	echo "<br>";
+
 	
 	$usuarioAntiguo = new Usuario($original['nombreUsuario'],$original['email'],$original['pass'],$original['tipoUsuario'],$original['foto'],
 		$original['preferencia1'],$original['preferencia2'],$original['preferencia3'],$original['estado'],$original['ciudadActual'],
 		$original['fechaNacimiento'],$original['eslogan']);
 
-	echo "$usuarioAntiguo->email";
-	echo "<br>";
+	
 		if($usuario->nombreUsuario!=""){
 
 			$usuarioAntiguo->nombreUsuario=$usuario->nombreUsuario;
@@ -207,7 +202,7 @@ echo $original['nombreUsuario'];
 							preferencia1='".$usuarioAntiguo->preferencia1."',preferencia2='".$usuarioAntiguo->preferencia2."',preferencia3='".$usuarioAntiguo->preferencia3."',
 							estado='".$usuarioAntiguo->estado."', ciudadActual='".$usuarioAntiguo->ciudadActual."',fechaNacimiento='".$usuarioAntiguo->fechaNacimiento."',
 							tipoUsuario='".$usuarioAntiguo->tipoUsuario."',eslogan='".$usuarioAntiguo->eslogan."' WHERE email='".$email."'";	
-	echo "$sql2";
+	
 	Usuario::consultaBD($sql2);
 	//header("Location:index.php");
 }

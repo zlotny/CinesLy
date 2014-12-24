@@ -20,13 +20,11 @@ if($accion == "Guardar cambios"){
 	$ciudadActual=$_REQUEST['ciudadActual'];
 	$fechaNacimiento=$_REQUEST['fechaNacimiento'];
 	$eslogan=$_REQUEST['eslogan'];
-	echo "el nombre de usuario es".$nombreUsuario;
-	echo "<br>";
-	echo "el tipo de usuario es".$tipoUsuario;
-	echo "<br>";
+	
 	$usuario = new Usuario($nombreUsuario,$email,$pass,$tipoUsuario,$foto,$preferencia1,$preferencia2,$preferencia3,$estado,$ciudadActual,$fechaNacimiento,$eslogan);
 	
 	$usuario->modificarUsuario($emailA,$usuario);
+	header("Location:../adminModificarUsuario.php");
 } 
 
 
