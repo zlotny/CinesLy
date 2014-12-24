@@ -343,6 +343,34 @@ function editarPublicacion($id,$publi){
 	return mysql_query($sql);
 }
 
+
+function consultarRecomendadas(){
+	$this->conectarBD();
+	$toRet = array();
+	$toRet[0] = array();
+	$toRet[1] = array();
+	$toRet[2] = array();
+
+	//	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
+	$sql= "\n"
+	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
+	    . "UNION\n"
+	    . "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
+	  
+
+	
+	
+	$resultado=mysql_query($sql);
+
+	while($row = mysql_fetch_array($resultado)){
+ 	array_push($toRet[0], $row["nombreUsuario"]);
+ 	array_push($toRet[1], $row["email"]);	
+ 	array_push($toRet[2], $row["titulo"]);			
+	}
+	return $toRet;
+	
+}
+
 }
 
 ?>

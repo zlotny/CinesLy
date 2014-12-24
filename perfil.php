@@ -1,4 +1,4 @@
-<html>
+	<html>
 <head>
 	<?php
 	include_once "cabecera.php";
@@ -128,7 +128,18 @@
 					{ ;
 						$publicacion=$row["publica"]; ?>
 
-						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?></p></td>
+						<tr class="table-publicaciones177"><td><p class="lead"><?php echo $publicacion; ?>
+						<div class="clearfix">
+									<?php
+
+										echo "<input type='submit' onclick='eliminarPublicacion(".$publicaciones[4][$i].")' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>";
+										echo "<input type='submit' onclick='mostrar(".$publicaciones[4][$i]."),ro(1".$publicaciones[4][$i].")' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>";
+										echo "<input type='submit' onclick='ocultar(".$publicaciones[4][$i].")' style='visibility: hidden;'  id='".$publicaciones[4][$i]."' class='btn btn-xs btn-success pull-right' value='Guardar'/>";
+									
+									?>
+
+								</div>
+						</p></td>
 						</tr>
 
 						<?php } ?>
@@ -224,19 +235,15 @@
 				<div class="panel-heading">Películas Recomendadas</div>
 				<div class="panel-body scrollable-table-perfilD">
 					<table class="table table-striped ">
-						<tr><td>Película Recomendada 1</td></tr>
-						<tr><td>Película Recomendada 2</td></tr>
-						<tr><td>Película Recomendada 3</td></tr>
-						<tr><td>Película Recomendada 4</td></tr>
-						<tr><td>Película Recomendada 5</td></tr>
-						<tr><td>Película Recomendada 6</td></tr>
-						<tr><td>Película Recomendada 7</td></tr>
-						<tr><td>Película Recomendada 8</td></tr>
-						<tr><td>Película Recomendada 9</td></tr>
-						<tr><td>Película Recomendada 10</td></tr>
-						<tr><td>Película Recomendada 11</td></tr>
-						<tr><td>Película Recomendada 12</td></tr>
+						<?php 
+							$rec=$_SESSION['usuario']->consultarRecomendadas(); 
+							for($i=0;$i<sizeof($rec[0]);$i++){
+							
+						?>
 
+						<tr><td><?php echo $rec[0][$i]; ?></td><td><?php echo $rec[2][$i]; ?></td></tr>
+
+						<?php } ?>
 
 					</table>
 				</div>
