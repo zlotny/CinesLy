@@ -453,9 +453,9 @@ function consultarRecomendadas(){
 
 	//	$sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
 	$sql= "\n"
-	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
+	. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
 	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
+	. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email  AND r.idPelicula=p.idPelicula \n";
 	
 
 	
@@ -464,7 +464,7 @@ function consultarRecomendadas(){
 
 	while($row = mysql_fetch_array($resultado)){
 		array_push($toRet[0], $row["nombreUsuario"]);
-		array_push($toRet[1], $row["email"]);	
+		array_push($toRet[1], $row["foto"]);	
 		array_push($toRet[2], $row["titulo"]);			
 	}
 	return $toRet;

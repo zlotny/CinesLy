@@ -252,7 +252,7 @@
 								$valoracion = round($row['valoracion']/$row['cont_valoracion'],2);
 						?>
 								<li>
-									<img src="<?php echo $row['foto']; ?>" style="max-width:135px; height:auto;" alt="" title="">
+									<img src="<?php echo $row['foto']; ?>" style="max-width:110px; height:auto;" alt="" title="">
 									<div class="caption" >
 										<div class="text">
 											<strong class="date"><?php echo $i; ?></strong>
@@ -264,10 +264,34 @@
 					</ul>            
 				</div>
 			</div>
+			<div class="events-box">
+				<div class="events-box-head">
+					<h5>Peliculas recomendadas</h5>
+				</div>
+				<div class="scrollable-table-perfilD">
+					<ul>
+						<?php 
+							$rec=$_SESSION['usuario']->consultarRecomendadas(); 
+							for($i=0;$i<sizeof($rec[0]);$i++){
+							
+						?>
+								<li class="xs">
+									<img src="<?php echo $rec[1][$i]; ?>" style="max-width:60px; height:auto;" alt="" title="">
+									<div class="caption" >
+										<div class="text">
+											<strong class="datexs"><?php echo $rec[2][$i]; ?></strong>
+									 		<strong class="title"> Recomendada por <?php echo $rec[0][$i]; ?></strong>
+										</div>
+									</div>
+								</li>
+						<?php } ?>
+					</ul>            
+				</div>
+			</div>
 			
 			
 
-			<div class="panel panel-default">
+			<!--<div class="panel panel-default">
 				<div class="panel-heading">Películas Recomendadas</div>
 				<div class="panel-body scrollable-table-perfilD">
 					<table class="table table-striped ">
@@ -284,7 +308,7 @@
 					</table>
 				</div>
 			</div>
-		</div>
+		</div>-->
 
 		<div class="col-md-1"></div>
 

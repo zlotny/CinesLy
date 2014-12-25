@@ -342,7 +342,14 @@ body{
 }
 .events-box ul li .caption {
 	background-color: rgba(0,136,204,0.9);
-	padding: 25px 30px 100px 30px;
+	padding: 25px 30px 50px 55px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.events-box ul .xs .caption {
+	background-color: rgba(0,136,204,0.9);
+	padding: 0px 45px 45px 90px;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -358,6 +365,14 @@ body{
 	color: #fff;
 	font-weight: 500;
 }
+
+.events-box ul li .caption strong.datexs {
+	font-family: 'museo500';
+	font-size: 16px;
+	color: #fff;
+	font-weight: 500;
+}
+
 .events-box ul li .caption strong.date span.mnt {
 	font-family: 'museo300';
 	font-weight: 300;
