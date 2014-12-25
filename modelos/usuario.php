@@ -47,7 +47,7 @@ class Usuario{
 	function getObjetoUsuario($email){
 		mysql_connect("localhost","usrCinesLy","AVVeY4MYU6bVXYhJ") or die ('No se pudo conectar: '.mysql_error());
 		mysql_select_db("CinesLy") or die ('No se pudo seleccionar la base de datos');
-		$sql="SELECT * FROM usuario WHERE email = '".$email."'";
+		$sql="SELECTÂ *Â FROMÂ usuarioÂ WHEREÂ emailÂ =Â '".$email."'";
 		$resultado= mysql_query($sql);
 		$row=mysql_num_rows($resultado);
 		if($row==1){
@@ -61,7 +61,7 @@ class Usuario{
 
 	function loguearUsuario(){
 		$this->conectarBD();
-		$sql="SELECT * FROM usuario WHERE email = '".$this->email."' AND pass = '".$this->pass."'";
+		$sql="SELECTÂ *Â FROMÂ usuarioÂ WHEREÂ emailÂ =Â '".$this->email."' AND pass = '".$this->pass."'";
 		$resultado=$this->consultaBD($sql);
 		$row=mysql_num_rows($resultado);
 		if($row==1){
@@ -109,7 +109,7 @@ Usuario::consultaBD($sql);
 
 /*
 function recuperarUsuario(){
-	mail("i.gd1989@hotmail.es","Desgraciao","Toma tu puta contraseña hijo de perra");
+	mail("i.gd1989@hotmail.es","Desgraciao","Toma tu puta contraseÃ±a hijo de perra");
 	echo "correo enviado ".$this->email;	 
 	//header("Location:../index.php");
 }
@@ -117,7 +117,7 @@ function recuperarUsuario(){
 
 function bajaUsuario(){
 	$this->conectarBD();
-	$sql="DELETE FROM usuario WHERE email = '".$this->email."' AND pass = '".$this->pass."'";
+	$sql="DELETEÂ FROMÂ usuarioÂ WHEREÂ emailÂ =Â '".$this->email."' AND pass = '".$this->pass."'";
 	$this->consultaBD($sql);
 	header("location:../index.php");
 }

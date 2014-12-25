@@ -392,7 +392,13 @@ class Pelicula{
 		}
 		return $toRet;
 	}
-	
+
+	// consultarTopPelis() devuelve las diez peliculas con mejor valoración.
+	function consultarTopPelis(){
+		Pelicula::conectarBD();
+		$sql="SELECT idPelicula,foto,titulo,valoracion,cont_valoracion FROM pelicula ORDER BY valoracion/cont_valoracion desc LIMIT 0,10";
+		return mysql_query($sql);
+	}
 
 }
 ?>

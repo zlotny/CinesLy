@@ -3,6 +3,7 @@
 	<?php
 	include_once "cabecera.php";
 	include_once "modelos/usuario.php";
+	include_once "modelos/pelicula.php";
 	include_once "sesion_segura.php";
 
 	?>
@@ -17,6 +18,8 @@
 	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
 	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
 	<link rel="stylesheet" href="style/style.css">
+		
+
 
 
 </head>
@@ -214,27 +217,55 @@
 		<div class="col-md-3" >
 
 
-			<div class="panel panel-default">
+			<!--<div class="panel panel-default">
 				<div class="panel-heading">Últimas Películas Vistas</div>
 				<div class="panel-body scrollable-table-perfilD">
 					<table class="table table-striped ">
-						<tr><td>Película Vista 1</td></tr>
-						<tr><td>Película Vista 2</td></tr>
-						<tr><td>Película Vista 3</td></tr>
-						<tr><td>Película Vista 4</td></tr>
-						<tr><td>Película Vista 5</td></tr>
-						<tr><td>Película Vista 6</td></tr>
-						<tr><td>Película Vista 7</td></tr>
-						<tr><td>Película Vista 8</td></tr>
-						<tr><td>Película Vista 9</td></tr>
-						<tr><td>Película Vista 10</td></tr>
-						<tr><td>Película Vista 11</td></tr>
-						<tr><td>Película Vista 12</td></tr>
+						<?php 
+							$topPelis=Pelicula::consultarTopPelis(); $i=1;
+							while($row = mysql_fetch_array($topPelis)){
+								$valoracion = $row['valoracion']/$row['cont_valoracion'];
+						?>
+								<tr>
+									<td><h1><?php echo $i; ?></h1></td>
+									<td><img class="table img-responsive img-rounded" src="<?php echo $row['foto']; ?>"></td>
+									<td><?php echo $row['titulo']; ?></td><td><?php echo round($valoracion,2); ?></td>
+								</tr>
+
+						<?php  $i++; } ?>
 
 
 					</table>
 				</div>
+			</div> -->
+
+
+			<div class="events-box">
+				<div class="events-box-head">
+					<h5>Películas <span>TOP 10</span></h5>
+				</div>
+				<div class="scrollable-table-perfilD">
+					<ul>
+						<?php 
+							$topPelis=Pelicula::consultarTopPelis(); $i=1;
+							while($row = mysql_fetch_array($topPelis)){
+								$valoracion = round($row['valoracion']/$row['cont_valoracion'],2);
+						?>
+								<li>
+									<img src="<?php echo $row['foto']; ?>" style="max-width:135px; height:auto;" alt="" title="">
+									<div class="caption" >
+										<div class="text">
+											<strong class="date"><?php echo $i; ?></strong>
+									 		<strong class="title"><?php echo $row['titulo']."  ( ".$valoracion." )"; ?></strong>
+										</div>
+									</div>
+								</li>
+						<?php  $i++; } ?>
+					</ul>            
+				</div>
 			</div>
+			
+			
 
 			<div class="panel panel-default">
 				<div class="panel-heading">Películas Recomendadas</div>
