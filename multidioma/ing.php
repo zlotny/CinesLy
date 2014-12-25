@@ -9,7 +9,7 @@ $textos["registro"]="Check in";
 $textos["forgetPass"]="Recover Password";
 
 //Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera
-$textos["findFilm"]="Search movie";
+$textos["findFilm"]="Search Film";
 $textos["find"]="Search";
 $textos["miMuro"]="My Wall";
 $textos["perfil"]="Perfil";
@@ -53,14 +53,14 @@ $textos["repNewPass"]="Repeat new Password";
 $textos["publicaciones"]="Publications";
 $textos["prev"]="Prev";
 $textos["sig"]="Next";
-$textos["ultPelVis"]="Latest Movies Views";
-$textos["pelRecomen"]="Recommended Movies";
+$textos["ultPelVis"]="Latest Films Views";
+$textos["pelRecomen"]="Recommended Films";
 
 //MisGrupos.php
 $textos["newGroup"]="New Group";
 $textos["nameGroup"]="Group Name";
 $textos["nameYourGroup"]="Name of Your Group";
-$textos["addFilm"]="Add Movie";
+$textos["addFilm"]="Add Film";
 $textos["addSesion"]="Add Session";
 $textos["addFriends"]="Add Friends";
 $textos["add"]="Add";
@@ -74,16 +74,18 @@ $textos["validar"]="Validate";
 
 //Ver_Grupo.php
 $textos["verGrupo"]="View Group";
-$textos["film"]="Movie"; 
+$textos["film"]="Film"; 
 $textos["sesion"]="Session";
 $textos["friendsGroup"]="Friends of Group";
 $textos["volver"]="Return";
 
 //adminModificarPelicula.php
-//pendiente de renombrar
-$textos["listaPelisCinesLy"]="List of movies - CinesLy";
-$textos["catalogPelis"]="List of Movies";
-$textos["editPeli"]="Edit Movie";
+$textos["listaPelisCinesLy"]="List of Films - CinesLy";
+
+$textos["h1AdModPel"]="Films Catalogue";
+$textos["catalogPelis"]="List of Films";
+
+$textos["editPeli"]="Edit Film";
 $textos["cambTitPeli"]="Change the title of the film";
 $textos["cambDirect"]="Change Director";
 $textos["cambActo"]="Change Actors";
@@ -93,81 +95,81 @@ $textos["cambAnho"]="Change year";
 $textos["cambGen"]="Change Gender";
 $textos["cambPais"]="Change Country";
 $textos["cambTipo"]="Change Type";
-$textos["allMov"]="All movies";
-$textos["enCart"]="In Billboard";
-$textos["especiales"]="Special";
-$textos["proxima"]="Coming Soon";
 $textos["cambSinop"]="Change Sinopsis";
 $textos["cambFoto"]="Change photo";
 $textos["guardCamb"]="Save Changes";
-$textos["inserMov"]="Insert a Movie";
-$textos["oBusq"]="or search";
-$textos["tipPel"]="Type of Movies";
-$textos["gen"]="Gender";
-$textos["action"]="Action";
+$textos["inserMov"]="Insert a Film";
+$textos["pBusq"]="or search";
+$textos["tipPel"]="Type of Films";
+
+//adminModificarUsuario.php
+$textos["h1ListUsu"]="User Lists";
+$textos["editUser"]="Edit User";
+
+$textos["cambNomUsu"]="Rename name";
+$textos["cambEmail"]="Change e-mail";
+
+$textos["cambTipUsu"]="Change type User(0 normal user, 1 admin):";
+$textos["cambPass"]="Change Password";
+$textos["cambPref1"]="Change Preference1:";
+$textos["cambPref2"]="Change Preference2:";
+$textos["cambEst"]="Change Status";
+$textos["cambCiu"]="Change City";
+$textos["cambFechNac"]="Change Birthdate";
+$textos["cambEslo"]="Change Slogan";
+
+$textos["h4NewUsu"]="New User";
+$textos["smallAMU"]="Enter the following information to enter a new user.";
+$textos["typeUser"]="User Type:";
+$textos["labelAMU"]="You can change other details of the user the option to edit. Note that you can change everything, because you are the administrator";
+
+//amigos.php
+$textos["amigCines"]="Friends - CinesLy";
+$textos["h1Amigos"]="Friend List";
+$textos["pAmigos"]="In this page can manage your friends. Add new friends and accepts invitations of whom have added you.";
+$textos["misAmigos"]="My Friends";
+$textos["pendConf"]="Slope of confirmation";
+$textos["emDelAmToAdd"]="Friend's email to add";
+$textos["addFriend"]="Add one Friend";
+$textos["addFriend1"]="Add Friend";
+
+//catalogo.php
+$textos["h1Catalogo"]="List of Films";
+$textos["pAmigos"]="Search and comment your favorite Films. Click on the poster for a Film to see its detailed record";
+$textos["titulo"]="Title";
+$textos["genero"]="Gender";
+$textos["anho"]="Year";
+$textos["sinopsis"]="Sinopsis";
+$textos["typeFilm"]="Tyoe of Films";
+$textos["allFilms"]="All Films";
+$textos["carteleras"]="In Billboard";
+$textos["especial"]="Special";
+$textos["proximamente"]="Coming Soon";
+$textos["accion"]="Action";
 $textos["aventura"]="Adventure";
 $textos["comedia"]="Comedy";
 $textos["drama"]="Drama";
 $textos["fantasia"]="Fantasy";
 $textos["ficcion"]="Fiction";
-$textos["porno"]="Pornography";
-$textos["romantic"]="Romantic";
+$textos["porn"]="Pornography";
+$textos["romantica"]="Romantic";
 $textos["suspense"]="Suspense";
 $textos["terror"]="Terror";
 
-//adminModificarUsuario.php
-$textos["usrList"]="User Lists";
-$textos["editUser"]="Edit User";
-$textos["renUser"]="Rename User";
-$textos["changeTipUsr"]="Change type User";
-$textos["cambPass"]="Change Password";
-$textos["cambPref"]="Change Preference";
-$textos["cambEst"]="Change Status";
-$textos["cambCiu"]="Change City";
-$textos["cambFechNac"]="Change Birthdate";
-$textos["cambSlog"]="Change Slogan";
-
-//amigos.php
-$textos["amigCines"]="Friends - CinesLy";
-$textos["listAmig"]="Friend List";
-$textos["amig1"]="In this page can manage your friends. Add new friends and accepts invitations of whom have added you.";
-$textos["misAmig"]="My Friends";
-$textos["pendConf"]="Slope of confirmation";
-$textos["emDelAmToAdd"]="Friend's email to add";
-$textos["add1Frien"]="Add one Friend";
-$textos["addFriend"]="Add Friend";
-
-//catalogo.php
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
 
 //ficha_pelicula.php
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
+$textos["h1FichaPel"]="File of ";
+$textos["pFichaPel"]="In the detailed file of the Film you can see his information, his poster and user comments. Dare to say something!";
+$textos["divFichaPel"]="File of the Film ";
+$textos["director"]="Director: ";
+$textos["actores"]="Actors: ";
+$textos["distr"]="Distributor: ";
+$textos["duracion"]="Duration: ";
+$textos["valorar"]="Value: ";
+$textos["recomendar"]="Recommend";
+$textos["valMed"]="The average rating is:";
+$textos["comentarios"]="Comments";
+$textos["writeComen"]="Write a comment";
 
 //fichaAmigo.php
 $textos[""]="";
