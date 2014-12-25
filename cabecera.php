@@ -3,6 +3,14 @@ error_reporting(E_ERROR | E_PARSE);
 
 function cabeceraCartelera(){
 	?>
+	
+	<script src="js/alertify/lib/alertify.min.js"> </script>
+    <script src="js/general.js"> </script>
+  
+    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+    <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+    <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -31,7 +39,7 @@ function cabeceraCartelera(){
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="perfil.php">Ver Perfil</a></li>
 										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger"><a href="controladoras/cerrarSesion.php">Cerrar Sesion</a></li>
+										<li class="dropdown-danger"><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>
@@ -75,6 +83,14 @@ function cabeceraCartelera(){
 <?php
 function cabeceraPantallaPrincipal(){
 	?>
+	
+	<script src="js/alertify/lib/alertify.min.js"> </script>
+    <script src="js/general.js"> </script>
+  
+    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+    <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+    <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -108,7 +124,7 @@ function cabeceraPantallaPrincipal(){
 									<ul class="dropdown-menu" role="menu">
 										<li><a href="perfil.php">Ver Perfil</a></li>
 										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger" ><a href="controladoras/cerrarSesion.php">Cerrar Sesion</a></li>
+										<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
 										<!--li class="divider"></li>
 										<li><a href="#">Panel Admnistrador</a></li-->
 										</ul>

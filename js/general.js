@@ -156,6 +156,27 @@
                                 });
 
                               }
+							  
+
+ function cerrarSesion () {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres cerrar sesión", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/cerrarSesion.php";
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }						  
 
 
 
