@@ -123,7 +123,7 @@ $textos["valMed"]="平均評価は";
 $textos["comentarios"]="コメント";
 $textos["writeComen"]="コメントを書く";
 
-//adminModificarusuario.php
+//adminModificarPelicula.php
 $textos["h1AdModPel"]="ムービーカタログ";
 $textos["catalogPelis"]="映画のリスト";
 $textos["editPeli"]="動画編集";
@@ -160,22 +160,14 @@ $textos["h4NewUsu"]="新しいユーザー";
 $textos["typeUser"]="ユーザータイプ";
 $textos["labelAMU"]="あなたが編集するオプション、ユーザの他の詳細を変更することができます";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//modificar_grupo.php
+$textos["modGrup"]="グループの変更";
+$textos["changeGrup"]="変更グループ名";
+$textos["changePel"]="変更フィルム";
+$textos["changeSes"]="変更セッション";
+$textos["busqSes"]="検索セッション";
+$textos["dellAm"]="友達を削除する";
+$textos["modif"]="修正する";
 
 
 ?>

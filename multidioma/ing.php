@@ -176,8 +176,8 @@ $textos["writeComen"]="Write a comment";
 $textos["modGrup"]="Modify Group";
 $textos["changeGrup"]="Change Group Name";
 $textos["changePel"]="Change Film";
-$textos["changeSes"]="Change Desion";
-$textos["busqSes"]="Buscar Sesi?n";
+$textos["changeSes"]="Change Session";
+$textos["busqSes"]="Search Session";
 $textos["dellAm"]="Remove Friends";
 $textos["modif"]="Modify";
 
