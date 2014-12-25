@@ -357,8 +357,12 @@ body{
 .events-box ul li .caption .text {
 	float: left;
 	width: 150px;
+	transition: 0.2s;
 }
-.events-box ul li .caption:hover .text {width:300px;}
+.events-box ul li .caption:hover .text {
+	width:300px;
+	transition: 0.2s;
+}
 .events-box ul li .caption strong.date {
 	font-family: 'museo500';
 	font-size: 44px;
