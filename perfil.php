@@ -51,8 +51,8 @@
 	
 
 
-	<div class="col-md-1"></div>
-	<div class="col-md-2" >
+	
+	<div class="col-md-3" >
 
 		<div class="panel panel-default " >
 			<div class="panel-heading ">Perfil</div>
@@ -214,7 +214,7 @@
 
 
 
-		<div class="col-md-3" >
+		<div class="col-md-4" >
 
 			<div class="events-box">
 				<div class="events-box-head">
@@ -266,7 +266,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-1"></div>
+		
 
 
 

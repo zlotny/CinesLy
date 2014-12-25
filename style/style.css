@@ -1,6 +1,7 @@
 body{
 	padding-top:42px;
 	overflow-x:hidden;
+	height: 100% !important;
 }
 
 .top-margin{
@@ -200,20 +201,22 @@ body{
 	cursor: pointer;
 }
 
-.footer{
+#page-footer{
 	width: 100%;
 	margin-bottom: 0px;
-	background-color: #101112;
+	
 	height: 40px;
 }
 
 .align-right-footer{
-	margin-left:301px;
-}
+	margin-left:207px;
+	border-top: solid;
+	border-left: solid;
+	border-right: solid;
+	border-bottom: none;
+	border-color: #151515;
+	border-width: 1px;
 
-.footer-fixed{
-	position: fixed;
-	bottom: 0;
 }
 
 .standard-div-height{
@@ -269,9 +272,9 @@ body{
 }
 
 .publication-body {
-  display: table-cell;
-  vertical-align: top;
-  width: 1000px;
+	display: table-cell;
+	vertical-align: top;
+	width: 1000px;
 }
 
 .publi{
@@ -402,3 +405,59 @@ body{
 .border-radius-publi{
 	border-radius:3px;
 }
+
+
+.footer{
+	height: 43px;
+	width: 420px;
+	position:fixed;
+	bottom: 50px;
+	left: -380px;
+	transition: 0.2s;
+	z-index: 999;
+
+}
+.footer:hover{
+	height: 43px;
+	width: 420px;
+	position:fixed;
+	bottom: 50px;
+	left: 0px;
+	transition: 0.2s;
+}
+
+.footer-content{
+	height: 43px;
+	width: 380px;
+	background-color: #151515;
+	position:absolute;
+	left:0;
+	line-height: 43px;
+	color:whitesmoke;
+
+}
+.footer-button{
+	height: 43px;
+	position:absolute;
+	right:0;
+	background-color: #b15315;
+	width: 40px;
+}
+.footer-icon{
+	height: 43px;
+	width: 40px;
+	text-align: center;
+	line-height: 43px;
+}
+
+.footer-text{
+	margin-left: 15px;
+}
+
+.footer-dropdown{
+	height: 43px;
+	position:relative;
+	margin-left: 15px;
+	top: -2px;
+}
+
