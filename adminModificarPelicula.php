@@ -30,7 +30,7 @@
 
 
        //Esta cabeceira tense que modificar
-   cabeceraCartelera();
+   cabeceraAdministrador();
 
    session_start();
    if($_REQUEST["filtrado"]==true){
@@ -83,47 +83,116 @@
           echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
           echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
           ;?>
-          <!-- boton para editar e eliminar-->
-          <div class="col-md-8"></div>
+          <div class="col-md-8"> </div>
           <div class="col-md-4">
-
-            <button type="button" class="btn btn-default" aria-label="Left Align">
+            <!--editar perfil-->
+            <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
             </button>
-            <button type="button" class="btn btn-default" aria-label="Left Align">
+
+            <!--EliminarPerfil-->
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
+        <!--<input type="button" id="eliminar-boton" class="btn btn-danger pull-right" value="Eliminar" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
+      -->
+    </div>
+    
+    <!-- Pagina modal para modificar perfil -->
+    <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!--enctype="multipart/form-data" añadido por min-->
+      <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php?idPelicula=<?php echo $panelPelicula["idPelicula"]; ?>" method="POST">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4>Editar Pelicula</h4>
+            </div>
+            <div class="modal-body">
+              <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
+              <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
+              
+              <label for="director" class="">Cambiar Director:</label>
+              <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
+              
+              <label for="actores" class="">Cambiar Actores:</label>
+              <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
+              
+              <label for="distribuidora" class="">Cambiar Distribuidora:</label>
+              <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
+              
+              <label for="duracion" class="">Cambiar Duracion:</label>
+              <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+              
+              <label for="anho" class="">Cambiar Año:</label>
+              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
+              
+              <label for="genero" class="">Cambiar Genero:</label>
+              <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
+              
+              <label for="pais" class="">Cambiar País:</label>
+              <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
+              
+              <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
+              <select name="tipoPeli" aria-labelledby="buscar_peli">
+                <option  value="">Todas las peliculas</option>
+                <option  value="cartelera">En Cartelera</option>
+                <option  value="especial">Especiales</option>
+                <option  value="proximamente">Proximamente</option>
+              </select>
+              <br/><br/>
+
+              <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
+              <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
+              
+              <label for="foto" class="">Cambiar foto:</label>
+              <!-- subir foto a implemetar en un futuro-->
+              <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
+              <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+              <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
+              <input name="userfile" type="file" />
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
           </div>
+        </div>
+      </form>
+    </div>  
+    <div class="clearfix"></div>
 
-          <?php
-          echo '</div>';
-          echo '</div>';
-          echo '</div>';
-          echo '</li>';
-        }
-      }
-      else{
-        $arrayPeliculas=Pelicula::mostrarPeliculas();
-        foreach($arrayPeliculas as $panelPelicula){
-          $a=Pelicula::getObjetoPelicula($panelPelicula["idPelicula"]);
-          echo '<li class="media">';
-          echo '<div class="col-md-12 ">';
-          echo '<div class="well">';
-          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
-          if(substr($panelPelicula["foto"],0,3) == "img"){
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+    <?php
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</li>';
+  }
+}
+else{
+  $arrayPeliculas=Pelicula::mostrarPeliculas();
+  foreach($arrayPeliculas as $panelPelicula){
+    $a=Pelicula::getObjetoPelicula($panelPelicula["idPelicula"]);
+    echo '<li class="media">';
+    echo '<div class="col-md-12 ">';
+    echo '<div class="well">';
+    echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
+    if(substr($panelPelicula["foto"],0,3) == "img"){
+      echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
-          }else{
-            echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
+    }else{
+      echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
 
-          }
-          echo '</a>';  
-          echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>'
-          ;?>
+    }
+    echo '</a>';  
+    echo '<div class="media-body">';
+    echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
+    echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
+    echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
+    echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>'
+    ;?>
 
           <!-- boton para editar e eliminar       
           <div class="col-md-8"></div>
@@ -137,100 +206,100 @@
             </button>
           </div>
  
--->
+        -->
         <!-- Modificar una pelicula -->
         <div class="col-md-8"> </div>
         <div class="col-md-4">
-        <!--editar perfil-->
-        <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
-        </button>
+          <!--editar perfil-->
+          <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+          </button>
 
-        <!--EliminarPerfil-->
-        <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
-          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-        </button>
+          <!--EliminarPerfil-->
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+          </button>
         <!--<input type="button" id="eliminar-boton" class="btn btn-danger pull-right" value="Eliminar" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
       -->
-        </div>
-        
-        <!-- Pagina modal para modificar perfil -->
-        <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <!--enctype="multipart/form-data" añadido por min-->
-          <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php?idPelicula=<?php echo $panelPelicula["idPelicula"]; ?>" method="POST">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4>Editar Pelicula</h4>
-                </div>
-                <div class="modal-body">
-                  <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
-                  <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
-                  
-                  <label for="director" class="">Cambiar Director:</label>
-                  <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
-                  
-                  <label for="actores" class="">Cambiar Actores:</label>
-                  <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
-                  
-                  <label for="distribuidora" class="">Cambiar Distribuidora:</label>
-                  <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
-                  
-                  <label for="duracion" class="">Cambiar Duracion:</label>
-                  <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
-                  
-                  <label for="anho" class="">Cambiar Año:</label>
-                  <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
-                  
-                  <label for="genero" class="">Cambiar Genero:</label>
-                  <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
-                  
-                  <label for="pais" class="">Cambiar País:</label>
-                  <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
-                  
-                  <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
-                  <select name="tipoPeli" aria-labelledby="buscar_peli">
-                    <option  value="">Todas las peliculas</option>
-                    <option  value="cartelera">En Cartelera</option>
-                    <option  value="especial">Especiales</option>
-                    <option  value="proximamente">Proximamente</option>
-                  </select>
-                  <br/><br/>
-
-                  <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
-                  <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
-                  
-                  <label for="foto" class="">Cambiar foto:</label>
-                  <!-- subir foto a implemetar en un futuro-->
-                  <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
-                  <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                  <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-                  <input name="userfile" type="file" />
-
-
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                </div>
-              </div>
+    </div>
+    
+    <!-- Pagina modal para modificar perfil -->
+    <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!--enctype="multipart/form-data" añadido por min-->
+      <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarPelicula.php?idPelicula=<?php echo $panelPelicula["idPelicula"]; ?>" method="POST">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4>Editar Pelicula</h4>
             </div>
-          </form>
-        </div>  
-        <div class="clearfix"></div>
+            <div class="modal-body">
+              <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
+              <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
+              
+              <label for="director" class="">Cambiar Director:</label>
+              <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
+              
+              <label for="actores" class="">Cambiar Actores:</label>
+              <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
+              
+              <label for="distribuidora" class="">Cambiar Distribuidora:</label>
+              <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
+              
+              <label for="duracion" class="">Cambiar Duracion:</label>
+              <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+              
+              <label for="anho" class="">Cambiar Año:</label>
+              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
+              
+              <label for="genero" class="">Cambiar Genero:</label>
+              <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
+              
+              <label for="pais" class="">Cambiar País:</label>
+              <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
+              
+              <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
+              <select name="tipoPeli" aria-labelledby="buscar_peli">
+                <option  value="">Todas las peliculas</option>
+                <option  value="cartelera">En Cartelera</option>
+                <option  value="especial">Especiales</option>
+                <option  value="proximamente">Proximamente</option>
+              </select>
+              <br/><br/>
 
-      <?php  
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</li>';
-    }
+              <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
+              <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
+              
+              <label for="foto" class="">Cambiar foto:</label>
+              <!-- subir foto a implemetar en un futuro-->
+              <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
+              <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+              <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
+              <input name="userfile" type="file" />
 
 
+            </div>
+            <div class="modal-footer">
+              <button type="submit" name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>  
+    <div class="clearfix"></div>
+
+    <?php  
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</li>';
   }
 
-  ?> 
+
+}
+
+?> 
 
 </ul>
 </div>
