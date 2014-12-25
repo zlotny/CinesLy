@@ -111,7 +111,7 @@
 	</div>
 
 	<div class="col-md-5" >
-		<div class="panel panel-default" >
+		<div class="panel panel-default" style="text-align:center;" >
 
 <ul class="media-list">
 					<?php 
@@ -128,7 +128,7 @@
 								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $row['idPublicacion']; ?>" method="POST">
 
 								<div class="publication-body" >
-									<span class="very-small near-top"><?php echo $row['fecha']; ?></span>
+									<span class="small near-top"><?php echo $row['fecha']; ?></span>
 									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['publica']; ?></textarea>
 								</div>
 
@@ -229,7 +229,7 @@
 						?>
 								<li>
 									<img src="<?php echo $row['foto']; ?>" style="max-width:110px; height:auto;" alt="" title="">
-									<div class="caption" >
+									<div class="caption" style="cursor:pointer;">
 										<div class="text">
 											<strong class="date"><?php echo $i; ?></strong>
 									 		<strong class="title"><?php echo $row['titulo']."  ( ".$valoracion." )"; ?></strong>
@@ -264,27 +264,7 @@
 					</ul>            
 				</div>
 			</div>
-			
-			
-
-			<!--<div class="panel panel-default">
-				<div class="panel-heading">Películas Recomendadas</div>
-				<div class="panel-body scrollable-table-perfilD">
-					<table class="table table-striped ">
-						<?php 
-							$rec=$_SESSION['usuario']->consultarRecomendadas(); 
-							for($i=0;$i<sizeof($rec[0]);$i++){
-							
-						?>
-
-						<tr><td><?php echo $rec[0][$i]; ?></td><td><?php echo $rec[2][$i]; ?></td></tr>
-
-						<?php } ?>
-
-					</table>
-				</div>
-			</div>
-		</div>-->
+		</div>
 
 		<div class="col-md-1"></div>
 
@@ -318,8 +298,8 @@
 
 
 
-
-		<?php footer(); ?>
+<?php footer(); ?>
+		
 
 
 
