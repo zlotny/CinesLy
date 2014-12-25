@@ -244,8 +244,33 @@ function cabeceraIndex(){
 function footer(){
 	?>
 
-	<nav id="page-footer" class="navbar navbar-inverse footer" role="navigation">
-		<div class="navbar-header">
+	<div class="footer ">
+		<div class="footer-content">
+			<div class="dropdown dropup">
+				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub</a>
+					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
+						Idioma
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Galego</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Français</a></li>
+					</ul>
+				</span>	
+			</div>
+		</div>
+		<div class="footer-button">
+			<div class="glyphicon glyphicon-chevron-right footer-icon"/>
+		</div>
+	</div>
+
+
+
+
+
+<!-- <div class="navbar-header">
 			<div class="container container-fluid">
 				<a class="navbar-brand">
 					<label>CinesLy - Proyecto de Interfaces de Usuario. <span style="cursor:pointer; color: red;" onclick="location.replace('https://github.com/ndrs92/CinesLy');">Página en GitHub</span></label>
@@ -263,61 +288,69 @@ function footer(){
 					</ul>
 				</div>
 			</div>
-		</div>
-	</nav>
-	<script>
-		if (document.body.offsetHeight <= innerHeight){
-			document.getElementById("page-footer").classList.add("footer-fixed");
-		}
-	</script>
-	<?php
-}
-?>
+		</div> -->
 
 
-<?php
-function cabeceraAdministrador(){
+
+
+
+
+
+
+
+
+
+
+
+
+		<?php
+	}
 	?>
 
 
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container container-fluid pers">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
+	<?php
+	function cabeceraAdministrador(){
+		?>
 
-				<a href="pantalla de admin principal">
-					<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
-				</a>
-			</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container container-fluid pers">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 
-				
-				<ul class="nav navbar-nav navbar-right">
-					
-					
-					
+					<a href="pantalla de admin principal">
+						<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
+					</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+					<ul class="nav navbar-nav navbar-right">
+
+
+
 						<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
 						<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
 						<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
-				</ul>
-								
+					</ul>
 
-						
+
+
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
 
 
 
 
 
 
-<?php
-}
-?>
+		<?php
+	}
+	?>

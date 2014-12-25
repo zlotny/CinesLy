@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
   <link href="style/style.css" rel="stylesheet" />
+  <script src="js/alertify/lib/alertify.min.js"> </script>
+  <script src="js/general.js"> </script>
+  <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+  <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
 
 </head>
 <body>
@@ -64,35 +69,12 @@
     </div>
   </div>
   <div class="col-sm-3"></div>
-
-  
-
-
 </div>
+
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
-<footer>
- <section class="container" style="padding:10px">
-  <div class="btn-group dropup pull-rigth ">
-    <button type="button" class="btn btn-default">Idioma</button>
-    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-      &nbsp
-      <span class="caret"></span>
-      <span class="sr-only">Toggle Dropdown</span>
-      &nbsp
-    </button>
-    <ul class="dropdown-menu" role="menu">
-      <li><a href="#">Gallego</a></li>
-      <li><a href="#">Inglés</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Español</a></li>
-    </ul>
-  </div>
-</section>
-</footer>
+
+<?php footer(); ?>
+
 </body>	
-
-<script src="js/jquery-2.1.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
-
 </html>

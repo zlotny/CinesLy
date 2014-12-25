@@ -123,7 +123,7 @@ $textos["valMed"]="La valoración media es:";
 $textos["comentarios"]="Comentarios";
 $textos["writeComen"]="Escribe un comentario";
 
-//adminModificarusuario.php
+//adminModificarPelicula.php
 $textos["h1AdModPel"]="Catálogo de Películas";
 $textos["catalogPelis"]="List of Movies";
 $textos["editPeli"]="Editar Pelicula";
@@ -142,7 +142,7 @@ $textos["guardCamb"]="Guardar Cambios";
 $textos["inserMov"]="Inserte una Pelicula";
 $textos["pBusq"]=" busquela";
 
-//AdminModificarUsuario.php
+//adminModificarUsuario.php
 $textos["h1ListUsu"]="Lista de Usuarios";
 $textos["catalogPelis"]="List of Movies";
 $textos["editPeli"]="Editar Pelicula";
@@ -160,6 +160,15 @@ $textos["h4NewUsu"]="Nuevo Usuario";
 $textos["typeUser"]="Tipo de Usuario:";
 $textos["labelAMU"]="Podrá cambiar otros detalles de este usuario en la opción de editar.Ten en cuenta que te ES posible cambiar todo, pues eres el administrador, joder.";
 
+//modificar_grupo.php
+//revisar
+$textos["modGrup"]="Modificar Grupo";
+$textos["changeGrup"]="Cambiar nombre del Grupo";
+$textos["changePel"]="Cambiar Película";
+$textos["changeSes"]="Cambiar Sesión";
+$textos["busqSes"]="Buscar Sesión";
+$textos["dellAm"]="Eliminar Amigos";
+$textos["modif"]="Modificar";
 
 
 

@@ -26,12 +26,14 @@ include_once "sesion_segura.php";
 
   <?php cabeceraPantallaPrincipal(); 
   session_start();
+  $posiblesAmigos = $_SESSION["usuario"]->getPosiblesAmigos();
+
   ?>
 
   <h1 class="tackle-right">Lista de amigos</h1>
   <p class="tackle-right">En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado. </p>
   <div class="row top-margin">
-    <div class="col-md-3"> </div>
+    <div class="col-md-1"> </div>
     <div class="col-md-6">
       <div class="panel panel-default">
        <div class="panel panel-heading">Mis amigos</div>
@@ -125,9 +127,47 @@ include_once "sesion_segura.php";
 </div>					
 </div>				
 </div>
-</div> </div>
+</div> 
 
-<div class="col-md-3"> </div> 
+
+<div class="col-md-4"> 
+
+  <div class="panel panel-default">
+   <div class="panel panel-heading">Personas que podrían interesarte</div>
+   <div class="panel panel-body">
+     <table class="table table-striped">
+      <?php
+      foreach($posiblesAmigos as $filaAmigo){
+        echo "<form role='form' action='controladoras/addamigo.php'>";
+        if(isset($filaAmigo->foto)){
+          echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='".$filaAmigo->foto."' width='50px'/></a></td>";
+        }
+        else {
+          echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
+        }
+        ?>
+        <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
+        <input type="hidden" id="emailAmigoAdd" name="email" value="<?php echo $filaAmigo->email; ?>" />
+        <td class='col-md-1'><input type="submit" class='btn btn-info' value="Añadir"></td>
+      </tr>
+      <?php
+      echo "</form>";
+    }
+    ?>
+
+
+
+
+
+
+
+  </table>
+</div>
+</div> 
+</div>
+
+
+<div class="col-md-1"> </div> 
 <br/>
 </div>
 
@@ -157,6 +197,8 @@ include_once "sesion_segura.php";
   </div>  
 
 </div>
+
+
 <?php footer(); ?>
 
 </body>

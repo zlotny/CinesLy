@@ -51,8 +51,8 @@
 	
 
 
-	<div class="col-md-1"></div>
-	<div class="col-md-2" >
+	
+	<div class="col-md-3" >
 
 		<div class="panel panel-default " >
 			<div class="panel-heading ">Perfil</div>
@@ -60,9 +60,9 @@
 
 				<?php
 				if (isset($_SESSION['usuario']->foto)){
-					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='center-block'>";
+					echo "<img src='".$_SESSION['usuario']->foto."' height='150px' width='150px' class='center-block img-circle'>";
 				}else{
-					echo "<img src='img/default_user.png' width='150px' class='center-block'>";
+					echo "<img src='img/default_user.png' height='150px' width='150px' class='center-block img-circle'>";
 				}
 				?>
 				<h5>Nombre de Usuario:</h5>
@@ -71,7 +71,7 @@
 				<small><?php echo $_SESSION['usuario']->email; ?></small>
 				<h5>Biografía:</h5>
 				<form id="bio-form" action="controladoras/actualizaBio.php" method="post">
-					<textarea class="form-control eslogan" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
+					<textarea class="form-control eslogan border-radius-publi" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
 				</form>
 			</div>	
 			<div class="panel-footer">
@@ -111,7 +111,7 @@
 	</div>
 
 	<div class="col-md-5" >
-		<div class="panel panel-default" >
+		<div class="panel panel-default" style="text-align:center;" >
 
 <ul class="media-list">
 					<?php 
@@ -123,13 +123,13 @@
 					while($row = mysql_fetch_array($publicaciones)){
 						$usuRow = $row['email'];
 						?>
-						<li class="media">
-							<div class="well">
+						<li class="media" style="margin-top:0px;">
+							<div class="well" style="margin-bottom:0px;">
 								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $row['idPublicacion']; ?>" method="POST">
 
 								<div class="publication-body" >
-									<span class="very-small near-top"><?php echo $row['fecha']; ?></span>
-									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text" ><?php echo $row['publica']; ?></textarea>
+									<span class="small near-top"><?php echo $row['fecha']; ?></span>
+									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['publica']; ?></textarea>
 								</div>
 
 								<div class="clearfix">
@@ -141,15 +141,15 @@
 								<input type='button' onclick='mostrar(<?php echo $row['idPublicacion'].",1".$row['idPublicacion'].",editar".$row['idPublicacion']; ?>)' id='<?php echo "editar".$row['idPublicacion']; ?>' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>
 								<input type='submit' onclick='ocultar(<?php echo $row['idPublicacion']; ?>)' style='visibility: hidden;'  id='<?php echo $row['idPublicacion']; ?>' class='btn btn-xs btn-success pull-right' value='Guardar'/>
 	
+								
 								<?php  } ?>
 
 								</div>
-								
 								</form>
-
+								<hr style="background-color:#E1E1E1;height:1px;">
 							</div>
-
 						</li><?php  } ?>
+						<hr style="background-color:#1E1E1E;height:1px;">
 					</ul>
 
 
@@ -214,31 +214,7 @@
 
 
 
-		<div class="col-md-3" >
-
-
-			<!--<div class="panel panel-default">
-				<div class="panel-heading">Últimas Películas Vistas</div>
-				<div class="panel-body scrollable-table-perfilD">
-					<table class="table table-striped ">
-						<?php 
-							$topPelis=Pelicula::consultarTopPelis(); $i=1;
-							while($row = mysql_fetch_array($topPelis)){
-								$valoracion = $row['valoracion']/$row['cont_valoracion'];
-						?>
-								<tr>
-									<td><h1><?php echo $i; ?></h1></td>
-									<td><img class="table img-responsive img-rounded" src="<?php echo $row['foto']; ?>"></td>
-									<td><?php echo $row['titulo']; ?></td><td><?php echo round($valoracion,2); ?></td>
-								</tr>
-
-						<?php  $i++; } ?>
-
-
-					</table>
-				</div>
-			</div> -->
-
+		<div class="col-md-4" >
 
 			<div class="events-box">
 				<div class="events-box-head">
@@ -253,7 +229,7 @@
 						?>
 								<li>
 									<img src="<?php echo $row['foto']; ?>" style="max-width:110px; height:auto;" alt="" title="">
-									<div class="caption" >
+									<div class="caption" style="cursor:pointer;">
 										<div class="text">
 											<strong class="date"><?php echo $i; ?></strong>
 									 		<strong class="title"><?php echo $row['titulo']."  ( ".$valoracion." )"; ?></strong>
@@ -288,29 +264,9 @@
 					</ul>            
 				</div>
 			</div>
-			
-			
+		</div>
 
-			<!--<div class="panel panel-default">
-				<div class="panel-heading">Películas Recomendadas</div>
-				<div class="panel-body scrollable-table-perfilD">
-					<table class="table table-striped ">
-						<?php 
-							$rec=$_SESSION['usuario']->consultarRecomendadas(); 
-							for($i=0;$i<sizeof($rec[0]);$i++){
-							
-						?>
-
-						<tr><td><?php echo $rec[0][$i]; ?></td><td><?php echo $rec[2][$i]; ?></td></tr>
-
-						<?php } ?>
-
-					</table>
-				</div>
-			</div>
-		</div>-->
-
-		<div class="col-md-1"></div>
+		
 
 
 
@@ -342,8 +298,8 @@
 
 
 
-
-		<?php footer(); ?>
+<?php footer(); ?>
+		
 
 
 
