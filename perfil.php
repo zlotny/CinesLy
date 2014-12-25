@@ -71,7 +71,7 @@
 				<small><?php echo $_SESSION['usuario']->email; ?></small>
 				<h5>Biografía:</h5>
 				<form id="bio-form" action="controladoras/actualizaBio.php" method="post">
-					<textarea class="form-control eslogan" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
+					<textarea class="form-control eslogan border-radius-publi" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
 				</form>
 			</div>	
 			<div class="panel-footer">
@@ -123,13 +123,13 @@
 					while($row = mysql_fetch_array($publicaciones)){
 						$usuRow = $row['email'];
 						?>
-						<li class="media">
-							<div class="well">
+						<li class="media" style="margin-top:0px;">
+							<div class="well" style="margin-bottom:0px;">
 								<form action="controladoras/editarPublicacionPerfil.php?id=<?php echo $row['idPublicacion']; ?>" method="POST">
 
 								<div class="publication-body" >
 									<span class="very-small near-top"><?php echo $row['fecha']; ?></span>
-									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text" ><?php echo $row['publica']; ?></textarea>
+									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['publica']; ?></textarea>
 								</div>
 
 								<div class="clearfix">
@@ -141,15 +141,15 @@
 								<input type='button' onclick='mostrar(<?php echo $row['idPublicacion'].",1".$row['idPublicacion'].",editar".$row['idPublicacion']; ?>)' id='<?php echo "editar".$row['idPublicacion']; ?>' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>
 								<input type='submit' onclick='ocultar(<?php echo $row['idPublicacion']; ?>)' style='visibility: hidden;'  id='<?php echo $row['idPublicacion']; ?>' class='btn btn-xs btn-success pull-right' value='Guardar'/>
 	
+								
 								<?php  } ?>
 
 								</div>
-								
 								</form>
-
+								<hr style="background-color:#E1E1E1;height:1px;">
 							</div>
-
 						</li><?php  } ?>
+						<hr style="background-color:#1E1E1E;height:1px;">
 					</ul>
 
 
