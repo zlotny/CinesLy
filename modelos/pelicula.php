@@ -228,6 +228,7 @@ class Pelicula{
 	}
 
 	function consultaBD($consulta){
+		Pelicula::conectarBD();
 		$resultado= mysql_query($consulta) or die ('MySql Error en consultaBD'.mysql_error());
 		
 		return $resultado;
