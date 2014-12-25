@@ -171,53 +171,16 @@ $textos["valMed"]="The average rating is:";
 $textos["comentarios"]="Comments";
 $textos["writeComen"]="Write a comment";
 
-//fichaAmigo.php
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-
-//Login.php
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-
 //modificar_grupo.php
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
-$textos[""]="";
+//revisar
+$textos["modGrup"]="Modify Group";
+$textos["changeGrup"]="Change Group Name";
+$textos["changePel"]="Change Film";
+$textos["changeSes"]="Change Desion";
+$textos["busqSes"]="Buscar Sesi?n";
+$textos["dellAm"]="Remove Friends";
+$textos["modif"]="Modify";
+
 
 
 
