@@ -60,9 +60,9 @@
 
 				<?php
 				if (isset($_SESSION['usuario']->foto)){
-					echo "<img src='".$_SESSION['usuario']->foto."' width='150px' class='center-block'>";
+					echo "<img src='".$_SESSION['usuario']->foto."' height='150px' width='150px' class='center-block img-circle'>";
 				}else{
-					echo "<img src='img/default_user.png' width='150px' class='center-block'>";
+					echo "<img src='img/default_user.png' height='150px' width='150px' class='center-block img-circle'>";
 				}
 				?>
 				<h5>Nombre de Usuario:</h5>
@@ -215,30 +215,6 @@
 
 
 		<div class="col-md-3" >
-
-
-			<!--<div class="panel panel-default">
-				<div class="panel-heading">Últimas Películas Vistas</div>
-				<div class="panel-body scrollable-table-perfilD">
-					<table class="table table-striped ">
-						<?php 
-							$topPelis=Pelicula::consultarTopPelis(); $i=1;
-							while($row = mysql_fetch_array($topPelis)){
-								$valoracion = $row['valoracion']/$row['cont_valoracion'];
-						?>
-								<tr>
-									<td><h1><?php echo $i; ?></h1></td>
-									<td><img class="table img-responsive img-rounded" src="<?php echo $row['foto']; ?>"></td>
-									<td><?php echo $row['titulo']; ?></td><td><?php echo round($valoracion,2); ?></td>
-								</tr>
-
-						<?php  $i++; } ?>
-
-
-					</table>
-				</div>
-			</div> -->
-
 
 			<div class="events-box">
 				<div class="events-box-head">
