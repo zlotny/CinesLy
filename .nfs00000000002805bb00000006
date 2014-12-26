@@ -76,7 +76,7 @@
           echo '<li class="media" style="margin-top: 15px;">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="#">';
+          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
 
           if(substr($panelPelicula["foto"],0,3) == "img"){
             echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
@@ -187,7 +187,7 @@
           echo '<li class="media">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="#">';
+          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelPelicula["idPelicula"].'">';
           if(substr($panelPelicula["foto"],0,3) == "img"){
             echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
