@@ -38,7 +38,7 @@
 
 	cabeceraPantallaPrincipal();
 
-	$cant_reg = 3; 
+	$cant_reg = 15; 
 	$num_pag = $_GET['pagina']; 
 	if ($num_pag<1) { 
 		$comienzo = 0; 
@@ -57,7 +57,7 @@
 	
 	<div class="col-md-3" >
 
-		<div class="panel panel-default " >
+		<div class="panel panel-default " style="position:fixed;" >
 			<div class="panel-heading ">Perfil</div>
 			<div class="panel-body">
 				<?php
@@ -85,25 +85,24 @@
 
 	</div>
 
-	<div class="col-md-5" >
+	<div class="col-md-9" >
 		<div class="panel panel-default" style="text-align:center;" >
 			<ul class="media-list">
 					<?php 
-						$total_registros = $amigo->numPublicaciones();
+						$total_registros = $amigo->numAmigos();
 
-						$publicaciones=$amigo->paginadorPublicacionesPerfil($comienzo,$cant_reg); 
+						$amigos=$amigo->paginadorAmigos($comienzo,$cant_reg); 
 
 						$total_paginas = ceil($total_registros/$cant_reg);
 
-					while($row = mysql_fetch_array($publicaciones)){
-						$usuRow = $row['email'];
+					while($row = mysql_fetch_array($amigos)){
 						?>
 						<li class="media" style="margin-top:0px;">
 							<div class="well" style="margin-bottom:0px;">
 
 								<div class="publication-body" >
-									<span class="small near-top"><?php echo $row['fecha']; ?></span>
-									<textarea name="publi" readonly id= "<?php echo "1".$row['idPublicacion']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['publica']; ?></textarea>
+									<span class="small near-top"><?php echo $row['nombreUsuario']."  ".$row['email']; ?></span>
+									<textarea name="publi" readonly id= "<?php echo $row['email']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['eslogan']; ?></textarea>
 								</div>
 
 								
@@ -122,9 +121,9 @@
 						<?php
 						if( $num_pag > 1)
 							{ ?>
-						<li><a accesskey="a" href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>">Prev</a></li>
+						<li><a accesskey="a" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>">Prev</a></li>
 						<?php	} else { ?>
-						<li class="disabled" ><a href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Prev</a></li>
+						<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Prev</a></li>
 						<?php
 					}
 					if($num_pag<=5){
@@ -138,7 +137,7 @@
 							else 
 							{ 
 								 if ($i<=$total_paginas){?>
-								<li><a href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo $i ?>"><?php echo $i; ?></a></li> 
+								<li><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo $i ?>"><?php echo $i; ?></a></li> 
 								<?php	}else{  ?>
 										<li class="disabled"><a><?php echo "&nbsp"; ?></a></li> 
 										
@@ -155,7 +154,7 @@
 							} 
 							else 
 							{ 
-								?><li><a href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
+								?><li><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
 								<?php
 							} 
 						}
@@ -163,9 +162,9 @@
 					}
 					if(($num_pag+1)<=$total_paginas) 
 						{ ?>
-					<li><a accesskey="s" href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
+					<li><a accesskey="s" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
 					<?php	} else { ?>
-					<li class="disabled" ><a href="perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Sig</a></li>
+					<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Sig</a></li>
 					<?php
 				}	
 				?>	</ul>
@@ -175,57 +174,6 @@
 
 
 
-		<div class="col-md-4" >
-
-			<div class="events-box">
-				<div class="events-box-head">
-					<h5>Películas <span>TOP 10</span></h5>
-				</div>
-				<div class="scrollable-table-perfilD">
-					<ul>
-						<?php 
-							$topPelis=Pelicula::consultarTopPelis(); $i=1;
-							while($row = mysql_fetch_array($topPelis)){
-								$valoracion = round($row['valoracion']/$row['cont_valoracion'],2);
-						?>
-								<li>
-									<img src="<?php echo $row['foto']; ?>" style="max-width:110px; height:auto;" alt="" title="">
-									<div class="caption" style="cursor:pointer;">
-										<div class="text">
-											<strong class="date"><?php echo $i; ?></strong>
-									 		<strong class="title"><?php echo $row['titulo']."  ( ".$valoracion." )"; ?></strong>
-										</div>
-									</div>
-								</li>
-						<?php  $i++; } ?>
-					</ul>            
-				</div>
-			</div>
-			<div class="events-box">
-				<div class="events-box-head">
-					<h5>Peliculas recomendadas</h5>
-				</div>
-				<div class="scrollable-table-perfilD">
-					<ul>
-						<?php 
-							$rec=$amigo->consultarRecomendadas(); 
-							for($i=0;$i<sizeof($rec[0]);$i++){
-							
-						?>
-								<li class="xs">
-									<img src="<?php echo $rec[1][$i]; ?>" style="max-width:60px; height:auto;" alt="" title="">
-									<div class="caption" >
-										<div class="text">
-											<strong class="datexs"><?php echo $rec[2][$i]; ?></strong>
-									 		<strong class="title"> Recomendada por <?php echo $rec[0][$i]; ?></strong>
-										</div>
-									</div>
-								</li>
-						<?php } ?>
-					</ul>            
-				</div>
-			</div>
-		</div>
 
 		
 
@@ -235,12 +183,12 @@
 		<script type="text/javascript">
 			function leftArrowPressed() {
 				if(<?php echo $num_pag; ?> > 1) {
-					location.replace("perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>");
+					location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>");
 				}
 			}
 			function rightArrowPressed() {		
 				if((<?php echo $num_pag; ?>+1) <= <?php echo $total_paginas;?>) {
-					location.replace("perfilAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1); ?>");
+					location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1); ?>");
 				} 	
 			}
 			document.onkeydown = function(evt) {

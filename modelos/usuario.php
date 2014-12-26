@@ -221,6 +221,26 @@ function getAmigosSinConfirmar(){
 	}
 	return $toRet;
 }
+
+function numAmigos(){
+	$this->conectarBD();
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email' and estado = '0' \n"
+    . "UNION\n"
+    . "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
+	$resultado = mysql_query($sql);
+	return mysql_num_rows($resultado);
+}
+function paginadorAmigos($comienzo,$cant_reg){
+	$this->conectarBD();
+	$sql = "\n"
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.estado = '0' \n"
+    . "UNION\n"
+    . "\n"
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
+//echo $sql;
+	return mysql_query($sql);
+}
+
 function getAmigos(){
 	$this->conectarBD();
 	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
