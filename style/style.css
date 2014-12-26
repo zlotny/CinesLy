@@ -463,3 +463,10 @@ body{
 .alertify-message{
 	color: black !important;
 }
+
+
+.amigos-body {
+    display: table-cell;
+    vertical-align: top;
+    width: 1200px;
+}
