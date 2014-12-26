@@ -438,4 +438,12 @@ function usuariosFiltrados($email, $tipo){
 
 	}
 }
+
+function editarFotoPerfil($email,$foto){
+
+	$this->conectarBD();
+	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email=".$email;
+	return mysql_query($sql);
+}
+
 ?>
