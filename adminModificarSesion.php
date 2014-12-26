@@ -86,36 +86,40 @@
       <?php
 
       if(isset($filtro) ){
-        $arrayPeliculas=$filtro;
-        foreach($arrayPeliculas as $panelPelicula){
+        $arraySesiones=$filtro;
+        foreach($arraySesiones as $panelSesion){
 
-          echo '<li class="media" style="margin-top: 15px;">';
-          echo '<div class="col-md-12 ">';
+         $peliculaSesion=Pelicula::mostrarPelicula($panelSesion[0]);
+          echo '<li class="media">';
+          echo '<div class="col-md-1 "></div>';
+          echo '<div class="col-md-11 ">';
           echo '<div class="well">';
           echo '<a class="media-left" href="#">';
-
-          if(substr($panelPelicula["foto"],0,3) == "img"){
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+          if(substr($peliculaSesion["foto"],0,3) == "img"){
+            echo '<img src="'.$peliculaSesion["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
           }else{
             echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
 
           }
-
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
-          ;?>
+          echo '<p><b>Sala: </b>'.$panelSesion["sala"].'</p>';
+          echo '<p><b>Fecha: </b>'.$panelSesion["fecha"].'</p>';
+          echo '<p><b>Capacidad: </b>'.$panelSesion["capacidad"].'</p>';
+          echo '<p><b>idPelicula: </b>'.$panelSesion[0].'</p>';
+          echo '<p><b>Titulo de la pelicula: </b>'.$peliculaSesion["titulo"].'</p>';
+          ?>
+
+
+          
           <br/>
           <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $panelSesion["idSesion"];?>" > 
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
           </button>
 
           <!--EliminarPerfil-->
-          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion[0]?>');">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
           </button>
 
@@ -142,7 +146,7 @@
                     <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
 
                     <label for="idPelicula" class="">ID de la pelicula de la sesion ( no modificable ):</label>
-                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $panelSesion["idPelicula"]; ?>" readonly> <br/>
+                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $panelSesion[0]; ?>" readonly> <br/>
 
 
                   </div>
@@ -316,7 +320,7 @@
         <p>o busquela </p>
 
         <!-- formulario para buscar pelicula-->
-        <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
+        <form role="form" action="controladoras/adminFiltrarSesiones.php" method="post">
 
           <div class="input-group">
 

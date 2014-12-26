@@ -363,7 +363,7 @@
     </div> 
     <p>o busque un usuario </p>
 
-    <!-- formulario para buscar pelicula-->
+    <!-- formulario para buscar usuario-->
     <form role="form" action="controladoras/adminFiltrarUsuarios.php" method="post">
 
       <div class="input-group">
