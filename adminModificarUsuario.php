@@ -149,7 +149,8 @@
   
                   <label for="eslogan" class="">Cambiar eslogan:</label>
                   <input type="text" name="eslogan" class="form-control form-pers" placeholder="Introduzca su eslogan" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
-                  <label for="foto" class="">Cambiar foto:</label>
+                  
+
 
 
                 </div>
@@ -261,7 +262,7 @@
   
                   <label for="eslogan" class="">Cambiar eslogan:</label>
                   <input type="text" name="eslogan" class="form-control form-pers" placeholder="Introduzca su eslogan" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
-                  <label for="foto" class="">Cambiar foto:</label>
+                  
 
 
                 </div>
