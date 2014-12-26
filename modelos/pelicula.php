@@ -197,9 +197,10 @@ class Pelicula{
 
 		$sql2="UPDATE pelicula SET  titulo ='$peli1->titulo', director = '$peli1->director', distribuidora ='$peli1->distribuidora', 
 		duracion = '$peli1->duracion', sinopsis ='$peli1->sinopsis' , actores = '$peli1->actores', anho = $peli1->anho,
-		fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos =$peli1->votos ,
-		valoracion = $peli1->valoracion, tipo = '$peli1->tipo' , cont_valoracion = $peli1->contValoracion, foto = '$peli1->foto'
+		fecha_estreno =$peli1->fechaEstreno , genero ='$peli1->genero' , pais ='$peli1->pais' , votos ='$peli1->votos' ,
+		valoracion = '$peli1->valoracion', tipo = '$peli1->tipo' , cont_valoracion = '$peli1->contValoracion', foto = '$peli1->foto'
 		WHERE idPelicula = '$peli1->idPelicula'";
+		echo $sql2;
 		return Pelicula::consultaBD($sql2);
 	}
 

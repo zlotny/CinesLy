@@ -95,18 +95,17 @@
           echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
           ;?>
           <!--borrarase en un futuro -->
-          <div class="col-md-8"> </div>
-          <div class="col-md-4">
+         <br>
             <!--editar perfil-->
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
             </button>
 
             <!--EliminarPerfil-->
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
-          </div>
+         
 
           <!-- Pagina modal para modificar perfil -->
           <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -205,8 +204,7 @@
           ;?>
 
           <!-- Modificar una pelicula--> 
-          <div class="col-md-8"> </div>
-          <div class="col-md-4">
+          <br>
             
             <!--editar perfil-->
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
@@ -214,11 +212,11 @@
             </button>
 
             <!--EliminarPerfil-->
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula( '<?php echo $panelPelicula["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
 
-    	</div>
+    	
     
     <!-- Pagina modal para modificar perfil -->
     <div id="modificarPelicula<?php echo $a->idPelicula;?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
