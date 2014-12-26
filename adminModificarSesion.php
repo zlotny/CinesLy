@@ -221,13 +221,13 @@
                       <h4>Editar Sesión</h4>
                     </div>
                     <div class="modal-body">
-                      <label for="sala" class="">Cambiar la Sala:</label>
+                      <label for="sala" class="">Introduzca la Sala:</label>
                       <input type="text" name="sala" class="form-control form-pers" value="<?php echo $panelSesion["sala"];?>"><br/>    
 
-                      <label for="fecha" class="">Cambiar la Fecha:</label>
+                      <label for="fecha" class="">Introduzca la Fecha:</label>
                       <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
 
-                      <label for="capacidad" class="">Cambiar la Capacidad:</label>
+                      <label for="capacidad" class="">Introduzca la Capacidad:</label>
                       <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
 
                       <label for="idPelicula" class="">ID de la pelicula de la sesion ( no modificable ):</label>
