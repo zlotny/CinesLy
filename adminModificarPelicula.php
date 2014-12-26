@@ -88,11 +88,13 @@
 
           echo '</a>';  
           echo '<div class="media-body">';
+          echo '<p><b>idPelicula: </b>'.$panelPelicula["idPelicula"].'</p>';
           echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
           echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
           echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
           echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
           ;?>
+          <!--borrarase en un futuro -->
           <div class="col-md-8"> </div>
           <div class="col-md-4">
             <!--editar perfil-->
@@ -141,8 +143,8 @@
                     <label for="pais" class="">Cambiar País:</label>
                     <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
 
-                    <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
-                    <select name="tipoPeli" aria-labelledby="buscar_peli">
+                    <label for="tipoPeli" class="form-control">Cambiar Tipo:</label><br/>
+                    <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
                       <option  value="cartelera">En Cartelera</option>
                       <option  value="especial">Especiales</option>
                       <option  value="proximamente">Proximamente</option>
@@ -194,7 +196,8 @@
 
           }
           echo '</a>';  
-          echo '<div class="media-body">';
+          echo '<div class="media-body">';         
+          echo '<p><b>idPelicula: </b>'.$panelPelicula["idPelicula"].'</p>';
           echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
           echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
           echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
@@ -211,7 +214,7 @@
             </button>
 
             <!--EliminarPerfil-->
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
 
@@ -252,8 +255,8 @@
               <label for="pais" class="">Cambiar País:</label>
               <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
               
-              <label for="tipoPeli" class="">Cambiar Tipo:</label><br/>
-              <select name="tipoPeli" aria-labelledby="buscar_peli">
+              <label for="tipoPeli" >Cambiar Tipo:</label><br/>
+              <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
                 <option  value="cartelera">En Cartelera</option>
                 <option  value="especial">Especiales</option>
                 <option  value="proximamente">Proximamente</option>
@@ -343,7 +346,7 @@
               <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value=""> <br/>
               
               <label for="tipoPeli" class="">Tipo:</label><br/>
-              <select name="tipoPeli" aria-labelledby="buscar_peli">
+              <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
                 <option  value="cartelera">En Cartelera</option>
                 <option  value="especial">Especiales</option>
                 <option  value="proximamente">Proximamente</option>
@@ -392,7 +395,7 @@
       <br>
       <div class="form-group">
         <label for="tipo_peli">Tipo de Peliculas</label><br>
-        <select name="tipo" aria-labelledby="buscar_peli">
+        <select name="tipo" class="form-control" aria-labelledby="buscar_peli">
           <option  value="">Todas las peliculas</option>
           <option  value="cartelera">En Cartelera</option>
           <option  value="especial">Especiales</option>
