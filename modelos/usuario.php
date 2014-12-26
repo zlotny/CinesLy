@@ -130,7 +130,7 @@ function modificarUsuario($email,$usuario) {
 	if($usuario->nombreUsuario!=""){
 		$usuarioAntiguo->nombreUsuario=$usuario->nombreUsuario;
 	}elseif($usuario->nombreUsuario=="" && $usuarioAntiguo->nombreUsuario==""){
-		$usuarioAntiguo->nombreUsuario="campo Vacio";
+		//$usuarioAntiguo->nombreUsuario="campo Vacio";
 	}
 	if($usuario->email!=""){
 		$usuarioAntiguo->email=$usuario->email;
@@ -144,42 +144,42 @@ function modificarUsuario($email,$usuario) {
 	if($usuario->foto!=""){
 		$usuarioAntiguo->foto=$usuario->foto;
 	}elseif($usuario->foto=="" && $usuarioAntiguo->foto==""){
-		$usuarioAntiguo->foto="campo Vacio";
+		$usuarioAntiguo->foto="img/default_user.png";
 	}
 	if($usuario->preferencia1!=""){
 		$usuarioAntiguo->preferencia1=$usuario->preferencia1;
 	}elseif($usuario->preferencia1=="" && $usuarioAntiguo->preferencia1==""){
-		$usuarioAntiguo->preferencia1="campo Vacio";
+		//$usuarioAntiguo->preferencia1="campo Vacio";
 	}
 	if($usuario->preferencia2!=""){
 		$usuarioAntiguo->preferencia2=$usuario->preferencia2;
 	}elseif($usuario->preferencia2=="" && $usuarioAntiguo->preferencia2==""){
-		$usuarioAntiguo->preferencia2="campo Vacio";
+		//$usuarioAntiguo->preferencia2="campo Vacio";
 	}
 	if($usuario->preferencia3!=""){
 		$usuarioAntiguo->preferencia3=$usuario->preferencia3;
 	}elseif($usuario->preferencia3=="" && $usuarioAntiguo->preferencia3==""){
-		$usuarioAntiguo->preferencia3="campo Vacio";
+		//$usuarioAntiguo->preferencia3="campo Vacio";
 	}
 	if($usuario->estado!=""){
 		$usuarioAntiguo->estado=$usuario->estado;
 	}elseif($usuario->estado=="" && $usuarioAntiguo->estado==""){
-		$usuarioAntiguo->estado="campo Vacio";
+		//$usuarioAntiguo->estado="campo Vacio";
 	}
 	if($usuario->ciudadActual!=""){
 		$usuarioAntiguo->ciudadActual=$usuario->ciudadActual;
 	}elseif($usuario->ciudadActual=="" && $usuarioAntiguo->ciudadActual==""){
-		$usuarioAntiguo->ciudadActual="campo Vacio";
+		//$usuarioAntiguo->ciudadActual="campo Vacio";
 	}
 	if($usuario->fechaNacimiento!=""){
 		$usuarioAntiguo->fechaNacimiento=$usuario->fechaNacimiento;
 	}elseif($usuario->fechaNacimiento=="" && $usuarioAntiguo->fechaNacimiento==""){
-		$usuarioAntiguo->fechaNacimiento="campo Vacio";
+		//$usuarioAntiguo->fechaNacimiento="campo Vacio";
 	}
 	if($usuario->eslogan!=""){
 		$usuarioAntiguo->eslogan=$usuario->eslogan;
 	}elseif($usuario->eslogan=="" && $usuarioAntiguo->eslogan==""){
-		$usuarioAntiguo->eslogan="campo Vacio";
+		//$usuarioAntiguo->eslogan="campo Vacio";
 	}
 	$sql2="UPDATE usuario SET nombreUsuario='".$usuarioAntiguo->nombreUsuario."' , email='".$usuarioAntiguo->email."' , pass='".$usuarioAntiguo->pass."', foto='".$usuarioAntiguo->foto."',
 	preferencia1='".$usuarioAntiguo->preferencia1."',preferencia2='".$usuarioAntiguo->preferencia2."',preferencia3='".$usuarioAntiguo->preferencia3."',

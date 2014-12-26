@@ -86,7 +86,7 @@
           <div class="col-md-8"></div>
           <div class="col-md-4">
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario2<?php echo $i; ?>"> 
+            <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario1<?php echo $i; ?>"> 
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
           </button>
             <form action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
@@ -96,7 +96,7 @@
 
 
 
-<div id="modificarUsuario2<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modificarUsuario1<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
             <div class="modal-dialog">
@@ -191,7 +191,7 @@
           ?>
 
        
-        <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario<?php echo $i; ?>"> 
+        <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario2<?php echo $i; ?>"> 
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
           </button>
           
