@@ -26,20 +26,30 @@ if($accion == "Guardar cambios"){
 	$usuario->modificarUsuario($emailA,$usuario);
 	header("Location:../adminModificarUsuario.php");
 } else{
-if($accion == "Insertar Usuario"){
+	if($accion == "Insertar Usuario"){
 
-	echo "string";
+		echo "string";
 
-	$nombreUsuario = $_REQUEST['nombreUsuario'];
-	$email = $_REQUEST['email'];
-	$pass = $_REQUEST['pass'];
-	$tipoUsuario = $_REQUEST['tipoUsuario']; 
+		$nombreUsuario = $_REQUEST['nombreUsuario'];
+		$email = $_REQUEST['email'];
+		$pass = $_REQUEST['pass'];
+		$tipoUsuario = $_REQUEST['tipoUsuario']; 
 
-	$usuario = new Usuario($nombreUsuario,$email,$pass,$tipoUsuario,"","","","","","","","");
-	Usuario::insertarUsuario($usuario);
-		
-	header("Location:../adminModificarUsuario.php");
-} 
+		$usuario = new Usuario($nombreUsuario,$email,$pass,$tipoUsuario,"","","","","","","","");
+		Usuario::insertarUsuario($usuario);
+			
+		header("Location:../adminModificarUsuario.php");
+	} else{
+		if($accion == "Eliminar"){
+
+			
+			echo "string";
+			Usuario::eliminarUsuario($emailA);
+echo "string";
+echo "<br>";
+			header("Location:../adminModificarUsuario.php");
+		}
+	}
 }
 
 

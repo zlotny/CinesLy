@@ -98,6 +98,12 @@ echo "correo enviado ".$this->email;
 //header("Location:../index.php");
 }
 */
+function eliminarUsuario($email){
+	Usuario::conectarBD();
+	$sql="DELETE FROM usuario WHERE email = '".$email."'";
+	Usuario::consultaBD($sql);
+	
+}
 function bajaUsuario(){
 	$this->conectarBD();
 	$sql="DELETE FROM usuario WHERE email = '".$this->email."' AND pass = '".$this->pass."'";
@@ -386,5 +392,30 @@ function consultarRecomendadas(){
 	}
 	return $toRet;
 }
+
+
+function usuariosFiltrados($email, $tipo){
+		Usuario::conectarBD();
+		if($tipo == ""){
+			$tipo = "0' or tipo = '1";
+		}
+		if($tipo == "administrador"){
+			$tipo = "1";
+		}
+		if($tipo == "usuario"){
+			$tipo = "0";
+		}
+		$sql="select * from usuario where email like '%".$email."%' and (tipo = '".$tipo."')";
+		
+		
+		$resultado=mysql_query($sql);
+		echo $sql;
+		while($fila=mysql_fetch_array($resultado)){
+			$toRet[$fila["email"]]=$fila;
+		}
+		
+		return $toRet;
+
+	}
 }
 ?>

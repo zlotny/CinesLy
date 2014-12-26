@@ -66,7 +66,7 @@
           echo '<li class="media" style="margin-top: 15px;">';
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
-          echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
+          //echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
 
           if(substr($panelUsuario["foto"],0,3) == "img"){
             echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
@@ -78,10 +78,9 @@
 
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelUsuario["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelUsuario["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelUsuario["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelUsuario["sinopsis"].'</p>';
+          echo '<p><b>Nombre: </b>'.$panelUsuario["nombreUsuario"].'</p>';
+          echo '<p><b>Email: </b>'.$panelUsuario["email"].'</p>';
+          echo '<p><b>Tipo Usuario: </b>'.$panelUsuario["tipoUsuario"].'</p>';
           ;?>
           <!-- boton para editar e eliminar-->
           <div class="col-md-8"></div>
@@ -102,6 +101,9 @@
           echo '</li>';
         }
       }
+
+
+      
       else{
         $arrayUsuarios=Usuario::mostrarUsuarios();
         $i=0;
@@ -127,9 +129,17 @@
           ?>
 
        
-
-        <input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarUsuario<?php echo $i; ?>" value="Editar">     
-         
+        <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario<?php echo $i; ?>"> 
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+          </button>
+          
+          <!--button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('1', '1');">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+            </button>
+        <input type="button" class="btn btn-primary right" data-toggle="modal" data-target="#modificarUsuario<?php echo $i; ?>" value="Editar"-->     
+         <form action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+           <input type="submit" name="accion" class="btn btn-danger" value="Eliminar">
+         </form>
         <div id="modificarUsuario<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
@@ -181,6 +191,7 @@
                 </div>
                 <div class="modal-footer">
                   <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+
                   <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                 </div>
               </div>
@@ -233,8 +244,8 @@
             <input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" >
             <h6> Tipo de Usuario: </h6>
             <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="0->User 1->Admin" ><br/>
-            <label>Podrá cambiar otros detalles de este usuario en la opción de editar.
-              Ten en cuenta que te <span class="text-color-red text-weight-bold"> ES posible cambiar todo</span>, pues eres el administrador, joder.</label>
+            <label>
+              Los datos podrán ser cambiados en <span class="text-color-red text-weight-bold"> EDITAR. </span></label>
             </div>
             <div class="modal-footer">
               
@@ -245,30 +256,29 @@
         </div>
       </form>
     </div> 
-    <p>o busquela </p>
+    <p>o busque un usuario </p>
 
     <!-- formulario para buscar pelicula-->
-    <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
+    <form role="form" action="controladoras/adminFiltrarUsuarios.php" method="post">
 
       <div class="input-group">
 
-        <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
+        <input name="busqueda" type="text" class="form-control" placeholder="Buscar un Usuario">
         <span class="input-group-btn">
           <button type="submit" class="btn btn-success">Buscar</button>
         </span>
       </div>            
       <br>
       <div class="form-group">
-        <label for="tipo_peli">Tipo de Peliculas</label><br>
-        <select name="tipo" aria-labelledby="buscar_peli">
-          <option  value="">Todas las peliculas</option>
-          <option  value="cartelera">En Cartelera</option>
-          <option  value="especial">Especiales</option>
-          <option  value="proximamente">Proximamente</option>
+        <label for="tipo_peli">Tipo de Usuario</label><br>
+        <select name="tipo" class="form-control" aria-labelledby="buscar_user">
+          <option  value="">Todos los usuarios</option>
+          <option  value="administrador">Administrador</option>
+          <option  value="usuario">Usuario</option>
         </select>
 
       </div>
-      <div class="form-group">
+      <!--div class="form-group">
         <label >Género</label>
 
         <table class="table table-striped">
@@ -285,7 +295,7 @@
           <tr ><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
 
         </table>
-      </div>
+      </div-->
 
     </form>
   </div>
