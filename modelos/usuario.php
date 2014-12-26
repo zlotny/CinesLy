@@ -322,13 +322,13 @@ function consultarPublicacion(){
 }
 function paginadorPublicacionesPerfil($comienzo,$cant_reg){
 	$this->conectarBD();
-	$sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$_SESSION['usuario']->email."' ORDER BY fecha LIMIT ".$comienzo.", ".$cant_reg;
+	$sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$this->email."' ORDER BY fecha desc LIMIT ".$comienzo.", ".$cant_reg;
 //echo $sql;
 	return mysql_query($sql);
 }
 function numPublicaciones(){
 	$this->conectarBD();
-	$sql="SELECT * FROM publicacion WHERE email='".$_SESSION['usuario']->email."'";
+	$sql="SELECT * FROM publicacion WHERE email='".$this->email."'";
 	$resultado = mysql_query($sql);
 	return mysql_num_rows($resultado);
 }
