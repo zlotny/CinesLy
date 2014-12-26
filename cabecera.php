@@ -354,6 +354,7 @@ function footer(){
 						<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
 						<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
 						<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
+						<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
 					</ul>
 
 
