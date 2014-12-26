@@ -137,7 +137,7 @@ include_once "sesion_segura.php";
           <br>
           <div class="form-group">
             <label for="tipo_peli">Tipo de Peliculas</label><br>
-            <select name="tipo" aria-labelledby="buscar_peli">
+            <select name="tipo" class="form-control" aria-labelledby="buscar_peli">
               <option  value="">Todas las peliculas</option>
               <option  value="cartelera">En Cartelera</option>
               <option  value="especial">Especiales</option>

@@ -237,3 +237,26 @@ function eliminarPelicula (idPelicula) {
 
 
 
+function eliminarSesion (idSesion, idPelicula) {
+
+  alertify.set({ 
+    labels: {
+      ok     : "Si",
+      cancel : "No"
+    } 
+  });
+
+  alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+  alertify.confirm("Seguro que quieres eliminar esta sesión", function (e) {
+    if (e) {
+                                    
+      document.location.href = "controladoras/eliminarSesion.php?idSesion="+idSesion+"&idPelicula=" + idPelicula;
+    } 
+    else {
+
+      return false;
+    }
+  });
+
+}

@@ -119,9 +119,7 @@ class Sesion{
 	}
 
 	function modificarSesion($idPelicula,$idSesion,$sesion){
-
 		Sesion::conectarBD();
-
 
 		$sql="SELECT * FROM sesion WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
 
@@ -132,7 +130,6 @@ class Sesion{
 		$original=mysql_fetch_array($resultado);
 
 		$sesion1=new Sesion($original["idPelicula"],$original["idSesion"],$original["fecha"],$original["sala"],$original["capacidad"]);
-		
 
 		if($sesion->fecha!=""){
 			$sesion1->fecha=$sesion->fecha;
@@ -147,10 +144,9 @@ class Sesion{
 		$sql2="UPDATE sesion SET fecha ='$sesion1->fecha', sala = '$sesion1->sala', capacidad ='$sesion1->capacidad' 
 		WHERE idSesion ='".$idSesion."' and idPelicula = '".$idPelicula."'";
 		echo $sql2;
-		$resultado=Sesion::consultaBD($sql);
 
-		Sesion::consultaBD($sql2);
-
+		return Sesion::consultaBD($sql2);
+		
 
 	}
 
@@ -185,7 +181,21 @@ class Sesion{
 		return $toRet;
 	}
 
+	function mostrarSesiones(){
 
+		Pelicula::conectarBD();
+		
+		$sql = "SELECT * FROM sesion";
+		$result = Sesion::consultaBD($sql);
+
+		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$toRet[$tuplas["idSesion"]] = $tuplas;
+		}
+
+		return $toRet;
+
+
+	}
 
 
 
