@@ -28,7 +28,7 @@ if($accion == "Guardar cambios"){
 } else{
 	if($accion == "Insertar Usuario"){
 
-		echo "string";
+		
 
 		$nombreUsuario = $_REQUEST['nombreUsuario'];
 		$email = $_REQUEST['email'];
@@ -43,10 +43,9 @@ if($accion == "Guardar cambios"){
 		if($accion == "Eliminar"){
 
 			
-			echo "string";
+			
 			Usuario::eliminarUsuario($emailA);
-echo "string";
-echo "<br>";
+
 			header("Location:../adminModificarUsuario.php");
 		}
 	}

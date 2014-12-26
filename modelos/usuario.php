@@ -82,6 +82,7 @@ class Usuario{
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header("Location:../index.php");
 	}
+	
 	function insertarUsuario($usuario){
 		Usuario::conectarBD();
 		$sql="INSERT INTO usuario (nombreUsuario, email, pass, foto, preferencia1, preferencia2, preferencia3, estado, ciudadActual, fechaNacimiento, tipoUsuario, eslogan)
@@ -417,7 +418,7 @@ function consultarRecomendadas(){
 function usuariosFiltrados($email, $tipo){
 		Usuario::conectarBD();
 		if($tipo == ""){
-			$tipo = "0' or tipo = '1";
+			$tipo = "0' or tipoUsuario = '1";
 		}
 		if($tipo == "administrador"){
 			$tipo = "1";
@@ -425,7 +426,7 @@ function usuariosFiltrados($email, $tipo){
 		if($tipo == "usuario"){
 			$tipo = "0";
 		}
-		$sql="select * from usuario where email like '%".$email."%' and (tipo = '".$tipo."')";
+		$sql="select * from usuario where email like '%".$email."%' and (tipoUsuario = '".$tipo."')";
 		
 		
 		$resultado=mysql_query($sql);
