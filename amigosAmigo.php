@@ -57,7 +57,7 @@
 	
 	<div class="col-md-3" >
 
-		<div class="panel panel-default " style="position:fixed;" >
+		<div class="panel panel-default " >
 			<div class="panel-heading ">Perfil</div>
 			<div class="panel-body">
 				<?php
@@ -76,9 +76,7 @@
 			</div> 
 			<div class="panel-footer">
 				<!-- Sin implementar -->
-				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar como amigo">       
-				<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="Amigos de <?php echo $amigo->nombreUsuario; ?>">       
-
+				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
 				<div class="clearfix"></div>
 			</div>	
 		</div>			
@@ -100,9 +98,27 @@
 						<li class="media" style="margin-top:0px;">
 							<div class="well" style="margin-bottom:0px;">
 
-								<div class="publication-body" >
-									<span class="small near-top"><?php echo $row['nombreUsuario']."  ".$row['email']; ?></span>
-									<textarea name="publi" readonly id= "<?php echo $row['email']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['eslogan']; ?></textarea>
+
+								<div class="amigos-body" >
+<div style="width:20%;float:left;margin-right:10px;">
+<a  href="perfilAmigo.php?email=<?php echo $row['email']; ?>">
+				<?php
+				if (isset($row['foto'])){
+					echo "<img src='".$row['foto']."' width='75px' class='center-block'>";
+				}else{
+					echo "<img src='img/default_user.png' width='75px' class='center-block'>";
+				}
+				?>
+	</a>			
+									
+								<p class="small"><?php echo $row['nombreUsuario']; ?></p>
+								<p class="small"><?php echo $row['email']; ?></p>
+</div>
+
+
+									<textarea name="publi" style="width:60%;float:left;cursor:pointer;" readonly id= "<?php echo $row['email']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['eslogan']; ?></textarea>
+												<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
+
 								</div>
 
 								

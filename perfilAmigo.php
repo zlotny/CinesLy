@@ -76,8 +76,8 @@
 			</div> 
 			<div class="panel-footer">
 				<!-- Sin implementar -->
-				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar como amigo">       
-				<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="Amigos de <?php echo $amigo->nombreUsuario; ?>">       
+				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
+				<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="Amigos">       
 
 				<div class="clearfix"></div>
 			</div>	

@@ -339,7 +339,7 @@ function footer(){
 						<span class="icon-bar"></span>
 					</button>
 
-					<a href="pantalla de admin principal">
+					<a href="adminModificarUsuario.php">
 						<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
 					</a>
 				</div>
