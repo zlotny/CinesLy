@@ -67,13 +67,21 @@
           echo '<div class="col-md-12 ">';
           echo '<div class="well">';
           //echo '<a class="media-left" href="ficha_pelicula.php?id='.$panelUsuario["idPelicula"].'">';
-
+          //
           if(substr($panelUsuario["foto"],0,3) == "img"){
-            echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+           // echo '<img src="'.$panelUsuario["foto"].'" alt="" nmouseover="src="img/logo_foto.png"" onmouseout="" 
+            //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
+            ?>
 
-          }else{
-            echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
-
+<img src="<?php echo $panelUsuario["foto"]; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $panelUsuario["foto"]; ?>'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+     
+           <?php
+          }else{ 
+           // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
+            ?>
+            <img src="img/default_user.png" onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+ 
+<?php
           }
 
           echo '</a>';  
@@ -176,11 +184,19 @@
           echo '<div class="well">';
           echo '<a class="media-left" href="#">';
           if(substr($panelUsuario["foto"],0,3) == "img"){
-            echo '<img src="'.$panelUsuario["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+           // echo '<img src="'.$panelUsuario["foto"].'" alt="" nmouseover="src="img/logo_foto.png"" onmouseout="" 
+            //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
+            ?>
 
-          }else{
-            echo '<img src="img/default_user.png" alt="usuario sin foto" height="140px" width="90px" class="thumbnail">';
-
+<img src="<?php echo $panelUsuario["foto"]; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $panelUsuario["foto"]; ?>'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+     
+           <?php
+          }else{ 
+           // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
+            ?>
+            <img src="img/default_user.png" onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+ 
+<?php
           }
           echo '</a>';  
           echo '<div class="media-body">';
@@ -195,10 +211,7 @@
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
           </button>
           
-          <!--button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('1', '1');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-            </button>
-        <input type="button" class="btn btn-primary right" data-toggle="modal" data-target="#modificarUsuario<?php echo $i; ?>" value="Editar"-->     
+             
          <form action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
            <input type="submit" name="accion" class="btn btn-danger" value="Eliminar">
          </form>
@@ -279,6 +292,34 @@
   </ul>
 </div>
 
+
+
+<!-- Subir una imagen -->
+
+<div id="upload" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4>Subir foto de perfil</h4>
+                </div>
+                <div class="modal-body">                  
+                  <!--Empezo aqui -->
+                  <form action="controladoras/subirFoto.php" method="post" enctype="multipart/form-data">
+                    <label for="file">Sube un archivo:</label>
+                      <input type="file" name="archivo" id="archivo" />
+                      <input type="submit" name="boton" value="Subir" />
+                  </form>
+                <div class="clearfix"></div>
+
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+        </div>  
+
+        
 <!-- Barra lateral   col-md-offset-10 -->
 
 <div class="admin-custom-panel-right-fixed col-md-3" >
