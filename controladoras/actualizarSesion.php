@@ -3,11 +3,6 @@
 include_once "../modelos/sesion.php";
 
 
-echo $_GET["idSesion"];
-echo $_REQUEST["sala"];
-echo $_REQUEST["fecha"];
-echo $_REQUEST["capacidad"];
-echo $_REQUEST["idPelicula"];
 
 
 if(!substr ( $_REQUEST["sala"] , 0) or !substr ( $_REQUEST["fecha"] , 0) or !substr ( $_REQUEST["capacidad"] , 0) or !substr ( $_REQUEST["idPelicula"] , 0)){
