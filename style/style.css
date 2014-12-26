@@ -460,4 +460,6 @@ body{
 	margin-left: 15px;
 	top: -2px;
 }
-
+.alertify-message{
+	color: black !important;
+}

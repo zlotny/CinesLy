@@ -82,6 +82,7 @@ class Usuario{
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header("Location:../index.php");
 	}
+	
 	function insertarUsuario($usuario){
 		Usuario::conectarBD();
 		$sql="INSERT INTO usuario (nombreUsuario, email, pass, foto, preferencia1, preferencia2, preferencia3, estado, ciudadActual, fechaNacimiento, tipoUsuario, eslogan)
@@ -98,6 +99,12 @@ echo "correo enviado ".$this->email;
 //header("Location:../index.php");
 }
 */
+function eliminarUsuario($email){
+	Usuario::conectarBD();
+	$sql="DELETE FROM usuario WHERE email = '".$email."'";
+	Usuario::consultaBD($sql);
+	
+}
 function bajaUsuario(){
 	$this->conectarBD();
 	$sql="DELETE FROM usuario WHERE email = '".$this->email."' AND pass = '".$this->pass."'";
@@ -221,6 +228,26 @@ function getAmigosSinConfirmar(){
 	}
 	return $toRet;
 }
+
+function numAmigos(){
+	$this->conectarBD();
+	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email' and estado = '0' \n"
+    . "UNION\n"
+    . "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
+	$resultado = mysql_query($sql);
+	return mysql_num_rows($resultado);
+}
+function paginadorAmigos($comienzo,$cant_reg){
+	$this->conectarBD();
+	$sql = "\n"
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.estado = '0' \n"
+    . "UNION\n"
+    . "\n"
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
+//echo $sql;
+	return mysql_query($sql);
+}
+
 function getAmigos(){
 	$this->conectarBD();
 	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
@@ -386,5 +413,30 @@ function consultarRecomendadas(){
 	}
 	return $toRet;
 }
+
+
+function usuariosFiltrados($email, $tipo){
+		Usuario::conectarBD();
+		if($tipo == ""){
+			$tipo = "0' or tipoUsuario = '1";
+		}
+		if($tipo == "administrador"){
+			$tipo = "1";
+		}
+		if($tipo == "usuario"){
+			$tipo = "0";
+		}
+		$sql="select * from usuario where email like '%".$email."%' and (tipoUsuario = '".$tipo."')";
+		
+		
+		$resultado=mysql_query($sql);
+		echo $sql;
+		while($fila=mysql_fetch_array($resultado)){
+			$toRet[$fila["email"]]=$fila;
+		}
+		
+		return $toRet;
+
+	}
 }
 ?>
