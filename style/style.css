@@ -464,9 +464,14 @@ body{
 	color: black !important;
 }
 
+.fotoUsr:hover { 
+    cursor: pointer;
+
+}
 
 .amigos-body {
     display: table-cell;
     vertical-align: top;
     width: 1200px;
 }
+

@@ -57,14 +57,40 @@
 		<div class="panel panel-default " >
 			<div class="panel-heading ">Perfil</div>
 			<div class="panel-body">
-
+				
 				<?php
-				if (isset($_SESSION['usuario']->foto)){
-					echo "<img src='".$_SESSION['usuario']->foto."' height='150px' width='150px' class='center-block img-circle'>";
-				}else{
-					echo "<img src='img/default_user.png' height='150px' width='150px' class='center-block img-circle'>";
+				if (isset($_SESSION['usuario']->foto)){?>
+					<img src="<?php echo $_SESSION['usuario']->foto; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $_SESSION['usuario']->foto; ?>'"  height='150px' width='150px' class='center-block img-circle fotoUsr' data-toggle='modal' data-target='#upload'>";
+				<?php	}else{
+					echo "<img src='img/default_user.png' onmouseover='javascript:this.src='img/yo.jpg';' height='150px' width='150px' class='center-block img-circle fotoUsr' data-toggle='modal' data-target='#upload'>";
 				}
 				?>
+
+
+				<div id="upload" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+									<h4>Subir foto de perfil</h4>
+								</div>
+								<div class="modal-body">									
+									<!--Empezo aqui -->
+									<form action="controladoras/subirFoto.php" method="post" enctype="multipart/form-data">
+										<label for="file">Sube un archivo:</label>
+    									<input type="file" name="archivo" id="archivo" />
+    									<input type="submit" name="boton" value="Subir" />
+									</form>
+								<div class="clearfix"></div>
+
+								</div>
+								<div class="modal-footer">
+								</div>
+							</div>
+						</div>
+				</div>  
+				
+				
 				<h5>Nombre de Usuario:</h5>
 				<small><?php echo $_SESSION['usuario']->nombreUsuario; ?></small>
 				<h5>Correo Electrónico:</h5>
@@ -104,6 +130,12 @@
 						</div>
 					</form>
 				</div>  
+
+
+
+
+
+
 				<div class="clearfix"></div>
 			</div>	
 		</div>			
