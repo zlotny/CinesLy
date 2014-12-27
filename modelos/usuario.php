@@ -237,14 +237,14 @@ function numAmigos(){
 	$resultado = mysql_query($sql);
 	return mysql_num_rows($resultado);
 }
-function paginadorAmigos($comienzo,$cant_reg){
+function paginadorAmigos($usr,$comienzo,$cant_reg){
 	$this->conectarBD();
 	$sql = "\n"
-    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.estado = '0' \n"
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.email1 != '$usr' and a.estado = '0' \n"
     . "UNION\n"
     . "\n"
-    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
-//echo $sql;
+    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.email2 != '$usr' and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
+	//echo $sql;
 	return mysql_query($sql);
 }
 

@@ -118,7 +118,7 @@
 					<?php 
 					$total_registros = $amigo->numAmigos();
 
-					$amigos=$amigo->paginadorAmigos($comienzo,$cant_reg); 
+					$amigos=$amigo->paginadorAmigos($_SESSION['usuario']->email,$comienzo,$cant_reg); 
 
 					$total_paginas = ceil($total_registros/$cant_reg);
 
