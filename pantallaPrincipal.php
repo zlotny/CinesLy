@@ -30,6 +30,17 @@ session_start();
 <body>
 	<?php 
 	cabeceraPantallaPrincipal();
+
+		$cant_reg = 15; 
+		$num_pag = $_GET['pagina']; 
+		if ($num_pag<1) { 
+			$comienzo = 0; 
+			$num_pag = 1; 
+		} else { 
+			$comienzo = ($num_pag-1)  * $cant_reg; 
+		}
+
+	
 	if($_REQUEST["publi"] == "correcta"){
 		echo "<script>
 		alertify.log('Se ha insertado la publicación correctamente', 'success', 5000);
@@ -72,7 +83,11 @@ session_start();
 		<div class="row">
 			<div class="col-md-10 col-sm-10 col-xs-12 col-lg-10 ">
 				<ul class="media-list">
-					<?php $publicaciones=$_SESSION['usuario']->consultarPublicacion(); 
+					<?php 
+					$total_registros = $_SESSION['usuario']->numPublicacionesTot();
+					//echo $total_registros;
+					$publicaciones=$_SESSION['usuario']->consultarPublicacion($comienzo,$cant_reg); 
+					$total_paginas = ceil($total_registros/$cant_reg);
 					for($i=0;$i<sizeof($publicaciones[0]);$i++){
 						$usuRow = Usuario::getObjetoUsuario($publicaciones[3][$i]);
 						?>
@@ -116,6 +131,59 @@ session_start();
 						</li>
 						<?php  }?>
 					</ul>
+					<ul class="pagination">
+
+
+						<?php
+						if( $num_pag > 1)
+							{ ?>
+						<li><a accesskey="a" href="pantallaPrincipal.php?pagina=<?php echo ($num_pag-1); ?>">Prev</a></li>
+						<?php	} else { ?>
+						<li class="disabled" ><a href="pantallaPrincipal.php?pagina=<?php echo ($num_pag) ?>">Prev</a></li>
+						<?php
+					}
+					if($num_pag<=5){
+						for ($i=1; $i<=5; $i++) 
+						{ 
+							if ($num_pag == $i) 
+							{ 
+								?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
+								<?php 
+							} 
+							else 
+							{ 
+								if ($i<=$total_paginas){?>
+								<li><a href="pantallaPrincipal.php?pagina=<?php echo $i ?>"><?php echo $i; ?></a></li> 
+								<?php	}else{  ?>
+								<li class="disabled"><a><?php echo "&nbsp"; ?></a></li> 
+
+								<?php }
+							} 
+						}
+					} else {
+						for ($i=$num_pag-4; $i<=$num_pag; $i++) 
+						{ 
+							if ($num_pag == $i) 
+							{ 
+								?><li class="active"><a class="style1"><?php echo $num_pag ?><span class="sr-only">(página actual)</span></a></li> 
+								<?php 
+							} 
+							else 
+							{ 
+								?><li><a href="pantallaPrincipal.php?pagina=<?php echo $i ?>"><?php echo $i ?></a></li> 
+								<?php
+							} 
+						}
+
+					}
+					if(($num_pag+1)<=$total_paginas) 
+						{ ?>
+					<li><a accesskey="s" href="pantallaPrincipal.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
+					<?php	} else { ?>
+					<li class="disabled" ><a href="pantallaPrincipal.php?pagina=<?php echo ($num_pag) ?>">Sig</a></li>
+					<?php
+				}	
+				?>	</ul>
 				</div>
 				<div class="col-sm-2">
 				</div>
@@ -125,6 +193,29 @@ session_start();
 			</div>
 		</div>
 
+		<script type="text/javascript">
+		function leftArrowPressed() {
+			if(<?php echo $num_pag; ?> > 1) {
+				location.replace("pantallaPrincipal.php?pagina=<?php echo ($num_pag-1); ?>");
+			}
+		}
+		function rightArrowPressed() {		
+			if((<?php echo $num_pag; ?>+1) <= <?php echo $total_paginas;?>) {
+				location.replace("pantallaPrincipal.php?pagina=<?php echo ($num_pag+1); ?>");
+			} 	
+		}
+		document.onkeydown = function(evt) {
+			evt = evt || window.event;
+			switch (evt.keyCode) {
+				case 37:
+				leftArrowPressed();
+				break;
+				case 39:
+				rightArrowPressed();
+				break;
+			}
+		};
+		</script>
 		<?php footer(); ?>
 
 

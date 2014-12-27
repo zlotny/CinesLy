@@ -376,7 +376,7 @@ function insertarPublicacion($publi){
 	$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
 	return mysql_query($sql);
 }
-function consultarPublicacion(){
+function consultarPublicacion($comienzo,$cant_reg){
 	$this->conectarBD();
 	$toRet = array();
 	$toRet[0] = array();
@@ -390,7 +390,7 @@ function consultarPublicacion(){
 	. "UNION\n"
 	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
 	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc";
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc LIMIT ".$comienzo.", ".$cant_reg;
 	$resultado=mysql_query($sql);
 	while($row = mysql_fetch_array($resultado)){
 		array_push($toRet[0], $row["nombreUsuario"]);
@@ -406,6 +406,18 @@ function paginadorPublicacionesPerfil($comienzo,$cant_reg){
 	$sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$this->email."' ORDER BY fecha desc LIMIT ".$comienzo.", ".$cant_reg;
 //echo $sql;
 	return mysql_query($sql);
+}
+function numPublicacionesTot(){
+	$this->conectarBD();
+$sql= "\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+	. "UNION\n"
+	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ";
+	
+	$resultado = mysql_query($sql);
+	return mysql_num_rows($resultado);
 }
 function numPublicaciones(){
 	$this->conectarBD();
