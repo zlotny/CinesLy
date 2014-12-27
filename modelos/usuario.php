@@ -248,6 +248,19 @@ function paginadorAmigos($comienzo,$cant_reg){
 	return mysql_query($sql);
 }
 
+function estadoAmistad($amigo){
+	$this->conectarBD();
+	$sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$amigo' OR email1='$amigo' AND email2='$this->email'";
+	$resultado = mysql_query($sql);
+	$row = mysql_num_rows($resultado);
+	if( $row == 0 ){
+		return -1;
+	} else {
+		$row = mysql_fetch_array($resultado);
+		return $row['estado'];
+	}
+}
+
 function getAmigos(){
 	$this->conectarBD();
 	$sql = "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";

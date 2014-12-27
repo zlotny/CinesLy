@@ -115,9 +115,13 @@ include_once "sesion_segura.php";
     else {
       echo "<tr><td class='col-md-1'><a href='perfilAmigo.php?email=".$filaAmigo->email."'><img src='img/default_user.png' width='50px'/></a></td>";
     }
+
+$url = $_SERVER['PHP_SELF'];  
+$server = $_SERVER["SERVER_NAME"]; 
+
     ?>
     <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-    <td class='col-md-1'><a onclick="confirmarEliminar('<?php echo $filaAmigo->email; ?>')"  class='btn btn-info'>Eliminar</a></td>
+    <td class='col-md-1'><a onclick="pruebaEliminar('<?php echo $filaAmigo->email; ?>','<?php echo $server.$url ?>')"  class='btn btn-info'>Eliminar</a></td>
   </tr>
   <?php
 

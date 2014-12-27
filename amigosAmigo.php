@@ -1,97 +1,114 @@
-	<html>
-<head>
-	<?php
-	include_once "cabecera.php";
-	include_once "modelos/usuario.php";
-	include_once "modelos/pelicula.php";
-	include_once "sesion_segura.php";
+<html>
+	<head>
+		<?php
 
-	session_start();
-	if(!$_REQUEST["email"]){
-		header("Location: pantallaPrincipal.php");
-	}else{
-		if($_REQUEST["email"] == $_SESSION["usuario"]->email){
-			header("Location: perfil.php");
+		include_once "cabecera.php";
+		include_once "modelos/usuario.php";
+		include_once "modelos/pelicula.php";
+		include_once "sesion_segura.php";
+
+		session_start();
+
+		if(!$_REQUEST["email"]){
+			header("Location: pantallaPrincipal.php");
+		}else{
+			if($_REQUEST["email"] == $_SESSION["usuario"]->email){
+				header("Location: perfil.php");
+			}
 		}
-	}
-	$amigo = Usuario::getObjetoUsuario($_REQUEST["email"]);
 
-	?>
-	<title>Perfil de <?php echo $amigo->nombreUsuario; ?> - CinesLy</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
-	<script src="js/alertify/lib/alertify.min.js"> </script>
-	<script src="js/general.js"> </script>
+		$url = $_SERVER['PHP_SELF']."?email=".$_REQUEST["email"];  
+		$server = $_SERVER["SERVER_NAME"]; 
 
-	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
-	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-	<link rel="stylesheet" href="style/style.css">
-		
+		$amigo = Usuario::getObjetoUsuario($_REQUEST["email"]);
 
+		?>
+		<title>Perfil de <?php echo $amigo->nombreUsuario; ?> - CinesLy</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
+		<script src="js/alertify/lib/alertify.min.js"> </script>
+		<script src="js/general.js"> </script>
 
-
-</head>
-<body>
-	<?php
-
-	cabeceraPantallaPrincipal();
-
-	$cant_reg = 15; 
-	$num_pag = $_GET['pagina']; 
-	if ($num_pag<1) { 
-		$comienzo = 0; 
-		$num_pag = 1; 
-	} else { 
-		$comienzo = ($num_pag-1)  * $cant_reg; 
-	}
-	?>
-
+		<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+		<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+		<link rel="stylesheet" href="style/style.css">
 	
-	<h1 class="tackle-right">Perfil de <?php echo $amigo->nombreUsuario; ?></h1>
-	<p class="tackle-right">Estas viendo el perfil de <?php echo $amigo->nombreUsuario; ?>. ¿Aún no es tu amigo? Añádelo a <a href="amigos.php">tu lista de amigos</a>!</p>
-	
+	</head>
+	<body>
+		<?php
+
+		cabeceraPantallaPrincipal();
+
+		$cant_reg = 15; 
+		$num_pag = $_GET['pagina']; 
+		if ($num_pag<1) { 
+			$comienzo = 0; 
+			$num_pag = 1; 
+		} else { 
+			$comienzo = ($num_pag-1)  * $cant_reg; 
+		}
+		?>
 
 
-	
-	<div class="col-md-3" >
+		<h1 class="tackle-right">Perfil de <?php echo $amigo->nombreUsuario; ?></h1>
+		<p class="tackle-right">Estas viendo el perfil de <?php echo $amigo->nombreUsuario; ?>. ¿Aún no es tu amigo? Añádelo a <a href="amigos.php">tu lista de amigos</a>!</p>
 
-		<div class="panel panel-default " >
-			<div class="panel-heading ">Perfil</div>
-			<div class="panel-body">
-				<?php
-				if (isset($amigo->foto)){
-					echo "<img src='".$amigo->foto."' width='150px' class='center-block'>";
-				}else{
-					echo "<img src='img/default_user.png' width='150px' class='center-block'>";
-				}
-				?>
-				<h5>Nombre de Usuario:</h5>
-				<small><?php echo $amigo->nombreUsuario; ?></small>
-				<h5>Correo Electrónico:</h5>
-				<small><?php echo $amigo->email; ?></small>
-				<h5>Biografía:</h5>
-				<textarea disabled class="form-control eslogan"><?php echo $amigo->eslogan; ?></textarea>
-			</div> 
-			<div class="panel-footer">
-				<!-- Sin implementar -->
-				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
-				<div class="clearfix"></div>
-			</div>	
-		</div>			
 
-	</div>
 
-	<div class="col-md-9" >
-		<div class="panel panel-default" style="text-align:center;" >
-			<ul class="media-list">
+
+		<div class="col-md-3" >
+
+			<div class="panel panel-default " >
+				<div class="panel-heading ">Perfil</div>
+				<div class="panel-body">
+					<?php
+					if (isset($amigo->foto)){
+						echo "<img src='".$amigo->foto."' width='150px' class='center-block'>";
+					}else{
+						echo "<img src='img/default_user.png' width='150px' class='center-block'>";
+					}
+					?>
+					<h5>Nombre de Usuario:</h5>
+					<small><?php echo $amigo->nombreUsuario; ?></small>
+					<h5>Correo Electrónico:</h5>
+					<small><?php echo $amigo->email; ?></small>
+					<h5>Biografía:</h5>
+					<textarea disabled class="form-control eslogan"><?php echo $amigo->eslogan; ?></textarea>
+				</div> 
+				<div class="panel-footer">
+				<?php							
+					$estadoA = $_SESSION['usuario']->estadoAmistad($amigo->email);	
+					switch ($estadoA) {
+					    case 0:
+					        ?> 
+					        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url ?>')" value="Eliminar amigo"> 
+						        <?php
+					        break;
+					    case 1:
+					        echo "<input type='button' class='btn btn-info pull-right border-radius-publi' style='width:150px' value='Solicitud enviada'>";
+					        break;
+					    default:
+					        echo "<input type='button' class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>";
+					        break;
+					}
+					?>          
+	<div class="clearfix"></div>
+				</div>	
+			</div>			
+
+		</div>
+
+		<div class="col-md-9" >
+			<div class="panel panel-default" style="text-align:center;" >
+				<ul class="media-list">
 					<?php 
-						$total_registros = $amigo->numAmigos();
+					$total_registros = $amigo->numAmigos();
 
-						$amigos=$amigo->paginadorAmigos($comienzo,$cant_reg); 
+					$amigos=$amigo->paginadorAmigos($comienzo,$cant_reg); 
 
-						$total_paginas = ceil($total_registros/$cant_reg);
+					$total_paginas = ceil($total_registros/$cant_reg);
 
 					while($row = mysql_fetch_array($amigos)){
 						?>
@@ -100,24 +117,40 @@
 
 
 								<div class="amigos-body" >
-<div style="width:20%;float:left;margin-right:10px;">
-<a  href="perfilAmigo.php?email=<?php echo $row['email']; ?>">
-				<?php
-				if (isset($row['foto'])){
-					echo "<img src='".$row['foto']."' width='75px' class='center-block'>";
-				}else{
-					echo "<img src='img/default_user.png' width='75px' class='center-block'>";
-				}
-				?>
-	</a>			
-									
-								<p class="small"><?php echo $row['nombreUsuario']; ?></p>
-								<p class="small"><?php echo $row['email']; ?></p>
-</div>
+									<div style="width:20%;float:left;margin-right:10px;">
+										<a  href="perfilAmigo.php?email=<?php echo $row['email']; ?>">
+											<?php
+											if (isset($row['foto'])){
+												echo "<img src='".$row['foto']."' width='75px' class='center-block'>";
+											}else{
+												echo "<img src='img/default_user.png' width='75px' class='center-block'>";
+											}
+											?>
+										</a>			
+
+										<p class="small"><?php echo $row['nombreUsuario']; ?></p>
+										<p class="small"><?php echo $row['email']; ?></p>
+										
+									</div>
 
 
 									<textarea name="publi" style="width:60%;float:left;cursor:pointer;" readonly id= "<?php echo $row['email']; ?>" class="form-control publi publicacion-text border-radius-publi"  ><?php echo $row['eslogan']; ?></textarea>
-												<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
+									<?php	
+									$estadoB = $_SESSION['usuario']->estadoAmistad($row['email']);
+									switch ($estadoB) {
+									    case 0:
+									        ?> 
+									        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $row['email']; ?>','<?php echo $server.$url ?>')" value="Eliminar amigo"> 
+  									        <?php
+									        break;
+									    case 1:
+									        echo "<input type='button' class='btn btn-info pull-right border-radius-publi' style='width:150px' value='Solicitud enviada'>";
+									        break;
+									    default:
+									        echo "<input type='button' class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>";
+									        break;
+									}
+									?>  
 
 								</div>
 
@@ -152,11 +185,11 @@
 							} 
 							else 
 							{ 
-								 if ($i<=$total_paginas){?>
+								if ($i<=$total_paginas){?>
 								<li><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo $i ?>"><?php echo $i; ?></a></li> 
 								<?php	}else{  ?>
-										<li class="disabled"><a><?php echo "&nbsp"; ?></a></li> 
-										
+								<li class="disabled"><a><?php echo "&nbsp"; ?></a></li> 
+
 								<?php }
 							} 
 						}
@@ -197,33 +230,33 @@
 
 
 		<script type="text/javascript">
-			function leftArrowPressed() {
-				if(<?php echo $num_pag; ?> > 1) {
-					location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>");
-				}
+		function leftArrowPressed() {
+			if(<?php echo $num_pag; ?> > 1) {
+				location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>");
 			}
-			function rightArrowPressed() {		
-				if((<?php echo $num_pag; ?>+1) <= <?php echo $total_paginas;?>) {
-					location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1); ?>");
-				} 	
+		}
+		function rightArrowPressed() {		
+			if((<?php echo $num_pag; ?>+1) <= <?php echo $total_paginas;?>) {
+				location.replace("amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1); ?>");
+			} 	
+		}
+		document.onkeydown = function(evt) {
+			evt = evt || window.event;
+			switch (evt.keyCode) {
+				case 37:
+				leftArrowPressed();
+				break;
+				case 39:
+				rightArrowPressed();
+				break;
 			}
-			document.onkeydown = function(evt) {
-				evt = evt || window.event;
-				switch (evt.keyCode) {
-					case 37:
-					leftArrowPressed();
-					break;
-					case 39:
-					rightArrowPressed();
-					break;
-				}
-			};
+		};
 		</script>
 
 
 
 
-<?php footer(); ?>
+		<?php footer(); ?>
 		
 
 
@@ -234,4 +267,4 @@
 	<script src= "js/jquery-2.1.1.min.js"></script>
 	<script src= "bootstrap/js/bootstrap.js"></script>
 
-	</html>
+</html>
