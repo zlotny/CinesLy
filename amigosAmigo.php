@@ -83,14 +83,19 @@
 					switch ($estadoA) {
 					    case 0:
 					        ?> 
-					        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url ?>')" value="Eliminar amigo"> 
-						        <?php
+					        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url; ?>')" value="Eliminar amigo"> 
+						    <?php
 					        break;
 					    case 1:
-					        echo "<input type='button' class='btn btn-info pull-right border-radius-publi' style='width:150px' value='Solicitud enviada'>";
+					        echo "<input type='button' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value='Cancelar solicitud'>";
 					        break;
 					    default:
-					        echo "<input type='button' class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>";
+					    	?>
+					    	<form role='form' style="margin:0px;" action='controladoras/addamigo.php'>
+				    	        <input type="hidden" name="email" value="<?php echo $amigo->email; ?>">
+						        <input type="submit" class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>
+					    	</form>
+					        <?php
 					        break;
 					}
 					?>          
@@ -140,14 +145,20 @@
 									switch ($estadoB) {
 									    case 0:
 									        ?> 
-									        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $row['email']; ?>','<?php echo $server.$url ?>')" value="Eliminar amigo"> 
+									        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $row['email']; ?>','<?php echo $server.$url; ?>')" value="Eliminar amigo"> 
   									        <?php
 									        break;
 									    case 1:
-									        echo "<input type='button' class='btn btn-info pull-right border-radius-publi' style='width:150px' value='Solicitud enviada'>";
+									        echo "<input type='button' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value='Cancelar solicitud'>";
 									        break;
 									    default:
-									        echo "<input type='button' class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>";
+									    	?>
+									    	<form role='form' style="margin:0px;" action='controladoras/addamigo.php'>
+										    	<input type="hidden" name="email" value="<?php echo $row['email']; ?>">
+										    	<input type="hidden" name="url" value="<?php echo $server.$url; ?>">
+										        <input type="submit" class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>
+									        </form>
+									        <?php
 									        break;
 									}
 									?>  
