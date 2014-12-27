@@ -308,7 +308,7 @@ function eliminarAmigo($emailamigo){
 	$sql = "DELETE FROM agrega WHERE (email1='$emailamigo' and email2='$this->email') or (email2='$emailamigo' and email1='$this->email')";
 	return mysql_query($sql);
 }
-function addAmigo($emailAmigo){
+/*function addAmigo($emailAmigo){
 	$this->conectarBD();
 	$sql = "SELECT email FROM usuario where email='$emailAmigo'";
 	if(mysql_num_rows(mysql_query($sql)) == 0){
@@ -326,12 +326,42 @@ function addAmigo($emailAmigo){
 				return "insertado";
 			}
 			return "error";
-			}*/
+			}
 		
 	}
 //Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
 	
+	$sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
+	if(mysql_query($sql)){
+		return "insertado";
+	}
+	return "error";
+}*/
+function addAmigo($emailAmigo){
+        $this->conectarBD();
+        $sql = "SELECT email FROM usuario where email='$emailAmigo'";
+        if(mysql_num_rows(mysql_query($sql)) == 0){
+                return "noexiste";
+        }else{
+                $sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailamigo' OR email2='$this->email' AND email1='$emailamigo' ";
+                $resultado=mysql_query($sql);
+                $row = mysql_fetch_array($resultado);
+                echo $row["estado"];
+                        if($row["estado"]==1){
+                                return "error";
+                        }else{
+                                $sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
+                                if(mysql_query($sql)){
+                                return "insertado";
+                        		}
+                        		return "error";
+                        }
+
+        }
+//Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
+
 }
+
 function confirmarAmigo($usuarioTarget){
 	$this->conectarBD();
 	$sql = "UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget'";
