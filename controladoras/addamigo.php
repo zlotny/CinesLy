@@ -9,7 +9,7 @@ $aux = explode("?", $ruta[2]);
 if( isset($_REQUEST["email"]) ) {
 
 	$flag = $_SESSION["usuario"]->addAmigo($_REQUEST["email"]);
-	//echo $flag;
+	echo $flag;
 	if($flag == "noexiste"){
 		header("Location: ../amigos.php?not_found=true");
 		exit(0);

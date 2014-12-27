@@ -343,18 +343,17 @@ function addAmigo($emailAmigo){
         if(mysql_num_rows(mysql_query($sql)) == 0){
                 return "noexiste";
         }else{
-                $sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailamigo' OR email2='$this->email' AND email1='$emailamigo' ";
+                $sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailAmigo' OR email2='$this->email' AND email1='$emailAmigo' ";
                 $resultado=mysql_query($sql);
                 $row = mysql_fetch_array($resultado);
-                echo $row["estado"];
                         if($row["estado"]==1){
                                 return "error";
                         }else{
                                 $sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
                                 if(mysql_query($sql)){
                                 return "insertado";
-                        		}
-                        		return "error";
+                        		}else{
+                        		return "errores";}
                         }
 
         }
