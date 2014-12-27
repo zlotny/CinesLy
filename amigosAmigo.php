@@ -24,31 +24,32 @@
 
 		?>
 		<title>Perfil de <?php echo $amigo->nombreUsuario; ?> - CinesLy</title>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">	
-		<script src="js/alertify/lib/alertify.min.js"> </script>
-		<script src="js/general.js"> </script>
-
 		<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
 		<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
 		<link rel="stylesheet" href="style/style.css">
+		<script src="js/alertify/lib/alertify.min.js"> </script>
+		<script src="js/general.js"> </script>
 	
 	</head>
 	<body>
+
 		<?php
 
-		cabeceraPantallaPrincipal();
+			cabeceraPantallaPrincipal();
 
-		$cant_reg = 15; 
-		$num_pag = $_GET['pagina']; 
-		if ($num_pag<1) { 
-			$comienzo = 0; 
-			$num_pag = 1; 
-		} else { 
-			$comienzo = ($num_pag-1)  * $cant_reg; 
-		}
+			$cant_reg = 15; 
+			$num_pag = $_GET['pagina']; 
+			if ($num_pag<1) { 
+				$comienzo = 0; 
+				$num_pag = 1; 
+			} else { 
+				$comienzo = ($num_pag-1)  * $cant_reg; 
+			}
+			
 		?>
 
 
@@ -277,15 +278,8 @@
 		};
 		</script>
 
-
-
-
 		<?php footer(); ?>
 		
-
-
-
-
 	</body>
 
 	<script src= "js/jquery-2.1.1.min.js"></script>
