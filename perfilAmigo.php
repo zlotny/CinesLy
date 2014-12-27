@@ -14,6 +14,10 @@
 			header("Location: perfil.php");
 		}
 	}
+
+	$url = $_SERVER['PHP_SELF']."?email=".$_REQUEST["email"];  
+	$server = $_SERVER["SERVER_NAME"]; 
+
 	$amigo = Usuario::getObjetoUsuario($_REQUEST["email"]);
 
 	?>
@@ -76,7 +80,28 @@
 			</div> 
 			<div class="panel-footer">
 				<!-- Sin implementar -->
-				<input type="button" class="btn btn-info pull-right border-radius-publi" value="Agregar amigo">       
+				<?php							
+					$estadoA = $_SESSION['usuario']->estadoAmistad($amigo->email);	
+					switch ($estadoA) {
+					    case 0:
+					        ?> 
+					        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url ?>')" value="Eliminar amigo"> 
+						        <?php
+					        break;
+					    case 1:
+					        echo "<input type='button' class='btn btn-info pull-right border-radius-publi' style='width:150px' value='Solicitud enviada'>";
+					        break;
+					    default:
+					        echo "<input type='button' class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>";
+					        break;
+					}
+				?> 
+
+
+
+
+
+
 				<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="Amigos">       
 
 				<div class="clearfix"></div>
