@@ -328,7 +328,8 @@ function confirmarAmigo($usuarioTarget){
 }
 function denegarAmigo($usuarioTarget){
 	$this->conectarBD();
-	return mysql_query("Delete FROM agrega WHERE email1 = '$usuarioTarget' or email2 = '$usuarioTarget'");
+	$sql = "Delete FROM agrega WHERE email1='$this->email' AND email2='$usuarioTarget' OR email1='$usuarioTarget' AND email2='$this->email' ";
+	return mysql_query($sql);
 }
 function insertarPublicacion($publi){
 	$this->conectarBD();

@@ -89,7 +89,13 @@
 						        <?php
 					        break;
 					    case 1:
-					        echo "<input type='button' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value='Cancelar solicitud'>";
+					    	?>
+					    	<form role='form' style="margin:0px;" action='controladoras/cancelarAmigo.php'>
+				    	    	<input type="hidden" name="email" value="<?php echo $amigo->email; ?>">
+				    	    	<input type="hidden" name="url" value="<?php echo $server.$url; ?>">
+					        	<input type='submit' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value='Cancelar solicitud'>
+					       	</form>
+					        <?php
 					        break;
 					    default:
 					    	?>
