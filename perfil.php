@@ -61,7 +61,7 @@
 						if (isset($_SESSION['usuario']->foto)){
 					
 					?>
-						<img src="<?php echo $_SESSION['usuario']->foto; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $_SESSION['usuario']->foto; ?>'"  height='150px' width='150px' class='center-block img-circle fotoUsr' data-toggle='modal' data-target='#upload'>";
+						<img src="<?php echo $_SESSION['usuario']->foto; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $_SESSION['usuario']->foto; ?>'"  height='150px' width='150px' class='center-block img-circle fotoUsr' data-toggle='modal' data-target='#upload'>
 					<?php
 
 						}else{
