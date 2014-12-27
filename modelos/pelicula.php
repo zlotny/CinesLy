@@ -373,6 +373,7 @@ class Pelicula{
 		if($sql=="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."') and genero like '"){
 			$sql="select * from pelicula where titulo like '%".$titulo."%' and (tipo = '".$tipo."')";
 		}
+	
 		$resultado=mysql_query($sql);
 		echo $sql;
 		while($fila=mysql_fetch_array($resultado)){
