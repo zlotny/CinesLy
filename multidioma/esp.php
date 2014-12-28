@@ -85,6 +85,14 @@ $textos["h1Amigos"]="Lista de amigos";
 $textos["pAmigos"]="En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado.";
 $textos["misAmigos"]="Mis amigos";
 $textos["addFriend"]="Añadir un Amigo";
+$textos["pPersonas"]="Personas que podrían interesarte";
+$textos["top"]="Peliculas Top 10";
+$textos["recomFilm"]="Películas Recomendadas";
+
+//PerfilAmigo.php
+$textos["delAmi"]="Eliminar Amigo";
+$textos["pAmigosAm"]="Estas viendo el perfil de . ¿Aún no es tu amigo? Añádelo a tu lista de amigos";
+
 
 //Catalogo.php
 $textos["h1Catalogo"]="Catálogo de Películas";
@@ -123,9 +131,23 @@ $textos["valMed"]="La valoración media es:";
 $textos["comentarios"]="Comentarios";
 $textos["writeComen"]="Escribe un comentario";
 
+//modificar_grupo.php
+//revisar
+$textos["modGrup"]="Modificar Grupo";
+$textos["changeGrup"]="Cambiar nombre del Grupo";
+$textos["changePel"]="Cambiar Película";
+$textos["changeSes"]="Cambiar Sesión";
+$textos["busqSes"]="Buscar Sesión";
+$textos["dellAm"]="Eliminar Amigos";
+$textos["modif"]="Modificar";
+
+
+//Parte de Administrador
+
+
 //adminModificarPelicula.php
 $textos["h1AdModPel"]="Catálogo de Películas";
-$textos["catalogPelis"]="List of Movies";
+$textos["idFilm"]="IdPelicula";
 $textos["editPeli"]="Editar Pelicula";
 $textos["cambTitPeli"]="Cambiar el titulo de la pelicula";
 $textos["cambDirect"]="Cambiar Director:";
@@ -140,11 +162,12 @@ $textos["cambSinop"]="Cambiar Sinopsis:";
 $textos["cambFoto"]="Cambiar Foto:";
 $textos["guardCamb"]="Guardar Cambios";
 $textos["inserMov"]="Inserte una Pelicula";
-$textos["pBusq"]=" busquela";
+$textos["pBusq"]="o busquela";
+$textos["noFile"]="Ningun archivo seleccionado";
+
 
 //adminModificarUsuario.php
 $textos["h1ListUsu"]="Lista de Usuarios";
-$textos["catalogPelis"]="List of Movies";
 $textos["editPeli"]="Editar Pelicula";
 $textos["cambNomUsu"]="Cambiar el nombre del Usuario";
 $textos["cambEmail"]="Cambiar el correo";
@@ -152,23 +175,50 @@ $textos["cambPass"]="Cambiar pass:";
 $textos["cambTipUsu"]="Cambiar el tipo de usuario(0 usuario normal, 1 admin):";
 $textos["cambPref1"]="Cambiar preferencia1:";
 $textos["cambPref2"]="Cambiar preferencia2:";
+$textos["cambPref3"]="Cambiar preferencia3:";
+$textos["cambEstado"]="Cambiar estado:";
+$textos["cambCity"]="Cambiar estadoCambiar ciudadActual:";
 $textos["cambFechNac"]="Cambiar fechaNacimiento:";
 $textos["cambEslo"]="Cambiar eslogan:";
 $textos["h4NewUsu"]="Nuevo Usuario";
 $textos["smallAMU"]="Introduce los siguientes datos para introducir un nuevo usuario.";
 $textos["h4NewUsu"]="Nuevo Usuario";
 $textos["typeUser"]="Tipo de Usuario:";
-$textos["labelAMU"]="Podrá cambiar otros detalles de este usuario en la opción de editar.Ten en cuenta que te ES posible cambiar todo, pues eres el administrador, joder.";
+$textos["labelAMU"]="Los datos podrán ser cambiados en EDITAR.";
 
-//modificar_grupo.php
-//revisar
-$textos["modGrup"]="Modificar Grupo";
-$textos["changeGrup"]="Cambiar nombre del Grupo";
-$textos["changePel"]="Cambiar Película";
-$textos["changeSes"]="Cambiar Sesión";
-$textos["busqSes"]="Buscar Sesión";
-$textos["dellAm"]="Eliminar Amigos";
-$textos["modif"]="Modificar";
+//adminModificarSesion.php
+$textos["h1SesExis"]="Sesiones Existentes";
+$textos["sala"]="Sala";
+$textos["fecha"]="Fecha";
+$textos["capacidad"]="Capacidad";
+$textos["titPel"]="Título de la pelicula";
+$textos["editSes"]="Editar Sesión";
+$textos["cambSala"]="Cambiar la Sala:";
+$textos["cambFech"]="Cambiar la Fecha:";
+$textos["cambCapac"]="Cambiar la Capacidad:";
+$textos["cambId"]="ID de la pelicula de la sesion ( no modificable ):";
+$textos["h4NewSes"]="Inserte una sesión";
+$textos["insertSes"]="Insertar Sesion";
+$textos["intrSala"]="Introduzca la Sala:";
+$textos["intrFech"]="Introduzca la Fecha:";
+$textos["intrCap"]="Introduzca la Capacidad:";
+$textos["intrId"]="ID de la pelicula de la sesion:";
+$textos["saveSes"]="GuardarSesion:";
+
+//Faltarian os alertify
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

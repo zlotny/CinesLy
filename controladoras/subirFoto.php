@@ -22,7 +22,18 @@ if(isset($_POST['boton'])){
           "archivos/" . $_FILES["archivo"]["name"]);
           echo "Archivo Subido ";
           echo "<img src="archivos/".$_FILES["archivo"]["name"]."">";
-        }
+		  /*
+		  $email=$_REQUEST["email"];
+		  $foto=$_REQUEST["foto"];
+
+		  $flag = $_SESSION["usuario"]->subirFoto($email,$foto);
+		  if($flag){
+		  	header("Location: ../perfil.php");
+	      }else{
+			echo "Ha habido un error al subir tu foto. ";
+		  }
+        */
+		}
       }
     } else {
         // Si el usuario intenta subir algo que no es una imagen o una imagen que pesa mas de 20 KB mostramos este mensaje

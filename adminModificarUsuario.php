@@ -138,7 +138,7 @@
                   <label for="preferencia3" class="">Cambiar preferencia3:</label>
                   <input type="text" name="preferencia3" class="form-control form-pers" placeholder="Introduzca su preferencia3" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
 
-                  <label for="estado" class="">Cambiar estadp:</label>
+                  <label for="estado" class="">Cambiar estado:</label>
                   <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
                   
                   <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
@@ -251,7 +251,7 @@
                   <label for="preferencia3" class="">Cambiar preferencia3:</label>
                   <input type="text" name="preferencia3" class="form-control form-pers" placeholder="Introduzca su preferencia3" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
 
-                  <label for="estado" class="">Cambiar estadp:</label>
+                  <label for="estado" class="">Cambiar estado:</label>
                   <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
                   
                   <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
