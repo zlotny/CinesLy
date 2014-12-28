@@ -26,7 +26,7 @@ $textos["nomUsu"]="User name";
 $textos["email"]="e-mail";
 $textos["pass"]="Password";
 $textos["confPass"]="Confirm Password";
-$textos["labelReg"]="You can to specify more your profile when you start session with your new user account. Note that is no possible to change e-mail when is linked to your account.";
+$textos["labelReg"]="You can  specify more your profile when you start session with your new user account. Note that is no possible to change e-mail when is linked to your account.";
 $textos["registrarse"]="Check in";
 $textos["cerrar"]="Close";
 
@@ -37,7 +37,7 @@ $textos["loteria"]="Check lottery";
 
 //PantallaPrincipal.php
 $textos["h1Welcome"]="Welcome to CinesLy, ";
-$textos["pYourWall"]="This is your wall. Here you will see both your publications like the publications of your friends. Say something!";
+$textos["pYourWall"]="This is your wall. Here you will see both, your publications,and your friend´s publications. Say something!";
 $textos["publicar"]="Publish";
 $textos["editar"]="Edit";
 $textos["eliminar"]="Remove";
@@ -79,49 +79,9 @@ $textos["sesion"]="Session";
 $textos["friendsGroup"]="Friends of Group";
 $textos["volver"]="Return";
 
-//adminModificarPelicula.php
-$textos["listaPelisCinesLy"]="List of Films - CinesLy";
 
-$textos["h1AdModPel"]="Films Catalogue";
-$textos["catalogPelis"]="List of Films";
 
-$textos["editPeli"]="Edit Film";
-$textos["cambTitPeli"]="Change the title of the film";
-$textos["cambDirect"]="Change Director";
-$textos["cambActo"]="Change Actors";
-$textos["cambDist"]="Change Distributor";
-$textos["cambDur"]="Change Duration";
-$textos["cambAnho"]="Change year";
-$textos["cambGen"]="Change Gender";
-$textos["cambPais"]="Change Country";
-$textos["cambTipo"]="Change Type";
-$textos["cambSinop"]="Change Sinopsis";
-$textos["cambFoto"]="Change photo";
-$textos["guardCamb"]="Save Changes";
-$textos["inserMov"]="Insert a Film";
-$textos["pBusq"]="or search";
-$textos["tipPel"]="Type of Films";
 
-//adminModificarUsuario.php
-$textos["h1ListUsu"]="User Lists";
-$textos["editUser"]="Edit User";
-
-$textos["cambNomUsu"]="Rename name";
-$textos["cambEmail"]="Change e-mail";
-
-$textos["cambTipUsu"]="Change type User(0 normal user, 1 admin):";
-$textos["cambPass"]="Change Password";
-$textos["cambPref1"]="Change Preference1:";
-$textos["cambPref2"]="Change Preference2:";
-$textos["cambEst"]="Change Status";
-$textos["cambCiu"]="Change City";
-$textos["cambFechNac"]="Change Birthdate";
-$textos["cambEslo"]="Change Slogan";
-
-$textos["h4NewUsu"]="New User";
-$textos["smallAMU"]="Enter the following information to enter a new user.";
-$textos["typeUser"]="User Type:";
-$textos["labelAMU"]="You can change other details of the user the option to edit. Note that you can change everything, because you are the administrator";
 
 //amigos.php
 $textos["amigCines"]="Friends - CinesLy";
@@ -181,6 +141,69 @@ $textos["busqSes"]="Search Session";
 $textos["dellAm"]="Remove Friends";
 $textos["modif"]="Modify";
 
+//Parte de Administrador
+
+//adminModificarPelicula.php
+$textos["listaPelisCinesLy"]="List of Films - CinesLy";
+$textos["h1AdModPel"]="Films Catalogue";
+$textos["catalogPelis"]="List of Films";
+$textos["editPeli"]="Edit Film";
+$textos["cambTitPeli"]="Change the title of the film";
+$textos["cambDirect"]="Change Director";
+$textos["cambActo"]="Change Actors";
+$textos["cambDist"]="Change Distributor";
+$textos["cambDur"]="Change Duration";
+$textos["cambAnho"]="Change year";
+$textos["cambGen"]="Change Gender";
+$textos["cambPais"]="Change Country";
+$textos["cambTipo"]="Change Type";
+$textos["cambSinop"]="Change Sinopsis";
+$textos["cambFoto"]="Change photo";
+$textos["guardCamb"]="Save Changes";
+$textos["inserMov"]="Insert a Film";
+$textos["pBusq"]="or search";
+$textos["noFile"]="Any file selected";--
+
+//adminModificarUsuario.php
+$textos["h1ListUsu"]="User Lists";
+$textos["editUser"]="Edit User";
+$textos["cambNomUsu"]="Rename name";
+$textos["cambEmail"]="Change e-mail";
+$textos["cambTipUsu"]="Change type User(0 normal user, 1 admin):";
+$textos["cambPass"]="Change Password";
+$textos["cambPref1"]="Change Preference1:";
+$textos["cambPref2"]="Change Preference2:";
+$textos["cambPref3"]=":";
+$textos["cambEst"]="Change Status";
+$textos["cambCity"]="Switch main cityl:"
+$textos["cambFechNac"]="Change Birthdate";
+$textos["cambEslo"]="Change Slogan";
+$textos["h4NewUsu"]="New User";
+$textos["smallAMU"]="Enter the following information to enter a new user.";
+$textos["typeUser"]="User Type:";
+$textos["labelAMU"]="The datas will be able to are modified at edit menu.";
+
+//adminModificarSesion.php
+$textos["h1SesExis"]="Existens sessions";
+$textos["sala"]="Room";
+$textos["fecha"]="Date";
+$textos["capacidad"]="Capacity";
+$textos["titPel"]="Film title";
+$textos["editSes"]="Edit session";
+$textos["cambSala"]="Switch room:";
+$textos["cambFech"]="Switch date:";
+$textos["cambCapac"]="Switch capacity:";
+$textos["cambId"]="Switch session film ID(not modify):";
+$textos["h4NewSes"]="Insert a new session";
+$textos["insertSes"]="Insert session";
+$textos["intrSala"]="Inssert room:";
+$textos["intrFech"]="Inssert date:";
+$textos["intrCap"]="Insert capacity:";
+$textos["intrId"]="Inssert session film ID:";
+$textos["saveSes"]="Save session:";
+
 
 
 ?>
+
+
