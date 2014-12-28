@@ -166,6 +166,6 @@ include_once "sesion_segura.php";
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="js/valoracion.min.js"></script>
 
-
+  <?php footer(); ?>
 
 </body>

@@ -162,7 +162,7 @@ $textos["cambFoto"]="Change photo";
 $textos["guardCamb"]="Save Changes";
 $textos["inserMov"]="Insert a Film";
 $textos["pBusq"]="or search";
-$textos["noFile"]="Any file selected";--
+$textos["noFile"]="Any file selected";
 
 //adminModificarUsuario.php
 $textos["h1ListUsu"]="User Lists";
@@ -175,7 +175,7 @@ $textos["cambPref1"]="Change Preference1:";
 $textos["cambPref2"]="Change Preference2:";
 $textos["cambPref3"]=":";
 $textos["cambEst"]="Change Status";
-$textos["cambCity"]="Switch main cityl:"
+$textos["cambCity"]="Switch main cityl:";
 $textos["cambFechNac"]="Change Birthdate";
 $textos["cambEslo"]="Change Slogan";
 $textos["h4NewUsu"]="New User";
