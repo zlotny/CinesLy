@@ -68,21 +68,6 @@ include "cabecera.php";
           <div class="col-md-1"></div>
         </div>
 
-        <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#lot" value="Comprobar Loteria"></input></div>
-        <div id="lot" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h3 style="font-family: 'tahoma';font-size:16px !important; line-height:20px;margin-top:5px; padding-bottom:5px;">Comprueba tu número de <a href="http://loteria.rtve.es/" title="Loter&iacute;a de Navidad">Lotería de Navidad</a></h3>
-            </div>
-            <div class="modal-body">
-              <iframe frameborder="0" width="100%" height="130px" src="http://www.rtve.es/comunes/loteria-navidad/2014/comprobarNumeroForm.html"></iframe>
-         
-            </div>
-          </div>
-        </div>
-        </div>
         <section class="container" style="padding:10px;">
           <div class="col-md-1"></div>
           <div class="col-sm-2">

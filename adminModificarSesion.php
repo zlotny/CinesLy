@@ -14,7 +14,7 @@
     <script src="js/general.js"> </script>
     <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
     <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-    <title>Lista de peliculas - CinesLy</title>
+    <title>Lista de Sesiones - CinesLy</title>
 
 
   </head>
@@ -34,11 +34,11 @@
    cabeceraAdministrador();
 
    session_start();
-  /*
+  
   if($_REQUEST["filtrado"]==true){
     $filtro=$_SESSION["filtro"];
     unset($_SESSION["filtro"]);
-  }*/
+  }
 
   if($_REQUEST["update"] == "bad"){
     echo "<script>alertify.error('Ha ocurrido un error al modificar la sesion.');</script>";
@@ -86,10 +86,13 @@
       <?php
 
       if(isset($filtro) ){
-        $arraySesiones=$filtro;
-        foreach($arraySesiones as $panelSesion){
+        //echo $filtro[0][0];
+       foreach($filtro as $panelSesion){
+         
+         $sesionActual=Sesion::consultarSesion($panelSesion[0],$panelSesion[1]);
 
          $peliculaSesion=Pelicula::mostrarPelicula($panelSesion[0]);
+         
           echo '<li class="media">';
           echo '<div class="col-md-1 "></div>';
           echo '<div class="col-md-11 ">';
@@ -104,31 +107,38 @@
           }
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>Sala: </b>'.$panelSesion["sala"].'</p>';
-          echo '<p><b>Fecha: </b>'.$panelSesion["fecha"].'</p>';
-          echo '<p><b>Capacidad: </b>'.$panelSesion["capacidad"].'</p>';
-          echo '<p><b>idPelicula: </b>'.$panelSesion[0].'</p>';
+          echo '<p><b>Sala: </b>'.$sesionActual["sala"].'</p>';
+          echo '<p><b>Fecha: </b>'.$sesionActual["fecha"].'</p>';
+          echo '<p><b>Capacidad: </b>'.$sesionActual["capacidad"].'</p>';
+          echo '<p><b>idSesion: </b>'.$sesionActual["idSesion"].'</p>';
+          echo '<p><b>idPelicula: </b>'.$sesionActual["idPelicula"].'</p>';
           echo '<p><b>Titulo de la pelicula: </b>'.$peliculaSesion["titulo"].'</p>';
+          
+/*
+          echo '<p><b>Sala: </b>'.$panelSesion[3].'</p>';
+          echo '<p><b>Fecha: </b>'.$panelSesion[2].'</p>';
+          echo '<p><b>Capacidad: </b>'.$panelSesion[4].'</p>';
+          echo '<p><b>idSesion: </b>'.$panelSesion[1].'</p>';
+          echo '<p><b>idPelicula: </b>'.$panelSesion[0].'</p>';
+*/
           ?>
-
-
           
           <br/>
-          <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $panelSesion["idSesion"];?>" > 
+          <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $sesionActual["idSesion"];?>" > 
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
           </button>
 
           <!--EliminarPerfil-->
-          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion[0]?>');">
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $sesionActual["idSesion"]?>', '<?php echo $sesionActual["idPelicula"]?>');">
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
           </button>
 
           <!--</div>-->
 
           <!-- Pagina modal para modificar perfil -->
-          <div id="modificarSesion<?php echo $panelSesion["idSesion"];?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div id="modificarSesion<?php echo $sesionActual["idSesion"];?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <!--enctype="multipart/form-data" añadido por min-->
-            <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarSesion.php?idSesion=<?php echo $panelSesion["idSesion"]; ?>" method="POST">
+            <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarSesion.php?idSesion=<?php echo $sesionActual["idSesion"]; ?>" method="POST">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -137,16 +147,16 @@
                   </div>
                   <div class="modal-body">
                     <label for="sala" class="">Cambiar la Sala:</label>
-                    <input type="text" name="sala" class="form-control form-pers" value="<?php echo $panelSesion["sala"];?>"><br/>    
+                    <input type="text" name="sala" class="form-control form-pers" value="<?php echo $sesionActual["sala"];?>"><br/>    
 
                     <label for="fecha" class="">Cambiar la Fecha:</label>
-                    <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
+                    <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $sesionActual["fecha"]; ?>"> <br/>
 
                     <label for="capacidad" class="">Cambiar la Capacidad:</label>
-                    <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
+                    <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $sesionActual["capacidad"]; ?>"> <br/>
 
                     <label for="idPelicula" class="">ID de la pelicula de la sesion ( no modificable ):</label>
-                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $panelSesion[0]; ?>" readonly> <br/>
+                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $sesionActual["idPelicula"]; ?>" readonly> <br/>
 
 
                   </div>
@@ -166,8 +176,9 @@
           echo '</div>';
           echo '</li>';
         }
-      }
-      else{
+
+      }else{
+
         $arraySesiones=Sesion::mostrarSesiones();
         foreach($arraySesiones as $panelSesion){
           //$a=Pelicula::getObjetoPelicula($panelPelicula["idPelicula"]);
