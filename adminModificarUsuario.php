@@ -299,31 +299,9 @@
 
 
 
-<!-- Subir una imagen  OBSOLETO -->
 
-<div id="upload" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4>Subir foto de perfil</h4>
-                </div>
-                <div class="modal-body">                  
-                  <!--Empezo aqui -->
-                  <form action="controladoras/administrarUsuario.php" method="post" enctype="multipart/form-data" >
-                    <label for="file">Sube una foto:</label>
-                      <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-                      <input type="file" name="archivo"  />
-                      <input type="submit" name="accion" value="Subir" />
-                  </form>
-                <div class="clearfix"></div>
 
-                </div>
-                <div class="modal-footer">
-                </div>
-              </div>
-            </div>
-        </div>  
+
 
         
 <!-- Barra lateral   col-md-offset-10 -->
