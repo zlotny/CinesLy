@@ -277,6 +277,42 @@ function getAmigos(){
 	return $toRet;
 }
 
+//filtro sobre get amigos
+function filtrarAmigos($busqueda,$email){
+	Usuario::conectarBD();
+	$i=0;
+	$sql1="SELECT email1 FROM `agrega` WHERE email2='$email' AND estado = '0'";
+	$resultado1= mysql_query($sql1);
+	while($row = mysql_fetch_array($resultado1)){
+
+		$correoAmigo=$row["email1"];
+		$sql2="SELECT email FROM usuario WHERE email = '$correoAmigo' AND nombreUsuario LIKE '%".$busqueda."%'";
+		$resultado2= mysql_query($sql2);
+
+		while ($row2= mysql_fetch_array($resultado2)) {
+			//array_push($toRet, Usuario::getObjetoUsuario($row2["email"]));
+			$toRet[$i]=$row2;
+			$i=$i+1;
+		}
+	}
+	$sql3="SELECT email2 FROM `agrega` WHERE email1='$email' AND estado = '0'";
+	$resultado3= mysql_query($sql3);
+	while($row3 = mysql_fetch_array($resultado3)){
+
+		$correoAmigo=$row["email2"];
+		$sql4="SELECT email FROM usuario WHERE email = '$correoAmigo' AND nombreUsuario LIKE '%".$busqueda."%'";
+		$resultado4= mysql_query($sql4);
+
+		while ($row4= mysql_fetch_array($resultado4)) {
+			//array_push($toRet, Usuario::getObjetoUsuario($row4["email"]));
+			$toRet[$i]=$row4;
+			$i=$i+1;
+		}
+	}
+return $toRet;
+	
+}
+
 
 //Esta funcion retorna los amigos de tus amigos, que no sean tus amigos ni tu <<- mola eh
 function getPosiblesAmigos(){
