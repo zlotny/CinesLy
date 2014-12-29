@@ -1,6 +1,8 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
+include_once('multidioma/cambioIdioma.php');
+
 function cabeceraCartelera(){
 	?>
 	
@@ -343,16 +345,15 @@ function footer(){
 	<div class="footer ">
 		<div class="footer-content">
 			<div class="dropdown dropup">
-				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub</a>
+				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" > <?php echo $textos["hrefGH"]?></a>
 					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
 						Idioma
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Galego</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" onclick="window.location="multidioma/cambiodioma.php?prueba=esp"">Español</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Français</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Japonés</a></li>
 					</ul>
 				</span>	
 			</div>
