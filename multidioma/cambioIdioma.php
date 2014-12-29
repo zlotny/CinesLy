@@ -1,6 +1,7 @@
 <?php
-
+/*
 $Lengua = $_GET['Lenguaje'];
+
 switch($Lengua){
     case 'ES':
         include('multidioma/esp.php');
@@ -13,4 +14,7 @@ switch($Lengua){
     break;
     
 }
+*/
+$prueba=$_REQUEST["prueba"];
+echo $prueba;
 ?>

@@ -205,6 +205,14 @@ $textos["intrCap"]="Introduzca la Capacidad:";
 $textos["intrId"]="ID de la pelicula de la sesion:";
 $textos["saveSes"]="GuardarSesion:";
 
+
+//Footer
+$textos["hrefGH"]="Página en GitHub";
+$textos["idioma"]="Idioma";
+$textos["esp"]="Español";
+$textos["ing"]="Inglés";
+$textos["jap"]="Japonés";
+
 //Faltarian os alertify
 
 
