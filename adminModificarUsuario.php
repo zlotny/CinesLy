@@ -73,15 +73,17 @@
             //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
             ?>
 
-<img src="<?php echo $panelUsuario["foto"]; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $panelUsuario["foto"]; ?>'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+<img src="<?php echo $panelUsuario["foto"]; ?>"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
      
            <?php
           }else{ 
            // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
             ?>
-            <img src="img/default_user.png" onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
- 
-<?php
+            <img src="img/default_user.png"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
+
+<?php 
+//onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"
+//onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $panelUsuario["foto"];
           }
 
           echo '</a>';  
@@ -105,7 +107,7 @@
 
 
 <div id="modificarUsuario1<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+          <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
             <div class="modal-dialog">
               <div class="modal-content">
@@ -123,8 +125,9 @@
                   <label for="pass" class="">Cambiar pass:</label>
                   <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
                   
-                  <label for="foto" class="">Cambiar foto:</label>
-                  <input type="text" name="foto" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
+                  <label for="archivo" class="">Cambiar foto:</label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                  <input type="text" name="archivo" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
                   
                   <label for="tipoUsuario" class="">Cambiar el tipo de usuario(0 usuario normal, 1 admin):</label>
                   <input type="text" name="tipoUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["tipoUsuario"];?>"><br/> 
@@ -189,13 +192,13 @@
             //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
             ?>
 
-<img src="<?php echo $panelUsuario["foto"]; ?>" onmouseover="src='img/logo_foto.png'"  onmouseout="src='<?php echo $panelUsuario["foto"]; ?>'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+<img src="<?php echo $panelUsuario["foto"]; ?>"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
      
            <?php
           }else{ 
            // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
             ?>
-            <img src="img/default_user.png" onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"  height='140px' width='90px' class='thumbnail' data-toggle='modal' data-target='#upload'>
+            <img src="img/default_user.png"  height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
  
 <?php
           }
@@ -218,7 +221,7 @@
          </form>
 
         <div id="modificarUsuario2<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <form id="form-edit-perfil" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+          <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
             <div class="modal-dialog">
               <div class="modal-content">
@@ -236,8 +239,9 @@
                   <label for="pass" class="">Cambiar pass:</label>
                   <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
                   
-                  <label for="foto" class="">Cambiar foto:</label>
-                  <input type="text" name="foto" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
+                  <label for="archivo" class="">Cambiar foto:</label>
+                  <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                  <input type="file" name="archivo" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
                   
                   <label for="tipoUsuario" class="">Cambiar el tipo de usuario(0 usuario normal, 1 admin):</label>
                   <input type="text" name="tipoUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["tipoUsuario"];?>"><br/> 
@@ -295,7 +299,7 @@
 
 
 
-<!-- Subir una imagen -->
+<!-- Subir una imagen  OBSOLETO -->
 
 <div id="upload" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -306,10 +310,11 @@
                 </div>
                 <div class="modal-body">                  
                   <!--Empezo aqui -->
-                  <form action="controladoras/subirFoto.php" method="post" enctype="multipart/form-data">
-                    <label for="file">Sube un archivo:</label>
-                      <input type="file" name="archivo" id="archivo" />
-                      <input type="submit" name="boton" value="Subir" />
+                  <form action="controladoras/administrarUsuario.php" method="post" enctype="multipart/form-data" >
+                    <label for="file">Sube una foto:</label>
+                      <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                      <input type="file" name="archivo"  />
+                      <input type="submit" name="accion" value="Subir" />
                   </form>
                 <div class="clearfix"></div>
 

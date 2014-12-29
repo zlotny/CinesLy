@@ -543,13 +543,16 @@ function usuariosFiltrados($email, $tipo){
 
 	}
 }
-
+/*	INNECESAREA
 function subirFoto($email,$foto){
 
-	$this->conectarBD();
-	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email=".$email;
+	Usuario::conectarBD();
+	echo "string";
+	echo "<br>";
+	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email='".$email."'";
 	echo $sql;
 	return mysql_query($sql);
-}
+}*/
+
 
 ?>
