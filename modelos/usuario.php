@@ -379,22 +379,24 @@ function addAmigo($emailAmigo){
         if(mysql_num_rows(mysql_query($sql)) == 0){
                 return "noexiste";
         }else{
+
+        		if($this->email==$emailAmigo){
+        			return "error";
+        		}
                 $sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailAmigo' OR email2='$this->email' AND email1='$emailAmigo' ";
                 $resultado=mysql_query($sql);
                 $row = mysql_fetch_array($resultado);
-                        if($row["estado"]==1){
-                                return "error";
-                        }else{
-                                $sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
-                                if(mysql_query($sql)){
-                                return "insertado";
-                        		}else{
-                        		return "errores";}
-                        }
-
+                if($row["estado"]==1){
+                    return "error";
+                }else{
+                    $sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
+                    if(mysql_query($sql)){
+                    	return "insertado";
+            		}else{
+	        			return "error";}
+                }
         }
 //Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
-
 }
 
 function confirmarAmigo($usuarioTarget){
