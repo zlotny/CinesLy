@@ -137,6 +137,11 @@
                     <label for="anho" class="">Cambiar Año:</label>
                     <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
 
+
+                    <label for="fechaEstreno" class="">Cambiar Fecha de estreno(AAAA-MM-DD):</label>
+                    <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno(AAAA-MM-DD)" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
+
+
                     <label for="genero" class="">Cambiar Genero:</label>
                     <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
 
@@ -214,7 +219,7 @@
             </button>
 
             <!--EliminarPerfil-->
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
+            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
             </button>
 
@@ -247,7 +252,12 @@
               <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
               
               <label for="anho" class="">Cambiar Año:</label>
-              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
+              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su fecha de estreno" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
+              
+              <label for="fechaEstreno" class="">Cambiar Fecha de estreno(AAAA-MM-DD):</label>
+              <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno(AAAA-MM-DD)" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
+
+
               
               <label for="genero" class="">Cambiar Genero:</label>
               <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
@@ -353,7 +363,7 @@
               </select>
               <br/><br/>
 
-              <label for="fechaEstreno" class="">Fecha de estreno:</label>
+              <label for="fechaEstreno" class="">Fecha de estreno(AAAA-MM-DD):</label>
               <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno" value=""> <br/>
 
               <label for="sinopsis" class="">Sinopsis:</label> 
