@@ -49,12 +49,12 @@
 
 		?>
 		
-		<h1 class="tackle-right">Perfil de <?php echo $_SESSION['usuario']->nombreUsuario; ?></h1>
-		<p class="tackle-right">Éste es tu perfil. En esta página puedes ver tu información y editar tus datos.</p>
+		<h1 class="tackle-right"><?php echo $text["h1Perfil"];?> <?php echo $_SESSION['usuario']->nombreUsuario; ?></h1>
+		<p class="tackle-right"><?php echo $text["p1Perfil"];?></p>
 				
 		<div class="col-md-3" >
 			<div class="panel panel-default " >
-				<div class="panel-heading ">Perfil</div>
+				<div class="panel-heading "><?php echo $text["perfil"];?></div>
 				<div class="panel-body">
 					<?php
 					
@@ -91,13 +91,13 @@
 					</div>  
 					<!-- Fin ventana modal #upload -->
 
-					<h5>Nombre de Usuario:</h5>
+					<h5><?php echo $text["nomUsu"];?></h5>
 					<small><?php echo $_SESSION['usuario']->nombreUsuario; ?></small>
 					
-					<h5>Correo Electrónico:</h5>
+					<h5><?php echo $text["email"];?></h5>
 					<small><?php echo $_SESSION['usuario']->email; ?></small>
 					
-					<h5>Biografía:</h5>
+					<h5><?php echo $text["biografia"];?></h5>
 					<form id="bio-form" action="controladoras/actualizaBio.php" method="post">
 						<textarea class="form-control eslogan border-radius-publi" name="eslogan" onblur="document.getElementById('bio-form').submit()"><?php echo $_SESSION['usuario']->eslogan; ?></textarea>
 					</form>
@@ -111,14 +111,14 @@
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4>Editar cuenta</h4>
+										<h4><?php echo $text["editarCuenta"];?></h4>
 									</div>
 									<div class="modal-body">
-										<label for="nombreUsuario" class="">Cambiar el nombre de usuario</label>
+										<label for="nombreUsuario" class=""><?php echo $text["cambNomUsu"];?></label>
 										<input type="text" name="newName" class="form-control form-pers" value="<?php echo $_SESSION['usuario']->nombreUsuario;?>"><br/>      
-										<label for="pass1" class="">Contraseña nueva:</label>
+										<label for="pass1" class=""><?php echo $text["newPass"];?></label>
 										<input type="password" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
-										<label for="pass1" class="">Repetir contraseña nueva:</label>
+										<label for="pass1" class=""><?php echo $text["repNewPass"];?></label>
 										<input type="password" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
 
 										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
@@ -126,7 +126,7 @@
 									</div>
 									<div class="modal-footer">
 										<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
-										<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 									</div>
 								</div>
 							</div>
@@ -190,7 +190,7 @@
 
 					?>
 					<li>
-						<a accesskey="a" href="perfil.php?pagina=<?php echo ($num_pag-1) ?>">Prev</a>	
+						<a accesskey="a" href="perfil.php?pagina=<?php echo ($num_pag-1) ?>"><?php echo $text["prev"];?></a>	
 					</li>
 					<?php
 
@@ -198,7 +198,7 @@
 
 					?>
 					<li class="disabled" >
-						<a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Prev</a>	
+						<a href="perfil.php?pagina=<?php echo ($num_pag) ?>"><?php echo $text["prev"];?></a>	
 					</li>
 					<?php
 
@@ -259,7 +259,7 @@
 
 						?>
 						<li>
-							<a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" >Sig</a>
+							<a accesskey="s" href="perfil.php?pagina=<?php echo ($num_pag+1) ?>" ><?php echo $text["sig"];?></a>
 						</li>
 						<?php
 
@@ -268,7 +268,7 @@
 						?>
 
 						<li class="disabled" >
-							<a href="perfil.php?pagina=<?php echo ($num_pag) ?>">Sig</a>
+							<a href="perfil.php?pagina=<?php echo ($num_pag) ?>"><?php echo $text["sig"];?></a>
 						</li>
 						<?php
 						
@@ -281,7 +281,7 @@
 		<div class="col-md-4" >
 			<div class="events-box">
 				<div class="events-box-head">
-					<h5>Películas <span>TOP 10</span></h5>
+					<h5><?php echo $text["pel"];?> <span><?php echo $text["top"];?></span></h5>
 				</div>
 				<div class="scrollable-table-perfilD">
 					<ul>
@@ -312,7 +312,7 @@
 			</div>
 			<div class="events-box">
 				<div class="events-box-head">
-					<h5>Peliculas recomendadas</h5>
+					<h5><?php echo $text["recomFilm"];?></h5>
 				</div>
 				<div class="scrollable-table-perfilD">
 					<ul>
@@ -327,7 +327,7 @@
 									<div class="caption" >
 										<div class="text">
 											<strong class="datexs"><?php echo $rec[2][$i]; ?></strong>
-									 		<strong class="title"> Recomendada por <?php echo $rec[0][$i]; ?></strong>
+									 		<strong class="title"> <?php echo $text["recomFrom"];?><?php echo $rec[0][$i]; ?></strong>
 										</div>
 									</div>
 								</li>

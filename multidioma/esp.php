@@ -88,20 +88,31 @@ $textos["film"]="Película";
 $textos["sesion"]="Sesión";
 $textos["friendsGroup"]="Amigos del Grupo";
 $textos["volver"]="Volver";
+$textos["cambNomGrup"]="Cambiar Nombre de Grupo:";
+$textos["cambPel"]="Cambiar Pelicula:";
+$textos["cambSes"]="Cambiar Sesion:";
+$textos["editGroup"]="Editar Grupo";
 
 
 //Amigos.php
-$textos["h1Amigos"]="Lista de amigos";
-$textos["pAmigos"]="En esta página podrás gestionar tus amistades. Añade nuevos amigos y acepta las invitaciones de quienes te hayan agregado.";
-$textos["misAmigos"]="Mis amigos";
+$textos["h1Amigos"]="Lista de amigos filtrados";
+$textos["pAmigos"]="En esta página podrás ver tus amistades en función de la busqueda realizada. Añade nuevos amigos, elimina a alguno que ya no desees o visita su perfil.";
+$textos["misAmigos"]="Mis amigos filtrados";
 $textos["addFriend"]="Añadir un Amigo";
+$textos["emailFriend"]="Email del amigo a añadir";
 $textos["pPersonas"]="Personas que podrían interesarte";
-$textos["top"]="Peliculas Top 10";
+$textos["pel"]="Peliculas";
+$textos["top"]="Top 10";
 $textos["recomFilm"]="Películas Recomendadas";
+$textos["recomFrom"]="Recomendada por";
+$textos["addFriend1"]="Añadir Amigo";
+
 
 //PerfilAmigo.php
 $textos["delAmi"]="Eliminar Amigo";
-$textos["pAmigosAm"]="Estas viendo el perfil de . ¿Aún no es tu amigo? Añádelo a tu lista de amigos";
+$textos["pAmigosAm"]="Estas viendo el perfil de";
+$textos["pAmigosAm1"]="¿Aún no es tu amigo? Añádelo a";
+$textos["pAmigosAm2"]="tu lista de amigos";
 
 
 //Catalogo.php

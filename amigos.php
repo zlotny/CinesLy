@@ -42,14 +42,14 @@ include_once "sesion_segura.php";
 
 if(isset($filtro) ){
   ?>
-  <h1 class="tackle-right">Lista de amigos filtrados</h1>
-  <p class="tackle-right">En esta página podrás ver tus amistades en función de la busqueda realizada. Añade nuevos amigos, elimina a alguno que ya no desees o visita su perfil. </p>
+  <h1 class="tackle-right"><?php echo $text["h1Amigos"];?></h1>
+  <p class="tackle-right"><?php echo $text["pAmigos"];?></p>
   <div class="row top-margin">
     <div class="col-md-1"> </div>
     <div class="col-md-6">
       <div class="panel panel-default">
-       <div class="panel panel-heading">Mis amigos Filtrados</div>
-       <a href='#' data-toggle="modal" data-target="#addfriend" class='btn btn-info high-right'>Añadir un amigo</a>
+       <div class="panel panel-heading"><?php echo $text["misAmigos"];?></div>
+       <a href='#' data-toggle="modal" data-target="#addfriend" class='btn btn-info high-right'><?php echo $text["addFriend"];?></a>
        <?php 
        if($_REQUEST["not_found"] == true){
         echo "<script>
@@ -93,7 +93,7 @@ $server = $_SERVER["SERVER_NAME"];
 
     ?>
     <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
-    <td class='col-md-1'><a onclick="pruebaEliminar('<?php echo $filaAmigo->email; ?>','<?php echo $server.$url ?>')"  class='btn btn-info'>Eliminar</a></td>
+    <td class='col-md-1'><a onclick="pruebaEliminar('<?php echo $filaAmigo->email; ?>','<?php echo $server.$url ?>')"  class='btn btn-info'><?php echo $text["elimnar"];?></a></td>
   </tr>
   <?php
 
@@ -109,7 +109,7 @@ $server = $_SERVER["SERVER_NAME"];
 <div class="col-md-4"> 
 
   <div class="panel panel-default">
-   <div class="panel panel-heading">Personas que podrían interesarte</div>
+   <div class="panel panel-heading"><?php echo $text["pPersonas"];?></div>
    <div class="panel panel-body">
      <table class="table table-striped">
       <?php
@@ -152,7 +152,7 @@ $server = $_SERVER["SERVER_NAME"];
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Añadir un amigo</h3>
+        <h3><?php echo $text["addFriend"];?></h3>
       </div>
       <div class="modal-body" style="text-align:left">
         <div class="row"></div>
@@ -160,10 +160,10 @@ $server = $_SERVER["SERVER_NAME"];
 
         <form role="form" action="controladoras/addamigo.php">
           <div class="form-group">
-            <label>Email del amigo a añadir</label>
+            <label><?php echo $text["emailFriend"];?></label>
             <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="Introduzca el email del amigo a añadir">
           </div>
-          <button type="submit" class="btn btn-primary">Añadir amigo</button>
+          <button type="submit" class="btn btn-primary"><?php echo $text["addFriend1"];?></button>
         </form>
 
 
@@ -175,8 +175,7 @@ $server = $_SERVER["SERVER_NAME"];
 </div>
 
 
-<?php
-footer(); 
+<?phpfooter(); 
 
 
 

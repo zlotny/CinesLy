@@ -28,15 +28,15 @@
    <div class="col-sm-3"></div>
    <div class="col-sm-6">
      <div class="panel panel-default">
-       <div class="panel-heading">Ver Grupo</div>
+       <div class="panel-heading"><?php echo $text["verGrupo"];?></div>
        <div class="panel-body">
 
 
         <div class="form-group">
-            <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
+            <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
           </div>
           <div class="form-group">
-            <label for="grupo_peli">Pelicula</label><span class="little-right"><?php  
+            <label for="grupo_peli"><?php echo $text["film"];?></label><span class="little-right"><?php  
             $peli = Sesion::getPeliSesion($grupoActual->idSesion);
             echo $peli->titulo;
             ?></span>
@@ -44,10 +44,10 @@
             
           </div>
           <div class="form-group">
-            <label for="grupo_sesion">Sesión:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
+            <label for="grupo_sesion"><?php echo $text["sesion"];?>:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
             
           </div>
-          <label for="grupo_amigos">Amigos del grupo: </label>
+          <label for="grupo_amigos"><?php echo $text["friendsGroup"];?></label>
           <div class="form-group scrollable-table">
             <table class="table table-striped ">
               <?php
@@ -62,7 +62,7 @@
 
             </table>
           </div>
-		  <button data-toggle="modal" data-target="#editGroup" class="btn btn-success">Editar</button>
+		  <button data-toggle="modal" data-target="#editGroup" class="btn btn-success"><?php echo $text["editar"];?></button>
 		  
 		  
 		  
@@ -74,24 +74,24 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>Editar Grupo</h4>
+                    <h4><?php echo $text["editGroup"];?></h4>
                   </div>
                   <div class="modal-body">
                     
-                    <label for="pais" class="">Cambiar Nombre de Grupo:</label>
+                    <label for="pais" class=""><?php echo $text["cambNomGrup"];?></label>
                     <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->nombre; ?>"> <br/>
 
-                    <label for="pais" class="">Cambiar Pelicula:</label>
+                    <label for="pais" class=""><?php echo $text["cambPel"];?></label>
                     <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $peli->titulo; ?>"> <br/>
 
-                    <label for="pais" class="">Cambiar Sesion:</label>
+                    <label for="pais" class=""><?php echo $text["cambSes"];?></label>
                     <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->idSesion; ?>"> <br/>
 
 
                   </div>
                   <div class="modal-footer">
-                    <button name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button name="idPelicula" class="btn btn-success" value="hola"><?php echo $text["guardCamb"];?></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                   </div>
                 </div>
               </div>
@@ -100,7 +100,7 @@
           <div class="clearfix"></div>
 		
 		  
-          <a href="mis_grupos.php"  class="btn btn-success pull-right">Volver</a>
+          <a href="mis_grupos.php"  class="btn btn-success pull-right"><?php echo $text["volver"];?></a>
       </div>
     </div>
   </div>
