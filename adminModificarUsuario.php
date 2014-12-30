@@ -14,7 +14,7 @@ include_once "sesion_segura.php";
  <script src="js/general.js"> </script>
  <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
  <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
- <title>Lista de peliculas - CinesLy</title>
+ <title>Lista de Usuarios - CinesLy</title>
 
 
 </head>
@@ -50,7 +50,7 @@ if($_REQUEST["update"] == "good"){
 
 
 
-<h1 class="tackle-right">Lista de Usuarios</h1>
+<h1 class="tackle-right"><?php echo $text["h1ListUsu"];?></h1>
 
 <div class="col-md-1"> </div>
 <div class="col-md-8 ">
@@ -96,7 +96,7 @@ if($_REQUEST["update"] == "good"){
 
 
           <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario1<?php echo $i; ?>"> 
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
           </button>
           <form action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
            <input type="submit" name="accion" class="btn btn-danger" value="Eliminar">
@@ -112,45 +112,45 @@ if($_REQUEST["update"] == "good"){
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4>Editar Usuario</h4>
+                <h4><?php echo $text["editUser"];?></h4>
               </div>
               <div class="modal-body">
-                <label for="nombreUsuario" class="">Cambiar el nombre del Usuario</label>
+                <label for="nombreUsuario" class=""><?php echo $text["cambNomUsu"];?></label>
                 <input type="text" name="nombreUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
 
-                <label for="email" class="">Cambiar el correo</label>
+                <label for="email" class=""><?php echo $text["cambEmail"];?></label>
                 <input type="text" name="email" class="form-control form-pers" value="<?php echo $panelUsuario["email"];?>"><br/> 
 
-                <label for="pass" class="">Cambiar pass:</label>
-                <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
+                <label for="pass" class=""><?php echo $text["cambPass"];?></label>
+                <input type="password" name="pass" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
 
-                <label for="archivo" class="">Cambiar foto:</label>
+                <label for="archivo" class=""><?php echo $text["cambFoto"];?></label>
                 <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-                <input type="text" name="archivo" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
+                <input type="text" name="archivo" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
 
-                <label for="tipoUsuario" class="">Cambiar el tipo de usuario(0 usuario normal, 1 admin):</label>
+                <label for="tipoUsuario" class=""><?php echo $text["cambTipUsu"];?></label>
                 <input type="text" name="tipoUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["tipoUsuario"];?>"><br/> 
 
-                <label for="preferencia1" class="">Cambiar preferencia1:</label>
-                <input type="text" name="preferencia1" class="form-control form-pers" placeholder="Introduzca su preferencia1" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
+                <label for="preferencia1" class=""><?php echo $text["cambPref1"];?></label>
+                <input type="text" name="preferencia1" class="form-control form-pers" placeholder="<?php echo $text["p2"];?>" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
 
-                <label for="preferencia2" class="">Cambiar preferencia2:</label>
-                <input type="text" name="preferencia2" class="form-control form-pers" placeholder="Introduzca su preferencia2" value="<?php echo $panelUsuario["preferencia2"]; ?>"> <br/>
+                <label for="preferencia2" class=""><?php echo $text["cambPref2"];?></label>
+                <input type="text" name="preferencia2" class="form-control form-pers" placeholder="<?php echo $text["p3"];?>" value="<?php echo $panelUsuario["preferencia2"]; ?>"> <br/>
 
-                <label for="preferencia3" class="">Cambiar preferencia3:</label>
-                <input type="text" name="preferencia3" class="form-control form-pers" placeholder="Introduzca su preferencia3" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
+                <label for="preferencia3" class=""><?php echo $text["cambPref3"];?></label>
+                <input type="text" name="preferencia3" class="form-control form-pers" placeholder="<?php echo $text["p4"];?>" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
 
-                <label for="estado" class="">Cambiar estado:</label>
-                <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
+                <label for="estado" class=""><?php echo $text["cambEstado"];?></label>
+                <input type="text" name="estado" class="form-control form-pers" placeholder="<?php echo $text["p5"];?>" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
 
-                <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
-                <input type="text" name="ciudadActual" class="form-control form-pers" placeholder="Introduzca su ciudadActual" value="<?php echo $panelUsuario["ciudadActual"]; ?>"> <br/>
+                <label for="ciudadActual" class=""><?php echo $text["cambCity"];?></label> 
+                <input type="text" name="ciudadActual" class="form-control form-pers" placeholder="<?php echo $text["p6"];?>" value="<?php echo $panelUsuario["ciudadActual"]; ?>"> <br/>
 
-                <label for="fechaNacimiento" class="">Cambiar fechaNacimiento:</label>
-                <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="Introduzca su fechaNacimiento" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
+                <label for="fechaNacimiento" class=""><?php echo $text["cambFechNac"];?></label>
+                <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="<?php echo $text["p7"];?>" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
 
-                <label for="eslogan" class="">Cambiar eslogan:</label>
-                <input type="text" name="eslogan" class="form-control form-pers" placeholder="Introduzca su eslogan" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
+                <label for="eslogan" class=""><?php echo $text["cambEslo"];?></label>
+                <input type="text" name="eslogan" class="form-control form-pers" placeholder="<?php echo $text["p8"];?>" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
 
 
 
@@ -159,7 +159,7 @@ if($_REQUEST["update"] == "good"){
               <div class="modal-footer">
                 <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
 
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
               </div>
             </div>
           </div>
@@ -203,20 +203,23 @@ if($_REQUEST["update"] == "good"){
       }
       echo '</a>';  
       echo '<div class="media-body">';
-      echo '<p><b>Nombre: </b>'.$panelUsuario["nombreUsuario"].'</p>';
-      echo '<p><b>Email: </b>'.$panelUsuario["email"].'</p>';
-      echo '<p><b>Tipo Usuario: </b>'.$panelUsuario["tipoUsuario"].'</p>';
+
+      echo "<p><b>".$text['nombre1']."</b>".$panelUsuario["nombreUsuario"]."</p>";
+      echo "<p><b>".$text['email']."</b>".$panelUsuario["email"]."</p>";
+      echo "<p><b>".$text['typeUser']."</b>".$panelUsuario["tipoUsuario"]."</p>";
+
+  
 
       ?>
 
 
       <button type="button" class="btn btn-primary " data-toggle="modal" aria-label="Left Align" data-target="#modificarUsuario2<?php echo $i; ?>"> 
-        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
       </button>
 
 
-      <form action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
-       <input type="submit" name="accion" class="btn btn-danger " value="Eliminar">
+      <form action="controladoras/administrarUsuario.php?accion=Eliminar&emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+       <input type="submit"  class="btn btn-danger " value="<?php echo $text["eliminar"];?>">
      </form>
 
      <div id="modificarUsuario2<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -226,45 +229,45 @@ if($_REQUEST["update"] == "good"){
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4>Editar Usuario</h4>
+              <h4><?php echo $text["editUser"];?></h4>
             </div>
             <div class="modal-body">
-              <label for="nombreUsuario" class="">Cambiar el nombre del Usuario</label>
+              <label for="nombreUsuario" class=""><?php echo $text["cambNomUsu"];?></label>
               <input type="text" name="nombreUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["nombreUsuario"];?>"><br/> 
 
-              <label for="email" class="">Cambiar el correo</label>
+              <label for="email" class=""><?php echo $text["cambEmail"];?></label>
               <input type="text" name="email" class="form-control form-pers" value="<?php echo $panelUsuario["email"];?>"><br/> 
 
-              <label for="pass" class="">Cambiar pass:</label>
-              <input type="password" name="pass" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
+              <label for="pass" class=""><?php echo $text["cambPass"];?></label>
+              <input type="password" name="pass" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelUsuario["pass"]; ?>"> <br/>
 
-              <label for="archivo" class="">Cambiar foto:</label>
+              <label for="archivo" class=""><?php echo $text["cambFoto"];?></label>
               <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
-              <input type="file" name="archivo" class="form-control form-pers" placeholder="Introduzca los pass" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
+              <input type="file" name="archivo" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelUsuario["foto"]; ?>"> <br/>
 
-              <label for="tipoUsuario" class="">Cambiar el tipo de usuario(0 usuario normal, 1 admin):</label>
+              <label for="tipoUsuario" class=""><?php echo $text["cambTipUsu"];?></label>
               <input type="text" name="tipoUsuario" class="form-control form-pers" value="<?php echo $panelUsuario["tipoUsuario"];?>"><br/> 
 
-              <label for="preferencia1" class="">Cambiar preferencia1:</label>
-              <input type="text" name="preferencia1" class="form-control form-pers" placeholder="Introduzca su preferencia1" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
+              <label for="preferencia1" class=""><?php echo $text["cambPref1"];?></label>
+              <input type="text" name="preferencia1" class="form-control form-pers" placeholder="<?php echo $text["p2"];?>" value="<?php echo $panelUsuario["preferencia1"]; ?>"> <br/>
 
-              <label for="preferencia2" class="">Cambiar preferencia2:</label>
-              <input type="text" name="preferencia2" class="form-control form-pers" placeholder="Introduzca su preferencia2" value="<?php echo $panelUsuario["preferencia2"]; ?>"> <br/>
+              <label for="preferencia2" class=""><?php echo $text["cambPref2"];?></label>
+              <input type="text" name="preferencia2" class="form-control form-pers" placeholder="<?php echo $text["p3"];?>" value="<?php echo $panelUsuario["preferencia2"]; ?>"> <br/>
 
-              <label for="preferencia3" class="">Cambiar preferencia3:</label>
-              <input type="text" name="preferencia3" class="form-control form-pers" placeholder="Introduzca su preferencia3" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
+              <label for="preferencia3" class=""><?php echo $text["cambPref3"];?></label>
+              <input type="text" name="preferencia3" class="form-control form-pers" placeholder="<?php echo $text["p4"];?>" value="<?php echo $panelUsuario["preferencia3"]; ?>"> <br/>
 
-              <label for="estado" class="">Cambiar estado:</label>
-              <input type="text" name="estado" class="form-control form-pers" placeholder="Introduzca su estado" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
+              <label for="estado" class=""><?php echo $text["cambEstado"];?></label>
+              <input type="text" name="estado" class="form-control form-pers" placeholder="<?php echo $text["p5"];?>" value="<?php echo $panelUsuario["estado"]; ?>"> <br/>
 
-              <label for="ciudadActual" class="">Cambiar ciudadActual:</label> 
-              <input type="text" name="ciudadActual" class="form-control form-pers" placeholder="Introduzca su ciudadActual" value="<?php echo $panelUsuario["ciudadActual"]; ?>"> <br/>
+              <label for="ciudadActual" class=""><?php echo $text["cambCity"];?></label> 
+              <input type="text" name="ciudadActual" class="form-control form-pers" placeholder="<?php echo $text["p6"];?>" value="<?php echo $panelUsuario["ciudadActual"]; ?>"> <br/>
 
-              <label for="fechaNacimiento" class="">Cambiar fechaNacimiento:</label>
-              <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="Introduzca su fechaNacimiento" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
+              <label for="fechaNacimiento" class=""><?php echo $text["cambFechNac"];?></label>
+              <input type="text" name="fechaNacimiento" class="form-control form-pers" placeholder="<?php echo $text["p7"];?>" value="<?php echo $panelUsuario["fechaNacimiento"]; ?>"> <br/>
 
-              <label for="eslogan" class="">Cambiar eslogan:</label>
-              <input type="text" name="eslogan" class="form-control form-pers" placeholder="Introduzca su eslogan" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
+              <label for="eslogan" class=""><?php echo $text["cambEslo"];?></label>
+              <input type="text" name="eslogan" class="form-control form-pers" placeholder="<?php echo $text["p8"];?>" value="<?php echo $panelUsuario["eslogan"]; ?>"> <br/>
 
 
 
@@ -272,7 +275,7 @@ if($_REQUEST["update"] == "good"){
             <div class="modal-footer">
               <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
 
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
             </div>
           </div>
         </div>
@@ -319,20 +322,20 @@ if($_REQUEST["update"] == "good"){
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title">Nuevo Usuario</h4> 
-              <small>Introduce los siguientes datos para introducir un nuevo usuario.</small>
+              <h4 class="modal-title"><?php echo $text["h4NewUsu"];?></h4> 
+              <small><?php echo $text["smallAMU"];?></small>
             </div>
             <div class="modal-body">
-              <h6> Nombre de usuario: </h6>
+              <h6> <?php echo $text["nomUsu"];?> </h6>
               <input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" >
-              <h6> Correo electrónico: </h6>
+              <h6> <?php echo $text["email"];?></h6>
               <input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">
-              <h6> Contraseña: </h6>
+              <h6> <?php echo $text["pass"];?> </h6>
               <input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" >
-              <h6> Tipo de Usuario: </h6>
+              <h6> <?php echo $text["typeUser"];?> </h6>
               <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="0->User 1->Admin" ><br/>
               <label>
-                Los datos podrán ser cambiados en <span class="text-color-red text-weight-bold"> EDITAR. </span></label>
+                <?php echo $text["laberAMU"];?> <span class="text-color-red text-weight-bold"> <?php echo $text["laberAMU1"];?> </span></label>
               </div>
               <div class="modal-footer">
 
@@ -343,25 +346,25 @@ if($_REQUEST["update"] == "good"){
           </div>
         </form>
       </div> 
-      <p>o busque un usuario </p>
+      <p><?php echo $text["oFindUsu"];?> </p>
 
       <!-- formulario para buscar usuario-->
       <form role="form" action="controladoras/adminFiltrarUsuarios.php" method="post">
 
         <div class="input-group">
 
-          <input name="busqueda" type="text" class="form-control" placeholder="Buscar un Usuario">
+          <input name="busqueda" type="text" class="form-control" placeholder="<?php echo $text["findUsu"];?>">
           <span class="input-group-btn">
-            <button type="submit" class="btn btn-success">Buscar</button>
+            <button type="submit" class="btn btn-success"><?php echo $text["find"];?></button>
           </span>
         </div>            
         <br>
         <div class="form-group">
-          <label for="tipo_peli">Tipo de Usuario</label><br>
+          <label for="tipo_peli"><?php echo $text["typeUser"];?></label><br>
           <select name="tipo" class="form-control" aria-labelledby="buscar_user">
-            <option  value="">Todos los usuarios</option>
-            <option  value="administrador">Administrador</option>
-            <option  value="usuario">Usuario</option>
+            <option  value=""><?php echo $text["allUsers"];?></option>
+            <option  value="administrador"><?php echo $text["admin"];?></option>
+            <option  value="usuario"><?php echo $text["user"];?></option>
           </select>
 
         </div>

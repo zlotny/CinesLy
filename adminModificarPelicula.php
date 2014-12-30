@@ -60,7 +60,7 @@
 
 
 
-  <h1 class="tackle-right">Catálogo de Películas</h1>
+  <h1 class="tackle-right"><?php echo $text["h1AdModPel"];?></h1>
   
   <div class="col-md-1"> </div>
   <div class="col-md-8 ">
@@ -88,23 +88,23 @@
 
           echo '</a>';  
           echo '<div class="media-body">';
-          echo '<p><b>idPelicula: </b>'.$panelPelicula["idPelicula"].'</p>';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo "<p><b>".$text['idFilm']."</b>".$panelPelicula['idPelicula']."</p>";
+            echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+            echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+            echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+            echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
           ;?>
           <!--borrarase en un futuro -->
           <div class="col-md-8"> </div>
           <div class="col-md-4">
             <!--editar perfil-->
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
             </button>
 
             <!--EliminarPerfil-->
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
             </button>
           </div>
 
@@ -116,50 +116,51 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>Editar Pelicula</h4>
+                    <h4><?php echo $text["editPeli"];?></h4>
                   </div>
                   <div class="modal-body">
-                    <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
+                    <label for="nuevoTitulo" class=""><?php echo $text["cambTitPeli"];?></label>
                     <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
 
-                    <label for="director" class="">Cambiar Director:</label>
-                    <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca el director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
+                    <label for="director" class=""><?php echo $text["cambDirect"];?></label>
+                    <input type="text" name="director" class="form-control form-pers" placeholder="<?php echo $text["m1"];?>" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
 
-                    <label for="actores" class="">Cambiar Actores:</label>
-                    <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
+                    <label for="actores" class=""><?php echo $text["cambActo"];?></label>
+                    <input type="text" name="actores" class="form-control form-pers" placeholder="<?php echo $text["m2"];?>" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
 
-                    <label for="distribuidora" class="">Cambiar Distribuidora:</label>
-                    <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
+                    <label for="distribuidora" class=""><?php echo $text["cambDist"];?></label>
+                    <input type="text" name="distribuidora" class="form-control form-pers" placeholder="<?php echo $text["m3"];?>" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
 
-                    <label for="duracion" class="">Cambiar Duracion:</label>
-                    <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+                    <label for="duracion" class=""><?php echo $text["cambDur"];?></label>
+                    <input type="text" name="duracion" class="form-control form-pers" placeholder="<?php echo $text["m4"];?>" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
 
-                    <label for="anho" class="">Cambiar Año:</label>
-                    <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
-
-
-                    <label for="fechaEstreno" class="">Cambiar Fecha de estreno(AAAA-MM-DD):</label>
-                    <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno(AAAA-MM-DD)" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
+                    <label for="anho" class=""><?php echo $text["cambAnho"];?></label>
+                    <input type="text" name="anho" class="form-control form-pers" placeholder="<?php echo $text["m5"];?>" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
 
 
-                    <label for="genero" class="">Cambiar Genero:</label>
-                    <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
+                    <label for="fechaEstreno" class=""><?php echo $text["cambFechEst"];?></label>
+                    <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="<?php echo $text["m6"];?>" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
 
-                    <label for="pais" class="">Cambiar País:</label>
-                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
 
-                    <label for="tipoPeli" class="form-control">Cambiar Tipo:</label><br/>
+                    <label for="genero" class=""><?php echo $text["cambGen"];?></label>
+                    <input type="text" name="genero" class="form-control form-pers" placeholder="<?php echo $text["m7"];?>" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
+
+                    <label for="pais" class=""><?php echo $text["cambPais"];?></label>
+                    <input type="text" name="pais" class="form-control form-pers" placeholder="<?php echo $text["m8"];?>" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
+
+                    <label for="tipoPeli" class="form-control"><?php echo $text["cambTipo"];?></label><br/>
+
                     <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
-                      <option  value="cartelera">En Cartelera</option>
-                      <option  value="especial">Especiales</option>
-                      <option  value="proximamente">Proximamente</option>
+                      <option  value="cartelera"><?php echo $text["carteleras"];?></option>
+                      <option  value="especial"><?php echo $text["especial"];?></option>
+                      <option  value="proximamente"><?php echo $text["proximamente"];?></option>
                     </select>
                     <br/><br/>
 
-                    <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
+                    <label for="sinopsis" class=""><?php echo $text["cambSinop"];?></label> 
                     <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
 
-                    <label for="foto" class="">Cambiar foto:</label>
+                    <label for="foto" class=""><?php echo $text["cambFoto"];?></label>
                     <!-- subir foto a implemetar en un futuro-->
                     <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
                     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
@@ -169,8 +170,8 @@
 
                   </div>
                   <div class="modal-footer">
-                    <button type="submit" name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="idPelicula" class="btn btn-success" value="hola"><?php echo $text["guardCamb"];?></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                   </div>
                 </div>
               </div>
@@ -202,11 +203,11 @@
           }
           echo '</a>';  
           echo '<div class="media-body">';         
-          echo '<p><b>idPelicula: </b>'.$panelPelicula["idPelicula"].'</p>';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>'
+          echo "<p><b>".$text['idFilm']."</b>".$panelPelicula['idPelicula']."</p>";
+          echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+          echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+          echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+          echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
           ;?>
 
           <!-- Modificar una pelicula--> 
@@ -215,12 +216,12 @@
             
             <!--editar perfil-->
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
             </button>
 
             <!--EliminarPerfil-->
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
             </button>
 
     	</div>
@@ -233,73 +234,73 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4>Editar Pelicula</h4>
-            </div>
-            <div class="modal-body">
-              <label for="nuevoTitulo" class="">Cambiar el titulo de la pelicula</label>
-              <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
-              
-              <label for="director" class="">Cambiar Director:</label>
-              <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su director" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
-              
-              <label for="actores" class="">Cambiar Actores:</label>
-              <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
-              
-              <label for="distribuidora" class="">Cambiar Distribuidora:</label>
-              <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
-              
-              <label for="duracion" class="">Cambiar Duracion:</label>
-              <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
-              
-              <label for="anho" class="">Cambiar Año:</label>
-              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su fecha de estreno" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
-              
-              <label for="fechaEstreno" class="">Cambiar Fecha de estreno(AAAA-MM-DD):</label>
-              <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno(AAAA-MM-DD)" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
+              <h4><?php echo $text["editPeli"];?></h4>
+                  </div>
+                  <div class="modal-body">
+                    <label for="nuevoTitulo" class=""><?php echo $text["cambTitPeli"];?></label>
+                    <input type="text" name="nuevoTitulo" class="form-control form-pers" value="<?php echo $panelPelicula["titulo"];?>"><br/>    
+
+                    <label for="director" class=""><?php echo $text["cambDirect"];?></label>
+                    <input type="text" name="director" class="form-control form-pers" placeholder="<?php echo $text["m1"];?>" value="<?php echo $panelPelicula["director"]; ?>"> <br/>
+
+                    <label for="actores" class=""><?php echo $text["cambActo"];?></label>
+                    <input type="text" name="actores" class="form-control form-pers" placeholder="<?php echo $text["m2"];?>" value="<?php echo $panelPelicula["actores"]; ?>"> <br/>
+
+                    <label for="distribuidora" class=""><?php echo $text["cambDist"];?></label>
+                    <input type="text" name="distribuidora" class="form-control form-pers" placeholder="<?php echo $text["m3"];?>" value="<?php echo $panelPelicula["distribuidora"]; ?>"> <br/>
+
+                    <label for="duracion" class=""><?php echo $text["cambDur"];?></label>
+                    <input type="text" name="duracion" class="form-control form-pers" placeholder="<?php echo $text["m4"];?>" value="<?php echo $panelPelicula["duracion"]; ?>"> <br/>
+
+                    <label for="anho" class=""><?php echo $text["cambAnho"];?></label>
+                    <input type="text" name="anho" class="form-control form-pers" placeholder="<?php echo $text["m5"];?>" value="<?php echo $panelPelicula["anho"]; ?>"> <br/>
 
 
-              
-              <label for="genero" class="">Cambiar Genero:</label>
-              <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
-              
-              <label for="pais" class="">Cambiar País:</label>
-              <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
-              
-              <label for="tipoPeli" >Cambiar Tipo:</label><br/>
-              <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
-                <option  value="cartelera">En Cartelera</option>
-                <option  value="especial">Especiales</option>
-                <option  value="proximamente">Proximamente</option>
-              </select>
-              <br/><br/>
-
-              <label for="sinopsis" class="">Cambiar Sinopsis:</label> 
-              <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
-              
-              <label for="foto" class="">Cambiar foto:</label>
-              <!-- subir foto a implemetar en un futuro-->
-              <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
-              <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-              <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-              <input name="userfile" type="file" />
+                    <label for="fechaEstreno" class=""><?php echo $text["cambFechEst"];?></label>
+                    <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="<?php echo $text["m6"];?>" value="<?php echo $panelPelicula["fecha_estreno"]; ?>"> <br/>
 
 
-            </div>
-            <div class="modal-footer">
-              <button type="submit" name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>  
-    <div class="clearfix"></div>
+                    <label for="genero" class=""><?php echo $text["cambGen"];?></label>
+                    <input type="text" name="genero" class="form-control form-pers" placeholder="<?php echo $text["m7"];?>" value="<?php echo $panelPelicula["genero"]; ?>"> <br/>
 
-    <?php  
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</li>';
+                    <label for="pais" class=""><?php echo $text["cambPais"];?></label>
+                    <input type="text" name="pais" class="form-control form-pers" placeholder="<?php echo $text["m8"];?>" value="<?php echo $panelPelicula["pais"]; ?>"> <br/>
+
+                    <label for="tipoPeli" class=""><?php echo $text["cambTipo"];?></label><br/>
+                      <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
+                        <option  value="cartelera"><?php echo $text["carteleras"];?></option>
+                        <option  value="especial"><?php echo $text["especial"];?></option>
+                        <option  value="proximamente"><?php echo $text["proximamente"];?></option>
+                    </select>
+                    <br/><br/>
+
+                    <label for="sinopsis" class=""><?php echo $text["cambSinop"];?></label> 
+                    <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
+
+                    <label for="foto" class=""><?php echo $text["cambFoto"];?></label>
+                    <!-- subir foto a implemetar en un futuro-->
+                    <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
+                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                    <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
+                    <input name="userfile" type="file" />
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" name="idPelicula" class="btn btn-success" value="hola"><?php echo $text["guardCamb"];?></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>  
+          <div class="clearfix"></div>
+
+          <?php
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
+          echo '</li>';
   }
 
 
@@ -318,7 +319,7 @@
   <div class="panel-body">
   <!-- insertar una pelicula-->
     <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#insertarPelicula" > 
-      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Inserte una pelicula
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> <?php echo $text["inserMov"];?>
     </button>
 
     <div id="insertarPelicula" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -328,43 +329,43 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4>Insertar Pelicula</h4>
+              <h4><?php echo $text["inserMov"];?></h4>
             </div>
             <div class="modal-body">
-              <label for="nuevoTitulo" class="">Titulo de la pelicula</label>
+              <label for="nuevoTitulo" class=""><?php echo $text["tituloPel"];?></label>
               <input type="text" name="nuevoTitulo" class="form-control form-pers" value=""><br/>    
               
-              <label for="director" class="">Director:</label>
-              <input type="text" name="director" class="form-control form-pers" placeholder="Introduzca su director" value=""> <br/>
+              <label for="director" class=""><?php echo $text["director"];?></label>
+              <input type="text" name="director" class="form-control form-pers" placeholder="<?php echo $text["m1"];?>" value=""> <br/>
               
-              <label for="actores" class="">Actores:</label>
-              <input type="text" name="actores" class="form-control form-pers" placeholder="Introduzca los actores" value=""> <br/>
+              <label for="actores" class=""><?php echo $text["actores"];?></label>
+              <input type="text" name="actores" class="form-control form-pers" placeholder="<?php echo $text["m2"];?>" value=""> <br/>
               
-              <label for="distribuidora" class="">Distribuidora:</label>
-              <input type="text" name="distribuidora" class="form-control form-pers" placeholder="Introduzca su distribuidora" value=""> <br/>
+              <label for="distribuidora" class=""><?php echo $text["distr"];?></label>
+              <input type="text" name="distribuidora" class="form-control form-pers" placeholder="<?php echo $text["m3"];?>" value=""> <br/>
               
-              <label for="duracion" class="">Duracion:</label>
-              <input type="text" name="duracion" class="form-control form-pers" placeholder="Introduzca su duración" value=""> <br/>
+              <label for="duracion" class=""><?php echo $text["duracion"];?></label>
+              <input type="text" name="duracion" class="form-control form-pers" placeholder="<?php echo $text["m4"];?>" value=""> <br/>
               
-              <label for="anho" class="">Año:</label>
-              <input type="text" name="anho" class="form-control form-pers" placeholder="Introduzca su año" value=""> <br/>
+              <label for="anho" class=""><?php echo $text["anho"];?></label>
+              <input type="text" name="anho" class="form-control form-pers" placeholder="<?php echo $text["m5"];?>" value=""> <br/>
               
-              <label for="genero" class="">Genero:</label>
-              <input type="text" name="genero" class="form-control form-pers" placeholder="Introduzca sus generos" value=""> <br/>
+              <label for="genero" class=""><?php echo $text["genero"];?></label>
+              <input type="text" name="genero" class="form-control form-pers" placeholder="<?php echo $text["m9"];?>" value=""> <br/>
               
-              <label for="pais" class="">País:</label>
-              <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca su país" value=""> <br/>
+              <label for="pais" class=""><?php echo $text["pais"];?></label>
+              <input type="text" name="pais" class="form-control form-pers" placeholder="<?php echo $text["m8"];?>" value=""> <br/>
               
               <label for="tipoPeli" class="">Tipo:</label><br/>
               <select name="tipoPeli" class="form-control" aria-labelledby="buscar_peli">
-                <option  value="cartelera">En Cartelera</option>
-                <option  value="especial">Especiales</option>
-                <option  value="proximamente">Proximamente</option>
+                <option  value="cartelera"><?php echo $text["carteleras"];?></option>
+                <option  value="especial"><?php echo $text["especial"];?></option>
+                <option  value="proximamente"><?php echo $text["proximamente"];?></option>
               </select>
               <br/><br/>
 
               <label for="fechaEstreno" class="">Fecha de estreno(AAAA-MM-DD):</label>
-              <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="Introduzca su fecha de estreno" value=""> <br/>
+              <input type="text" name="fechaEstreno" class="form-control form-pers" placeholder="<?php echo $text["m6"];?>" value=""> <br/>
 
               <label for="sinopsis" class="">Sinopsis:</label> 
               <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()">""</textarea><br/>
@@ -379,8 +380,8 @@
 
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Guardar Pelicula</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-success"><?php echo $text["guardCamb"];?></button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
             </div>
           </div>
         </div>
@@ -390,27 +391,27 @@
 
     <br>
 
-    <p>o busquela </p>
+    <p><?php echo $text["pBusq"];?></p>
 
     <!-- formulario para buscar pelicula-->
     <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
 
       <div class="input-group">
 
-        <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
+        <input name="busqueda" type="text" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
         <span class="input-group-btn">
-          <button type="submit" class="btn btn-success">Buscar</button>
+          <button type="submit" class="btn btn-success"><?php echo $text["find"];?></button>
         </span>
       </div>            
       <br>
       <div class="form-group">
-        <label for="tipo_peli">Tipo de Peliculas</label><br>
-        <select name="tipo" class="form-control" aria-labelledby="buscar_peli">
-          <option  value="">Todas las peliculas</option>
-          <option  value="cartelera">En Cartelera</option>
-          <option  value="especial">Especiales</option>
-          <option  value="proximamente">Proximamente</option>
-        </select>
+        <label for="tipo_peli"><?php echo $text["typeFlim"];?></label><br>
+            <select name="tipo" class="form-control" aria-labelledby="buscar_peli">
+              <option  value=""><?php echo $text["allFilms"];?></option>
+              <option  value="cartelera"><?php echo $text["carteleras"];?></option>
+              <option  value="especial"><?php echo $text["especial"];?></option>
+              <option  value="proximamente"><?php echo $text["proximamente"];?></option>
+            </select>
 
       </div>
       <div class="form-group">
@@ -418,17 +419,16 @@
 
         <table class="table table-striped">
 
-          <tr><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
-          <tr><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" onclick="alertify.error('En que pinchas picaron?')"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-          <tr><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-
+          <tr ><td><?php echo $text["accion"];?></td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
+              <tr ><td><?php echo $text["aventura"];?></td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["comedia"];?></td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["drama"];?></td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["fantasia"];?></td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["ficcion"];?></td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["porn"];?></td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" > <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["romantica"];?></td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["suspense"];?></td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["terror"];?></td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
         </table>
       </div>
 
