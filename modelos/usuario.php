@@ -232,18 +232,18 @@ function getAmigosSinConfirmar(){
 function numAmigos(){
 	$this->conectarBD();
 	$sql = "SELECT email1 FROM agrega WHERE email2='$this->email' and estado = '0' \n"
-    . "UNION\n"
-    . "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
+	. "UNION\n"
+	. "SELECT email2 FROM agrega WHERE email1='$this->email' and estado = '0' ";
 	$resultado = mysql_query($sql);
 	return mysql_num_rows($resultado);
 }
 function paginadorAmigos($usr,$comienzo,$cant_reg){
 	$this->conectarBD();
 	$sql = "\n"
-    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.email1 != '$usr' and a.estado = '0' \n"
-    . "UNION\n"
-    . "\n"
-    . "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.email2 != '$usr' and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
+	. "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email2='$this->email' and u.email=a.email1 and a.email1 != '$usr' and a.estado = '0' \n"
+	. "UNION\n"
+	. "\n"
+	. "SELECT u.nombreUsuario,u.email,u.foto,u.eslogan FROM agrega a,usuario u WHERE a.email1='$this->email' and u.email=a.email2 and a.email2 != '$usr' and a.estado = '0' ORDER BY 1 LIMIT ".$comienzo.", ".$cant_reg;
 	//echo $sql;
 	return mysql_query($sql);
 }
@@ -311,7 +311,7 @@ function filtrarAmigos($busqueda,$email){
 			$i=$i+1;
 		}
 	}
-return $toRet;
+	return $toRet;
 	
 }
 
@@ -376,152 +376,152 @@ function eliminarAmigo($emailamigo){
 	return "error";
 }*/
 function addAmigo($emailAmigo){
-        $this->conectarBD();
-        $sql = "SELECT email FROM usuario where email='$emailAmigo'";
-        if(mysql_num_rows(mysql_query($sql)) == 0){
-                return "noexiste";
-        }else{
+	$this->conectarBD();
+	$sql = "SELECT email FROM usuario where email='$emailAmigo'";
+	if(mysql_num_rows(mysql_query($sql)) == 0){
+		return "noexiste";
+	}else{
 
-        		if($this->email==$emailAmigo){
-        			return "error";
-        		}
-                $sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailAmigo' OR email2='$this->email' AND email1='$emailAmigo' ";
-                $resultado=mysql_query($sql);
-                $row = mysql_fetch_array($resultado);
-                if($row["estado"]==1){
-                    return "error";
-                }else{
-                    $sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
-                    if(mysql_query($sql)){
-                    	return "insertado";
-            		}else{
-	        			return "error";}
-                }
-        }
+		if($this->email==$emailAmigo){
+			return "error";
+		}
+		$sql = "SELECT estado FROM agrega WHERE email1='$this->email' AND email2='$emailAmigo' OR email2='$this->email' AND email1='$emailAmigo' ";
+		$resultado=mysql_query($sql);
+		$row = mysql_fetch_array($resultado);
+		if($row["estado"]==1){
+			return "error";
+		}else{
+			$sql = "INSERT INTO agrega values('$this->email','$emailAmigo','1')";
+			if(mysql_query($sql)){
+				return "insertado";
+			}else{
+				return "error";}
+			}
+		}
 //Si un usuario tiene a 1 el campo estado significa que esta pendiente de aceptacion. 0 es que esta todo correcto.
-}
-
-function confirmarAmigo($usuarioTarget){
-	$this->conectarBD();
-	$sql = "UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget'";
-	mysql_query($sql) or die(mysql_error());
-}
-function denegarAmigo($usuarioTarget){
-	$this->conectarBD();
-	$sql = "Delete FROM agrega WHERE email1='$this->email' AND email2='$usuarioTarget' OR email1='$usuarioTarget' AND email2='$this->email' ";
-	return mysql_query($sql);
-}
-function insertarPublicacion($publi){
-	$this->conectarBD();
-	$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
-	return mysql_query($sql);
-}
-function consultarPublicacion($comienzo,$cant_reg){
-	$this->conectarBD();
-	$toRet = array();
-	$toRet[0] = array();
-	$toRet[1] = array();
-	$toRet[2] = array();
-	$toRet[3] = array();
-	$toRet[4] = array();
-// $sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
-	$sql= "\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
-	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
-	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc LIMIT ".$comienzo.", ".$cant_reg;
-	$resultado=mysql_query($sql);
-	while($row = mysql_fetch_array($resultado)){
-		array_push($toRet[0], $row["nombreUsuario"]);
-		array_push($toRet[1], $row["fecha"]);
-		array_push($toRet[2], $row["publica"]);
-		array_push($toRet[3], $row["email"]);
-		array_push($toRet[4], $row["idPublicacion"]);
 	}
-	return $toRet;
-}
-function paginadorPublicacionesPerfil($comienzo,$cant_reg){
-	$this->conectarBD();
-	$sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$this->email."' ORDER BY fecha desc LIMIT ".$comienzo.", ".$cant_reg;
+
+	function confirmarAmigo($usuarioTarget){
+		$this->conectarBD();
+		$sql = "UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget'";
+		mysql_query($sql) or die(mysql_error());
+	}
+	function denegarAmigo($usuarioTarget){
+		$this->conectarBD();
+		$sql = "Delete FROM agrega WHERE email1='$this->email' AND email2='$usuarioTarget' OR email1='$usuarioTarget' AND email2='$this->email' ";
+		return mysql_query($sql);
+	}
+	function insertarPublicacion($publi){
+		$this->conectarBD();
+		$sql = "INSERT INTO publicacion(email, fecha, publica) values('$this->email','".date("Y-m-d H:i:s")."','$publi')";
+		return mysql_query($sql);
+	}
+	function consultarPublicacion($comienzo,$cant_reg){
+		$this->conectarBD();
+		$toRet = array();
+		$toRet[0] = array();
+		$toRet[1] = array();
+		$toRet[2] = array();
+		$toRet[3] = array();
+		$toRet[4] = array();
+// $sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
+		$sql= "\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+		. "UNION\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+		. "UNION\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ORDER BY 3 desc LIMIT ".$comienzo.", ".$cant_reg;
+		$resultado=mysql_query($sql);
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet[0], $row["nombreUsuario"]);
+			array_push($toRet[1], $row["fecha"]);
+			array_push($toRet[2], $row["publica"]);
+			array_push($toRet[3], $row["email"]);
+			array_push($toRet[4], $row["idPublicacion"]);
+		}
+		return $toRet;
+	}
+	function paginadorPublicacionesPerfil($comienzo,$cant_reg){
+		$this->conectarBD();
+		$sql="SELECT fecha,email,idPublicacion,publica FROM publicacion WHERE email='".$this->email."' ORDER BY fecha desc LIMIT ".$comienzo.", ".$cant_reg;
 //echo $sql;
-	return mysql_query($sql);
-}
-function numPublicacionesTot(){
-	$this->conectarBD();
-$sql= "\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
-	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
-	. "UNION\n"
-	. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ";
-	
-	$resultado = mysql_query($sql);
-	return mysql_num_rows($resultado);
-}
-function numPublicaciones(){
-	$this->conectarBD();
-	$sql="SELECT * FROM publicacion WHERE email='".$this->email."'";
-	$resultado = mysql_query($sql);
-	return mysql_num_rows($resultado);
-}
-function editarPerfil($newName, $newPass){
-	$this->conectarBD();
-	$sql = "UPDATE usuario SET nombreUsuario = '$newName' , pass = '$newPass' WHERE email = '$this->email' ";
-	return mysql_query($sql);
-}
-function actualizaBio($newBio){
-	$this->conectarBD();
-	$sql = "UPDATE usuario SET eslogan = '$newBio' WHERE email = '$this->email' ";
-	return mysql_query($sql);
-}
-function eliminarCuenta(){
-	$this->conectarBD();
-	$sql = "DELETE FROM usuario WHERE email = '$this->email' ";
-	return mysql_query($sql);
-}
-function eliminarPublicacion($idP){
-	$this->conectarBD();
-	$sql = "DELETE FROM publicacion WHERE idPublicacion=$idP";
-	return mysql_query($sql);
-}
+		return mysql_query($sql);
+	}
+	function numPublicacionesTot(){
+		$this->conectarBD();
+		$sql= "\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=p.email \n"
+		. "UNION\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM agrega a, usuario u, publicacion p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=p.email \n"
+		. "UNION\n"
+		. "SELECT u.nombreUsuario,u.email, p.fecha,p.publica,p.idPublicacion FROM usuario u,publicacion p WHERE u.email='".$this->email."' AND u.email=p.email ";
+
+		$resultado = mysql_query($sql);
+		return mysql_num_rows($resultado);
+	}
+	function numPublicaciones(){
+		$this->conectarBD();
+		$sql="SELECT * FROM publicacion WHERE email='".$this->email."'";
+		$resultado = mysql_query($sql);
+		return mysql_num_rows($resultado);
+	}
+	function editarPerfil($newName, $newPass){
+		$this->conectarBD();
+		$sql = "UPDATE usuario SET nombreUsuario = '$newName' , pass = '$newPass' WHERE email = '$this->email' ";
+		return mysql_query($sql);
+	}
+	function actualizaBio($newBio){
+		$this->conectarBD();
+		$sql = "UPDATE usuario SET eslogan = '$newBio' WHERE email = '$this->email' ";
+		return mysql_query($sql);
+	}
+	function eliminarCuenta(){
+		$this->conectarBD();
+		$sql = "DELETE FROM usuario WHERE email = '$this->email' ";
+		return mysql_query($sql);
+	}
+	function eliminarPublicacion($idP){
+		$this->conectarBD();
+		$sql = "DELETE FROM publicacion WHERE idPublicacion=$idP";
+		return mysql_query($sql);
+	}
 //devuelve array asociativo con todos los usuarios
-function mostrarUsuarios(){
-	Usuario::conectarBD();
-	$sql = "SELECT * FROM usuario";
-	$result = Usuario::consultaBD($sql);
-	while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
-		$toRet[$tuplas["email"]] = $tuplas;
+	function mostrarUsuarios(){
+		Usuario::conectarBD();
+		$sql = "SELECT * FROM usuario";
+		$result = Usuario::consultaBD($sql);
+		while ($tuplas = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$toRet[$tuplas["email"]] = $tuplas;
+		}
+		return $toRet;
 	}
-	return $toRet;
-}
-function editarPublicacion($id,$publi){
-	$this->conectarBD();
-	$sql = "UPDATE publicacion SET publica='".$publi."' WHERE idPublicacion=".$id;
-	return mysql_query($sql);
-}
-function consultarRecomendadas(){
-	$this->conectarBD();
-	$toRet = array();
-	$toRet[0] = array();
-	$toRet[1] = array();
-	$toRet[2] = array();
+	function editarPublicacion($id,$publi){
+		$this->conectarBD();
+		$sql = "UPDATE publicacion SET publica='".$publi."' WHERE idPublicacion=".$id;
+		return mysql_query($sql);
+	}
+	function consultarRecomendadas(){
+		$this->conectarBD();
+		$toRet = array();
+		$toRet[0] = array();
+		$toRet[1] = array();
+		$toRet[2] = array();
 // $sql="SELECT u.nombreUsuario, p.fecha, p.publica FROM publicacion p, usuario u WHERE u.email = '".$this->email."' AND p.email = '".$this->email."' ORDER BY p.fecha desc";
-	$sql= "\n"
-	. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
-	. "UNION\n"
-	. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n";
-	$resultado=mysql_query($sql);
-	while($row = mysql_fetch_array($resultado)){
-		array_push($toRet[0], $row["nombreUsuario"]);
-		array_push($toRet[1], $row["foto"]);
-		array_push($toRet[2], $row["titulo"]);
+		$sql= "\n"
+		. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email2='".$this->email."' AND a.email1=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n"
+		. "UNION\n"
+		. "SELECT u.nombreUsuario,p.foto,p.titulo FROM agrega a, usuario u, recomendada r, pelicula p WHERE a.email1='".$this->email."' AND a.email2=u.email AND a.estado=0 AND u.email=r.email AND r.idPelicula=p.idPelicula \n";
+		$resultado=mysql_query($sql);
+		while($row = mysql_fetch_array($resultado)){
+			array_push($toRet[0], $row["nombreUsuario"]);
+			array_push($toRet[1], $row["foto"]);
+			array_push($toRet[2], $row["titulo"]);
+		}
+		return $toRet;
 	}
-	return $toRet;
-}
 
 
-function usuariosFiltrados($email, $tipo){
+	function usuariosFiltrados($email, $tipo){
 		Usuario::conectarBD();
 		if($tipo == ""){
 			$tipo = "0' or tipoUsuario = '1";
@@ -544,17 +544,23 @@ function usuariosFiltrados($email, $tipo){
 		return $toRet;
 
 	}
-}
-/*	INNECESAREA
-function subirFoto($email,$foto){
 
-	Usuario::conectarBD();
-	echo "string";
-	echo "<br>";
-	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email='".$email."'";
-	echo $sql;
-	return mysql_query($sql);
-}*/
+//Devuelve un array de notificaciones para mostrar en la vista
+//Cada array tiene dentro otro array con los datos relevantes de la notificacion
+	function getNotificaciones(){
+		$toRet = array();
+		Usuario::conectarBD();
+		$sql = "select * from notificacion where email = '$this->email'";
+		$result = mysql_query($sql);
+		while($row = mysql_fetch_array($result)){
+			array_push($toRet, $row);
+		}
+		return $toRet;
+	}
+
+
+}
+
 
 
 ?>
