@@ -8,11 +8,11 @@ function cabeceraCartelera(){
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
-    <script src="js/general.js"> </script>
-  
-    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	<script src="js/general.js"> </script>
+
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
 	
 	<div class="container">
 		<div class="row">
@@ -60,9 +60,23 @@ function cabeceraCartelera(){
 												<h4 class="modal-title">Notificaciones</h4>
 											</div>
 											<div class="modal-body">
-												<h5>Notificacion 1</h5>               
-												<h5>Notificacion 2</h5>               
-												<h5>Notificacion 3</h5>               
+												<form action="controladoras/procesarNotificacion.php" method="POST">
+													<table class="table table-striped table-hover">
+														<?php
+														$notif = $_SESSION["usuario"]->getNotificaciones();
+														foreach($notif as $notificacion){
+
+															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
+
+
+
+															
+														}
+
+
+														?>
+													</table>
+												</form>             
 											</div>
 										</div>
 									</div>  
@@ -88,11 +102,11 @@ function cabeceraPantallaPrincipal(){
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
-    <script src="js/general.js"> </script>
-  
-    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	<script src="js/general.js"> </script>
+
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
 	
 	<div class="container">
 		<div class="row">
@@ -145,9 +159,23 @@ function cabeceraPantallaPrincipal(){
 												<h4 class="modal-title">Notificaciones</h4>
 											</div>
 											<div class="modal-body">
-												<h5>Notificacion 1</h5>               
-												<h5>Notificacion 2</h5>               
-												<h5>Notificacion 3</h5>               
+												<form action="controladoras/procesarNotificacion.php" method="POST">
+													<table class="table table-striped table-hover">
+														<?php
+														$notif = $_SESSION["usuario"]->getNotificaciones();
+														foreach($notif as $notificacion){
+
+															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
+
+
+
+															
+														}
+
+
+														?>
+													</table>
+												</form>
 											</div>
 										</div>
 									</div>  
@@ -261,11 +289,11 @@ function cabeceraAmigos(){
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
-    <script src="js/general.js"> </script>
-  
-    <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-    <link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	<script src="js/general.js"> </script>
+
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
 	
 	<div class="container">
 		<div class="row">
@@ -288,6 +316,12 @@ function cabeceraAmigos(){
 								<div class="form-group">
 									<input type="text" name="busqueda" class="form-control" placeholder="Buscar Amigos">
 									<button type="submit" class="btn btn-success" style="margin-left:-2px;">Buscar</button>
+									<?php
+									if(isset($_GET["filtrado"])){
+
+										echo "<a href='amigos.php' class='btn btn-primary'>Cancelar Búsqueda</a>";
+									}
+									?>
 								</div>
 							</form>
 							<ul class="nav navbar-nav navbar-right">
@@ -318,9 +352,23 @@ function cabeceraAmigos(){
 												<h4 class="modal-title">Notificaciones</h4>
 											</div>
 											<div class="modal-body">
-												<h5>Notificacion 1</h5>               
-												<h5>Notificacion 2</h5>               
-												<h5>Notificacion 3</h5>               
+												<form action="controladoras/procesarNotificacion.php" method="POST">
+													<table class="table table-striped table-hover">
+														<?php
+														$notif = $_SESSION["usuario"]->getNotificaciones();
+														foreach($notif as $notificacion){
+
+															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
+
+
+
+															
+														}
+
+
+														?>
+													</table>
+												</form>           
 											</div>
 										</div>
 									</div>  
@@ -352,9 +400,15 @@ function footer(){
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
+
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#"?>Español</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
 						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Japonés</a></li>
+
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=ES"?>Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=EN">English</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=JA">日本人	</a></li>
+
 					</ul>
 				</span>
 			</div>
