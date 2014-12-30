@@ -2,10 +2,10 @@
 <?php
 
 //Cabecera.php - Cabecera Index
-$textos["email"]="Correo Electronico";
-$textos["pass"]="Contraseña";
+$textos["emailC"]="Correo Electronico";
+$textos["passC"]="Contraseña";
 $textos["loguear"]="Entrar";
-$textos["registro"]="Registrarse";
+$textos["registro"]="Registro";
 $textos["forgetPass"]="Recuperar contraseña";
 
 //Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera
@@ -22,13 +22,19 @@ $textos["amigos"]="Amigos";
 $textos["catalogo"]="Catálogo";
 
 //Cabecera.php - Cabecera Index - Registro
-$textos["nomUsu"]="Nombre de usuario";
-$textos["email"]="Correo electrónico";
-$textos["pass"]="Contraseña";
-$textos["confPass"]="Confirma tu contraseña";
-$textos["labelReg"]="Podrás detallar más tu perfil una vez inicies sesión con tu nuevo usuario. Ten en cuenta que no es posible cambiar la dirección de correo electrónico una vez que ésta esté ligada a tu cuenta.";
+$textos["nomUsu"]="Nombre de usuario:";
+$textos["email"]="Correo electrónico:";
+$textos["pass"]="Contraseña:";
+$textos["confPass"]="Confirma tu contraseña:";
+$textos["labelReg"]="Podrás detallar más tu perfil una vez inicies sesión con tu nuevo usuario."; 
+$textos["labelReg1"]="Ten en cuenta que"; 
+$textos["labelReg2"]="no es posible cambiar la dirección de correo electrónico"; 
+$textos["labelReg3"]="una vez que ésta esté ligada a tu cuenta.";
 $textos["registrarse"]="Registrarse";
 $textos["cerrar"]="Cerrar";
+$textos["smallCR"]="Introduce los siguientes datos para continuar con el registro";
+$textos["smallCR1"]="Introduce tu correo electrónico para recuperar la contraseña.";
+$textos["h6CR"]="Introduce tu correo electrónico:";
 
 //Index.php
 $textos["labelH3Index"]="Disfruta del cine, en compañía";
@@ -42,6 +48,7 @@ $textos["pYourWall"]="Éste es tu muro. Aquí verás tanto tus publicaciones com
 $textos["publicar"]="Publicar";
 $textos["editar"]="Editar";
 $textos["eliminar"]="Eliminar";
+$textos["writePub"]="Escribe una publicación....";
 
 //Perfil.php
 $textos["h1Perfil"]="Perfil de ";
@@ -61,6 +68,8 @@ $textos["pelRecomen"]="Películas Recomendadas";
 $textos["newGroup"]="Nuevo Grupo";
 $textos["nameGroup"]="Nombre del Grupo";
 $textos["nameYourGroup"]="Nombre de tu Grupo";
+$textos["description"]="Descripción";
+$textos["chooseSesion"]="Elegir Sesión";
 $textos["addFilm"]="Añadir Película";
 $textos["addSesion"]="Añadir Sesion";
 $textos["addFriends"]="Añadir Amigos";

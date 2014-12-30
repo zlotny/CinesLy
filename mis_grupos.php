@@ -62,22 +62,22 @@ session_start();
  <div class="row top-margin">
   <div class="col-sm-6">
    <div class="panel panel-default">
-     <div class="panel-heading">Nuevo Grupo</div>
+     <div class="panel-heading"><?php echo $text["newGroup"];?></div>
      <div class="panel-body">
 
 
       <form action="controladoras/crearGrupo.php" role="form" method="POST">
         <div class="form-group">
-          <label for="nombre_grupo">Nombre del Grupo</label>
+          <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label>
           <input name="nombreGrupo" class="form-control" id="nombre_grupo"
           placeholder="Nombre de tu grupo">
         </div>
         <div class="form-group">
-          <label for="descripcion_grupo">Descripción</label>
+          <label for="descripcion_grupo"><?php echo $text["description"];?></label>
           <input type="text" name="descripcionGrupo" class="form-control" id="descripcion_grupo" placeholder="Introduce una descripción">
         </div>
         <div class="form-group">
-          <label for="add_sesion">Elegir Sesión</label><br/>
+          <label for="add_sesion"><?php echo $text["chooseSesion"];?></label><br/>
           <select name="idSesion" class="form-control">
             <?php
             $sesiones = Sesion::getFuturasSesiones();
@@ -89,7 +89,7 @@ session_start();
             ?>
           </select>
         </div>
-        <label for="add_amigos">Añadir Amigos</label>
+        <label for="add_amigos"><?php echo $text["addFriends"];?></label>
         <div class="form-group scrollable-table">
           <table class="table table-striped">
             <?php
@@ -100,7 +100,7 @@ session_start();
             ?>
           </table>
         </div>
-        <button type="submit" class="btn btn-success pull-right">Crear</button>
+        <button type="submit" class="btn btn-success pull-right"><?php echo $text["crear"];?></button>
       </form>
     </div>
   </div>
@@ -108,12 +108,12 @@ session_start();
 
 <div class="col-sm-6">
   <div class="panel panel-default">
-    <div class="panel-heading">Grupos</div>
+    <div class="panel-heading"><?php echo $text["grupo"];?></div>
     <div class="panel-body">
       <form action="controladoras/eliminarGrupos.php" method="POST">   
        <div class="form-group scrollable-table">
         <table class="table table-striped">
-          <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
+          <tr><td><?php echo $text["nombre"];?></td><td><?php echo $text["numInteger"];?></td><td></td><td></td></tr>
           <?php
           $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
           foreach ($grupos as $grupo){

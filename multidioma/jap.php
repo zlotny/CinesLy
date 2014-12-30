@@ -34,6 +34,7 @@ $textos["cerrar"]="閉じる";
 $textos["labelH3Index"]="映画を楽しむ、同行";
 $textos["labelH1Index"]="現在、劇場で";
 $textos["loteria"]="Loteriaを確認してください";
+$textos["cinesLy"]="CinesLy";
 
 //PantallaPrincipal.php
 $textos["h1Welcome"]="CinesLyへようこそ";

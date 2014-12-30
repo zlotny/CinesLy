@@ -224,11 +224,11 @@ function cabeceraIndex(){
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
-					<input type="email" name="email" class="form-control" placeholder="Correo electrónico">
+					<input type="email" name="email" class="form-control" placeholder="Correo Electronico">
 					<input type="password" name="pass" class="form-control" placeholder="Contraseña">
 					<input type="submit" name="accion" class="btn btn-success" value="Entrar">
-					<input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="Registro"/>
-					<input type="button" class="btn btn-danger" data-toggle="modal" data-target="#forgetPass" value="Recuperar Contraseña"/>
+					<input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="Registro">
+					<input type="button" class="btn btn-danger" data-toggle="modal" data-target="#forgetPass" value="Recuperar contraseña">
 				</form>
 			</div>
 		</div>
@@ -239,24 +239,24 @@ function cabeceraIndex(){
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Registro</h4> 
-						<small>Introduce los siguientes datos para continuar con el registro.</small>
+						<h4 class="modal-title"><?php echo $text["registro"];?></h4> 
+						<small><?php echo $text["smallCR"];//Introduce los siguientes datos para continuar con el registro ?></small>
 					</div>
 					<div class="modal-body">
-						<h6> Nombre de usuario: </h6>
+						<h6> <?php echo $text["nomUsu"];?> </h6>
 						<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" />
-						<h6> Correo electrónico: </h6>
+						<h6> <?php echo $text["email"];?> </h6>
 						<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico" />
-						<h6> Contraseña: </h6>
+						<h6> <?php echo $text["pass"];?> </h6>
 						<input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" />
-						<h6> Confirma tu contraseña: </h6>
+						<h6> <?php echo $text["confPass"];?></h6>
 						<input type="password" class="form-control form-pers" placeholder="Repita la contraseña" /><br/>
-						<label>Podrás detallar más tu perfil una vez inicies sesión con tu nuevo usuario.
-							Ten en cuenta que <span class="text-color-red text-weight-bold">no es posible cambiar la dirección de correo electrónico</span> una vez que ésta esté ligada a tu cuenta.</label>
+						<label><?php echo $text["labelReg"];?>
+							<?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="accion" class="btn btn-success" value="Registrarse">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 						</div>
 					</div>
 				</div>
@@ -268,16 +268,16 @@ function cabeceraIndex(){
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title">Recuperar contraseña</h4>
-							<small>Introduce tu correo electrónico para recuperar la contraseña.</small>
+							<h4 class="modal-title"><?php echo $text["forgetPass"];?></h4>
+							<small><?php echo $text["smallCR1"];?></small>
 						</div>
 						<div class="modal-body">
-							<h6> Introduce tu correo electrónico: </h6>
+							<h6> <?php echo $text["h6CR"];?></h6>
 							<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">          
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="accion" class="btn btn-success" value="Recuperar">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 						</div>
 					</div>
 				</div>
