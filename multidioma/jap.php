@@ -19,7 +19,7 @@ $textos["misGrupos"]="私のグループ";
 $textos["cerrarSesion"]="クローズセッション";
 
 $textos["amigos"]="フレンズ";
-$textos["catalogo"]="Catálago";
+$textos["catalogo"]="カタログ";
 
 //Cabecera.php - Cabecera Index - Registro
 $textos["nomUsu"]="ユーザー名";
@@ -85,6 +85,13 @@ $textos["h1Amigos"]="バディリスト";
 $textos["pAmigos"]="このページでは、あなたの友情を管理することができます。あなたが追加した招待状を受け入れ、新しい友達を追加します。";
 $textos["misAmigos"]="マイフレンド";
 $textos["addFriend"]="友達を追加";
+$textos["pPersonas"]="人々はあなたが興味がある可能性があります";
+$textos["top"]="上位10作品";
+$textos["recomFilm"]="お薦め作品";
+
+//PerfilAmigo.php
+$textos["delAmi"]="友達を削除する";
+$textos["pAmigosAm"]="あなたが閲覧している。それはあなたの友人はまだありませんか？友達リストに追加";
 
 //Catalogo.php
 $textos["h1Catalogo"]="ムービーカタログ";
@@ -125,7 +132,7 @@ $textos["writeComen"]="コメントを書く";
 
 //adminModificarPelicula.php
 $textos["h1AdModPel"]="ムービーカタログ";
-$textos["catalogPelis"]="映画のリスト";
+$textos["idFilm"]="同上の映画";
 $textos["editPeli"]="動画編集";
 $textos["cambTitPeli"]="映画のタイトルを変更する";
 $textos["cambDirect"]="変更マネージャ";
@@ -144,7 +151,6 @@ $textos["pBusq"]="で見て";
 
 //AdminModificarUsuario.php
 $textos["h1ListUsu"]="ユーザーリスト";
-$textos["catalogPelis"]="映画のリスト";
 $textos["editPeli"]="動画編集";
 $textos["cambNomUsu"]="ユーザー名の変更";
 $textos["cambEmail"]="電子メールの変更";
@@ -168,6 +174,34 @@ $textos["changeSes"]="変更セッション";
 $textos["busqSes"]="検索セッション";
 $textos["dellAm"]="友達を削除する";
 $textos["modif"]="修正する";
+
+//adminModificarSesion.php
+$textos["h1SesExis"]="既存のセッション";
+$textos["sala"]="ルーム";
+$textos["fecha"]="日付";
+$textos["capacidad"]="容量";
+$textos["titPel"]="映画のタイトル";
+$textos["editSes"]="編集セッション";
+$textos["cambSala"]="部屋を変更します。";
+$textos["cambFech"]="変更日：";
+$textos["cambCapac"]="変更容量：";
+$textos["cambId"]="セッション（変更しない）の映画のID：";
+$textos["h4NewSes"]="セッションを挿入";
+$textos["insertSes"]="挿入セッション";
+$textos["intrSala"]="ルームを入力してください：";
+$textos["intrFech"]="日付を入力してください：";
+$textos["intrCap"]="容量を入力します。";
+$textos["intrId"]="セッションの映画のID：";
+$textos["saveSes"]="セッションを保存：";
+
+
+//Footer
+$textos["hrefGH"]="GitHubのページ";
+$textos["idioma"]="言語";
+$textos["esp"]="スペイン語";
+$textos["ing"]="英語";
+$textos["jap"]="日本人";
+
 
 
 ?>

@@ -19,7 +19,7 @@ $textos["misGrupos"]="Mis Grupos";
 $textos["cerrarSesion"]="Cerrar Sesion";
 
 $textos["amigos"]="Amigos";
-$textos["catalogo"]="Catálago";
+$textos["catalogo"]="Catálogo";
 
 //Cabecera.php - Cabecera Index - Registro
 $textos["nomUsu"]="Nombre de usuario";
