@@ -109,5 +109,12 @@ class Evento{
 	 	return mysql_query($sql);
 	 }
 
+	 function addAmigoGrupo($email, $id){
+	 	Evento::conectarBD();
+	 	$sql = "INSERT INTO contiene(id_evento, email) VALUES('$id','$email')";
+	 	echo $sql;
+	 	return mysql_query($sql);
+	 }
+
 
 	}

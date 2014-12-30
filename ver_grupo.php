@@ -143,7 +143,7 @@
       <div class="modal-body" style="text-align:left">
         <div class="row"></div>
 
-        <form role="form" action="controladoras/addamigoGrupo.php">
+        <form role="form" action="controladoras/addamigoGrupo.php" method="POST">
           <div class="form-group">
             <label>Amigo a añadir</label>
             <?php $posibles = $_SESSION["usuario"]->getAmigos(); ?>
@@ -158,7 +158,7 @@
             }
             ?>
           </select>
-          <input type="hidden" value="<?php echo $_GET["id"]; ?>";
+          <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>";
           <br/>
         </div>
         <button type="submit" class="btn btn-primary">Añadir amigo</button>
