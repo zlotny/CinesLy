@@ -52,7 +52,7 @@ body{
 
 .scrollable-table{
 
-	overflow-y: scroll;
+	overflow-y: scroll; 
 	height: 200px;
 
 }
@@ -88,13 +88,14 @@ body{
 .custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:15px;
+	bottom:10px;
+
 }
 
 .admin-custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:-39px;
+	bottom: 10px;
 }
 
 .peli{
@@ -465,13 +466,13 @@ body{
 }
 
 .fotoUsr:hover { 
-    cursor: pointer;
+	cursor: pointer;
 
 }
 
 .amigos-body {
-    display: table-cell;
-    vertical-align: top;
-    width: 1200px;
+	display: table-cell;
+	vertical-align: top;
+	width: 1200px;
 }
 
