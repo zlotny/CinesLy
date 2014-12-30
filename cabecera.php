@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-session_start();
 
 include_once "multidioma/esp.php";
 include_once "modelos/usuario.php";
@@ -9,6 +8,7 @@ include_once "modelos/pelicula.php";
 include_once "modelos/sesion.php";
 include_once "modelos/evento.php";
 
+session_start();
 
 if(!isset($_SESSION["idioma"])){
 	$text = $textos;

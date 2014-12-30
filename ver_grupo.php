@@ -1,3 +1,4 @@
+ <?php include_once "cabecera.php"; ?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -14,11 +15,6 @@
 </head>
 <body>
  <?php
- session_start();
- include_once "cabecera.php";
- include_once "modelos/evento.php";
- include_once "modelos/usuario.php";
- include_once "modelos/sesion.php";
  cabeceraVerGrupo();
  $grupoActual = Evento::getGrupoById($_REQUEST["id"]);
  $usuariosDelGrupo =  Evento::getArrayIntegrantes($_REQUEST["id"]);
@@ -33,7 +29,6 @@
     </script>";
   }
  }
- 
  ?>
 
 
@@ -73,7 +68,7 @@
           <table class="table table-striped ">
             <?php
             foreach($usuariosDelGrupo as $user){
-              echo "<tr ><td>$user->nombreUsuario</td><td class='col-md-1'><a href='controladoras/eliminarAmigoGrupo.php?email=".$_SESSION["usuario"]->email."&id=".$grupoActual->idEvento."' class='btn btn-info'>Eliminar</a></td></tr>";
+              echo "<tr ><td>$user->nombreUsuario</td><td class='col-md-1'><a href='controladoras/eliminarAmigoGrupo.php?email=".$user->email."&id=".$grupoActual->idEvento."' class='btn btn-info'>Eliminar</a></td></tr>";
             }
             ?>
 
