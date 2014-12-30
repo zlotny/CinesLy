@@ -10,6 +10,7 @@ if(!isset($_SESSION["idioma"])){
 	$text = $_SESSION["idioma"];
 }
 
+session_start();
 
 function cabeceraCartelera(){
 	?>
@@ -42,6 +43,8 @@ function cabeceraCartelera(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
+
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">
@@ -143,6 +146,7 @@ function cabeceraPantallaPrincipal(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">
@@ -336,6 +340,7 @@ function cabeceraAmigos(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">

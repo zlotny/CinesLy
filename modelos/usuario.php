@@ -559,6 +559,19 @@ function addAmigo($emailAmigo){
 	}
 
 
+	function numNotificaciones(){
+		$this->conectarBD();
+		$sql = "select * from notificacion where email = '$this->email'";
+		$resultado = mysql_query($sql);
+		$row = mysql_num_rows($resultado);
+		if($row==0){
+			return "";
+		} else {
+			return mysql_num_rows($resultado);
+		}
+	}
+
+
 }
 
 
