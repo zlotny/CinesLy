@@ -32,8 +32,7 @@
        <div class="panel-body">
 
 
-        <form role="form">
-          <div class="form-group">
+        <div class="form-group">
             <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
           </div>
           <div class="form-group">
@@ -63,8 +62,45 @@
 
             </table>
           </div>
+		  <button data-toggle="modal" data-target="#editGroup" class="btn btn-success">Editar</button>
+		  
+		  
+		  
+		  
+		  <div id="editGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <form action="#" method="POST">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Editar Grupo</h4>
+                  </div>
+                  <div class="modal-body">
+                    
+                    <label for="pais" class="">Cambiar Nombre de Grupo:</label>
+                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->nombre; ?>"> <br/>
+
+                    <label for="pais" class="">Cambiar Pelicula:</label>
+                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $peli->titulo; ?>"> <br/>
+
+                    <label for="pais" class="">Cambiar Sesion:</label>
+                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->idSesion; ?>"> <br/>
+
+
+                  </div>
+                  <div class="modal-footer">
+                    <button name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>  
+          <div class="clearfix"></div>
+		
+		  
           <a href="mis_grupos.php"  class="btn btn-success pull-right">Volver</a>
-        </form>
       </div>
     </div>
   </div>
