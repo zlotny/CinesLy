@@ -2,7 +2,8 @@
 <?php
 
 //Cabecera.php - Cabecera Index
-$textos["pass"]="Password";
+$textos["emailC"]="Correo electrónico";
+$textos["passC"]="Password";
 $textos["loguear"]="Enter";
 $textos["registro"]="Check in";
 $textos["forgetPass"]="Recover Password";
@@ -28,6 +29,12 @@ $textos["confPass"]="Confirm Password";
 $textos["labelReg"]="You can  specify more your profile when you start session with your new user account. Note that is no possible to change e-mail when is linked to your account.";
 $textos["registrarse"]="Check in";
 $textos["cerrar"]="Close";
+$textos["labelReg1"]="Take care about"; 
+$textos["labelReg2"]="switching email is a not available option"; 
+$textos["labelReg3"]="when this is linked to your account.";
+$textos["smallCR"]="Introduce los siguientes datos para continuar con el registro Enter the following data to continuous with the registration";
+$textos["smallCR1"]="Enter your email to recover your password.";
+$textos["h6CR"]="Enter your email:";
 
 //Index.php
 $textos["labelH3Index"]="Enjoy the cinema, accompanied.";
@@ -41,6 +48,7 @@ $textos["pYourWall"]="This is your wall. Here you will see both, your publicatio
 $textos["publicar"]="Publish";
 $textos["editar"]="Edit";
 $textos["eliminar"]="Remove";
+$textos["writePub"]="Write a publication....";
 
 //Perfil.php
 $textos["h1Perfil"]="Profile of ";
@@ -60,6 +68,8 @@ $textos["pelRecomen"]="Recommended Films";
 $textos["newGroup"]="New Group";
 $textos["nameGroup"]="Group Name";
 $textos["nameYourGroup"]="Name of Your Group";
+$textos["description"]="Description";
+$textos["chooseSesion"]="Choose session";
 $textos["addFilm"]="Add Film";
 $textos["addSesion"]="Add Session";
 $textos["addFriends"]="Add Friends";
@@ -78,9 +88,10 @@ $textos["film"]="Film";
 $textos["sesion"]="Session";
 $textos["friendsGroup"]="Friends of Group";
 $textos["volver"]="Return";
-
-
-
+$textos["cambNomGrup"]="Switch group name:";
+$textos["cambPel"]="Switch film:";
+$textos["cambSes"]="Switch session:";
+$textos["editGroup"]="Edit group";
 
 
 //amigos.php
@@ -88,10 +99,20 @@ $textos["amigCines"]="Friends - CinesLy";
 $textos["h1Amigos"]="Friend List";
 $textos["pAmigos"]="In this page can manage your friends. Add new friends and accepts invitations of whom have added you.";
 $textos["misAmigos"]="My Friends";
-$textos["pendConf"]="Slope of confirmation";
-$textos["emDelAmToAdd"]="Friend's email to add";
+$textos["pendConf"]="Pending confirmation";
+$textos["emailFriend"]="Friend's email to add";
 $textos["addFriend"]="Add one Friend";
 $textos["addFriend1"]="Add Friend";
+$textos["pel"]="Films";
+$textos["top"]="Top 10";
+
+
+//PerfilAmigo.php
+$textos["delAmi"]="Remove friend";
+$textos["pAmigosAm"]="Your are watching a friend´s profile";
+$textos["pAmigosAm1"]="Is not this person your friend yet? add him!";
+$textos["pAmigosAm2"]="Your friend list";
+
 
 //catalogo.php
 $textos["h1Catalogo"]="List of Films";
@@ -171,9 +192,9 @@ $textos["cambNomUsu"]="Rename name";
 $textos["cambEmail"]="Change e-mail";
 $textos["cambTipUsu"]="Change type User(0 normal user, 1 admin):";
 $textos["cambPass"]="Change Password";
-$textos["cambPref1"]="Change Preference1:";
-$textos["cambPref2"]="Change Preference2:";
-$textos["cambPref3"]=":";
+$textos["cambPref1"]="Change 1 preference:";
+$textos["cambPref2"]="Change 2 preference:";
+$textos["cambPref3"]="Change 3 preference:";
 $textos["cambEst"]="Change Status";
 $textos["cambCity"]="Switch main cityl:";
 $textos["cambFechNac"]="Change Birthdate";
@@ -202,7 +223,12 @@ $textos["intrCap"]="Insert capacity:";
 $textos["intrId"]="Inssert session film ID:";
 $textos["saveSes"]="Save session:";
 
-
+//Footer
+$textos["hrefGH"]="Site in GitHub";
+$textos["idioma"]="Language";
+$textos["esp"]="Spanish";
+$textos["ing"]="English";
+$textos["jap"]="Japanesse";
 
 ?>
 

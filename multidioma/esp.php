@@ -105,6 +105,7 @@ $textos["emailFriend"]="Email del amigo a añadir";
 $textos["pPersonas"]="Personas que podrían interesarte";
 $textos["pel"]="Peliculas";
 $textos["top"]="Top 10";
+$textos["pendConf"]="Pendiente de confirmación";
 $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
@@ -170,6 +171,7 @@ $textos["modif"]="Modificar";
 
 
 //adminModificarPelicula.php
+$textos["listaPelisCinesLy"]="Lista de películas - CinesLy";
 $textos["h1AdModPel"]="Catálogo de Películas";
 $textos["idFilm"]="IdPelicula";
 $textos["editPeli"]="Editar Pelicula";
@@ -192,7 +194,7 @@ $textos["noFile"]="Ningun archivo seleccionado";
 
 //adminModificarUsuario.php
 $textos["h1ListUsu"]="Lista de Usuarios";
-$textos["editPeli"]="Editar Pelicula";
+$textos["editUser"]="Editar usuario";
 $textos["cambNomUsu"]="Cambiar el nombre del Usuario";
 $textos["cambEmail"]="Cambiar el correo";
 $textos["cambPass"]="Cambiar pass:";
