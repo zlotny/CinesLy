@@ -34,6 +34,7 @@ $textos["cerrar"]="Cerrar";
 $textos["labelH3Index"]="Disfruta del cine, en compañía";
 $textos["labelH1Index"]="Actualmente en cartelera";
 $textos["loteria"]="Comprobar Loteria";
+$textos["cinesLy"]="CinesLy";
 
 //PantallaPrincipal.php
 $textos["h1Welcome"]="Bienvenido a CinesLy, ";
