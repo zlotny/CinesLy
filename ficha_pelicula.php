@@ -1,8 +1,6 @@
 <?php 
-include "cabecera.php";
-include_once "modelos/pelicula.php";
-include_once "modelos/usuario.php";
 include_once "sesion_segura.php";
+include_once "cabecera.php";
 ?>
 
 <html lang="es">
@@ -22,8 +20,7 @@ include_once "sesion_segura.php";
 
 <body>
   <?php 
-  cabeceraPantallaPrincipal(); 
-  session_start();  
+  cabeceraPantallaPrincipal();  
   $idPeli=$_REQUEST["id"];
   $ObjPeli=Pelicula::getObjetoPelicula($idPeli);
 

@@ -1,8 +1,14 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
+
 include_once "multidioma/esp.php";
 include_once "modelos/usuario.php";
+include_once "modelos/pelicula.php";
+include_once "modelos/sesion.php";
+include_once "modelos/evento.php";
+
+session_start();
 
 if(!isset($_SESSION["idioma"])){
 	$text = $textos;
@@ -10,8 +16,14 @@ if(!isset($_SESSION["idioma"])){
 	$text = $_SESSION["idioma"];
 }
 
+session_start();
 
 function cabeceraCartelera(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -42,6 +54,8 @@ function cabeceraCartelera(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
+
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">
@@ -106,8 +120,11 @@ function cabeceraCartelera(){
 
 <?php
 function cabeceraPantallaPrincipal(){
-
-
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -143,6 +160,7 @@ function cabeceraPantallaPrincipal(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">
@@ -206,6 +224,11 @@ function cabeceraPantallaPrincipal(){
 
 <?php
 function cabeceraIndex(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 
 
@@ -295,6 +318,11 @@ function cabeceraIndex(){
 
 <?php
 function cabeceraAmigos(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -336,6 +364,7 @@ function cabeceraAmigos(){
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
 								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
 								<li class="dropdown">
@@ -438,6 +467,11 @@ function footer(){
 
 <?php
 function cabeceraAdministrador(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 
 
@@ -487,7 +521,11 @@ function cabeceraAdministrador(){
 
 <?php
 function cabeceraVerGrupo(){
-
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 
 	?>
 	
