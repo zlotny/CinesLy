@@ -1,7 +1,7 @@
 <?php 
-include "cabecera.php";
-include_once "modelos/usuario.php";		
 include_once "sesion_segura.php";
+include_once "cabecera.php";
+    
 
 
 
@@ -29,8 +29,8 @@ include_once "sesion_segura.php";
 </head>
 <body>
 
-  <?php cabeceraAmigos(); 
-  session_start();
+  <?php 
+  cabeceraAmigos(); 
 
   if($_REQUEST["filtrado"]==true){
     $filtro=$_SESSION["filtro"];
@@ -39,9 +39,12 @@ include_once "sesion_segura.php";
 
   $posiblesAmigos = $_SESSION["usuario"]->getPosiblesAmigos();
 
-
+// print_r($text);
 if(isset($filtro) ){
   ?>
+
+ 
+
   <h1 class="tackle-right"><?php echo $text["h1Amigos"];?></h1>
   <p class="tackle-right"><?php echo $text["pAmigos"];?></p>
   <div class="row top-margin">
@@ -104,6 +107,8 @@ $server = $_SERVER["SERVER_NAME"];
 </div>        
 </div>
 </div> 
+
+
 
 
 <div class="col-md-4"> 

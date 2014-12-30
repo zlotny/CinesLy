@@ -1,9 +1,7 @@
 <?php
-include_once "modelos/usuario.php";
 include_once "sesion_segura.php";
 
-
-session_start();
+include_once "cabecera.php";
 
 ?>
 
@@ -23,7 +21,7 @@ session_start();
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="js/general.js"></script>
-	<?php include "cabecera.php";?>
+	
 
 
 </head>

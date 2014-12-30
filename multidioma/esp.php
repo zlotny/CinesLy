@@ -22,10 +22,10 @@ $textos["amigos"]="Amigos";
 $textos["catalogo"]="Catálogo";
 
 //Cabecera.php - Cabecera Index - Registro
-$textos["nomUsu"]="Nombre de usuario:";
-$textos["email"]="Correo electrónico:";
-$textos["pass"]="Contraseña:";
-$textos["confPass"]="Confirma tu contraseña:";
+$textos["nomUsu"]="Nombre de usuario: ";
+$textos["email"]="Correo electrónico: ";
+$textos["pass"]="Contraseña: ";
+$textos["confPass"]="Confirma tu contraseña: ";
 $textos["labelReg"]="Podrás detallar más tu perfil una vez inicies sesión con tu nuevo usuario."; 
 $textos["labelReg1"]="Ten en cuenta que"; 
 $textos["labelReg2"]="no es posible cambiar la dirección de correo electrónico"; 
@@ -181,36 +181,72 @@ $textos["cambActo"]="Cambiar Actores:";
 $textos["cambDist"]="Cambiar Distribuidora:";
 $textos["cambDur"]="Cambiar Duracion:";
 $textos["cambAnho"]="Cambiar Año:";
+$textos["cambFechEst"]="Cambiar Fecha de estreno(AAAA-MM-DD):";
 $textos["cambGen"]="Cambiar Genero:";
 $textos["cambPais"]="Cambiar País:";
 $textos["cambTipo"]="Cambiar Tipo:";
 $textos["cambSinop"]="Cambiar Sinopsis:";
 $textos["cambFoto"]="Cambiar Foto:";
 $textos["guardCamb"]="Guardar Cambios";
+$textos["guardPel"]="Guardar Pelicula";
 $textos["inserMov"]="Inserte una Pelicula";
 $textos["pBusq"]="o busquela";
 $textos["noFile"]="Ningun archivo seleccionado";
 
+$textos["pBusq"]="o busquela";
+$textos["tituloPel"]="Titulo de la pelicula";
+
+
+
+
+$textos["m1"]="Introduzca el director";
+$textos["m2"]="Introduzca los actores";
+$textos["m3"]="Introduzca su distribuidora";
+$textos["m4"]="Introduzca su Duración";
+$textos["m5"]="Introduzca su Año";
+$textos["m6"]="Introduzca su fecha de estreno(AAAA-MM-DD)";
+$textos["m7"]="Introduzca su Introduzca sus generos";
+$textos["m8"]="Introduzca su país";
+$textos["m9"]="Introduzca su genero";
+
 
 //adminModificarUsuario.php
-$textos["h1ListUsu"]="Lista de Usuarios";
+$textos["h1ListUsu"]="Lista de Usuarios - CinesLy";
 $textos["editUser"]="Editar usuario";
 $textos["cambNomUsu"]="Cambiar el nombre del Usuario";
 $textos["cambEmail"]="Cambiar el correo";
-$textos["cambPass"]="Cambiar pass:";
-$textos["cambTipUsu"]="Cambiar el tipo de usuario(0 usuario normal, 1 admin):";
-$textos["cambPref1"]="Cambiar preferencia1:";
-$textos["cambPref2"]="Cambiar preferencia2:";
-$textos["cambPref3"]="Cambiar preferencia3:";
+$textos["cambPass"]="Cambiar pass: ";
+$textos["cambFoto"]="Cambiar foto: ";
+$textos["cambTipUsu"]="Cambiar el tipo de usuario(0 usuario normal, 1 admin): ";
+$textos["cambPref1"]="Cambiar preferencia1: ";
+$textos["cambPref2"]="Cambiar preferencia2: ";
+$textos["cambPref3"]="Cambiar preferencia3: ";
 $textos["cambEstado"]="Cambiar estado:";
-$textos["cambCity"]="Cambiar estadoCambiar ciudadActual:";
-$textos["cambFechNac"]="Cambiar fechaNacimiento:";
-$textos["cambEslo"]="Cambiar eslogan:";
+$textos["cambCity"]="Cambiar estadoCambiar ciudadActual: ";
+$textos["cambFechNac"]="Cambiar fechaNacimiento: ";
+$textos["cambEslo"]="Cambiar eslogan: ";
 $textos["h4NewUsu"]="Nuevo Usuario";
 $textos["smallAMU"]="Introduce los siguientes datos para introducir un nuevo usuario.";
-$textos["h4NewUsu"]="Nuevo Usuario";
-$textos["typeUser"]="Tipo de Usuario:";
-$textos["labelAMU"]="Los datos podrán ser cambiados en EDITAR.";
+$textos["typeUser"]="Tipo de Usuario: ";
+$textos["labelAMU"]="Los datos podrán ser cambiados en"; 
+$textos["labelAMU1"]="EDITAR.";
+$textos["findUsu"]="Buscar un Usuario: ";
+$textos["allUsers"]="Todos los usuarios";
+$textos["admin"]="Administrador";
+$textos["user"]="Usuario";
+$textos["nombre1"]="Nombre: ";
+$textos["oFindUsu"]="o buscar un usuario: ";
+
+$textos["p1"]="Introduzca su pass";
+$textos["p2"]="Introduzca su preferencia1";
+$textos["p3"]="Introduzca su preferencia2";
+$textos["p4"]="Introduzca su preferencia3";
+$textos["p5"]="Introduzca su estado";
+$textos["p6"]="Introduzca su ciudadActual";
+$textos["p7"]="Introduzca su fechaNacimiento";
+$textos["p8"]="Introduzca su eslogan";
+
+
 
 //adminModificarSesion.php
 $textos["h1SesExis"]="Sesiones Existentes";
