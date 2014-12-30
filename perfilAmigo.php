@@ -1,13 +1,10 @@
 <html>
 	<head>
 		<?php
+		include_once "sesion_segura.php";
 		
 		include_once "cabecera.php";
-		include_once "modelos/usuario.php";
-		include_once "modelos/pelicula.php";
-		include_once "sesion_segura.php";
 
-		session_start();
 		
 		if(!$_REQUEST["email"]){
 			header("Location: pantallaPrincipal.php");

@@ -28,14 +28,12 @@ include_once "sesion_segura.php";
 
      <?php
 
-     error_reporting(E_ERROR | E_PARSE);
 
-     include_once "modelos/pelicula.php";
      include_once "cabecera.php";
      
      
      cabeceraCartelera();
-     session_start();
+
      if($_REQUEST["filtrado"]==true){
       $filtro=$_SESSION["filtro"];
       unset($_SESSION["filtro"]);

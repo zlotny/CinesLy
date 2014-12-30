@@ -1,11 +1,7 @@
 <?php
 include_once "sesion_segura.php";
-include_once "modelos/pelicula.php";
-include_once "modelos/usuario.php";
-include_once "modelos/sesion.php";
-include_once "modelos/evento.php";
 
-session_start();
+
 
 ?>
 

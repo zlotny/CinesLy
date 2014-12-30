@@ -21,18 +21,12 @@
   <body>
 
    <?php
-
-   error_reporting(E_ERROR | E_PARSE);
-
-   include_once "modelos/pelicula.php";
-
    include_once "cabecera.php";
 
 
        //Esta cabeceira tense que modificar
    cabeceraAdministrador();
 
-   session_start();
    if($_REQUEST["filtrado"]==true){
     $filtro=$_SESSION["filtro"];
     unset($_SESSION["filtro"]);

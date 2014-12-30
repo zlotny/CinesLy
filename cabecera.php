@@ -1,8 +1,14 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
+session_start();
+
 include_once "multidioma/esp.php";
 include_once "modelos/usuario.php";
+include_once "modelos/pelicula.php";
+include_once "modelos/sesion.php";
+include_once "modelos/evento.php";
+
 
 if(!isset($_SESSION["idioma"])){
 	$text = $textos;
@@ -12,6 +18,11 @@ if(!isset($_SESSION["idioma"])){
 
 
 function cabeceraCartelera(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -106,8 +117,11 @@ function cabeceraCartelera(){
 
 <?php
 function cabeceraPantallaPrincipal(){
-
-
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -206,6 +220,11 @@ function cabeceraPantallaPrincipal(){
 
 <?php
 function cabeceraIndex(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 
 
@@ -295,6 +314,11 @@ function cabeceraIndex(){
 
 <?php
 function cabeceraAmigos(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -438,6 +462,11 @@ function footer(){
 
 <?php
 function cabeceraAdministrador(){
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 
 
@@ -487,7 +516,11 @@ function cabeceraAdministrador(){
 
 <?php
 function cabeceraVerGrupo(){
-
+	if(!isset($_SESSION["idioma"])){
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 
 	?>
 	
