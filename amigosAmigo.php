@@ -53,8 +53,8 @@
 		?>
 
 
-		<h1 class="tackle-right">Perfil de <?php echo $amigo->nombreUsuario; ?></h1>
-		<p class="tackle-right">Estas viendo el perfil de <?php echo $amigo->nombreUsuario; ?>. ¿Aún no es tu amigo? Añádelo a <a href="amigos.php">tu lista de amigos</a>!</p>
+		<h1 class="tackle-right"><?php echo $text["h1Perfil"];?><?php echo $amigo->nombreUsuario; ?></h1>
+		<p class="tackle-right"><?php echo $text["pAmigosAm"];?> <?php echo $amigo->nombreUsuario; ?><?php echo $text["pAmigosAm1"];?><a href="amigos.php"><?php echo $text["pAmigosAm2"];?></a>!</p>
 
 
 
@@ -62,7 +62,7 @@
 		<div class="col-md-3" >
 
 			<div class="panel panel-default " >
-				<div class="panel-heading ">Perfil</div>
+				<div class="panel-heading "><?php echo $text["perfil"];?></div>
 				<div class="panel-body">
 					<?php
 					if (isset($amigo->foto)){
@@ -71,11 +71,11 @@
 						echo "<img src='img/default_user.png' width='150px' class='center-block'>";
 					}
 					?>
-					<h5>Nombre de Usuario:</h5>
+					<h5><?php echo $text["nomUsu"];?></h5>
 					<small><?php echo $amigo->nombreUsuario; ?></small>
-					<h5>Correo Electrónico:</h5>
+					<h5><?php echo $text["email"];?></h5>
 					<small><?php echo $amigo->email; ?></small>
-					<h5>Biografía:</h5>
+					<h5><?php echo $text["biografia"];?>:</h5>
 					<textarea disabled class="form-control eslogan"><?php echo $amigo->eslogan; ?></textarea>
 				</div> 
 				<div class="panel-footer">
@@ -195,9 +195,9 @@
 						<?php
 						if( $num_pag > 1)
 							{ ?>
-						<li><a accesskey="a" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>">Prev</a></li>
+						<li><a accesskey="a" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag-1); ?>"><?php echo $text["prev"];?></a></li>
 						<?php	} else { ?>
-						<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Prev</a></li>
+						<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>"><?php echo $text["prev"];?></a></li>
 						<?php
 					}
 					if($num_pag<=5){
@@ -236,9 +236,9 @@
 					}
 					if(($num_pag+1)<=$total_paginas) 
 						{ ?>
-					<li><a accesskey="s" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1) ?>" >Sig</a></li>
+					<li><a accesskey="s" href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag+1) ?>" ><?php echo $text["sig"];?></a></li>
 					<?php	} else { ?>
-					<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>">Sig</a></li>
+					<li class="disabled" ><a href="amigosAmigo.php?email=<?php echo $amigo->email ?>&pagina=<?php echo ($num_pag) ?>"><?php echo $text["sig"];?></a></li>
 					<?php
 				}	
 				?>	</ul>

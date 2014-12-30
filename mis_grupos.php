@@ -70,11 +70,11 @@ session_start();
         <div class="form-group">
           <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label>
           <input name="nombreGrupo" class="form-control" id="nombre_grupo"
-          placeholder="Nombre de tu grupo">
+          placeholder="<?php echo $text["nameYourGroup"];?>">
         </div>
         <div class="form-group">
           <label for="descripcion_grupo"><?php echo $text["description"];?></label>
-          <input type="text" name="descripcionGrupo" class="form-control" id="descripcion_grupo" placeholder="Introduce una descripción">
+          <input type="text" name="descripcionGrupo" class="form-control" id="descripcion_grupo" placeholder="<?php echo $text["description"];?>">
         </div>
         <div class="form-group">
           <label for="add_sesion"><?php echo $text["chooseSesion"];?></label><br/>
@@ -95,7 +95,9 @@ session_start();
             <?php
             $amigos = $_SESSION["usuario"]->getAmigos();
             foreach($amigos as $amigo){
-              echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'>Añadir&nbsp;</span></td></tr>";
+            ?>
+              <tr><td><?php echo $amigo->nombreUsuario; ?></td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'><?php echo $text["add"];?>&nbsp;</span></td></tr>
+            <?php 
             }
             ?>
           </table>
@@ -117,6 +119,7 @@ session_start();
           <?php
           $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
           foreach ($grupos as $grupo){
+        
             echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> Ver </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
           }
           ?>

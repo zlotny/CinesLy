@@ -89,11 +89,11 @@ $textos["film"]="Película";
 $textos["sesion"]="Sesión";
 $textos["friendsGroup"]="Amigos del Grupo";
 $textos["volver"]="Volver";
-$textos["cambNomGrup"]="Cambiar Nombre de Grupo:";
+$textos["cambNomGroup"]="Cambiar Nombre de Grupo:";
 $textos["cambPel"]="Cambiar Pelicula:";
 $textos["cambSes"]="Cambiar Sesion:";
 $textos["editGroup"]="Editar Grupo";
-$textos["cambDescGroup"]="Cambiar Nombre Grupo";
+$textos["cambDescGroup"]="Cambiar Descripción";
 
 
 //Amigos.php
@@ -114,17 +114,17 @@ $textos["addFriend1"]="Añadir Amigo";
 //PerfilAmigo.php
 $textos["delAmi"]="Eliminar Amigo";
 $textos["pAmigosAm"]="Estas viendo el perfil de";
-$textos["pAmigosAm1"]="¿Aún no es tu amigo? Añádelo a";
+$textos["pAmigosAm1"]=". ¿Aún no es tu amigo? Añádelo a";
 $textos["pAmigosAm2"]="tu lista de amigos";
 
 
 //Catalogo.php
 $textos["h1Catalogo"]="Catálogo de Películas";
 $textos["pAmigos"]="Busca y comenta tus películas favoritas. Haz click sobre el póster de una película para ver su ficha detallada";
-$textos["titulo"]="Título";
-$textos["genero"]="Género";
-$textos["anho"]="Año";
-$textos["sinopsis"]="Sinopsis";
+$textos["titulo"]="Título: ";
+$textos["genero"]="Género: ";
+$textos["anho"]="Año: ";
+$textos["sinopsis"]="Sinopsis: ";
 $textos["typeFilm"]="Tipo de películas";
 $textos["allFilms"]="Todas las películas";
 $textos["carteleras"]="En Cartelera";

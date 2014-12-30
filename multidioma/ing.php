@@ -96,10 +96,10 @@ $textos["addFriend1"]="Add Friend";
 //catalogo.php
 $textos["h1Catalogo"]="List of Films";
 $textos["pAmigos"]="Search and comment your favorite Films. Click on the poster for a Film to see its detailed record";
-$textos["titulo"]="Title";
-$textos["genero"]="Gender";
-$textos["anho"]="Year";
-$textos["sinopsis"]="Sinopsis";
+$textos["titulo"]="Title: ";
+$textos["genero"]="Gender: ";
+$textos["anho"]="Year: ";
+$textos["sinopsis"]="Sinopsis: ";
 $textos["typeFilm"]="Tyoe of Films";
 $textos["allFilms"]="All Films";
 $textos["carteleras"]="In Billboard";

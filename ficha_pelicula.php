@@ -37,8 +37,8 @@ include_once "sesion_segura.php";
 
   ?>
 
-<h1 class="tackle-right">Ficha de "<?php echo "$ObjPeli->titulo"; ?>"</h1>
-<p class="tackle-right">En la ficha detallada de la película puedes ver su información, su póster y los comentarios de los usuarios. ¡Anímate a decir algo!</p>
+<h1 class="tackle-right"><?php echo $text["h1FichaPel"];?>"<?php echo "$ObjPeli->titulo"; ?>"</h1>
+<p class="tackle-right"><?php echo $text["pFichaPel"];?>"</p>
 
   <div class="container">
     <div class="row">
@@ -54,20 +54,20 @@ include_once "sesion_segura.php";
     </div>
     <div class="col-lg-9">
      <div class="panel panel-default top-margin">
-       <div class="panel-heading text-weight-bold">Ficha de la Película</div>
+       <div class="panel-heading text-weight-bold"><?php echo $text["divFichaPel"];?>"</div>
        <div class="panel-body">
         <div class="row-fluid">
           <div class="span6">
             <div class="direction-box top-margin-little">    
               <ul>
-                <li class="list-no-deco"><strong class="step">Título: </strong><?php echo "$ObjPeli->titulo"; ?></li>
-                <li class="list-no-deco"><strong class="step">Director: </strong><?php echo "$ObjPeli->director"; ?></li>
-                <li class="list-no-deco"><strong class="step">Actores: </strong><?php echo "$ObjPeli->actores"; ?></li>
-                <li class="list-no-deco"><strong class="step">Distribuidora: </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
-                <li class="list-no-deco"><strong class="step">Duración: </strong><?php echo "$ObjPeli->duracion";  ?></li>
+                <li class="list-no-deco"><strong class="step"><?php echo $text["titulo"];?>" </strong><?php echo "$ObjPeli->titulo"; ?></li>
+                <li class="list-no-deco"><strong class="step"><?php echo $text["director"];?>" </strong><?php echo "$ObjPeli->director"; ?></li>
+                <li class="list-no-deco"><strong class="step"><?php echo $text["actores"];?>" </strong><?php echo "$ObjPeli->actores"; ?></li>
+                <li class="list-no-deco"><strong class="step"><?php echo $text["distr"];?>" </strong><?php echo "$ObjPeli->distribuidora"; ?></li>
+                <li class="list-no-deco"><strong class="step"><?php echo $text["duracion"];?>" </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
               </ul>
-              <strong>Valorar:</strong>
+              <strong><?php echo $text["valorar"];?>"</strong>
               <div class="btn-group" role="group" aria-label="...">
                 <form action="controladoras/procesarValoracion.php" method="POST">
                   <?php $_SESSION['idPelicula']=$ObjPeli->idPelicula;?>
@@ -79,7 +79,7 @@ include_once "sesion_segura.php";
                 </form>
 
               </div>   
-                <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong>Recomendar <strong></button>  
+                <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong><?php echo $text["recomendar"];?>" <strong></button>  
                 
                <div>
                 <?php
@@ -101,13 +101,13 @@ include_once "sesion_segura.php";
           <div class="top-margin">
             <div class="share-box-outer">
               <div class="panel panel-default">
-                <div class=" text-weight-bold panel-heading">Comentarios</div>
+                <div class=" text-weight-bold panel-heading"><?php echo $text["comentarios"];?>"</div>
                 <div class="panel-body" >
                  <div class="input-group col-md-11" style="margin-left: -10px;" >
                    <span class="input-group-btn ">
                     <form method="POST" action="controladoras/inserComentPelControlador.php" >
                       <input type="hidden" value="<?php echo $ObjPeli->idPelicula; ?>" name="idPeli"/>
-                      <input type="text" class="form-control" placeholder="Escribe un comentario" name="coments"/>
+                      <input type="text" class="form-control" placeholder="<?php echo $text["writeComen"];?>" name="coments"/>
                       <input type="submit" class="btn btn-info" value="Publicar"/>          
                     </form>
                   </span>

@@ -74,10 +74,10 @@ include_once "sesion_segura.php";
 
             echo '</a>';  
             echo '<div class="media-body">';
-            echo '<p><b>Título: </b>'.$panelPelicula["titulo"].'</p>';
-            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+            echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+            echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+            echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -100,10 +100,10 @@ include_once "sesion_segura.php";
             }
             echo '</a>';  
             echo '<div class="media-body">';
-            echo '<p><b>Título: </b>'.$panelPelicula["titulo"].'</p>';
-            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+            echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+            echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+            echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -129,7 +129,7 @@ include_once "sesion_segura.php";
 
           <div class="input-group">
 
-            <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
+            <input name="busqueda" type="text" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
             <span class="input-group-btn">
               <button type="submit" class="btn btn-success"><?php echo $text["find"];?></button>
             </span>

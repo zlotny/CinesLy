@@ -45,8 +45,9 @@
        <div class="panel-body">
 
 
-
-        <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
+        
+        <div class="form-group">
+          <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
         </div>
         <div class="form-group">
           <label for="grupo_peli"><?php echo $text["film"];?></label><span class="little-right"><?php  
@@ -118,7 +119,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" name="confirmarCambiosGrupo" class="btn btn-success"><?php echo $text["guardCamb"];?>s</button>
+                  <button type="submit" name="confirmarCambiosGrupo" class="btn btn-success"><?php echo $text["guardCamb"];?></button>
                   <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                 </div>
               </div>
