@@ -1,8 +1,15 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-session_start();
-$text = $_SESSION["idioma"];
+include_once "multidioma/esp.php";
+include_once "modelos/usuario.php";
+
+if(!isset($_SESSION["idioma"])){
+	$text = $textos;
+}else{
+	$text = $_SESSION["idioma"];
+}
+
 
 function cabeceraCartelera(){
 	?>
@@ -99,6 +106,8 @@ function cabeceraCartelera(){
 
 <?php
 function cabeceraPantallaPrincipal(){
+
+
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
@@ -422,55 +431,122 @@ function footer(){
 
 
 
-		<?php
-	}
+	<?php
+}
+?>
+
+
+<?php
+function cabeceraAdministrador(){
 	?>
+
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container container-fluid pers">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a href="adminModificarUsuario.php">
+					<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
+				</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+				<ul class="nav navbar-nav navbar-right">
+
+
+
+					<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
+					<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
+					<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
+					<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
+				</ul>
+
+
+
+			</div>
+		</div>
+	</nav>
+
+
+
+
 
 
 	<?php
-	function cabeceraAdministrador(){
-		?>
+}
+?>
 
 
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container container-fluid pers">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-
-					<a href="adminModificarUsuario.php">
-						<img class="img-responsive main-logo" src="img/logo_blanco_wide.png" alt=""  />
-					</a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<?php
+function cabeceraVerGrupo(){
 
 
-					<ul class="nav navbar-nav navbar-right">
-
-
-
-						<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
-						<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
-						<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
-						<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-					</ul>
-
-
-
-				</div>
-			</div>
-		</nav>
-
-
-
-
-
-
-		<?php
-	}
 	?>
+	
+	<script src="js/alertify/lib/alertify.min.js"> </script>
+	<script src="js/general.js"> </script>
+
+	<link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
+	<link rel="stylesheet" href="js/alertify/themes/alertify.bootstrap.css" />
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+					<div class="container container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a href="pantallaPrincipal.php"><img src="img/logo_blanco_wide.png" alt="" class="main-logo"></a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+							<form role="form" action="controladoras/filtrarCatalogo.php" class="navbar-form navbar-left high-right" method="post">
+								<div class="form-group">
+									<input type="text" name="busqueda" class="form-control" placeholder="Buscar Película">
+									<button type="submit" class="btn btn-success" style="margin-left:-2px;">Buscar</button>
+								</div>
+							</form>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="perfil.php">Ver Perfil</a></li>
+										<li><a href="mis_grupos.php">Mis Grupos</a></li>
+										<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
+										<!--li class="divider"></li>
+										<li><a href="#">Panel Admnistrador</a></li-->
+										</ul>
+									</li>
+									<li><a href="amigos.php">Amigos </a></li>
+									<li><a href="catalogo.php">Catálogo </a></li>
+								</ul>
+								
+
+							</div>
+						</nav>
+					</div>
+
+				</div>	
+			</div>		
+		</div>
+	</div>
+	
+	<?php
+}
+?>
