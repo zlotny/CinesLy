@@ -1,8 +1,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-//include_once('multidioma/cambioIdioma.php');
-
+$text = $_SESSION["idioma"];
 
 function cabeceraCartelera(){
 	?>
@@ -401,13 +400,9 @@ function footer(){
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
 
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#"?>Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Japonés</a></li>
-
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=ES"?>Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=EN">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=JA">日本人	</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=ES" >Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=EN" >English</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=JP" >Japonés</a></li>
 
 					</ul>
 				</span>
@@ -418,62 +413,6 @@ function footer(){
 		</div>
 	</div>
 	
-	<!--
-	<div class="footer ">
-		<div class="footer-content">
-			<div class="dropdown dropup">
-				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" > <?php echo $textos["hrefGH"]?></a>
-					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
-						Idioma
-						<span class="caret"></span>
-					</button>
-					
-					<form action="multidioma/CambioIdioma.php" method="post"> 				
-    					<select name="idioma" onChange='this.form.submit()'>
-				            <option value=""><?php echo $textos[1];//Seleccione su idioma?></option>
-				            <option value="ESP">Español</option>
-				            <option value="ENG">English</option>
-				            <option value="JAP">Japonés</option>
-    					</select>
-					</form>
-				</span>
-			</div>
-		</div>
-		<div class="footer-button">
-			<div class="glyphicon glyphicon-chevron-right footer-icon"/>
-		</div>
-	</div>
-	-->
-	
-	
-
-
-
-<!-- <div class="navbar-header">
-			<div class="container container-fluid">
-				<a class="navbar-brand">
-					<label>CinesLy - Proyecto de Interfaces de Usuario. <span style="cursor:pointer; color: red;" onclick="location.replace('https://github.com/ndrs92/CinesLy');">Página en GitHub</span></label>
-				</a>
-				<div class="dropdown dropup">
-					<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
-						Idioma
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Galego</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Français</a></li>
-					</ul>
-				</div>
-			</div>
-		</div> -->
-
-
-
-
-
-
 
 
 
