@@ -281,6 +281,7 @@ function getAmigos(){
 function filtrarAmigos($busqueda,$email){
 	Usuario::conectarBD();
 	$i=0;
+	$toRet=array();
 	$sql1="SELECT email1 FROM `agrega` WHERE email2='$email' AND estado = '0'";
 	$resultado1= mysql_query($sql1);
 	while($row = mysql_fetch_array($resultado1)){
@@ -295,11 +296,12 @@ function filtrarAmigos($busqueda,$email){
 			$i=$i+1;
 		}
 	}
+
 	$sql3="SELECT email2 FROM `agrega` WHERE email1='$email' AND estado = '0'";
 	$resultado3= mysql_query($sql3);
 	while($row3 = mysql_fetch_array($resultado3)){
 
-		$correoAmigo=$row["email2"];
+		$correoAmigo=$row3["email2"];
 		$sql4="SELECT email FROM usuario WHERE email = '$correoAmigo' AND nombreUsuario LIKE '%".$busqueda."%'";
 		$resultado4= mysql_query($sql4);
 
@@ -543,13 +545,16 @@ function usuariosFiltrados($email, $tipo){
 
 	}
 }
-
+/*	INNECESAREA
 function subirFoto($email,$foto){
 
-	$this->conectarBD();
-	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email=".$email;
+	Usuario::conectarBD();
+	echo "string";
+	echo "<br>";
+	$sql = "UPDATE usuario SET foto='".$foto."' WHERE email='".$email."'";
 	echo $sql;
 	return mysql_query($sql);
-}
+}*/
+
 
 ?>
