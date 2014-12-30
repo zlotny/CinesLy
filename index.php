@@ -1,5 +1,11 @@
-<?php 
+<?php
+session_start();
+
 include "cabecera.php"; 
+//include('../multidioma/CambioIdioma.php');
+
+//$_SESSION['idioma'] = 'ESP';
+//$textos = idioma(3, $_SESSION['idioma']);
 
 ?>
 <html>

@@ -1,7 +1,8 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-include_once('multidioma/cambioIdioma.php');
+//include_once('multidioma/cambioIdioma.php');
+
 
 function cabeceraCartelera(){
 	?>
@@ -341,19 +342,19 @@ function cabeceraAmigos(){
 <?php
 function footer(){
 	?>
-
+	
 	<div class="footer ">
 		<div class="footer-content">
 			<div class="dropdown dropup">
-				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" > <?php echo $textos["hrefGH"]?></a>
+				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub</a>
 					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
 						Idioma
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=ES"?>Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=EN">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=JA">Japonés</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#"?>Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Japonés</a></li>
 					</ul>
 				</span>
 			</div>
@@ -362,8 +363,35 @@ function footer(){
 			<div class="glyphicon glyphicon-chevron-right footer-icon"/>
 		</div>
 	</div>
-
-
+	
+	<!--
+	<div class="footer ">
+		<div class="footer-content">
+			<div class="dropdown dropup">
+				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" > <?php echo $textos["hrefGH"]?></a>
+					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
+						Idioma
+						<span class="caret"></span>
+					</button>
+					
+					<form action="multidioma/CambioIdioma.php" method="post"> 				
+    					<select name="idioma" onChange='this.form.submit()'>
+				            <option value=""><?php echo $textos[1];//Seleccione su idioma?></option>
+				            <option value="ESP">Español</option>
+				            <option value="ENG">English</option>
+				            <option value="JAP">Japonés</option>
+    					</select>
+					</form>
+				</span>
+			</div>
+		</div>
+		<div class="footer-button">
+			<div class="glyphicon glyphicon-chevron-right footer-icon"/>
+		</div>
+	</div>
+	-->
+	
+	
 
 
 
