@@ -68,12 +68,12 @@
           <label for="grupo_sesion"><?php echo $text["sesion"];?>:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
 
         </div>
-        <label for="grupo_amigos"><?php echo $text["friendsGroup"];?></label>
+        <label for="grupo_amigos"><?php echo $text["friendsGroup"];?></label><a href='#' data-toggle="modal" data-target="#addfriend" class='btn btn-info high-right'>Añadir un amigo</a>
         <div class="form-group scrollable-table">
           <table class="table table-striped ">
             <?php
             foreach($usuariosDelGrupo as $user){
-              echo "<tr ><td>$user->nombreUsuario</td></tr>";
+              echo "<tr ><td>$user->nombreUsuario</td><td class='col-md-1'><a href='controladoras/eliminarAmigoGrupo.php?email=".$_SESSION["usuario"]->email."&id=".$grupoActual->idEvento."' class='btn btn-info'>Eliminar</a></td></tr>";
             }
             ?>
 
@@ -136,6 +136,31 @@
 
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
+
+
+<div id="addfriend" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Añadir un amigo</h3>
+      </div>
+      <div class="modal-body" style="text-align:left">
+        <div class="row"></div>
+
+        <form role="form" action="controladoras/addamigoGrupo.php">
+          <div class="form-group">
+            <label>Email del amigo a añadir</label>
+            <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="Introduzca el email del amigo a añadir">
+          </div>
+          <button type="submit" class="btn btn-primary">Añadir amigo</button>
+        </form>
+
+      </div>
+    </div>
+  </div>  
+
+</div>
 
 <?php footer(); ?>
 
