@@ -33,74 +33,87 @@
 
 
         <div class="form-group">
-            <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
-          </div>
-          <div class="form-group">
-            <label for="grupo_peli">Pelicula</label><span class="little-right"><?php  
-            $peli = Sesion::getPeliSesion($grupoActual->idSesion);
-            echo $peli->titulo;
-            ?></span>
-            
-            
-          </div>
-          <div class="form-group">
-            <label for="grupo_sesion">Sesión:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
-            
-          </div>
-          <label for="grupo_amigos">Amigos del grupo: </label>
-          <div class="form-group scrollable-table">
-            <table class="table table-striped ">
-              <?php
-              foreach($usuariosDelGrupo as $user){
-                echo "<tr ><td>$user->nombreUsuario</td></tr>";
-              }
-
-              ?>
+          <label for="nombre_grupo">Nombre del Grupo: </label><span class="little-right"><?php echo $grupoActual->nombre; ?></span>
+        </div>
+        <div class="form-group">
+          <label for="grupo_peli">Pelicula</label><span class="little-right"><?php  
+          $peli = Sesion::getPeliSesion($grupoActual->idSesion);
+          echo $peli->titulo;
+          ?></span>
 
 
-              
+        </div>
 
-            </table>
-          </div>
-		  <button data-toggle="modal" data-target="#editGroup" class="btn btn-success">Editar</button>
-		  
-		  
-		  
-		  
-		  <div id="editGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            
-            <form action="#" method="POST">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>Editar Grupo</h4>
-                  </div>
-                  <div class="modal-body">
-                    
-                    <label for="pais" class="">Cambiar Nombre de Grupo:</label>
-                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->nombre; ?>"> <br/>
+        <div class="form-group">
+          <label for="grupo_desc">Descripción:</label><span class="little-right"><?php echo $grupoActual->descripcion; ?></span>
 
-                    <label for="pais" class="">Cambiar Pelicula:</label>
-                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $peli->titulo; ?>"> <br/>
-
-                    <label for="pais" class="">Cambiar Sesion:</label>
-                    <input type="text" name="pais" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->idSesion; ?>"> <br/>
+        </div>
 
 
-                  </div>
-                  <div class="modal-footer">
-                    <button name="idPelicula" class="btn btn-success" value="hola">Guardar Cambios</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                  </div>
+        <div class="form-group">
+          <label for="grupo_sesion">Sesión:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
+
+        </div>
+        <label for="grupo_amigos">Amigos del grupo: </label>
+        <div class="form-group scrollable-table">
+          <table class="table table-striped ">
+            <?php
+            foreach($usuariosDelGrupo as $user){
+              echo "<tr ><td>$user->nombreUsuario</td></tr>";
+            }
+
+            ?>
+
+
+
+
+          </table>
+        </div>
+        <button data-toggle="modal" data-target="#editGroup" class="btn btn-success">Editar</button>
+        <a href="mis_grupos.php"  class="btn btn-success pull-right">Volver</a>
+
+
+        <div id="editGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+          <form action="controladoras/modificarGrupo.php" method="POST">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4>Editar Grupo</h4>
+                </div>
+                <div class="modal-body">
+
+                  <label for="nombre" class="">Cambiar Nombre de Grupo:</label>
+                  <input type="text" name="nuevoNombre" class="form-control form-pers" placeholder="Introduzca nuevo nombre" value="<?php echo $grupoActual->nombre; ?>"> <br/>
+
+                  <label for="comentario" class="">Cambiar Descripción de Grupo:</label>
+                  <input type="text" name="nuevaDescripcion" class="form-control form-pers" placeholder="Introduzca nueva descripcion" value="<?php echo $grupoActual->descripcion; ?>"> <br/>
+
+                  <label for="pais" class="">Cambiar Sesion:</label>
+                  <select name="idSesionNueva" class="form-control">
+                    <?php
+                    $sesiones = Sesion::getFuturasSesiones();
+                    foreach($sesiones as $sesion){
+                      $peliReferencia = Pelicula::getObjetoPelicula($sesion->idPelicula);
+                      echo "<option value='$sesion->idSesion'>$sesion->idSesion: $peliReferencia->titulo</option>";
+                    }
+
+                    ?>
+                  </select><br/>
+
+                  <input type="hidden" name="idGrupo" value="<?php echo $grupoActual->idEvento; ?>"
+
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" name="confirmarCambiosGrupo" class="btn btn-success">Guardar Cambios</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                 </div>
               </div>
-            </form>
-          </div>  
-          <div class="clearfix"></div>
-		
-		  
-          <a href="mis_grupos.php"  class="btn btn-success pull-right">Volver</a>
+            </div>
+          </form>
+        </div>  
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
