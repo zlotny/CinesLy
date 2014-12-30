@@ -406,6 +406,11 @@ function addAmigo($emailAmigo){
 		$sql = "UPDATE agrega SET estado='0' WHERE email2 = '$this->email' AND email1 = '$usuarioTarget'";
 		mysql_query($sql) or die(mysql_error());
 	}
+	function amigoConfirmado($usuarioTarget){
+		$this->conectarBD();
+		$sql = "INSERT INTO notificacion(email,fecha,descripcion,tipo) VALUES ('".$usuarioTarget."','".date("Y-m-d H:i:s")."','Tienes un nuevo amigo ( ".$usuarioTarget." )','amistad');";
+		mysql_query($sql) or die(mysql_error());
+	}
 	function denegarAmigo($usuarioTarget){
 		$this->conectarBD();
 		$sql = "Delete FROM agrega WHERE email1='$this->email' AND email2='$usuarioTarget' OR email1='$usuarioTarget' AND email2='$this->email' ";
@@ -557,7 +562,12 @@ function addAmigo($emailAmigo){
 		}
 		return $toRet;
 	}
-
+function eliminarNotif($id){
+	Usuario::conectarBD();
+	$sql="DELETE FROM notificacion WHERE idNotificacion = ".$id;
+	 return mysql_query($sql);
+	
+}
 
 	function numNotificaciones(){
 		$this->conectarBD();

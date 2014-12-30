@@ -39,6 +39,27 @@
                               }
 
 
+ function eliminarNotif (id,url) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres eliminar esta nofiticacion?", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/eliminarNotif.php?id=" + id+"&url="+url;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
+
+
 
                               jQuery(document).ready(function ($) {
 

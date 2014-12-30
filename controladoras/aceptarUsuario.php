@@ -6,6 +6,8 @@ if(isset($_REQUEST["action"])){
 
 	if($_REQUEST["action"] == "accept"){
 		$_SESSION["usuario"]->confirmarAmigo($_REQUEST["email"]);
+		$_SESSION["usuario"]->amigoConfirmado($_REQUEST["email"]);
+
 		header("Location: ../amigos.php");
 
 

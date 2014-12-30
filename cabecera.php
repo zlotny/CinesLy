@@ -10,6 +10,7 @@ if(!isset($_SESSION["idioma"])){
 	$text = $_SESSION["idioma"];
 }
 
+
 session_start();
 
 function cabeceraCartelera(){
@@ -177,10 +178,12 @@ function cabeceraPantallaPrincipal(){
 														<?php
 														$notif = $_SESSION["usuario"]->getNotificaciones();
 														foreach($notif as $notificacion){
+															?>
+															<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
+																<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
+															</tr>
 
-															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
-
-
+															<?php
 
 															
 														}
