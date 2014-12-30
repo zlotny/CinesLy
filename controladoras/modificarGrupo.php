@@ -11,9 +11,9 @@ include_once "../modelos/evento.php";
 $grupoAinsertar = new Evento($_REQUEST["idGrupo"], $_REQUEST["nuevaDescripcion"], $_REQUEST["idSesionNueva"], "", $_REQUEST["nuevoNombre"]);
 
 if(Evento::modificarGrupo($grupoAinsertar)){
-
+	header("Location:../ver_grupo.php?correcto=OKAI&id=".$_REQUEST["idGrupo"]);
 }else{
-
+	header("Location:../ver_grupo.php?correcto=NOPE&id=".$_REQUEST["idGrupo"]);
 }
 
 ?>

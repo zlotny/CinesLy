@@ -23,6 +23,18 @@
  $grupoActual = Evento::getGrupoById($_REQUEST["id"]);
  $usuariosDelGrupo =  Evento::getArrayIntegrantes($_REQUEST["id"]);
 
+ if($_REQUEST["correcto"]=="OKAI"){
+	echo "<script>
+	alertify.log('Se ha modificado correctamente','success', 5000);
+	</script>";
+ }else{
+	if($_REQUEST["correcto"]=="NOPE"){
+		echo "<script>
+		alertify.log('Ha habido un error al modificar tu grupo','error', 5000);
+		</script>";
+	}
+ }
+ 
  ?>
  <div class="row top-margin">
    <div class="col-sm-3"></div>
@@ -98,7 +110,7 @@
                       $peliReferencia = Pelicula::getObjetoPelicula($sesion->idPelicula);
                       echo "<option value='$sesion->idSesion'>$sesion->idSesion: $peliReferencia->titulo</option>";
                     }
-
+					
                     ?>
                   </select><br/>
 
