@@ -82,6 +82,7 @@ $textos["ver"]="Ver";
 $textos["borrar"]="Borrar";
 $textos["validar"]="Validar";
 
+
 //Ver_Grupo.php
 $textos["verGrupo"]="Ver Grupo";
 $textos["film"]="Película"; 
@@ -92,6 +93,7 @@ $textos["cambNomGrup"]="Cambiar Nombre de Grupo:";
 $textos["cambPel"]="Cambiar Pelicula:";
 $textos["cambSes"]="Cambiar Sesion:";
 $textos["editGroup"]="Editar Grupo";
+$textos["cambDescGroup"]="Cambiar Nombre Grupo";
 
 
 //Amigos.php
@@ -106,6 +108,7 @@ $textos["top"]="Top 10";
 $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
+
 
 
 //PerfilAmigo.php
