@@ -1,15 +1,15 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
-session_start();
-
 include_once "multidioma/esp.php";
+include_once "modelos/usuario.php";
 
 if(!isset($_SESSION["idioma"])){
 	$text = $textos;
 }else{
-$text = $_SESSION["idioma"];
+	$text = $_SESSION["idioma"];
 }
+
 
 function cabeceraCartelera(){
 	?>
@@ -106,6 +106,8 @@ function cabeceraCartelera(){
 
 <?php
 function cabeceraPantallaPrincipal(){
+
+
 	?>
 	
 	<script src="js/alertify/lib/alertify.min.js"> </script>
