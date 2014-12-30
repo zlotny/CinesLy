@@ -33,6 +33,7 @@ $textos["cerrar"]="Close";
 $textos["labelH3Index"]="Enjoy the cinema, accompanied.";
 $textos["labelH1Index"]="Currently in billboard";
 $textos["loteria"]="Check lottery";
+$textos["cinesLy"]="CinesLy";
 
 //PantallaPrincipal.php
 $textos["h1Welcome"]="Welcome to CinesLy, ";

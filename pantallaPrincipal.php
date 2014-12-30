@@ -66,8 +66,8 @@ session_start();
 				<?php
 				$primerNombre = explode(" ", $_SESSION["usuario"]->nombreUsuario)[0];
 				?>
-				<h1>Bienvenido a CinesLy, <?php echo $primerNombre; ?></h1>
-				<p>Éste es tu muro. Aquí verás tanto tus publicaciones como las de tus amigos. ¡Dí algo!</p><?php echo $text["email"]; ?>
+				<h1><?php echo $text["h1Welcome"];?><?php echo $primerNombre; ?></h1>
+				<p><?php echo $text["pYourWall"];?></p>
 					<form action="controladoras/insertarPublicacion.php" method="POST">
 						<div class="input-group">
 							<input type="text" class="form-control" name="publicacion" placeholder="Escribe una publicación....">
