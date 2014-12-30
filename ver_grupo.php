@@ -19,8 +19,7 @@
  include_once "modelos/evento.php";
  include_once "modelos/usuario.php";
  include_once "modelos/sesion.php";
- cabeceraPantallaPrincipal();
- echo "pis";
+ cabeceraVerGrupo();
  $grupoActual = Evento::getGrupoById($_REQUEST["id"]);
  $usuariosDelGrupo =  Evento::getArrayIntegrantes($_REQUEST["id"]);
 
