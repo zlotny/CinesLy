@@ -73,13 +73,13 @@ if($_REQUEST["update"] == "good"){
             //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
           ?>
 
-          <img src="<?php echo $panelUsuario["foto"]; ?>"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
+          <img src="<?php echo $panelUsuario["foto"]; ?>"    width='90px' class='thumbnail' data-toggle='' data-target='#'>
 
           <?php
         }else{ 
            // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
           ?>
-          <img src="img/default_user.png"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
+          <img src="img/default_user.png"    width='90px' class='thumbnail' data-toggle='' data-target='#'>
 
           <?php 
 //onmouseover="src='img/logo_foto.png'"  onmouseout="src='img/default_user.png'"
@@ -191,13 +191,13 @@ if($_REQUEST["update"] == "good"){
             //height="140px" width="90px" data-toggle="modal" data-target="#upload" class="thumbnail">'; 
         ?>
 
-        <img src="<?php echo $panelUsuario["foto"]; ?>"   height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
+        <img src="<?php echo $panelUsuario["foto"]; ?>"    width='90px' class='thumbnail' data-toggle='' data-target='#'>
 
         <?php
       }else{ 
            // echo '<img src="img/default_user.png" alt="" height="140px" width="90px" class="thumbnail">';
         ?>
-        <img src="img/default_user.png"  height='140px' width='90px' class='thumbnail' data-toggle='' data-target='#'>
+        <img src="img/default_user.png"   width='90px' class='thumbnail' data-toggle='' data-target='#'>
 
         <?php
       }
