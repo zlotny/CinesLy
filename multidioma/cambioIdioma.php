@@ -1,20 +1,22 @@
 <?php
-/*
-$Lengua = $_GET['Lenguaje'];
 
+$Lengua = $_GET['Lenguaje'];
 switch($Lengua){
+
     case 'ES':
-        include('multidioma/esp.php');
+        include('esp.php');
+        header("location: ".$_SERVER['HTTP_REFERER']);
     break;
+
     case 'EN':
-        include('multidioma/eng.php');
+        include('ing.php');
+        header("location: ".$_SERVER['HTTP_REFERER']);
     break;
+    
     case 'JA':
-        include('multidioma/jap.php');
+        include('jap.php');
+        header("location: ".$_SERVER['HTTP_REFERER']);
     break;
     
 }
-*/
-$prueba=$_REQUEST["prueba"];
-echo $prueba;
 ?>

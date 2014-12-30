@@ -351,11 +351,11 @@ function footer(){
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
-						<li role="presentation"><a role="menuitem" tabindex="-1" onclick="window.location="multidioma/cambiodioma.php?prueba=esp"">Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Japonés</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=ES"?>Español</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=EN">English</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/cambioIdioma.php?Lenguaje=JA">Japonés</a></li>
 					</ul>
-				</span>	
+				</span>
 			</div>
 		</div>
 		<div class="footer-button">

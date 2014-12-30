@@ -2,7 +2,6 @@
 <?php
 
 //Cabecera.php - Cabecera Index
-$textos["email"]="e-mail";
 $textos["pass"]="Password";
 $textos["loguear"]="Enter";
 $textos["registro"]="Check in";
