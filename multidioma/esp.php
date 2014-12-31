@@ -8,7 +8,7 @@ $textos["loguear"]="Entrar";
 $textos["registro"]="Registro";
 $textos["forgetPass"]="Recuperar contraseña";
 
-//Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera
+//Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera - Cabecera Amigos
 $textos["findFilm"]="Buscar Pelicula";
 $textos["find"]="Buscar";
 $textos["miMuro"]="Mi muro";
@@ -20,12 +20,15 @@ $textos["cerrarSesion"]="Cerrar Sesion";
 
 $textos["amigos"]="Amigos";
 $textos["catalogo"]="Catálogo";
+$textos["notif"]="Notificaciones";
+$textos["findFriend"]="Buscar Amigos";
+
 
 //Cabecera.php - Cabecera Index - Registro
-$textos["nomUsu"]="Nombre de usuario: ";
-$textos["email"]="Correo electrónico: ";
-$textos["pass"]="Contraseña: ";
-$textos["confPass"]="Confirma tu contraseña: ";
+$textos["nomUsu"]="Nombre de usuario ";
+$textos["email"]="Correo electrónico ";
+$textos["pass"]="Contraseña ";
+$textos["confPass"]="Confirma tu contraseña ";
 $textos["labelReg"]="Podrás detallar más tu perfil una vez inicies sesión con tu nuevo usuario."; 
 $textos["labelReg1"]="Ten en cuenta que"; 
 $textos["labelReg2"]="no es posible cambiar la dirección de correo electrónico"; 
@@ -35,6 +38,13 @@ $textos["cerrar"]="Cerrar";
 $textos["smallCR"]="Introduce los siguientes datos para continuar con el registro";
 $textos["smallCR1"]="Introduce tu correo electrónico para recuperar la contraseña.";
 $textos["h6CR"]="Introduce tu correo electrónico:";
+
+//Cabecera.php - Cabecera Admin
+$textos["gP"]="Gestión de Peliculas";
+$textos["gS"]="Gestión de Sesiones";
+$textos["gU"]="Gestión de Usuarios";
+
+
 
 //Index.php
 $textos["labelH3Index"]="Disfruta del cine, en compañía";
@@ -47,6 +57,7 @@ $textos["h1Welcome"]="Bienvenido a CinesLy, ";
 $textos["pYourWall"]="Éste es tu muro. Aquí verás tanto tus publicaciones como las de tus amigos. ¡Dí algo!";
 $textos["publicar"]="Publicar";
 $textos["editar"]="Editar";
+$textos["dejarEditar"]="Dejar de Editar";//
 $textos["eliminar"]="Eliminar";
 $textos["writePub"]="Escribe una publicación....";
 
@@ -76,7 +87,7 @@ $textos["addFriends"]="Añadir Amigos";
 $textos["add"]="Añadir";
 $textos["crear"]="Crear";
 $textos["grupo"]="Grupos";
-$textos["nombre"]="Nombre";
+$textos["nombre"]="Nombre ";
 $textos["numInteger"]="Nº Integrantes";
 $textos["ver"]="Ver";
 $textos["borrar"]="Borrar";
@@ -98,9 +109,9 @@ $textos["cambDescGroup"]="Cambiar Descripción";
 
 //Amigos.php
 $textos["amigCines"]="Amigos - CinesLy";
-$textos["h1Amigos"]="Lista de amigos filtrados";
+$textos["h1Amigos"]="Lista de amigos";
 $textos["pAmigos"]="En esta página podrás ver tus amistades en función de la busqueda realizada. Añade nuevos amigos, elimina a alguno que ya no desees o visita su perfil.";
-$textos["misAmigos"]="Mis amigos filtrados";
+$textos["misAmigos"]="Mis amigos";
 $textos["addFriend"]="Añadir un Amigo";
 $textos["emailFriend"]="Email del amigo a añadir";
 $textos["pPersonas"]="Personas que podrían interesarte";
@@ -110,6 +121,7 @@ $textos["pendConf"]="Pendiente de confirmación";
 $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
+$textos["emailFriend1"]="Introduzca el email del amigo a añadir";
 
 
 //PerfilAmigo.php
@@ -151,7 +163,7 @@ $textos["director"]="Director: ";
 $textos["actores"]="Actores: ";
 $textos["distr"]="Distribuidora: ";
 $textos["duracion"]="Duración: ";
-$textos["valorar"]="Valorar: ";
+$textos["valorar"]="Valorar:  ";
 $textos["recomendar"]="Recomendar";
 $textos["valMed"]="La valoración media es:";
 $textos["comentarios"]="Comentarios";
@@ -230,7 +242,7 @@ $textos["findUsu"]="Buscar un Usuario: ";
 $textos["allUsers"]="Todos los usuarios";
 $textos["admin"]="Administrador";
 $textos["user"]="Usuario";
-$textos["nombre1"]="Nombre: ";
+$textos["nombre1"]="Nombre ";
 $textos["oFindUsu"]="o buscar un usuario: ";
 $textos["p1"]="Introduzca su pass";
 $textos["p2"]="Introduzca su preferencia1";
@@ -267,7 +279,9 @@ $textos["s2"]="Introduzca la capacidad";//
 $textos["s3"]="Introduzca el IdPelicula";//
 
 
+
 //Footer
+$textos["cinesLy1"]="CinesLy -";
 $textos["hrefGH"]="Página en GitHub";
 $textos["idioma"]="Idioma";
 $textos["esp"]="Español";

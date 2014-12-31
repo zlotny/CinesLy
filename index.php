@@ -93,7 +93,7 @@ include "cabecera.php";
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1>CinesLy</h1>
-            <h3 class="near-top"><?php echo $text["labelH3Index"];//Disfruta del cine, en compañía ?></h3>
+            <h3 class="near-top"><?php echo $text["labelH3Index"];?></h3>
             </div>
             <div class="col-md-1"></div>
           </div>

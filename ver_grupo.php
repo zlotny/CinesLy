@@ -63,7 +63,7 @@
         <label for="grupo_sesion"><?php echo $text["sesion"];?>:</label><span class="little-right"><?php echo $grupoActual->idSesion; ?></span>
 
       </div>
-      <label for="grupo_amigos"><?php echo $text["friendsGroup"];?></label><a href='#' data-toggle="modal" data-target="#addfriend" class='btn btn-info high-right'>Añadir un amigo</a>
+      <label for="grupo_amigos"><?php echo $text["friendsGroup"];?></label><a href='#' data-toggle="modal" data-target="#addfriend" class='btn btn-info high-right'><?php echo $text["addFriend"];?></a>
       <div class="form-group scrollable-table">
         <table class="table table-striped ">
           <?php

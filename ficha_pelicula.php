@@ -64,7 +64,7 @@ include_once "cabecera.php";
                 <li class="list-no-deco"><strong class="step"><?php echo $text["duracion"];?>" </strong><?php echo "$ObjPeli->duracion";  ?></li>
                 <!--<li><strong>Apta</strong> para todos los públicos.</li></ul>-->
               </ul>
-              <strong><?php echo $text["valorar"];?>"</strong>
+              <strong> <?php echo $text["valorar"];?></strong>
               <div class="btn-group" role="group" aria-label="...">
                 <form action="controladoras/procesarValoracion.php" method="POST">
                   <?php $_SESSION['idPelicula']=$ObjPeli->idPelicula;?>
@@ -76,13 +76,14 @@ include_once "cabecera.php";
                 </form>
 
               </div>   
-                <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong><?php echo $text["recomendar"];?>" <strong></button>  
+                <button type="button" class="btn btn-default" onclick="alertify.success('Recomendación guardada con éxito')"><strong><?php echo $text["recomendar"];?><strong></button>  
                 
                <div>
                 <?php
                 
                     $valoracionMedia = $ObjPeli->valoracion / $ObjPeli->contValoracion;
-                    echo "La valoración media es: ".round($valoracionMedia,2);
+                    echo "".$text['valMed']. " " .round($valoracionMedia,2)."";
+              
                     
                 ?>
               </div> 
@@ -105,7 +106,7 @@ include_once "cabecera.php";
                     <form method="POST" action="controladoras/inserComentPelControlador.php" >
                       <input type="hidden" value="<?php echo $ObjPeli->idPelicula; ?>" name="idPeli"/>
                       <input type="text" class="form-control" placeholder="<?php echo $text["writeComen"];?>" name="coments"/>
-                      <input type="submit" class="btn btn-info" value="Publicar"/>          
+                      <input type="submit" class="btn btn-info" value="<?php echo $text["publicar"];?>"/>          
                     </form>
                   </span>
                 </div>

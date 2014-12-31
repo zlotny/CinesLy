@@ -58,19 +58,17 @@ function cabeceraCartelera(){
 									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 
 								</li>
-								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
+								<li><a href="pantallaPrincipal.php"><?php echo $text["miMuro"];?> </a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $text["perfil"];?> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="perfil.php">Ver Perfil</a></li>
-										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger"><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-										<!--li class="divider"></li>
-										<li><a href="#">Panel Admnistrador</a></li-->
-										</ul>
+										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
+										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
+										<li class="dropdown-danger"><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
+									</ul>
 									</li>
-									<li><a href="amigos.php">Amigos </a></li>
-									<li><a href="catalogo.php">Catálogo </a></li>
+									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
 								</ul>
 								
 
@@ -79,7 +77,7 @@ function cabeceraCartelera(){
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title">Notificaciones</h4>
+												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 											</div>
 											<div class="modal-body">
 												<form action="controladoras/procesarNotificacion.php" method="POST">
@@ -154,8 +152,8 @@ function cabeceraPantallaPrincipal(){
 
 							<form role="form" action="controladoras/filtrarCatalogo.php" class="navbar-form navbar-left high-right" method="post">
 								<div class="form-group">
-									<input type="text" name="busqueda" class="form-control" placeholder="Buscar Película">
-									<button type="submit" class="btn btn-success" style="margin-left:-2px;">Buscar</button>
+									<input type="text" name="busqueda" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
+									<button type="submit" class="btn btn-success" style="margin-left:-2px;"><?php echo $text["find"];?></button>
 								</div>
 							</form>
 							<ul class="nav navbar-nav navbar-right">
@@ -163,19 +161,17 @@ function cabeceraPantallaPrincipal(){
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
 									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
-								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
+								<li><a href="pantallaPrincipal.php"><?php echo $text["miMuro"];?></a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $text["perfil"];?> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="perfil.php">Ver Perfil</a></li>
-										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-										<!--li class="divider"></li>
-										<li><a href="#">Panel Admnistrador</a></li-->
+										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
+										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
+										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
 										</ul>
 									</li>
-									<li><a href="amigos.php">Amigos </a></li>
-									<li><a href="catalogo.php">Catálogo </a></li>
+									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
 								</ul>
 								
 
@@ -184,7 +180,7 @@ function cabeceraPantallaPrincipal(){
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title">Notificaciones</h4>
+												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 											</div>
 											<div class="modal-body">
 												<form action="controladoras/procesarNotificacion.php" method="POST">
@@ -266,23 +262,23 @@ function cabeceraIndex(){
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title"><?php echo $text["registro"];?></h4> 
-						<small><?php echo $text["smallCR"];//Introduce los siguientes datos para continuar con el registro ?></small>
+						<small><!--<?php echo $text["smallCR"];?>-->Introduce los siguientes datos para continuar con el registro</small>
 					</div>
 					<div class="modal-body">
-						<h6> <?php echo $text["nomUsu"];?> </h6>
+						<h6> Nombre de Usuario<!--<?php echo $text["nomUsu"];?>--> </h6>
 						<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" />
-						<h6> <?php echo $text["email"];?> </h6>
+						<h6> Correo Electronico<!--<?php echo $text["email"];?>--> </h6>
 						<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico" />
-						<h6> <?php echo $text["pass"];?> </h6>
+						<h6> Contraseña<!--<?php echo $text["pass"];?>--> </h6>
 						<input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" />
-						<h6> <?php echo $text["confPass"];?></h6>
+						<h6> Confirma tu contraseña<!--<?php echo $text["confPass"];?>--></h6>
 						<input type="password" class="form-control form-pers" placeholder="Repita la contraseña" /><br/>
-						<label><?php echo $text["labelReg"];?>
-							<?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
+						<label>Ten en cuenta que<!--<?php echo $text["labelReg"];?>-->
+							 no es posible cambiar la dirección de correo electrónico <!--<?php echo $text["labelReg1"];?>--><span class="text-color-red text-weight-bold">una vez que ésta esté ligada a tu cuenta.<!--<?php echo $text["labelReg2"];?>--></span> <!--<?php echo $text["labelReg3"];?>--></label>
 						</div>
 						<div class="modal-footer">
-							<input type="submit" name="accion" class="btn btn-success" value="Registrarse">
-							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
+							<input type="submit" name="accion" class="btn btn-success" value="Registrarse"><!--<?php echo $text["registrarse"];?>-->
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar<!--<?php echo $text["cerrar"];?>--></button>
 						</div>
 					</div>
 				</div>
@@ -295,15 +291,15 @@ function cabeceraIndex(){
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title"><?php echo $text["forgetPass"];?></h4>
-							<small><?php echo $text["smallCR1"];?></small>
+							<small>Introduce tu correo electrónico para recuperar la contraseña.<!--<?php echo $text["smallCR1"];?>--></small>
 						</div>
 						<div class="modal-body">
-							<h6> <?php echo $text["h6CR"];?></h6>
+							<h6> Introduce tu correo electrónico:<!--<?php echo $text["h6CR"];?>--></h6>
 							<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">          
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="accion" class="btn btn-success" value="Recuperar">
-							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar<!--<?php echo $text["cerrar"];?>--></button>
 						</div>
 					</div>
 				</div>
@@ -354,8 +350,8 @@ function cabeceraAmigos(){
 
 							<form role="form" action="controladoras/filtroDeAmigos.php" class="navbar-form navbar-left high-right" method="post">
 								<div class="form-group">
-									<input type="text" name="busqueda" class="form-control" placeholder="Buscar Amigos">
-									<button type="submit" class="btn btn-success" style="margin-left:-2px;">Buscar</button>
+									<input type="text" name="busqueda" class="form-control" placeholder="<?php echo $text["findFriend"];?>">
+									<button type="submit" class="btn btn-success" style="margin-left:-2px;"><?php echo $text["find"];?></button>
 									<?php
 									if(isset($_GET["filtrado"])){
 
@@ -369,19 +365,17 @@ function cabeceraAmigos(){
 									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
 									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
 								</li>
-								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
+								<li><a href="pantallaPrincipal.php"><?php echo $text["miMuro"];?></a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $text["perfil"];?> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="perfil.php">Ver Perfil</a></li>
-										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-										<!--li class="divider"></li>
-										<li><a href="#">Panel Admnistrador</a></li-->
+										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
+										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
+										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
 										</ul>
 									</li>
-									<li><a href="amigos.php">Amigos </a></li>
-									<li><a href="catalogo.php">Catálogo </a></li>
+									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
 								</ul>
 								
 
@@ -390,7 +384,7 @@ function cabeceraAmigos(){
 										<div class="modal-content">
 											<div class="modal-header">
 												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title">Notificaciones</h4>
+												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 											</div>
 											<div class="modal-body">
 												<form action="controladoras/procesarNotificacion.php" method="POST">
@@ -398,10 +392,12 @@ function cabeceraAmigos(){
 														<?php
 														$notif = $_SESSION["usuario"]->getNotificaciones();
 														foreach($notif as $notificacion){
+															?>
+															<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
+																<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
+															</tr>
 
-															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
-
-
+															<?php
 
 															
 														}
@@ -435,16 +431,16 @@ function footer(){
 	<div class="footer ">
 		<div class="footer-content">
 			<div class="dropdown dropup">
-				<span class="footer-text">CinesLy - <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub</a>
+				<span class="footer-text">CinesLy -<!--<?php echo $notificacion['cinesLy1']; ?>--> <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub<!--<?php echo $notificacion['hrefGH']; ?>--></a>
 					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
-						Idioma
+						Idioma<!--<?php echo $notificacion['idioma']; ?>-->
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
 
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=ES" >Español</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=EN" >English</a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=JP" >Japonés</a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=ES" >Espanhol<!--<?php echo $notificacion['esp']; ?>--></a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=EN" >English<!--<?php echo $notificacion['ing']; ?>--></a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=JP" >Japonés<!--<?php echo $notificacion['jap']; ?>--></a></li>
 
 					</ul>
 				</span>
@@ -500,10 +496,10 @@ function cabeceraAdministrador(){
 
 
 
-					<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
-					<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
-					<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
-					<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
+					<li><a href="adminModificarPelicula.php">Gestión de Peliculas<!--<?php echo $notificacion['gP']; ?>--></a></li>
+					<li><a href="adminModificarSesion.php">Gestión de Sesiones<!--<?php echo $notificacion['gS']; ?>--></a></li>
+					<li><a href="adminModificarUsuario.php">Gestión de Usuarios<!--<?php echo $notificacion['gU']; ?>--></a></li>
+					<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion<!--<?php echo $notificacion['cerrarSesion']; ?>--></a></li>
 				</ul>
 
 
@@ -558,24 +554,26 @@ function cabeceraVerGrupo(){
 
 							<form role="form" action="controladoras/filtrarCatalogo.php" class="navbar-form navbar-left high-right" method="post">
 								<div class="form-group">
-									<input type="text" name="busqueda" class="form-control" placeholder="Buscar Película">
-									<button type="submit" class="btn btn-success" style="margin-left:-2px;">Buscar</button>
+									<input type="text" name="busqueda" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
+									<button type="submit" class="btn btn-success" style="margin-left:-2px;"><?php echo $text["find"];?></button>
 								</div>
 							</form>
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="pantallaPrincipal.php">Mi muro </a></li>
+								<li>
+									<span data-toggle="modal" data-target="#reg"class="glyphicon glyphicon-globe notif"></span>
+									<span class="badge badge-important" style="position:relative;right:20px;top:15px;"><?php $numNotif=$_SESSION['usuario']->numNotificaciones(); echo $numNotif; ?></span>
+								</li>
+								<li><a href="pantallaPrincipal.php"><?php echo $text["miMuro"];?></a></li>
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Perfil <span class="caret"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $text["perfil"];?> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="perfil.php">Ver Perfil</a></li>
-										<li><a href="mis_grupos.php">Mis Grupos</a></li>
-										<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-										<!--li class="divider"></li>
-										<li><a href="#">Panel Admnistrador</a></li-->
+										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
+										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
+										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
 										</ul>
 									</li>
-									<li><a href="amigos.php">Amigos </a></li>
-									<li><a href="catalogo.php">Catálogo </a></li>
+									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
 								</ul>
 								
 

@@ -310,7 +310,7 @@ if($_REQUEST["update"] == "good"){
   <div class="panel-body">
     <!-- formulario para inserta pelicula-->
     <form role="form" action="controladoras/" method="post">
-      <input type="button" class="btn btn-info" data-toggle="modal" data-target="#nuevoUsuario" value="Nuevo Usuario"/>
+      <input type="button" class="btn btn-info" data-toggle="modal" data-target="#nuevoUsuario" value="<?php echo $text["h4NewUsu"];?>"/>
     </form>
     <div id="nuevoUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <form action="controladoras/administrarUsuario.php" method="POST">
@@ -323,20 +323,20 @@ if($_REQUEST["update"] == "good"){
             </div>
             <div class="modal-body">
               <h6> <?php echo $text["nomUsu"];?> </h6>
-              <input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" >
+              <input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="<?php echo $text["nomUsu"];?>" >
               <h6> <?php echo $text["email"];?></h6>
-              <input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">
+              <input type="text" name="email" class="form-control form-pers" placeholder="<?php echo $text["email"];?>">
               <h6> <?php echo $text["pass"];?> </h6>
-              <input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" >
+              <input type="password" name="pass" class="form-control form-pers" placeholder="<?php echo $text["pass"];?>" >
               <h6> <?php echo $text["typeUser"];?> </h6>
-              <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="0->User 1->Admin" ><br/>
+              <input type="text" name="tipoUsuario" class="form-control form-pers" placeholder="<?php echo $text["typeUser"];?>" ><br/>
               <label>
                 <?php echo $text["laberAMU"];?> <span class="text-color-red text-weight-bold"> <?php echo $text["laberAMU1"];?> </span></label>
               </div>
               <div class="modal-footer">
 
                 <input type="submit" name="accion" class="btn btn-success" value="Insertar Usuario">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
               </div>
             </div>
           </div>

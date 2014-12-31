@@ -8,24 +8,26 @@ $textos["loguear"]="Enter";
 $textos["registro"]="Check in";
 $textos["forgetPass"]="Recover Password";
 
-//Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera
+//Cabecera.php - Cabecera Pantalla Principal - Cabecera Cartelera - Cabecera Amigos
 $textos["findFilm"]="Search Film";
 $textos["find"]="Search";
 $textos["miMuro"]="My Wall";
-$textos["perfil"]="Perfil";
+$textos["perfil"]="Profile";
 
 $textos["verPerfil"]="View Profile";
 $textos["misGrupos"]="My Groups";
-$textos["cerrarSesion"]="Profile";
+$textos["cerrarSesion"]="Close Sesion";
 
 $textos["amigos"]="Friends";
 $textos["catalogo"]="Catalog";
+$textos["notif"]="Notifications";
+$textos["findFriend"]="Find Friends";
 
 //Cabecera.php - Cabecera Index - Registro
-$textos["nomUsu"]="User name";
-$textos["email"]="e-mail";
-$textos["pass"]="Password";
-$textos["confPass"]="Confirm Password";
+$textos["nomUsu"]="User name ";
+$textos["email"]="e-mail ";
+$textos["pass"]="Password ";
+$textos["confPass"]="Confirm Password ";
 $textos["labelReg"]="You can  specify more your profile when you start session with your new user account. Note that is no possible to change e-mail when is linked to your account.";
 $textos["registrarse"]="Check in";
 $textos["cerrar"]="Close";
@@ -75,9 +77,9 @@ $textos["addSesion"]="Add Session";
 $textos["addFriends"]="Add Friends";
 $textos["add"]="Add";
 $textos["crear"]="Create";
-$textos["grupo"]="Group";
-$textos["nombre"]="Name";
-$textos["numInteger"]="Nº members";
+$textos["grupo"]="Group ";
+$textos["nombre"]="Name ";
+$textos["numInteger"]="Nº members ";
 $textos["ver"]="View";
 $textos["borrar"]="Delete";
 $textos["validar"]="Validate";
@@ -98,7 +100,7 @@ $textos["cambDescGroup"]="Switch description";
 
 //amigos.php
 $textos["amigCines"]="Friends - CinesLy";
-$textos["h1Amigos"]="Filtered friend list";
+$textos["h1Amigos"]="Friend list";
 $textos["pAmigos"]="In this page can manage your friends. Add new friends and accepts invitations of whom have added you.";
 $textos["misAmigos"]="My Friends";
 $textos["pendConf"]="Pending confirmation";
@@ -151,7 +153,7 @@ $textos["director"]="Director: ";
 $textos["actores"]="Actors: ";
 $textos["distr"]="Distributor: ";
 $textos["duracion"]="Duration: ";
-$textos["valorar"]="Value: ";
+$textos["valorar"]="Value:  ";
 $textos["recomendar"]="Recommend";
 $textos["valMed"]="The average rating is:";
 $textos["comentarios"]="Comments";
@@ -218,7 +220,7 @@ $textos["cambPref1"]="Change 1 preference:";
 $textos["cambPref2"]="Change 2 preference:";
 $textos["cambPref3"]="Change 3 preference:";
 $textos["cambEst"]="Change Status";
-$textos["cambCity"]="Change main cityl:";
+$textos["cambCity"]="Change main city:";
 $textos["cambFechNac"]="Change Birthdate";
 $textos["cambEslo"]="Change Slogan";
 $textos["h4NewUsu"]="New User";
@@ -230,7 +232,7 @@ $textos["findUsu"]="Looking for an user ";
 $textos["allUsers"]="All users";
 $textos["admin"]="Admin";
 $textos["user"]="User";
-$textos["nombre1"]="Name: ";
+$textos["nombre1"]="Name ";
 $textos["oFindUsu"]="or looking for an user: ";
 $textos["p1"]="Enter your pass";
 $textos["p2"]="Enter your preference number one";
@@ -263,6 +265,7 @@ $textos["saveSes"]="Save session:";
 
 
 //Footer
+$textos["cinesLy1"]="CinesLy -";
 $textos["hrefGH"]="Site in GitHub";
 $textos["idioma"]="Language";
 $textos["esp"]="Spanish";

@@ -121,7 +121,7 @@ include_once "sesion_segura.php";
           ?>
         </table>
       </div>
-      <input type="submit" class="btn btn-success pull-right" value="Validar"/>
+      <input type="submit" class="btn btn-success pull-right" value="<?php echo $text["validar"];?>"/>
     </form>
   </div>
 </div>
