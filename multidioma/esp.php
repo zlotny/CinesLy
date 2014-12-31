@@ -174,7 +174,7 @@ $textos["modif"]="Modificar";
 //adminModificarPelicula.php
 $textos["listaPelisCinesLy"]="Lista de películas - CinesLy";
 $textos["h1AdModPel"]="Catálogo de Películas";
-$textos["idFilm"]="IdPelicula";
+$textos["idFilm"]="IdPelicula: ";//
 $textos["editPeli"]="Editar Pelicula";
 $textos["cambTitPeli"]="Cambiar el titulo de la pelicula";
 $textos["cambDirect"]="Cambiar Director:";
@@ -244,10 +244,11 @@ $textos["p8"]="Introduzca su eslogan";
 
 //adminModificarSesion.php
 $textos["h1SesExis"]="Sesiones Existentes";
-$textos["sala"]="Sala";
-$textos["fecha"]="Fecha";
-$textos["capacidad"]="Capacidad";
-$textos["titPel"]="Título de la pelicula";
+$textos["sala"]="Sala: ";//
+$textos["fecha"]="Fecha: ";//
+$textos["capacidad"]="Capacidad: ";//
+$textos["idSesion"]="IdSesion: ";//
+$textos["titPel"]="Título de la pelicula: ";//
 $textos["editSes"]="Editar Sesión";
 $textos["cambSala"]="Cambiar la Sala:";
 $textos["cambFech"]="Cambiar la Fecha:";
@@ -259,7 +260,11 @@ $textos["intrSala"]="Introduzca la Sala:";
 $textos["intrFech"]="Introduzca la Fecha:";
 $textos["intrCap"]="Introduzca la Capacidad:";
 $textos["intrId"]="ID de la pelicula de la sesion:";
-$textos["saveSes"]="GuardarSesion:";
+$textos["saveSes"]="Guardar Sesion:";//
+
+$textos["s1"]="Introduzca la fecha";//
+$textos["s2"]="Introduzca la capacidad";//
+$textos["s3"]="Introduzca el IdPelicula";//
 
 
 //Footer
