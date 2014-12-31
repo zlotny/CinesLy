@@ -82,6 +82,7 @@ $textos["ver"]="View";
 $textos["borrar"]="Delete";
 $textos["validar"]="Validate";
 
+
 //Ver_Grupo.php
 $textos["verGrupo"]="View Group";
 $textos["film"]="Film"; 
@@ -89,14 +90,15 @@ $textos["sesion"]="Session";
 $textos["friendsGroup"]="Friends of Group";
 $textos["volver"]="Return";
 $textos["cambNomGrup"]="Switch group name:";
-$textos["cambPel"]="Switch film:";
-$textos["cambSes"]="Switch session:";
+$textos["cambPel"]="Change film:";
+$textos["cambSes"]="Change session:";
 $textos["editGroup"]="Edit group";
+$textos["cambDescGroup"]="Switch description";
 
 
 //amigos.php
 $textos["amigCines"]="Friends - CinesLy";
-$textos["h1Amigos"]="Friend List";
+$textos["h1Amigos"]="Filtered friend list";
 $textos["pAmigos"]="In this page can manage your friends. Add new friends and accepts invitations of whom have added you.";
 $textos["misAmigos"]="My Friends";
 $textos["pendConf"]="Pending confirmation";
@@ -105,6 +107,9 @@ $textos["addFriend"]="Add one Friend";
 $textos["addFriend1"]="Add Friend";
 $textos["pel"]="Films";
 $textos["top"]="Top 10";
+$textos["recomFrom"]="Commended by";
+$textos["recomFilm"]="Commended films";
+$textos["pPersonas"]="People maybe you are interested in";
 
 
 //PerfilAmigo.php
@@ -164,45 +169,78 @@ $textos["modif"]="Modify";
 
 //Parte de Administrador
 
+
+
 //adminModificarPelicula.php
-$textos["listaPelisCinesLy"]="List of Films - CinesLy";
-$textos["h1AdModPel"]="Films Catalogue";
-$textos["catalogPelis"]="List of Films";
-$textos["editPeli"]="Edit Film";
+$textos["listaPelisCinesLy"]="List of films - CinesLy";
+$textos["h1AdModPel"]="Films catalogue";
+$textos["catalogPelis"]="List of films";
+$textos["idFilm"]="IdFilm";
+$textos["editPeli"]="Edit film";
 $textos["cambTitPeli"]="Change the title of the film";
-$textos["cambDirect"]="Change Director";
-$textos["cambActo"]="Change Actors";
-$textos["cambDist"]="Change Distributor";
-$textos["cambDur"]="Change Duration";
+$textos["cambDirect"]="Change director";
+$textos["cambActo"]="Change actors";
+$textos["cambDist"]="Change distributor";
+$textos["cambDur"]="Change duration";
 $textos["cambAnho"]="Change year";
-$textos["cambGen"]="Change Gender";
-$textos["cambPais"]="Change Country";
-$textos["cambTipo"]="Change Type";
+$textos["cambGen"]="Change gender";
+$textos["cambPais"]="Change country";
+$textos["cambTipo"]="Change type";
 $textos["cambSinop"]="Change Sinopsis";
 $textos["cambFoto"]="Change photo";
-$textos["guardCamb"]="Save Changes";
-$textos["inserMov"]="Insert a Film";
+$textos["guardCamb"]="Save changes";
+$textos["guardPel"]="Save film";
+$textos["inserMov"]="Insert a film";
 $textos["pBusq"]="or search";
 $textos["noFile"]="Any file selected";
+$textos["pBusq"]="or search";
+$textos["tituloPel"]="Film tittle";
+$textos["m1"]="Enter film director";
+$textos["m2"]="Enter film actors";
+$textos["m3"]="Enter film distributor";
+$textos["m4"]="Enter film duration";
+$textos["m5"]="Enter film age";
+$textos["m6"]="Enter premiere date(YYYY-MM-DD)";
+$textos["m7"]="Enter film genders";
+$textos["m8"]="Enter film country";
+$textos["m9"]="Enter film gender";
+
 
 //adminModificarUsuario.php
 $textos["h1ListUsu"]="User Lists";
 $textos["editUser"]="Edit User";
 $textos["cambNomUsu"]="Rename name";
 $textos["cambEmail"]="Change e-mail";
+$textos["cambFoto"]="Change photo: ";
 $textos["cambTipUsu"]="Change type User(0 normal user, 1 admin):";
 $textos["cambPass"]="Change Password";
 $textos["cambPref1"]="Change 1 preference:";
 $textos["cambPref2"]="Change 2 preference:";
 $textos["cambPref3"]="Change 3 preference:";
 $textos["cambEst"]="Change Status";
-$textos["cambCity"]="Switch main cityl:";
+$textos["cambCity"]="Change main cityl:";
 $textos["cambFechNac"]="Change Birthdate";
 $textos["cambEslo"]="Change Slogan";
 $textos["h4NewUsu"]="New User";
 $textos["smallAMU"]="Enter the following information to enter a new user.";
 $textos["typeUser"]="User Type:";
-$textos["labelAMU"]="The datas will be able to are modified at edit menu.";
+$textos["labelAMU"]="The datas will be able to are modified at edit menu."; 
+$textos["labelAMU1"]="TO EDIT.";
+$textos["findUsu"]="Looking for an user ";
+$textos["allUsers"]="All users";
+$textos["admin"]="Admin";
+$textos["user"]="User";
+$textos["nombre1"]="Name: ";
+$textos["oFindUsu"]="or looking for an user: ";
+$textos["p1"]="Enter your pass";
+$textos["p2"]="Enter your preference number one";
+$textos["p3"]="Enter your preference number two";
+$textos["p4"]="Enter your preference number three";
+$textos["p5"]="Enter your status";
+$textos["p6"]="Enter your main city";
+$textos["p7"]="Enter your birth date";
+$textos["p8"]="Enter your slogan";
+
 
 //adminModificarSesion.php
 $textos["h1SesExis"]="Existens sessions";
@@ -211,10 +249,10 @@ $textos["fecha"]="Date";
 $textos["capacidad"]="Capacity";
 $textos["titPel"]="Film title";
 $textos["editSes"]="Edit session";
-$textos["cambSala"]="Switch room:";
-$textos["cambFech"]="Switch date:";
-$textos["cambCapac"]="Switch capacity:";
-$textos["cambId"]="Switch session film ID(not modify):";
+$textos["cambSala"]="Change room:";
+$textos["cambFech"]="Change date:";
+$textos["cambCapac"]="Change capacity:";
+$textos["cambId"]="Change session film ID(not modify):";
 $textos["h4NewSes"]="Insert a new session";
 $textos["insertSes"]="Insert session";
 $textos["intrSala"]="Inssert room:";
@@ -222,6 +260,7 @@ $textos["intrFech"]="Inssert date:";
 $textos["intrCap"]="Insert capacity:";
 $textos["intrId"]="Inssert session film ID:";
 $textos["saveSes"]="Save session:";
+
 
 //Footer
 $textos["hrefGH"]="Site in GitHub";

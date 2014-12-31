@@ -97,6 +97,7 @@ $textos["cambDescGroup"]="Cambiar Descripción";
 
 
 //Amigos.php
+$textos["amigCines"]="Amigos - CinesLy";
 $textos["h1Amigos"]="Lista de amigos filtrados";
 $textos["pAmigos"]="En esta página podrás ver tus amistades en función de la busqueda realizada. Añade nuevos amigos, elimina a alguno que ya no desees o visita su perfil.";
 $textos["misAmigos"]="Mis amigos filtrados";
@@ -109,7 +110,6 @@ $textos["pendConf"]="Pendiente de confirmación";
 $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
-
 
 
 //PerfilAmigo.php
@@ -141,6 +141,7 @@ $textos["porn"]="Pornografía";
 $textos["romantica"]="Romántica";
 $textos["suspense"]="Suspense";
 $textos["terror"]="Terror";
+
 
 //Ficha Pelicula
 $textos["h1FichaPel"]="Ficha de ";
@@ -192,13 +193,8 @@ $textos["guardPel"]="Guardar Pelicula";
 $textos["inserMov"]="Inserte una Pelicula";
 $textos["pBusq"]="o busquela";
 $textos["noFile"]="Ningun archivo seleccionado";
-
 $textos["pBusq"]="o busquela";
 $textos["tituloPel"]="Titulo de la pelicula";
-
-
-
-
 $textos["m1"]="Introduzca el director";
 $textos["m2"]="Introduzca los actores";
 $textos["m3"]="Introduzca su distribuidora";
@@ -236,7 +232,6 @@ $textos["admin"]="Administrador";
 $textos["user"]="Usuario";
 $textos["nombre1"]="Nombre: ";
 $textos["oFindUsu"]="o buscar un usuario: ";
-
 $textos["p1"]="Introduzca su pass";
 $textos["p2"]="Introduzca su preferencia1";
 $textos["p3"]="Introduzca su preferencia2";
@@ -245,7 +240,6 @@ $textos["p5"]="Introduzca su estado";
 $textos["p6"]="Introduzca su ciudadActual";
 $textos["p7"]="Introduzca su fechaNacimiento";
 $textos["p8"]="Introduzca su eslogan";
-
 
 
 //adminModificarSesion.php
