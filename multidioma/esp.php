@@ -23,7 +23,6 @@ $textos["catalogo"]="Catálogo";
 $textos["notif"]="Notificaciones";
 $textos["findFriend"]="Buscar Amigos";
 
-
 //Cabecera.php - Cabecera Index - Registro
 $textos["nomUsu"]="Nombre de usuario ";
 $textos["email"]="Correo electrónico ";
@@ -45,7 +44,6 @@ $textos["gS"]="Gestión de Sesiones";
 $textos["gU"]="Gestión de Usuarios";
 
 
-
 //Index.php
 $textos["labelH3Index"]="Disfruta del cine, en compañía";
 $textos["labelH1Index"]="Actualmente en cartelera";
@@ -57,7 +55,7 @@ $textos["h1Welcome"]="Bienvenido a CinesLy, ";
 $textos["pYourWall"]="Éste es tu muro. Aquí verás tanto tus publicaciones como las de tus amigos. ¡Dí algo!";
 $textos["publicar"]="Publicar";
 $textos["editar"]="Editar";
-$textos["dejarEditar"]="Dejar de Editar";//
+$textos["dejarEditar"]="Dejar de Editar";
 $textos["eliminar"]="Eliminar";
 $textos["writePub"]="Escribe una publicación....";
 
@@ -122,7 +120,6 @@ $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
 $textos["emailFriend1"]="Introduzca el email del amigo a añadir";
-
 
 //PerfilAmigo.php
 $textos["delAmi"]="Eliminar Amigo";
@@ -256,11 +253,11 @@ $textos["p8"]="Introduzca su eslogan";
 
 //adminModificarSesion.php
 $textos["h1SesExis"]="Sesiones Existentes";
-$textos["sala"]="Sala: ";//
-$textos["fecha"]="Fecha: ";//
-$textos["capacidad"]="Capacidad: ";//
-$textos["idSesion"]="IdSesion: ";//
-$textos["titPel"]="Título de la pelicula: ";//
+$textos["sala"]="Sala: ";
+$textos["fecha"]="Fecha: ";
+$textos["capacidad"]="Capacidad: ";
+$textos["idSesion"]="IdSesion: ";
+$textos["titPel"]="Título de la pelicula: ";
 $textos["editSes"]="Editar Sesión";
 $textos["cambSala"]="Cambiar la Sala:";
 $textos["cambFech"]="Cambiar la Fecha:";
@@ -272,11 +269,11 @@ $textos["intrSala"]="Introduzca la Sala:";
 $textos["intrFech"]="Introduzca la Fecha:";
 $textos["intrCap"]="Introduzca la Capacidad:";
 $textos["intrId"]="ID de la pelicula de la sesion:";
-$textos["saveSes"]="Guardar Sesion:";//
+$textos["saveSes"]="Guardar Sesion:";
 
-$textos["s1"]="Introduzca la fecha";//
-$textos["s2"]="Introduzca la capacidad";//
-$textos["s3"]="Introduzca el IdPelicula";//
+$textos["s1"]="Introduzca la fecha";
+$textos["s2"]="Introduzca la capacidad";
+$textos["s3"]="Introduzca el IdPelicula";
 
 
 

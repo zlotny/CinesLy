@@ -38,6 +38,12 @@ $textos["smallCR"]="Introduce los siguientes datos para continuar con el registr
 $textos["smallCR1"]="Enter your email to recover your password.";
 $textos["h6CR"]="Enter your email:";
 
+//Cabecera.php - Cabecera Admin
+$textos["gP"]="Films management";
+$textos["gS"]="Sessions management";
+$textos["gU"]="Users management";
+
+
 //Index.php
 $textos["labelH3Index"]="Enjoy the cinema, accompanied.";
 $textos["labelH1Index"]="Currently in billboard";
@@ -48,6 +54,7 @@ $textos["cinesLy"]="CinesLy";
 $textos["h1Welcome"]="Welcome to CinesLy, ";
 $textos["pYourWall"]="This is your wall. Here you will see both, your publications,and your friend´s publications. Say something!";
 $textos["publicar"]="Publish";
+$textos["dejarEditar"]="Stop editing";
 $textos["editar"]="Edit";
 $textos["eliminar"]="Remove";
 $textos["writePub"]="Write a publication....";
@@ -169,8 +176,8 @@ $textos["busqSes"]="Search Session";
 $textos["dellAm"]="Remove Friends";
 $textos["modif"]="Modify";
 
-//Parte de Administrador
 
+//Parte de Administrador
 
 
 //adminModificarPelicula.php
@@ -262,7 +269,9 @@ $textos["intrFech"]="Inssert date:";
 $textos["intrCap"]="Insert capacity:";
 $textos["intrId"]="Inssert session film ID:";
 $textos["saveSes"]="Save session:";
-
+$textos["s1"]="Enter date";
+$textos["s2"]="Enter capacity";
+$textos["s3"]="Enter FilmID";
 
 //Footer
 $textos["cinesLy1"]="CinesLy -";
