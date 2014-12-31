@@ -20,8 +20,8 @@ $textos["cerrarSesion"]="クローズセッション";
 
 $textos["amigos"]="フレンズ";
 $textos["catalogo"]="カタログ";
-$textos["notif"]="Notificaciones";
-$textos["findFriend"]="Buscar Amigos";
+$textos["notif"]="通知";
+$textos["findFriend"]="友達を検索";
 
 //Cabecera.php - Cabecera Index - Registro
 $textos["nomUsu"]="ユーザー名";
@@ -36,17 +36,17 @@ $textos["registrarse"]="登録";
 $textos["cerrar"]="閉じる";
 $textos["smallCR"]="登録を継続するには、次の詳細を入力します";
 $textos["smallCR1"]="パスワードの回復のためにメールアドレスを入力してください.";
-$textos["h6CR"]="あなたのメールアドレスを入力してください:";
+$textos["h6CR"]="あなたのメールアドレスを入力してください: ";
 
 //Cabecera.php - Cabecera Admin
-$textos["gP"]="Gestión de Peliculas";
-$textos["gS"]="Gestión de Sesiones";
-$textos["gU"]="Gestión de Usuarios";
+$textos["gP"]="経営作品";
+$textos["gS"]="セッション管理";
+$textos["gU"]="ユーザー管理";
 
 //Index.php
 $textos["labelH3Index"]="映画を楽しむ、同行";
 $textos["labelH1Index"]="現在、劇場で";
-$textos["loteria"]="Loteriaを確認してください";
+$textos["loteria"]="宝くじを確認してください";
 $textos["cinesLy"]="CinesLy";
 
 //PantallaPrincipal.php
@@ -54,7 +54,7 @@ $textos["h1Welcome"]="CinesLyへようこそ";
 $textos["pYourWall"]="これはあなたの壁である。ここでは、あなたの友人のものと両方のあなたの出版物が表示されます。何かを言う！";
 $textos["publicar"]="公開";
 $textos["editar"]="編集";
-$textos["dejarEditar"]="Dejar de Editar";
+$textos["dejarEditar"]="編集のままに";
 $textos["eliminar"]="削除";
 $textos["writePub"]="出版物を書く....";
 
@@ -96,9 +96,9 @@ $textos["film"]="映画";
 $textos["sesion"]="セッション";
 $textos["friendsGroup"]="フレンズグループ";
 $textos["volver"]="ボルベール";
-$textos["cambNomGroup"]="変更グループ名:";
-$textos["cambPel"]="変更の映画:";
-$textos["cambSes"]="変更セッション:";
+$textos["cambNomGroup"]="変更グループ名: ";
+$textos["cambPel"]="変更の映画: ";
+$textos["cambSes"]="変更セッション: ";
 $textos["editGroup"]="グループの編集";
 $textos["cambDescGroup"]="変更の説明";
 
@@ -110,13 +110,13 @@ $textos["misAmigos"]="マイフレンド";
 $textos["addFriend"]="友達を追加";
 $textos["emailFriend"]="電子メールアド";
 $textos["pPersonas"]="人々はあなたが興味がある可能性があります";
-$textos["pel"]="Peliculas";
+$textos["pel"]="ムービー";
 $textos["top"]="上位10作品";
 $textos["pendConf"]="確認する";
 $textos["recomFilm"]="お薦め作品";
 $textos["recomFrom"]="者が推奨";
 $textos["addFriend1"]="友達を追加";
-$textos["emailFriend1"]="Introduzca el email del amigo a añadir";
+$textos["emailFriend1"]="お友達のEメールアドを入力してください";
 
 //PerfilAmigo.php
 $textos["delAmi"]="友達を削除する";
@@ -151,7 +151,7 @@ $textos["terror"]="恐怖";
 $textos["h1FichaPel"]="タブ";
 $textos["pFichaPel"]="映画の詳細な記録では、あなたの情報、あなたのポスターと、ユーザーのコメントを見ることができます。何かを言うためにあえて！";
 $textos["divFichaPel"]="映画のファイル";
-$textos["director"]="監督：";
+$textos["director"]="監督： ";
 $textos["actores"]="俳優";
 $textos["distr"]="ディストリビューター";
 $textos["duracion"]="時間";
@@ -172,7 +172,7 @@ $textos["cambActo"]="変更俳優";
 $textos["cambDist"]="変更の代理店";
 $textos["cambDur"]="変更時間";
 $textos["cambAnho"]="変更年";
-$textos["cambFechEst"]="Cambiar Fecha de estreno(AAAA-MM-DD):";
+$textos["cambFechEst"]="変更のリリース日（YYYY-MM-DD）: ";
 $textos["cambGen"]="変更ジャンル";
 $textos["cambPais"]="国を変更";
 $textos["cambTipo"]="変更タイプ";
@@ -206,7 +206,7 @@ $textos["cambTipUsu"]="ユーザタイプ（通常のユーザー01 admin）を�
 $textos["cambPref1"]="好ましくは1を変更: ";
 $textos["cambPref2"]="好ましくは2を変更: ";
 $textos["cambPref3"]="好ましくは3を変更: ";
-$textos["cambEstado"]="変更状況:";
+$textos["cambEstado"]="変更状況: ";
 $textos["cambCity"]="実際の変更ステータス変更市: ";
 $textos["cambFechNac"]="変更生年月日";
 $textos["cambEslo"]="変更のスローガン";
@@ -245,24 +245,24 @@ $textos["h1SesExis"]="既存のセッション";
 $textos["sala"]="ルーム";
 $textos["fecha"]="日付";
 $textos["capacidad"]="容量";
-$textos["idSesion"]="IdSesion: ";
+$textos["idSesion"]="セッションID: ";
 $textos["titPel"]="映画のタイトル";
 $textos["editSes"]="編集セッション";
 $textos["cambSala"]="部屋を変更します。";
-$textos["cambFech"]="変更日：";
-$textos["cambCapac"]="変更容量：";
-$textos["cambId"]="セッション（変更しない）の映画のID：";
+$textos["cambFech"]="変更日： ";
+$textos["cambCapac"]="変更容量： ";
+$textos["cambId"]="セッション（変更しない）の映画のID： ";
 $textos["h4NewSes"]="セッションを挿入";
 $textos["insertSes"]="挿入セッション";
-$textos["intrSala"]="ルームを入力してください：";
-$textos["intrFech"]="日付を入力してください：";
+$textos["intrSala"]="ルームを入力してください： ";
+$textos["intrFech"]="日付を入力してください： ";
 $textos["intrCap"]="容量を入力します。";
-$textos["intrId"]="セッションの映画のID：";
-$textos["saveSes"]="セッションを保存：";
+$textos["intrId"]="セッションの映画のID： ";
+$textos["saveSes"]="セッションを保存： ";
 
-$textos["s1"]="Introduzca la fecha";
-$textos["s2"]="Introduzca la capacidad";
-$textos["s3"]="Introduzca el IdPelicula";
+$textos["s1"]="日付を入力する";
+$textos["s2"]="容量を入力してください";
+$textos["s3"]="Idのムービーを入力してください";
 
 //Footer
 $textos["cinesLy1"]="CinesLy -";
