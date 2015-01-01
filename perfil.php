@@ -100,7 +100,7 @@
 				</div>
 
 				<div class="panel-footer">
-					<input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="Editar perfil">       
+					<input type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modificarPerfil" value="<?php echo $text["editarCuenta"];?>">       
 					<div id="modificarPerfil" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						<form id="form-edit-perfil" action="controladoras/actualizarPerfil.php" method="POST">
 							<div class="modal-dialog">
@@ -113,15 +113,15 @@
 										<label for="nombreUsuario" class=""><?php echo $text["cambNomUsu"];?></label>
 										<input type="text" name="newName" class="form-control form-pers" value="<?php echo $_SESSION['usuario']->nombreUsuario;?>"><br/>      
 										<label for="pass1" class=""><?php echo $text["newPass"];?></label>
-										<input type="password" name="pass1" class="form-control form-pers" placeholder="Introduzca su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
+										<input type="password" name="pass1" class="form-control form-pers" placeholder="<?php echo $text["pl1"];?>" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
 										<label for="pass1" class=""><?php echo $text["repNewPass"];?></label>
-										<input type="password" name="pass2" class="form-control form-pers" placeholder="Repita su nueva contraseña" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
+										<input type="password" name="pass2" class="form-control form-pers" placeholder="<?php echo $text["pl2"];?>" value="<?php echo $_SESSION['usuario']->pass; ?>"> <br/>
 
-										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="Eliminar mi cuenta" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
+										<input type="button" id="eliminar-boton" class="btn btn-danger btn-xs pull-right" value="<?php echo $text["delCuenta"];?>" onclick="eliminarPerfil('<?php echo $_SESSION['usuario']->email; ?>');" ></input>  
 										<div class="clearfix"></div>
 									</div>
 									<div class="modal-footer">
-										<input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+										<input type="submit" name="accion" class="btn btn-success" value="<?php echo $text["guardCamb"];?>">
 										<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 									</div>
 								</div>
@@ -159,9 +159,9 @@
 										if($_SESSION["usuario"]->email == $usuRow){ 
 
 									?>							
-									<input type='button' onclick='eliminarPublicacionPerfil(<?php echo $row['idPublicacion']; ?>)' class='btn btn-xs btn-danger pull-right little-right' value='Eliminar'/>
-									<input type='button' onclick='mostrar(<?php echo $row['idPublicacion'].",1".$row['idPublicacion'].",editar".$row['idPublicacion']; ?>)' id='<?php echo "editar".$row['idPublicacion']; ?>' class='btn btn-xs btn-primary pull-right little-right' value='Editar'/>
-									<input type='submit' onclick='ocultar(<?php echo $row['idPublicacion']; ?>)' style='visibility: hidden;'  id='<?php echo $row['idPublicacion']; ?>' class='btn btn-xs btn-success pull-right' value='Guardar'/>
+									<input type='button' onclick='eliminarPublicacionPerfil(<?php echo $row['idPublicacion']; ?>)' class='btn btn-xs btn-danger pull-right little-right' value="<?php echo $text["eliminar"];?>"/>
+									<input type='button' onclick="mostrar(<?php echo $row['idPublicacion'].",1".$row['idPublicacion'].",editar".$row['idPublicacion'].",'".$text['dejarEditar']."','".$text['editar']."'"; ?>)" id='<?php echo "editar".$row['idPublicacion']; ?>' class='btn btn-xs btn-primary pull-right little-right' value="<?php echo $text["editar"];?>"/>
+									<input type='submit' onclick='ocultar(<?php echo $row['idPublicacion']; ?>)' style='visibility: hidden;'  id='<?php echo $row['idPublicacion']; ?>' class='btn btn-xs btn-success pull-right' value="<?php echo $text["guardar"];?>"/>
 									<?php 
 
 										} 

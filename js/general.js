@@ -237,17 +237,17 @@ function rw(id){
      divObject.readOnly = true;
 }
 
-function mostrar(id,idPubli,edit) {
+function mostrar(id,idPubli,edit,de,e) {
 
     var divObject = document.getElementById(id); 
-  
+    
     if(divObject.style.visibility == "hidden"){
       divObject.style.visibility = "visible";
-      edit.value = "Dejar de editar";
+      edit.value = de;
       ro(idPubli);
     }else{
       divObject.style.visibility = "hidden";
-      edit.value = "Editar";
+      edit.value = e;
       rw(idPubli);
   window.location.reload();
     }

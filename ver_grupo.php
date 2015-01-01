@@ -68,7 +68,7 @@
         <table class="table table-striped ">
           <?php
           foreach($usuariosDelGrupo as $user){
-            echo "<tr ><td>$user->nombreUsuario</td><td class='col-md-1'><a href='controladoras/eliminarAmigoGrupo.php?email=".$user->email."&id=".$grupoActual->idEvento."' class='btn btn-info'>Eliminar</a></td></tr>";
+            echo "<tr ><td>$user->nombreUsuario</td><td class='col-md-1'><a href='controladoras/eliminarAmigoGrupo.php?email=".$user->email."&id=".$grupoActual->idEvento."' class='btn btn-info'>".$text['eliminar']."</a></td></tr>";
           }
           ?>
 

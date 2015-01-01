@@ -34,7 +34,7 @@ $textos["cerrar"]="Close";
 $textos["labelReg1"]="Take care about"; 
 $textos["labelReg2"]="switching email is a not available option"; 
 $textos["labelReg3"]="when this is linked to your account.";
-$textos["smallCR"]="Introduce los siguientes datos para continuar con el registro Enter the following data to continuous with the registration";
+$textos["smallCR"]="Enter the following data to continuous with the registration";
 $textos["smallCR1"]="Enter your email to recover your password.";
 $textos["h6CR"]="Enter your email:";
 
@@ -58,6 +58,7 @@ $textos["dejarEditar"]="Stop editing";
 $textos["editar"]="Edit";
 $textos["eliminar"]="Remove";
 $textos["writePub"]="Write a publication....";
+$textos["guardar"]="Save";
 
 //Perfil.php
 $textos["h1Perfil"]="Profile of ";
@@ -66,6 +67,7 @@ $textos["biografia"]="Biography";
 $textos["editarCuenta"]="Edit Account";
 $textos["camNombUsu"]="Change the user name";
 $textos["newPass"]="New Password";
+$textos["delCuenta"]="Delete my Account";//
 $textos["repNewPass"]="Repeat new Password";
 $textos["publicaciones"]="Publications";
 $textos["prev"]="Prev";
@@ -74,11 +76,11 @@ $textos["ultPelVis"]="Latest Films Views";
 $textos["pelRecomen"]="Recommended Films";
 
 //MisGrupos.php
-$textos["newGroup"]="New Group";
-$textos["nameGroup"]="Group Name";
-$textos["nameYourGroup"]="Name of Your Group";
-$textos["description"]="Description";
-$textos["chooseSesion"]="Choose session";
+$textos["newGroup"]="New Group ";
+$textos["nameGroup"]="Group Name ";
+$textos["nameYourGroup"]="Name of Your Group ";
+$textos["description"]="Description ";
+$textos["chooseSesion"]="Choose session ";
 $textos["addFilm"]="Add Film";
 $textos["addSesion"]="Add Session";
 $textos["addFriends"]="Add Friends";
@@ -93,9 +95,9 @@ $textos["validar"]="Validate";
 
 
 //Ver_Grupo.php
-$textos["verGrupo"]="View Group";
-$textos["film"]="Film"; 
-$textos["sesion"]="Session";
+$textos["verGrupo"]="View Group ";
+$textos["film"]="Film "; 
+$textos["sesion"]="Session ";
 $textos["friendsGroup"]="Friends of Group";
 $textos["volver"]="Return";
 $textos["cambNomGrup"]="Switch group name:";
@@ -126,6 +128,8 @@ $textos["delAmi"]="Remove friend";
 $textos["pAmigosAm"]="Your are watching a friend´s profile";
 $textos["pAmigosAm1"]="Is not this person your friend yet? add him!";
 $textos["pAmigosAm2"]="Your friend list";
+$textos["cancSol"]="Cancel Request";//
+$textos["agregarAm"]="Add Friend";//
 
 
 //catalogo.php
@@ -135,7 +139,7 @@ $textos["titulo"]="Title: ";
 $textos["genero"]="Gender: ";
 $textos["anho"]="Year: ";
 $textos["sinopsis"]="Sinopsis: ";
-$textos["typeFilm"]="Tyoe of Films";
+$textos["typeFilm"]="Type of Films";
 $textos["allFilms"]="All Films";
 $textos["carteleras"]="In Billboard";
 $textos["especial"]="Special";
@@ -161,7 +165,7 @@ $textos["actores"]="Actors: ";
 $textos["distr"]="Distributor: ";
 $textos["duracion"]="Duration: ";
 $textos["valorar"]="Value:  ";
-$textos["recomendar"]="Recommend";
+$textos["recomendar"]="Recommend ";
 $textos["valMed"]="The average rating is:";
 $textos["comentarios"]="Comments";
 $textos["writeComen"]="Write a comment";
@@ -184,7 +188,7 @@ $textos["modif"]="Modify";
 $textos["listaPelisCinesLy"]="List of films - CinesLy";
 $textos["h1AdModPel"]="Films catalogue";
 $textos["catalogPelis"]="List of films";
-$textos["idFilm"]="IdFilm";
+$textos["idFilm"]="IdFilm: ";
 $textos["editPeli"]="Edit film";
 $textos["cambTitPeli"]="Change the title of the film";
 $textos["cambDirect"]="Change director";
@@ -226,21 +230,22 @@ $textos["cambPass"]="Change Password";
 $textos["cambPref1"]="Change 1 preference:";
 $textos["cambPref2"]="Change 2 preference:";
 $textos["cambPref3"]="Change 3 preference:";
-$textos["cambEst"]="Change Status";
+$textos["cambEstado"]="Change Status";
 $textos["cambCity"]="Change main city:";
 $textos["cambFechNac"]="Change Birthdate";
 $textos["cambEslo"]="Change Slogan";
 $textos["h4NewUsu"]="New User";
 $textos["smallAMU"]="Enter the following information to enter a new user.";
-$textos["typeUser"]="User Type:";
+$textos["typeUser"]="User Type: ";
 $textos["labelAMU"]="The datas will be able to are modified at edit menu."; 
 $textos["labelAMU1"]="TO EDIT.";
 $textos["findUsu"]="Looking for an user ";
 $textos["allUsers"]="All users";
-$textos["admin"]="Admin";
-$textos["user"]="User";
-$textos["nombre1"]="Name ";
+$textos["admin"]="Admin: ";
+$textos["user"]="User: ";
+$textos["nombre1"]="Name: ";
 $textos["oFindUsu"]="or looking for an user: ";
+$textos["insertUsu"]="Insert User";
 $textos["p1"]="Enter your pass";
 $textos["p2"]="Enter your preference number one";
 $textos["p3"]="Enter your preference number two";
@@ -252,11 +257,11 @@ $textos["p8"]="Enter your slogan";
 
 
 //adminModificarSesion.php
-$textos["h1SesExis"]="Existens sessions";
-$textos["sala"]="Room";
-$textos["fecha"]="Date";
-$textos["capacidad"]="Capacity";
-$textos["titPel"]="Film title";
+$textos["h1SesExis"]="Existens sessions: ";
+$textos["sala"]="Room: ";
+$textos["fecha"]="Date: ";
+$textos["capacidad"]="Capacity: ";
+$textos["titPel"]="Film title: ";
 $textos["editSes"]="Edit session";
 $textos["cambSala"]="Change room:";
 $textos["cambFech"]="Change date:";

@@ -102,7 +102,7 @@ if($_REQUEST["update"] == "good"){
 
 
        <div id="modificarUsuario1<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+        <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?accion=Guardar cambios&emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
           <div class="modal-dialog">
             <div class="modal-content">
@@ -153,7 +153,7 @@ if($_REQUEST["update"] == "good"){
 
               </div>
               <div class="modal-footer">
-                <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+                <input type="submit" class="btn btn-success" value="<?php echo $text["guardCamb"];?>">
 
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
               </div>
@@ -219,7 +219,7 @@ if($_REQUEST["update"] == "good"){
      </form>
 
      <div id="modificarUsuario2<?php echo $i; ?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
+      <form id="form-edit-perfil" enctype="multipart/form-data" action="controladoras/administrarUsuario.php?accion=Guardar cambios&emailA=<?php echo $panelUsuario["email"]; ?>" method="POST">
 
         <div class="modal-dialog">
           <div class="modal-content">
@@ -269,7 +269,7 @@ if($_REQUEST["update"] == "good"){
 
             </div>
             <div class="modal-footer">
-              <input type="submit" name="accion" class="btn btn-success" value="Guardar cambios">
+              <input type="submit" class="btn btn-success" value="<?php echo $text["guardCamb"];?>">
 
               <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
             </div>
@@ -313,7 +313,7 @@ if($_REQUEST["update"] == "good"){
       <input type="button" class="btn btn-info" data-toggle="modal" data-target="#nuevoUsuario" value="<?php echo $text["h4NewUsu"];?>"/>
     </form>
     <div id="nuevoUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <form action="controladoras/administrarUsuario.php" method="POST">
+      <form action="controladoras/administrarUsuario.php?accion=Insertar Usuario" method="POST">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -335,7 +335,7 @@ if($_REQUEST["update"] == "good"){
               </div>
               <div class="modal-footer">
 
-                <input type="submit" name="accion" class="btn btn-success" value="Insertar Usuario">
+                <input type="submit" class="btn btn-success" value="<?php echo $text["insertUsu"];?>">
                 <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
               </div>
             </div>
