@@ -439,16 +439,16 @@ function footer(){
 	<div class="footer ">
 		<div class="footer-content">
 			<div class="dropdown dropup">
-				<span class="footer-text">CinesLy -<!--<?php echo $notificacion['cinesLy1']; ?>--> <a href="https://github.com/ndrs92/CinesLy" >Página en GitHub<!--<?php echo $notificacion['hrefGH']; ?>--></a>
+				<span class="footer-text"><?php echo $text['cinesLy1']; ?> <a href="https://github.com/ndrs92/CinesLy" ><?php echo $text['hrefGH']; ?></a>
 					<button class="btn btn-primary dropdown-toggle footer-dropdown" type="button" id="dropdownidioma" data-toggle="dropdown" aria-expanded="true">
-						Idioma<!--<?php echo $notificacion['idioma']; ?>-->
+						<?php echo $text['idioma']; ?>
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu align-right-footer" role="menu" aria-labelledby="dropdownidioma">
 
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=ES" >Espanhol<!--<?php echo $notificacion['esp']; ?>--></a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=EN" >English<!--<?php echo $notificacion['ing']; ?>--></a></li>
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=JP" >Japonés<!--<?php echo $notificacion['jap']; ?>--></a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=ES" ><?php echo $text['esp']; ?></a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=EN" ><?php echo $text['ing']; ?></a></li>
+						<li role="presentation"><a role="menuitem" tabindex="-1" href="multidioma/controladorCambiarIdioma.php?lang=JP" ><?php echo $text['jap']; ?></a></li>
 
 					</ul>
 				</span>
@@ -505,10 +505,10 @@ function cabeceraAdministrador(){
 
 
 
-					<li><a href="adminModificarPelicula.php">Gestión de Peliculas<!--<?php echo $notificacion['gP']; ?>--></a></li>
-					<li><a href="adminModificarSesion.php">Gestión de Sesiones<!--<?php echo $notificacion['gS']; ?>--></a></li>
-					<li><a href="adminModificarUsuario.php">Gestión de Usuarios<!--<?php echo $notificacion['gU']; ?>--></a></li>
-					<li class="dropdown-danger" ><a onclick="cerrarSesion()">Cerrar Sesion<!--<?php echo $notificacion['cerrarSesion']; ?>--></a></li>
+					<li><a href="adminModificarPelicula.php"><?php echo $text['gP']; ?></a></li>
+					<li><a href="adminModificarSesion.php"><?php echo $text['gS']; ?></a></li>
+					<li><a href="adminModificarUsuario.php"><?php echo $text['gU']; ?></a></li>
+					<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text['cerrarSesion']; ?></a></li>
 				</ul>
 
 
