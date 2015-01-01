@@ -16,11 +16,9 @@ if(!isset($_SESSION["idioma"])){
 	$text = $_SESSION["idioma"];
 }
 
-
-session_start();
-
 function cabeceraCartelera(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
@@ -120,6 +118,7 @@ function cabeceraCartelera(){
 <?php
 function cabeceraPantallaPrincipal(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
@@ -224,10 +223,12 @@ function cabeceraPantallaPrincipal(){
 <?php
 function cabeceraIndex(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
 	}
+
 	?>
 
 
@@ -318,6 +319,7 @@ function cabeceraIndex(){
 <?php
 function cabeceraAmigos(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
@@ -426,6 +428,12 @@ function cabeceraAmigos(){
 
 <?php
 function footer(){
+	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
+		$text = $textos;
+	}else{
+		$text = $_SESSION["idioma"];
+	}
 	?>
 	
 	<div class="footer ">
@@ -467,6 +475,7 @@ function footer(){
 <?php
 function cabeceraAdministrador(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
@@ -521,6 +530,7 @@ function cabeceraAdministrador(){
 <?php
 function cabeceraVerGrupo(){
 	if(!isset($_SESSION["idioma"])){
+		include "multidioma/esp.php";
 		$text = $textos;
 	}else{
 		$text = $_SESSION["idioma"];
