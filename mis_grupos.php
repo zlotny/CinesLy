@@ -88,13 +88,11 @@ include_once "sesion_segura.php";
         <label for="add_amigos"><?php echo $text["addFriends"];?></label>
         <div class="form-group scrollable-table">
           <table class="table table-striped">
-            <?php
+           <?php
             $amigos = $_SESSION["usuario"]->getAmigos();
             foreach($amigos as $amigo){
-            ?>
-              <tr><td><?php echo $amigo->nombreUsuario; ?></td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'><?php echo $text["add"];?>&nbsp;</span></td></tr>
-            <?php 
-            }
+              echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'>".$text['add']."&nbsp;</span></td></tr>";
+           }
             ?>
           </table>
         </div>
@@ -116,7 +114,7 @@ include_once "sesion_segura.php";
           $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
           foreach ($grupos as $grupo){
         
-            echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> Ver </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
+            echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> ".$text['ver']." </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>".$text['borrar']."&nbsp;</span></td></tr>";
           }
           ?>
         </table>

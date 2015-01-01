@@ -82,7 +82,7 @@
 						switch ($estadoA) {
 						    case 0:
 						        ?> 
-						        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url; ?>')" value="Eliminar amigo"> 
+						        <input type="button" class="btn btn-danger pull-right border-radius-publi" style="width:150px" onclick="pruebaEliminar('<?php echo $amigo->email; ?>','<?php echo $server.$url; ?>')" value="<?php echo $text["delAmi"];?>"> 
 							        <?php
 						        break;
 						    case 1:
@@ -90,7 +90,7 @@
 						    	<form role='form' style="margin:0px;" action='controladoras/cancelarAmigo.php'>
 					    	    	<input type="hidden" name="email" value="<?php echo $amigo->email; ?>">
 					    	    	<input type="hidden" name="url" value="<?php echo $server.$url; ?>">
-						        	<input type='submit' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value='Cancelar solicitud'>
+						        	<input type='submit' class='btn btn-primary pull-right border-radius-publi' style='width:150px' value="<?php echo $text["cancSol"];?>">
 						       	</form>
 						        <?php
 						        break;
@@ -99,7 +99,7 @@
 						    	<form role="form" style="margin:0px;" action='controladoras/addamigo.php'>
 			    	        		<input type="hidden" name="email" value="<?php echo $amigo->email; ?>">
 			    	        		<input type="hidden" name="url" value="<?php echo $server.$url; ?>">
-							        <input type="submit" class='btn btn-success pull-right border-radius-publi' style='width:150px' value='Agregar amigo'>
+							        <input type="submit" class='btn btn-success pull-right border-radius-publi' style='width:150px' value="<?php echo $text["agregarAm"];?>">
 						        </form>
 						        <?php
 						        break;
@@ -111,7 +111,7 @@
 
 
 
-					<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="Amigos">       
+					<input type="button" class="btn btn-primary pull-left border-radius-publi" onclick="location.href = 'amigosAmigo.php?email=<?php echo $amigo->email; ?>' "  value="<?php echo $text["amigos"];?>">       
 
 					<div class="clearfix"></div>
 				</div>	

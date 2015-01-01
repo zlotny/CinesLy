@@ -123,6 +123,8 @@ $textos["delAmi"]="友達を削除する";
 $textos["pAmigosAm"]="あなたが閲覧している。それはあなたの友人はまだありませんか？友達リストに追加";
 $textos["pAmigosAm1"]=". ¿まだ、あなたの友人？に追加";
 $textos["pAmigosAm2"]="あなたの友達リスト";
+$textos["cancSol"]="Cancelar Solicitud";//
+$textos["agregarAm"]="Agregar Amigo";//
 
 //Catalogo.php
 $textos["h1Catalogo"]="ムービーカタログ";
@@ -221,6 +223,7 @@ $textos["allUsers"]="すべてのユーザー";
 $textos["admin"]="管理者";
 $textos["user"]="ユーザー";
 $textos["nombre1"]="名前: ";
+$textos["insertUsu"]="Insertar Usuario";
 $textos["oFindUsu"]="またはユーザを検索: ";
 $textos["p1"]="あなたのパスを入力してください";
 $textos["p2"]="あなたの選択を入力してください1";

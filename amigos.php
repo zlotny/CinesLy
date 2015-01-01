@@ -129,7 +129,7 @@ $server = $_SERVER["SERVER_NAME"];
         ?>
         <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
         <input type="hidden" id="emailAmigoAdd" name="email" value="<?php echo $filaAmigo->email; ?>" />
-        <td class='col-md-1'><input type="submit" class='btn btn-info' value="Añadir"></td>
+        <td class='col-md-1'><input type="submit" class='btn btn-info' value="<?php echo $text["add"];?>"></td>
       </tr>
       <?php
       echo "</form>";
@@ -166,7 +166,7 @@ $server = $_SERVER["SERVER_NAME"];
         <form role="form" action="controladoras/addamigo.php">
           <div class="form-group">
             <label><?php echo $text["emailFriend"];?></label>
-            <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="Introduzca el email del amigo a añadir">
+            <input type="email" class="form-control" id="emailAmigoAdd" name="email" placeholder="<?php echo $text["emailFriend1"];?>">
           </div>
           <button type="submit" class="btn btn-primary"><?php echo $text["addFriend1"];?></button>
         </form>
@@ -320,7 +320,7 @@ $server = $_SERVER["SERVER_NAME"];
         ?>
         <td class='col-md-4'><?php echo $filaAmigo->nombreUsuario; ?><br/><?php echo $filaAmigo->email; ?></td>
         <input type="hidden" id="emailAmigoAdd" name="email" value="<?php echo $filaAmigo->email; ?>" />
-        <td class='col-md-1'><input type="submit" class='btn btn-info' value="Añadir"></td>
+        <td class='col-md-1'><input type="submit" class='btn btn-info' value="<?php echo $text["add"];?>"></td>
       </tr>
       <?php
       echo "</form>";

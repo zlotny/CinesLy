@@ -58,12 +58,14 @@ $textos["editar"]="Editar";
 $textos["dejarEditar"]="Dejar de Editar";
 $textos["eliminar"]="Eliminar";
 $textos["writePub"]="Escribe una publicación....";
+$textos["guardar"]="Guardar";
 
 //Perfil.php
 $textos["h1Perfil"]="Perfil de ";
 $textos["p1Perfil"]="Éste es tu perfil. En esta página puedes ver tu información y editar tus datos.";
 $textos["biografia"]="Biografía";
 $textos["editarCuenta"]="Editar Cuenta";
+$textos["delCuenta"]="Eliminar mi Cuenta";//
 $textos["camNombUsu"]="Cambiar el nombre de usuario";
 $textos["newPass"]="Contraseña nueva";
 $textos["repNewPass"]="Repetir contraseña nueva";
@@ -72,6 +74,8 @@ $textos["prev"]="Prev";
 $textos["sig"]="Sig";
 $textos["ultPelVis"]="Últimas Películas Vistas";
 $textos["pelRecomen"]="Películas Recomendadas";
+$textos["pl1"]="Introduzca su nueva contraseña";//
+$textos["pl2"]="Repita su nueva contraseña";//
 
 //MisGrupos.php
 $textos["newGroup"]="Nuevo Grupo";
@@ -119,13 +123,15 @@ $textos["pendConf"]="Pendiente de confirmación";
 $textos["recomFilm"]="Películas Recomendadas";
 $textos["recomFrom"]="Recomendada por";
 $textos["addFriend1"]="Añadir Amigo";
-$textos["emailFriend1"]="Introduzca el email del amigo a añadir";
+$textos["emailFriend1"]="Introduzca el email del amigo a añadir";//
 
 //PerfilAmigo.php
 $textos["delAmi"]="Eliminar Amigo";
 $textos["pAmigosAm"]="Estas viendo el perfil de";
 $textos["pAmigosAm1"]=". ¿Aún no es tu amigo? Añádelo a";
 $textos["pAmigosAm2"]="tu lista de amigos";
+$textos["cancSol"]="Cancelar Solicitud";
+$textos["agregarAm"]="Agregar Amigo";
 
 
 //Catalogo.php
@@ -237,10 +243,11 @@ $textos["labelAMU"]="Los datos podrán ser cambiados en";
 $textos["labelAMU1"]="EDITAR.";
 $textos["findUsu"]="Buscar un Usuario: ";
 $textos["allUsers"]="Todos los usuarios";
-$textos["admin"]="Administrador";
-$textos["user"]="Usuario";
-$textos["nombre1"]="Nombre ";
+$textos["admin"]="Administrador: ";
+$textos["user"]="Usuario: ";
+$textos["nombre1"]="Nombre: ";
 $textos["oFindUsu"]="o buscar un usuario: ";
+$textos["insertUsu"]="Insertar Usuario";
 $textos["p1"]="Introduzca su pass";
 $textos["p2"]="Introduzca su preferencia1";
 $textos["p3"]="Introduzca su preferencia2";
