@@ -247,8 +247,8 @@ function cabeceraIndex(){
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
-					<input type="email" name="email" class="form-control" placeholder="Correo Electronico">
-					<input type="password" name="pass" class="form-control" placeholder="Contraseña">
+					<input type="email" name="email" class="form-control" placeholder="<?php echo $text["email"];?>">
+					<input type="password" name="pass" class="form-control" placeholder="<?php echo $text["pass"];?>">
 					<input type="submit" name="accion" class="btn btn-success" value="Entrar">
 					<input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="Registro">
 					<input type="button" class="btn btn-danger" data-toggle="modal" data-target="#forgetPass" value="Recuperar contraseña">
@@ -263,23 +263,23 @@ function cabeceraIndex(){
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title"><?php echo $text["registro"];?></h4> 
-						<small><!--<?php echo $text["smallCR"];?>-->Introduce los siguientes datos para continuar con el registro</small>
+						<small><?php echo $text["smallCR"];?></small>
 					</div>
 					<div class="modal-body">
-						<h6> Nombre de Usuario<!--<?php echo $text["nomUsu"];?>--> </h6>
-						<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="Nombre de usuario" />
-						<h6> Correo Electronico<!--<?php echo $text["email"];?>--> </h6>
-						<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico" />
-						<h6> Contraseña<!--<?php echo $text["pass"];?>--> </h6>
-						<input type="password" name="pass" class="form-control form-pers" placeholder="Contraseña" />
-						<h6> Confirma tu contraseña<!--<?php echo $text["confPass"];?>--></h6>
-						<input type="password" class="form-control form-pers" placeholder="Repita la contraseña" /><br/>
-						<label>Ten en cuenta que<!--<?php echo $text["labelReg"];?>-->
-							 no es posible cambiar la dirección de correo electrónico <!--<?php echo $text["labelReg1"];?>--><span class="text-color-red text-weight-bold">una vez que ésta esté ligada a tu cuenta.<!--<?php echo $text["labelReg2"];?>--></span> <!--<?php echo $text["labelReg3"];?>--></label>
+						<h6> <?php echo $text["nomUsu"];?> </h6>
+						<input type="text" name="nombreUsuario" class="form-control form-pers" placeholder="<?php echo $text["nomUsu"];?>" />
+						<h6> <?php echo $text["email"];?> </h6>
+						<input type="text" name="email" class="form-control form-pers" placeholder="<?php echo $text["email"];?>" />
+						<h6> <?php echo $text["pass"];?> </h6>
+						<input type="password" name="pass" class="form-control form-pers" placeholder="<?php echo $text["pass"];?>" />
+						<h6> <?php echo $text["confPass"];?></h6>
+						<input type="password" class="form-control form-pers" placeholder="<?php echo $text["confPass"];?>" /><br/>
+						<label><?php echo $text["labelReg"];?>
+							 <?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="accion" class="btn btn-success" value="Registrarse"><!--<?php echo $text["registrarse"];?>-->
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar<!--<?php echo $text["cerrar"];?>--></button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 						</div>
 					</div>
 				</div>
@@ -292,15 +292,15 @@ function cabeceraIndex(){
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 							<h4 class="modal-title"><?php echo $text["forgetPass"];?></h4>
-							<small>Introduce tu correo electrónico para recuperar la contraseña.<!--<?php echo $text["smallCR1"];?>--></small>
+							<small><?php echo $text["smallCR1"];?></small>
 						</div>
 						<div class="modal-body">
-							<h6> Introduce tu correo electrónico:<!--<?php echo $text["h6CR"];?>--></h6>
-							<input type="text" name="email" class="form-control form-pers" placeholder="Correo electrónico">          
+							<h6> <?php echo $text["h6CR"];?></h6>
+							<input type="text" name="email" class="form-control form-pers" placeholder="<?php echo $text["email"];?>">          
 						</div>
 						<div class="modal-footer">
 							<input type="submit" name="accion" class="btn btn-success" value="Recuperar">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar<!--<?php echo $text["cerrar"];?>--></button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 						</div>
 					</div>
 				</div>
