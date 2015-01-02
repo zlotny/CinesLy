@@ -246,18 +246,18 @@ function cabeceraIndex(){
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<form action="controladoras/procesarUsuario.php" method="POST" class="navbar-form navbar-right" role="search">
+				<form action="controladoras/procesarUsuario.php?accion=Entrar" method="POST" class="navbar-form navbar-right" role="search">
 					<input type="email" name="email" class="form-control" placeholder="<?php echo $text["email"];?>">
 					<input type="password" name="pass" class="form-control" placeholder="<?php echo $text["pass"];?>">
-					<input type="submit" name="accion" class="btn btn-success" value="Entrar">
-					<input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="Registro">
-					<input type="button" class="btn btn-danger" data-toggle="modal" data-target="#forgetPass" value="Recuperar contraseña">
+					<input type="submit" class="btn btn-success" value="<?php echo $text['loguear']; ?>">
+					<input type="button" class="btn btn-info" data-toggle="modal" data-target="#reg" value="<?php echo $text['registro']; ?>">
+					<input type="button" class="btn btn-danger" data-toggle="modal" data-target="#forgetPass" value="<?php echo $text['forgetPass']; ?>">
 				</form>
 			</div>
 		</div>
 	</nav>
 	<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<form action="controladoras/procesarUsuario.php" method="POST">
+		<form action="controladoras/procesarUsuario.php?accion=Registrarse" method="POST">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -278,7 +278,7 @@ function cabeceraIndex(){
 							 <?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
 						</div>
 						<div class="modal-footer">
-							<input type="submit" name="accion" class="btn btn-success" value="Registrarse"><!--<?php echo $text["registrarse"];?>-->
+							<input type="submit" class="btn btn-success" value="<?php echo $text['registrarse']; ?>"><!--<?php echo $text["registrarse"];?>-->
 							<button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
 						</div>
 					</div>
