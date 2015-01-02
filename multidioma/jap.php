@@ -57,12 +57,14 @@ $textos["editar"]="編集";
 $textos["dejarEditar"]="編集のままに";
 $textos["eliminar"]="削除";
 $textos["writePub"]="出版物を書く....";
+$textos["guardar"]="Guardar";
 
 //Perfil.php
 $textos["h1Perfil"]="プロフィール";
 $textos["p1Perfil"]="これはあなたのプロフィールです。このページでは、あなたの情報を見て、あなたのデータを編集することができます。";
 $textos["biografia"]="伝記";
 $textos["editarCuenta"]="アカウントの編集";
+$textos["delCuenta"]="Eliminar mi Cuenta";//
 $textos["camNombUsu"]="ユーザー名の変更";
 $textos["newPass"]="新しいパスワード";
 $textos["repNewPass"]="新しいパスワードを繰り返します";
@@ -71,6 +73,8 @@ $textos["prev"]="前のページ";
 $textos["sig"]="Sigの";
 $textos["ultPelVis"]="最新の映画·ビュー";
 $textos["pelRecomen"]="お薦め作品";
+$textos["pl1"]="Introduzca su nueva contraseña";//
+$textos["pl2"]="Repita su nueva contraseña";//
 
 //MisGrupos.php
 $textos["newGroup"]="新しいグループ";
@@ -198,8 +202,8 @@ $textos["m8"]="あなたの国を入力してください";
 $textos["m9"]="あなたの性別を入力してください";
 
 //AdminModificarUsuario.php
-$textos["h1ListUsu"]="ユーザーリスト";
-$textos["editPeli"]="動画編集";
+$textos["h1ListUsu"]="Lista de Usuarios - CinesLy";
+$textos["editUser"]="Editar usuario";
 $textos["cambNomUsu"]="ユーザー名の変更";
 $textos["cambEmail"]="電子メールの変更";
 $textos["cambPass"]="変更パス";
@@ -214,7 +218,6 @@ $textos["cambFechNac"]="変更生年月日";
 $textos["cambEslo"]="変更のスローガン";
 $textos["h4NewUsu"]="新しいユーザー";
 $textos["smallAMU"]="新しいユーザーを入力するには、次の情報を入力してください。";
-$textos["h4NewUsu"]="新しいユーザー";
 $textos["typeUser"]="ユーザータイプ";
 $textos["labelAMU"]="あなたが編集するオプション、ユーザの他の詳細を変更することができます";
 $textos["labelAMU1"]="編集.";
