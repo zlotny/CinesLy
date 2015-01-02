@@ -67,13 +67,15 @@ $textos["biografia"]="Biography";
 $textos["editarCuenta"]="Edit Account";
 $textos["camNombUsu"]="Change the user name";
 $textos["newPass"]="New Password";
-$textos["delCuenta"]="Delete my Account";//
+$textos["delCuenta"]="Delete my Account";
 $textos["repNewPass"]="Repeat new Password";
 $textos["publicaciones"]="Publications";
 $textos["prev"]="Prev";
 $textos["sig"]="Next";
 $textos["ultPelVis"]="Latest Films Views";
 $textos["pelRecomen"]="Recommended Films";
+$textos["pl1"]="Enter your new password";
+$textos["pl2"]="Repeat your new password";
 
 //MisGrupos.php
 $textos["newGroup"]="New Group ";
@@ -121,15 +123,15 @@ $textos["top"]="Top 10";
 $textos["recomFrom"]="Commended by";
 $textos["recomFilm"]="Commended films";
 $textos["pPersonas"]="People maybe you are interested in";
-
+$textos["emailFriend1"]="Enter friend's email to add";
 
 //PerfilAmigo.php
 $textos["delAmi"]="Remove friend";
 $textos["pAmigosAm"]="Your are watching a friend´s profile";
 $textos["pAmigosAm1"]="Is not this person your friend yet? add him!";
 $textos["pAmigosAm2"]="Your friend list";
-$textos["cancSol"]="Cancel Request";//
-$textos["agregarAm"]="Add Friend";//
+$textos["cancSol"]="Cancel Request";
+$textos["agregarAm"]="Add Friend";
 
 
 //catalogo.php
@@ -188,6 +190,7 @@ $textos["modif"]="Modify";
 $textos["listaPelisCinesLy"]="List of films - CinesLy";
 $textos["h1AdModPel"]="Films catalogue";
 $textos["catalogPelis"]="List of films";
+$textos["idFilm"]="IdPelicula: ";
 $textos["idFilm"]="IdFilm: ";
 $textos["editPeli"]="Edit film";
 $textos["cambTitPeli"]="Change the title of the film";

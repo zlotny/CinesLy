@@ -65,7 +65,7 @@ $textos["h1Perfil"]="Perfil de ";
 $textos["p1Perfil"]="Éste es tu perfil. En esta página puedes ver tu información y editar tus datos.";
 $textos["biografia"]="Biografía";
 $textos["editarCuenta"]="Editar Cuenta";
-$textos["delCuenta"]="Eliminar mi Cuenta";//
+$textos["delCuenta"]="Eliminar mi Cuenta";
 $textos["camNombUsu"]="Cambiar el nombre de usuario";
 $textos["newPass"]="Contraseña nueva";
 $textos["repNewPass"]="Repetir contraseña nueva";
@@ -74,8 +74,8 @@ $textos["prev"]="Prev";
 $textos["sig"]="Sig";
 $textos["ultPelVis"]="Últimas Películas Vistas";
 $textos["pelRecomen"]="Películas Recomendadas";
-$textos["pl1"]="Introduzca su nueva contraseña";//
-$textos["pl2"]="Repita su nueva contraseña";//
+$textos["pl1"]="Introduzca su nueva contraseña";
+$textos["pl2"]="Repita su nueva contraseña";
 
 //MisGrupos.php
 $textos["newGroup"]="Nuevo Grupo";
@@ -185,11 +185,10 @@ $textos["modif"]="Modificar";
 
 //Parte de Administrador
 
-
 //adminModificarPelicula.php
 $textos["listaPelisCinesLy"]="Lista de películas - CinesLy";
 $textos["h1AdModPel"]="Catálogo de Películas";
-$textos["idFilm"]="IdPelicula: ";//
+$textos["idFilm"]="IdPelicula: ";
 $textos["editPeli"]="Editar Pelicula";
 $textos["cambTitPeli"]="Cambiar el titulo de la pelicula";
 $textos["cambDirect"]="Cambiar Director:";
