@@ -57,7 +57,7 @@ $textos["editar"]="編集";
 $textos["dejarEditar"]="編集のままに";
 $textos["eliminar"]="削除";
 $textos["writePub"]="出版物を書く....";
-$textos["guardar"]="Guardar";
+$textos["guardar"]="保存";
 
 //Perfil.php
 $textos["h1Perfil"]="プロフィール";
@@ -73,8 +73,8 @@ $textos["prev"]="前のページ";
 $textos["sig"]="Sigの";
 $textos["ultPelVis"]="最新の映画·ビュー";
 $textos["pelRecomen"]="お薦め作品";
-$textos["pl1"]="Introduzca su nueva contraseña";//
-$textos["pl2"]="Repita su nueva contraseña";//
+$textos["pl1"]="新しいパスワードを入力してください";
+$textos["pl2"]="新しいパスワードを繰り返します";
 
 //MisGrupos.php
 $textos["newGroup"]="新しいグループ";
@@ -127,8 +127,8 @@ $textos["delAmi"]="友達を削除する";
 $textos["pAmigosAm"]="あなたが閲覧している。それはあなたの友人はまだありませんか？友達リストに追加";
 $textos["pAmigosAm1"]=". ¿まだ、あなたの友人？に追加";
 $textos["pAmigosAm2"]="あなたの友達リスト";
-$textos["cancSol"]="Cancelar Solicitud";//
-$textos["agregarAm"]="Agregar Amigo";//
+$textos["cancSol"]="キャンセル要求";
+$textos["agregarAm"]="友達を追加";
 
 //Catalogo.php
 $textos["h1Catalogo"]="ムービーカタログ";
@@ -202,8 +202,8 @@ $textos["m8"]="あなたの国を入力してください";
 $textos["m9"]="あなたの性別を入力してください";
 
 //AdminModificarUsuario.php
-$textos["h1ListUsu"]="Lista de Usuarios - CinesLy";
-$textos["editUser"]="Editar usuario";
+$textos["h1ListUsu"]="ユーザリスト - CinesLy";
+$textos["editUser"]="ユーザーの編集";
 $textos["cambNomUsu"]="ユーザー名の変更";
 $textos["cambEmail"]="電子メールの変更";
 $textos["cambPass"]="変更パス";
@@ -226,7 +226,7 @@ $textos["allUsers"]="すべてのユーザー";
 $textos["admin"]="管理者";
 $textos["user"]="ユーザー";
 $textos["nombre1"]="名前: ";
-$textos["insertUsu"]="Insertar Usuario";
+$textos["insertUsu"]="ユーザーの挿入";
 $textos["oFindUsu"]="またはユーザを検索: ";
 $textos["p1"]="あなたのパスを入力してください";
 $textos["p2"]="あなたの選択を入力してください1";
