@@ -74,10 +74,11 @@
 									<h4>Subir foto de perfil</h4>
 								</div>
 								<div class="modal-body">									
-									<form action="controladoras/subirFoto.php" method="post" enctype="multipart/form-data">
+									<form action="controladoras/subirFotoUsuario.php" method="post" enctype="multipart/form-data">
 										<label for="file">Sube un archivo:</label>
-    									<input type="file" name="archivo" id="archivo">
-    									<input type="submit" name="boton" value="Subir">
+										<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+    									<input type="file" name="archivo" class="form-control form-pers">
+    									<input type="submit" name="accion" value="Subir">
 									</form>
 									<div class="clearfix"></div>
 								</div>
