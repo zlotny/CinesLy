@@ -288,8 +288,8 @@ $textos["cinesLy1"]="CinesLy -";
 $textos["hrefGH"]="Página en GitHub";
 $textos["idioma"]="Idioma";
 $textos["esp"]="Español";
-$textos["ing"]="Inglés";
-$textos["jap"]="Japonés";
+$textos["ing"]="English";
+$textos["jap"]="日本人";
 
 //Faltarian os alertify
 

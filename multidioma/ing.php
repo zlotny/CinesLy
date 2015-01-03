@@ -285,9 +285,9 @@ $textos["s3"]="Enter FilmID";
 $textos["cinesLy1"]="CinesLy -";
 $textos["hrefGH"]="Site in GitHub";
 $textos["idioma"]="Language";
-$textos["esp"]="Spanish";
+$textos["esp"]="Español";
 $textos["ing"]="English";
-$textos["jap"]="Japanesse";
+$textos["jap"]="日本人";
 
 ?>
 

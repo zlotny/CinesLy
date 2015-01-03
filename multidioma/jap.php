@@ -274,8 +274,8 @@ $textos["s3"]="Idのムービーを入力してください";
 $textos["cinesLy1"]="CinesLy -";
 $textos["hrefGH"]="GitHubのページ";
 $textos["idioma"]="言語";
-$textos["esp"]="スペイン語";
-$textos["ing"]="英語";
+$textos["esp"]="Español";
+$textos["ing"]="English";
 $textos["jap"]="日本人";
 
 
