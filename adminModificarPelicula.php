@@ -88,21 +88,16 @@
             echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
             echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
           ;?>
-          <!--borrarase en un futuro -->
+          
          <br>
-            <!--editar perfil-->
+            <!--editar -->
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarPelicula<?php echo $a->idPelicula;?>" > 
               <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
-            </button>
+            </button> 
 
-            <!--EliminarPerfil-->
-<<<<<<< HEAD
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-=======
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $a->idPelicula?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
->>>>>>> 5f355c88a0f11560a48c2fdaae584831fc826cf5
+
             </button>
          
 
@@ -217,13 +212,10 @@
             </button>
 
             <!--EliminarPerfil-->
-<<<<<<< HEAD
-            <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula( '<?php echo $panelPelicula["idPelicula"]?>');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
-=======
+
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
->>>>>>> 5f355c88a0f11560a48c2fdaae584831fc826cf5
+              
             </button>
 
     	

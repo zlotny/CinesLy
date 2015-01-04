@@ -64,49 +64,49 @@ function cabeceraCartelera(){
 										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
 										<li class="dropdown-danger"><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
 									</ul>
-									</li>
-									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
-									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
-								</ul>
-								
-
-								<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
-											</div>
-											<div class="modal-body">
-												<form action="controladoras/procesarNotificacion.php" method="POST">
-													<table class="table table-striped table-hover">
-														<?php
-														$notif = $_SESSION["usuario"]->getNotificaciones();
-														foreach($notif as $notificacion){
-
-															echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
+								</li>
+								<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+								<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
+							</ul>
 
 
-
-															
-														}
-
-
-														?>
-													</table>
-												</form>             
-											</div>
+							<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 										</div>
-									</div>  
-								</div>
+										<div class="modal-body">
+											<form action="controladoras/procesarNotificacion.php" method="POST">
+												<table class="table table-striped table-hover">
+													<?php
+													$notif = $_SESSION["usuario"]->getNotificaciones();
+													foreach($notif as $notificacion){
+
+														echo "<tr><td><label>".$notificacion['descripcion']."</label></td></tr>";
+
+
+
+
+													}
+
+
+													?>
+												</table>
+											</form>             
+										</div>
+									</div>
+								</div>  
 							</div>
 						</div>
-					</nav>
-				</div>
+					</div>
+				</nav>
+			</div>
 
-			</div>	
-		</div>		
-	</div>
+		</div>	
+	</div>		
+</div>
 </div>
 
 
@@ -167,54 +167,54 @@ function cabeceraPantallaPrincipal(){
 										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
 										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
 										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
-										</ul>
-									</li>
-									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
-									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
-								</ul>
-								
-
-								<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
-											</div>
-											<div class="modal-body">
-												<form action="controladoras/procesarNotificacion.php" method="POST">
-													<table class="table table-striped table-hover">
-														<?php
-														$notif = $_SESSION["usuario"]->getNotificaciones();
-														foreach($notif as $notificacion){
-															?>
-															<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
-																<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
-															</tr>
-
-															<?php
-
-															
-														}
+									</ul>
+								</li>
+								<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+								<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
+							</ul>
 
 
-														?>
-													</table>
-												</form>
-											</div>
+							<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 										</div>
-									</div>  
-								</div>
-							</div>
-						</nav>
-					</div>
+										<div class="modal-body">
+											<form action="controladoras/procesarNotificacion.php" method="POST">
+												<table class="table table-striped table-hover">
+													<?php
+													$notif = $_SESSION["usuario"]->getNotificaciones();
+													foreach($notif as $notificacion){
+														?>
+														<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
+															<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
+														</tr>
 
-				</div>	
-			</div>		
-		</div>
+														<?php
+
+
+													}
+
+
+													?>
+												</table>
+											</form>
+										</div>
+									</div>
+								</div>  
+							</div>
+						</div>
+					</nav>
+				</div>
+
+			</div>	
+		</div>		
 	</div>
-	
-	<?php
+</div>
+
+<?php
 }
 ?>
 
@@ -275,7 +275,7 @@ function cabeceraIndex(){
 						<h6> <?php echo $text["confPass"];?></h6>
 						<input type="password" class="form-control form-pers" placeholder="<?php echo $text["confPass"];?>" /><br/>
 						<label><?php echo $text["labelReg"];?>
-							 <?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
+							<?php echo $text["labelReg1"];?><span class="text-color-red text-weight-bold"><?php echo $text["labelReg2"];?></span> <?php echo $text["labelReg3"];?></label>
 						</div>
 						<div class="modal-footer">
 							<input type="submit" class="btn btn-success" value="<?php echo $text['registrarse']; ?>"><!--<?php echo $text["registrarse"];?>-->
@@ -374,54 +374,54 @@ function cabeceraAmigos(){
 										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
 										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
 										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
-										</ul>
-									</li>
-									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
-									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
-								</ul>
-								
-
-								<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
-									<div class="modal-dialog">
-										<div class="modal-content">
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-												<h4 class="modal-title"><?php echo $text["notif"];?></h4>
-											</div>
-											<div class="modal-body">
-												<form action="controladoras/procesarNotificacion.php" method="POST">
-													<table class="table table-striped table-hover">
-														<?php
-														$notif = $_SESSION["usuario"]->getNotificaciones();
-														foreach($notif as $notificacion){
-															?>
-															<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
-																<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
-															</tr>
-
-															<?php
-
-															
-														}
+									</ul>
+								</li>
+								<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+								<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
+							</ul>
 
 
-														?>
-													</table>
-												</form>           
-											</div>
+							<div id="reg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="notificaciones" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+											<h4 class="modal-title"><?php echo $text["notif"];?></h4>
 										</div>
-									</div>  
-								</div>
-							</div>
-						</nav>
-					</div>
+										<div class="modal-body">
+											<form action="controladoras/procesarNotificacion.php" method="POST">
+												<table class="table table-striped table-hover">
+													<?php
+													$notif = $_SESSION["usuario"]->getNotificaciones();
+													foreach($notif as $notificacion){
+														?>
+														<tr><td><label><?php echo $notificacion['descripcion']; ?></label></td>
+															<td><input type="button" class="btn btn-warning" onclick="eliminarNotif(<?php echo $notificacion['idNotificacion']; ?>,'<?php echo "pantallaPrincipal\.php"; ?>')" value="eliminar"></td>
+														</tr>
 
-				</div>	
-			</div>		
-		</div>
+														<?php
+
+
+													}
+
+
+													?>
+												</table>
+											</form>           
+										</div>
+									</div>
+								</div>  
+							</div>
+						</div>
+					</nav>
+				</div>
+
+			</div>	
+		</div>		
 	</div>
-	
-	<?php
+</div>
+
+<?php
 }
 ?>
 
@@ -519,17 +519,6 @@ function cabeceraAdministrador(){
 
 
 
-
-
-<<<<<<< HEAD
-						<li><a href="adminModificarPelicula.php">Gestión de Peliculas</a></li>
-						<li><a href="adminModificarSesion.php">Gestión de Sesiones </a></li>
-						<li><a href="adminModificarUsuario.php">Gestión de Usuarios </a></li>
-						<li><a onclick="cerrarSesion()">Cerrar Sesion</a></li>
-					</ul>
-=======
->>>>>>> 5f355c88a0f11560a48c2fdaae584831fc826cf5
-
 	<?php
 }
 ?>
@@ -588,28 +577,20 @@ function cabeceraVerGrupo(){
 										<li><a href="perfil.php"><?php echo $text["verPerfil"];?></a></li>
 										<li><a href="mis_grupos.php"><?php echo $text["misGrupos"];?></a></li>
 										<li class="dropdown-danger" ><a onclick="cerrarSesion()"><?php echo $text["cerrarSesion"];?></a></li>
-										</ul>
-									</li>
-									<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
-									<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
-								</ul>
-								
+									</ul>
+								</li>
+								<li><a href="amigos.php"><?php echo $text["amigos"];?> </a></li>
+								<li><a href="catalogo.php"><?php echo $text["catalogo"];?> </a></li>
+							</ul>
 
-							</div>
-						</nav>
-					</div>
 
-<<<<<<< HEAD
-		<?php
-	}
-	?>
-=======
-				</div>	
-			</div>		
-		</div>
-	</div>
-	
-	<?php
+						</div>
+					</nav>
+				</div>
+			</div>	
+		</div>		
+
+
+<?php
 }
 ?>
->>>>>>> 5f355c88a0f11560a48c2fdaae584831fc826cf5
