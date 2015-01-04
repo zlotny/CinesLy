@@ -153,12 +153,9 @@
                     <label for="sinopsis" class=""><?php echo $text["cambSinop"];?></label> 
                     <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
 
-                    <label for="foto" class=""><?php echo $text["cambFoto"];?></label>
-                    <!-- subir foto a implemetar en un futuro-->
-                    <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
-                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                    <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-                    <input name="userfile" type="file" />
+                    <label for="archivo" class=""><?php echo $text["cambFoto"];?></label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                    <input type="file" name="archivo" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelPelicula["foto"]; ?>"> <br/>
 
 
                   </div>
@@ -215,7 +212,7 @@
 
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarPelicula('<?php echo $panelPelicula["idPelicula"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
-              
+
             </button>
 
     	
@@ -271,12 +268,9 @@
                     <label for="sinopsis" class=""><?php echo $text["cambSinop"];?></label> 
                     <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()"><?php echo $panelPelicula["sinopsis"]; ?></textarea><br/>
 
-                    <label for="foto" class=""><?php echo $text["cambFoto"];?></label>
-                    <!-- subir foto a implemetar en un futuro-->
-                    <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
-                    <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                    <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-                    <input name="userfile" type="file" />
+                    <label for="archivo" class=""><?php echo $text["cambFoto"];?></label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+                    <input type="file" name="archivo" class="form-control form-pers" placeholder="<?php echo $text["p1"];?>" value="<?php echo $panelPelicula["foto"]; ?>"> <br/>
 
 
                   </div>
@@ -364,14 +358,7 @@
               <label for="sinopsis" class="">Sinopsis:</label> 
               <textarea class="form-control eslogan" name="sinopsis" onblur="document.getElementById('bio-form').submit()">""</textarea><br/>
               
-              <label for="foto" class="">foto:</label>
-              <!-- subir foto a implemetar en un futuro-->
-              <!-- MAX_FILE_SIZE debe preceder el campo de entrada de archivo -->
-              <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-              <!-- El nombre del elemento de entrada determina el nombre en el array $_FILES -->
-              <input name="userfile" type="file" />
-
-
+              
             </div>
             <div class="modal-footer">
               <button type="submit" class="btn btn-success"><?php echo $text["guardCamb"];?></button>
