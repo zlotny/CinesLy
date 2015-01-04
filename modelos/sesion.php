@@ -183,7 +183,7 @@ class Sesion{
 
 	function mostrarSesiones(){
 
-		Pelicula::conectarBD();
+		Sesion::conectarBD();
 		
 		$sql = "SELECT * FROM sesion";
 		$result = Sesion::consultaBD($sql);
@@ -198,6 +198,30 @@ class Sesion{
 	}
 
 
+	function sesionesFiltradas($busqueda){
+		Sesion::conectarBD();
+//echo "string";
+		$sql1 = "SELECT * FROM pelicula WHERE titulo LIKE '%".$busqueda."%'";
+		$resultado=mysql_query($sql1);
+//echo $sql1;
+//echo "<br>";
+		$i=0;
+		while($fila=mysql_fetch_array($resultado)){
+			$sql2="SELECT * FROM sesion WHERE idPelicula = '".$fila["idPelicula"]."'";
+			//echo $sql2;
+			//echo "<br>";
+			$resultado2=mysql_query($sql2);
 
+			while($fila2=mysql_fetch_array($resultado2)){
+				$toRet[$i]=$fila2;
+				$i=$i+1;
+			}
+	}
+	//echo $toRet[0][0];
+
+	return $toRet;
+
+	}
 }
+
 ?>

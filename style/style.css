@@ -25,7 +25,7 @@ body{
 }
 
 .notif:hover{
-	color: green;
+	color: #5bc0de;
 	cursor: pointer;
 }
 
@@ -52,7 +52,7 @@ body{
 
 .scrollable-table{
 
-	overflow-y: scroll;
+	overflow-y: scroll; 
 	height: 200px;
 
 }
@@ -88,13 +88,14 @@ body{
 .custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:15px;
+	bottom:10px;
+
 }
 
 .admin-custom-panel-right-fixed {
 	position:fixed;
 	right:-20px;	
-	margin-top:-39px;
+	bottom: 10px;
 }
 
 .peli{
@@ -413,7 +414,9 @@ body{
 	position:fixed;
 	bottom: 50px;
 	left: -380px;
-	transition: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
 	z-index: 999;
 
 }
@@ -423,7 +426,9 @@ body{
 	position:fixed;
 	bottom: 50px;
 	left: 0px;
-	transition: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-delay: 0s; /* Safari */
+    transition-delay: 0s;
 }
 
 .footer-content{
@@ -465,13 +470,13 @@ body{
 }
 
 .fotoUsr:hover { 
-    cursor: pointer;
+	cursor: pointer;
 
 }
 
 .amigos-body {
-    display: table-cell;
-    vertical-align: top;
-    width: 1200px;
+	display: table-cell;
+	vertical-align: top;
+	width: 1200px;
 }
 

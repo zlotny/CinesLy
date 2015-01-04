@@ -1,6 +1,7 @@
 <?php
 include_once "usuario.php";
 
+
 class Evento{	
 
 	var $idEvento;
@@ -11,6 +12,7 @@ class Evento{
 
 	function __construct($id, $descripcion, $sesion, $email, $nombre)
 	{
+
 		$this->idEvento = $id;
 		$this->idSesion = $sesion;
 		$this->email = $email;
@@ -94,100 +96,25 @@ class Evento{
 	 	return mysql_query($sql);
 	 }
 
-// 	function modificarEvento($evento, $eventoNuevo)
-// 	{
-// 		Evento::conectarBD();
+	 function modificarGrupo($grupoNuevo){
+	 	Evento::conectarBD();
+	 	$sql = "UPDATE evento SET idSesion='$grupoNuevo->idSesion', descripcion = '$grupoNuevo->descripcion', nombre= '$grupoNuevo->nombre' where id_evento='$grupoNuevo->idEvento'";
+	 	return mysql_query($sql);
+	 }
 
-// 		$consulta=("SELECT FROM evento WHERE id_evento = $evento->idEvento ORDER BY ASC");//primero hacemos la consulta del evento a modificar
+	 function eliminarUsuarioGrupo($email, $id){
+	 	Evento::conectarBD();
+	 	$sql = "DELETE FROM contiene WHERE id_evento='$id' AND email='$email' ";
+	 	echo $sql;
+	 	return mysql_query($sql);
+	 }
 
-// 		$result= mysql_query($consulta);
-
-// 		//$numeroCampos = mysql_num_rows($result);
-
-// 		if ($result == 0){
-
-// 			return false;
-// 		}
-
-// 		 $result = result_to_array($result); //metemos la consulta en un array
-
-// 		 if ($consulta == ""){
-
-// 		 	echo '<div align="center">
-// 		 	<h2>No existe el evento</h2>
-// 		 </div>';
-
-// 		}else{
-
-// 			$idEvento=$result[0];
-// 			$idPelicula=$result[1];
-// 			$idSesion=$result[2];
-// 			$mail=$result[3];
-// 			$descripcion=$result[4];
-// 			$nombre = $result[5];
-
-
-
-// 			if($idEvento == ""){
-
-// 				$actualizado=mysql_query("UPDATE `evento` SET `id_evento`=eventoNuevo->getIdEvento() WHERE `id_evento` = idEvento");
-// 			}
-
-// 			if($idPelicula == "" or $idSesion == ""){
-
-// 				$actualizado=mysql_query("UPDATE `evento` SET `idPelicula`=eventoNuevo->getIdPelicula(), `idSesion`=eventoNuevo->getIdSesion() WHERE `id_evento` = $idEvento");
-// 			}
-
-
-// 			if($mail == ""){
-
-// 				$actualizado=mysql_query("UPDATE `evento` SET `email`=eventoNuevo->getMail() WHERE `id_evento` = idEvento");
-// 			}
-
-// 			if($descripcion == ""){
-
-// 				$actualizado=mysql_query("UPDATE `evento` SET `descripcion`=eventoNuevo->getDescripcion() WHERE `id_evento` = idEvento");
-// 			}
-
-// 			if($mail == ""){
-
-// 				$actualizado=mysql_query("UPDATE `evento` SET `nombre`=eventoNuevo->getNombre() WHERE `id_evento` = idEvento");
-// 			}
-
-// 		}
-
-// 	}
-
-
-// function consultarEvento($evento)
-// {
-
-// 	$consultar = mysql_query("SELECT * FROM `evento` WHERE `id_evento` = evento->getIdEvento()");
-
-// 	if ($consulta == ""){
-
-// 		echo '<div align="center">
-// 		<h2>El evento no existe</h2>
-// 	</div>';
-
-// }else{
-
-// 	$numeroCampos = mysql_num_rows($consultar);
-
-// 	if ($consultar == 0){
-
-// 		return false;
-// 	}
-
-// 		 $consultar = result_to_array($consultar); //metemos la consulta en un array
-
-// 		 foreach ($consultar as $valor) {
-
-// 		 	echo "$valor";
-// 		 }
-
-// 		}
-// 	}
+	 function addAmigoGrupo($email, $id){
+	 	Evento::conectarBD();
+	 	$sql = "INSERT INTO contiene(id_evento, email) VALUES('$id','$email')";
+	 	echo $sql;
+	 	return mysql_query($sql);
+	 }
 
 
 	}

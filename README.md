@@ -17,7 +17,7 @@ usando el script que ubicado bajo database-setup/ cuando esté terminado.
   
 Crear la base de datos CinesLy en tu servidor mysql y ejecutar:
   
-  `mysql -u user -p < text_file`
+  `mysql -u user -p < database-setup/setup.sql`
 
 A partir de ahí la web será usable.
 

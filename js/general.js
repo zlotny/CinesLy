@@ -9,7 +9,48 @@
 
                                 alertify.confirm("Seguro que quieres eliminar a un usuario de tu lista?", function (e) {
                                   if (e) {
-                                    document.location.href = "controladoras/eliminaramigo.php?email=" + email;
+                                    document.location.href = "controladoras/eliminarAmigo.php?email=" + email;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
+
+ function pruebaEliminar (email,url) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres eliminar a un usuario de tu lista?", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/eliminarAmigo.php?email=" + email+"&url="+url;
+                                  } else {
+
+                                    return false;
+                                  }
+                                });
+
+                              }
+
+
+ function eliminarNotif (id,url) {
+
+   alertify.set({ labels: {
+    ok     : "Si",
+    cancel : "No"
+  } });
+
+                                alertify.set({ buttonFocus: "none" }); // "none", "ok", "cancel"
+
+                                alertify.confirm("Seguro que quieres eliminar esta nofiticacion?", function (e) {
+                                  if (e) {
+                                    document.location.href = "controladoras/eliminarNotif.php?id=" + id+"&url="+url;
                                   } else {
 
                                     return false;
@@ -196,17 +237,17 @@ function rw(id){
      divObject.readOnly = true;
 }
 
-function mostrar(id,idPubli,edit) {
+function mostrar(id,idPubli,edit,de,e) {
 
     var divObject = document.getElementById(id); 
-  
+    
     if(divObject.style.visibility == "hidden"){
       divObject.style.visibility = "visible";
-      edit.value = "Dejar de editar";
+      edit.value = de;
       ro(idPubli);
     }else{
       divObject.style.visibility = "hidden";
-      edit.value = "Editar";
+      edit.value = e;
       rw(idPubli);
   window.location.reload();
     }

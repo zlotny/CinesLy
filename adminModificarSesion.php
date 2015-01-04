@@ -14,7 +14,7 @@
     <script src="js/general.js"> </script>
     <link rel="stylesheet" href="js/alertify/themes/alertify.core.css" />
     <link rel="stylesheet" href="js/alertify/themes/alertify.default.css" />
-    <title>Lista de peliculas - CinesLy</title>
+    <title>Lista de Sesiones - CinesLy</title>
 
 
   </head>
@@ -24,21 +24,16 @@
 
    error_reporting(E_ERROR | E_PARSE);
 
-   include_once "modelos/sesion.php";
-   include_once "modelos/pelicula.php";
-
    include_once "cabecera.php";
 
 
        //Esta cabeceira tense que modificar
    cabeceraAdministrador();
 
-   session_start();
-  /*
   if($_REQUEST["filtrado"]==true){
     $filtro=$_SESSION["filtro"];
     unset($_SESSION["filtro"]);
-  }*/
+  }
 
   if($_REQUEST["update"] == "bad"){
     echo "<script>alertify.error('Ha ocurrido un error al modificar la sesion.');</script>";
@@ -76,7 +71,7 @@
 
 
 
-  <h1 class="tackle-right">Sesiones Existentes</h1>
+  <h1 class="tackle-right"><?php echo $text["h1SesExis"];?></h1>
   
   <div class="col-md-1"> </div>
   <div class="col-md-8 ">
@@ -86,69 +81,78 @@
       <?php
 
       if(isset($filtro) ){
-        $arrayPeliculas=$filtro;
-        foreach($arrayPeliculas as $panelPelicula){
+        //echo $filtro[0][0];
+       foreach($filtro as $panelSesion){
+         
+         $sesionActual=Sesion::consultarSesion($panelSesion[0],$panelSesion[1]);
 
-          echo '<li class="media" style="margin-top: 15px;">';
-          echo '<div class="col-md-12 ">';
+         $peliculaSesion=Pelicula::mostrarPelicula($panelSesion[0]);
+         
+          echo '<li class="media">';
+          echo '<div class="col-md-1 "></div>';
+          echo '<div class="col-md-11 ">';
           echo '<div class="well">';
           echo '<a class="media-left" href="#">';
-
-          if(substr($panelPelicula["foto"],0,3) == "img"){
-            echo '<img src="'.$panelPelicula["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
+          if(substr($peliculaSesion["foto"],0,3) == "img"){
+            echo '<img src="'.$peliculaSesion["foto"].'" alt="" height="140px" width="90px" class="thumbnail">';
 
           }else{
             echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
 
           }
+          
+            echo '</a>';  
+            echo '<div class="media-body">';
+            echo "<p><b>".$text['sala']."</b>".$sesionActual["sala"]."</p>";
+            echo "<p><b>".$text['fecha']."</b>".$sesionActual["fecha"]."</p>";
+            echo "<p><b>".$text['capacidad']."</b>".$sesionActual["capacidad"]."</p>";
+            echo "<p><b>".$text['idSesion']."</b>".$sesionActual["idSesion"]."</p>";
+            echo "<p><b>".$text['idFilm']."</b>".$sesionActual["idPelicula"]."</p>";
+            echo "<p><b>".$text['titPel']."</b>".$peliculaSesion["titulo"]."</p>";
+            
 
-          echo '</a>';  
-          echo '<div class="media-body">';
-          echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-          echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-          echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-          echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
-          ;?>
+          ?>
+          
           <br/>
-          <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $panelSesion["idSesion"];?>" > 
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+          <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $sesionActual["idSesion"];?>" > 
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
           </button>
 
           <!--EliminarPerfil-->
-          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+          <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $sesionActual["idSesion"]?>', '<?php echo $sesionActual["idPelicula"]?>');">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
           </button>
 
           <!--</div>-->
 
           <!-- Pagina modal para modificar perfil -->
-          <div id="modificarSesion<?php echo $panelSesion["idSesion"];?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div id="modificarSesion<?php echo $sesionActual["idSesion"];?>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <!--enctype="multipart/form-data" añadido por min-->
-            <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarSesion.php?idSesion=<?php echo $panelSesion["idSesion"]; ?>" method="POST">
+            <form id="form-edit-perfil"  enctype="multipart/form-data" action="controladoras/actualizarSesion.php?idSesion=<?php echo $sesionActual["idSesion"]; ?>" method="POST">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4>Editar Sesión</h4>
+                    <h4><?php echo $text["editSes"];?></h4>
                   </div>
                   <div class="modal-body">
-                    <label for="sala" class="">Cambiar la Sala:</label>
-                    <input type="text" name="sala" class="form-control form-pers" value="<?php echo $panelSesion["sala"];?>"><br/>    
+                    <label for="sala" class=""><?php echo $text["cambSala"];?></label>
+                    <input type="text" name="sala" class="form-control form-pers" value="<?php echo $sesionActual["sala"];?>"><br/>    
 
-                    <label for="fecha" class="">Cambiar la Fecha:</label>
-                    <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
+                    <label for="fecha" class=""><?php echo $text["cambFech"];?></label>
+                    <input type="text" name="fecha" class="form-control form-pers" placeholder="<?php echo $text["s1"];?>" value="<?php echo $sesionActual["fecha"]; ?>"> <br/>
 
-                    <label for="capacidad" class="">Cambiar la Capacidad:</label>
-                    <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
+                    <label for="capacidad" class=""><?php echo $text["cambCapac"];?></label>
+                    <input type="text" name="capacidad" class="form-control form-pers" placeholder="<?php echo $text["s2"];?>" value="<?php echo $sesionActual["capacidad"]; ?>"> <br/>
 
-                    <label for="idPelicula" class="">ID de la pelicula de la sesion ( no modificable ):</label>
-                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $panelSesion["idPelicula"]; ?>" readonly> <br/>
+                    <label for="idPelicula" class=""><?php echo $text["cambId"];?></label>
+                    <input type="text" name="idPelicula" class="form-control form-pers" placeholder="<?php echo $text["s3"];?>" value="<?php echo $sesionActual["idPelicula"]; ?>" readonly> <br/>
 
 
                   </div>
                   <div class="modal-footer">
-                    <button type="submit" name="idSesion" class="btn btn-success">Guardar Cambios</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" name="idSesion" class="btn btn-success"><?php echo $text["guardCamb"];?></button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                   </div>
                 </div>
               </div>
@@ -162,8 +166,9 @@
           echo '</div>';
           echo '</li>';
         }
-      }
-      else{
+
+      }else{
+
         $arraySesiones=Sesion::mostrarSesiones();
         foreach($arraySesiones as $panelSesion){
           //$a=Pelicula::getObjetoPelicula($panelPelicula["idPelicula"]);
@@ -184,13 +189,16 @@
             echo '<img src="img/movie_no_poster.jpg" alt="" height="140px" width="90px" class="thumbnail">';
 
           }
-          echo '</a>';  
-          echo '<div class="media-body">';
-          echo '<p><b>Sala: </b>'.$panelSesion["sala"].'</p>';
-          echo '<p><b>Fecha: </b>'.$panelSesion["fecha"].'</p>';
-          echo '<p><b>Capacidad: </b>'.$panelSesion["capacidad"].'</p>';
-          echo '<p><b>idPelicula: </b>'.$panelSesion["idPelicula"].'</p>';
-          echo '<p><b>Titulo de la pelicula: </b>'.$peliculaSesion["titulo"].'</p>';
+         
+            echo '</a>';  
+            echo '<div class="media-body">';
+            echo "<p><b>".$text['sala']."</b>".$panelSesion["sala"]."</p>";
+            echo "<p><b>".$text['fecha']."</b>".$panelSesion["fecha"]."</p>";
+            echo "<p><b>".$text['capacidad']."</b>".$panelSesion["capacidad"]."</p>";
+            echo "<p><b>".$text['idFilm']."</b>".$panelSesion["idPelicula"]."</p>";
+            echo "<p><b>".$text['titPel']."</b>".$peliculaSesion["titulo"]."</p>";
+            
+
           ?>
 
           <!-- Modificar una pelicula 
@@ -200,12 +208,12 @@
             <!--editar perfil-->
             <br/>
             <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#modificarSesion<?php echo $panelSesion["idSesion"];?>" > 
-              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> <?php echo $text["editar"];?>
             </button>
 
             <!--EliminarPerfil-->
             <button type="button" class="btn btn-danger" aria-label="Left Align" onclick="eliminarSesion('<?php echo $panelSesion["idSesion"]?>', '<?php echo $panelSesion["idPelicula"]?>');">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> <?php echo $text["eliminar"];?>
             </button>
 
             <!--</div>-->
@@ -218,26 +226,26 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4>Editar Sesión</h4>
+                      <h4><?php echo $text["editSes"];?></h4>
                     </div>
                     <div class="modal-body">
-                      <label for="sala" class="">Cambiar la Sala:</label>
+                      <label for="sala" class=""><?php echo $text["cambSala"];?></label>
                       <input type="text" name="sala" class="form-control form-pers" value="<?php echo $panelSesion["sala"];?>"><br/>    
 
-                      <label for="fecha" class="">Cambiar la Fecha:</label>
-                      <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
+                      <label for="fecha" class=""><?php echo $text["cambFech"];?></label>
+                      <input type="text" name="fecha" class="form-control form-pers" placeholder="<?php echo $text["s1"];?>" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
 
-                      <label for="capacidad" class="">Cambiar la Capacidad:</label>
-                      <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
+                      <label for="capacidad" class=""><?php echo $text["cambCapac"];?></label>
+                      <input type="text" name="capacidad" class="form-control form-pers" placeholder="<?php echo $text["s2"];?>" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
 
-                      <label for="idPelicula" class="">ID de la pelicula de la sesion ( no modificable ):</label>
-                      <input type="text" name="idPelicula" class="form-control form-pers" placeholder="Introduzca su idPelicula" value="<?php echo $panelSesion["idPelicula"]; ?>" readonly> <br/>
+                      <label for="idPelicula" class=""><?php echo $text["cambId"];?></label>
+                      <input type="text" name="idPelicula" class="form-control form-pers" placeholder="<?php echo $text["s3"];?>" value="<?php echo $panelSesion["idPelicula"]; ?>" readonly> <br/>
 
 
                     </div>
                     <div class="modal-footer">
-                      <button type="submit" name="idSesion" class="btn btn-success">Guardar Cambios</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                      <button type="submit" name="idSesion" class="btn btn-success"><?php echo $text["guardCamb"];?></button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                     </div>
                   </div>
                 </div>
@@ -268,7 +276,7 @@
       <div class="panel-body">
         <!-- insertar una pelicula-->
         <button type="button" class="btn btn-primary" data-toggle="modal" aria-label="Left Align" data-target="#insertarSesion" > 
-          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Inserte una Sesion
+          <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> <?php echo $text["h4NewSes"];?>
         </button>
 
         <div id="insertarSesion" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -278,19 +286,19 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4>Insertar Sesion</h4>
+                  <h4><?php echo $text["insertSes"];?></h4>
                 </div>
                 <div class="modal-body">
-                  <label for="sala" class="">Introduzca la Sala:</label>
+                  <label for="sala" class=""><?php echo $text["intrSala"];?></label>
                   <input type="text" name="sala" class="form-control form-pers" value="<?php echo $panelSesion["sala"];?>"><br/>    
 
-                  <label for="fecha" class="">Introduzca la Fecha:</label>
+                  <label for="fecha" class=""><?php echo $text["intrFech"];?></label>
                   <input type="text" name="fecha" class="form-control form-pers" placeholder="Introduzca su fecha" value="<?php echo $panelSesion["fecha"]; ?>"> <br/>
 
-                  <label for="capacidad" class="">Introduzca la Capacidad:</label>
+                  <label for="capacidad" class=""><?php echo $text["intrCap"];?></label>
                   <input type="text" name="capacidad" class="form-control form-pers" placeholder="Introduzca los capacidad" value="<?php echo $panelSesion["capacidad"]; ?>"> <br/>
                   
-                  <label for="idPelicula" class="">ID de la pelicula de la sesion: </label>
+                  <label for="idPelicula" class=""><?php echo $text["intrId"];?></label>
                   <select name="idPelicula" class="form-control" aria-labelledby="buscar_peli">
                   <?php 
                     $arrayPeliculas=Pelicula::mostrarPeliculas();
@@ -302,8 +310,8 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-success">Guardar Sesion</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-success"><?php echo $text["saveSes"];?></button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo $text["cerrar"];?></button>
                 </div>
               </div>
             </div>
@@ -313,16 +321,16 @@
 
         <br>
 
-        <p>o busquela </p>
+        <p><?php echo $text["pBusq"];?></p>
 
         <!-- formulario para buscar pelicula-->
-        <form role="form" action="controladoras/adminFiltrarCatalogo.php" method="post">
+        <form role="form" action="controladoras/adminFiltrarSesiones.php" method="post">
 
           <div class="input-group">
 
-            <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
+            <input name="busqueda" type="text" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-success">Buscar</button>
+              <button type="submit" class="btn btn-success"><?php echo $text["find"];?></button>
             </span>
           </div>            
 

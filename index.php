@@ -1,5 +1,6 @@
-<?php 
+<?php
 include "cabecera.php"; 
+
 
 ?>
 <html>
@@ -54,8 +55,8 @@ include "cabecera.php";
       <div class="seccion center-text" style="opacity: 0.95;">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-          <h1>CinesLy</h1>
-          <h3 class="near-top">Disfruta del cine, en compañía</h3>
+          <h1><?php echo $text["cinesLy"];//CinesLy ?></h1>
+          <h3 class="near-top"><?php echo $text["labelH3Index"];//Disfruta del cine, en compañía ?></h3>
           </div>
           <div class="col-md-1"></div>
         </div>
@@ -63,26 +64,11 @@ include "cabecera.php";
         <div class="seccion-small center-text" style="background-color:rgba(44, 62, 80,0.2); color:black; ">
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <h1 class="text-weight-bold">Actualmente en cartelera</h1>
+            <h1 class="text-weight-bold"><?php echo $text["labelH1Index"];//Actualmente en cartelera ?></h1>
           </div>
           <div class="col-md-1"></div>
         </div>
 
-        <div style="display:inline"><input type="button" class="btn btn-info" data-toggle="modal" data-target="#lot" value="Comprobar Loteria"></input></div>
-        <div id="lot" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h3 style="font-family: 'tahoma';font-size:16px !important; line-height:20px;margin-top:5px; padding-bottom:5px;">Comprueba tu número de <a href="http://loteria.rtve.es/" title="Loter&iacute;a de Navidad">Lotería de Navidad</a></h3>
-            </div>
-            <div class="modal-body">
-              <iframe frameborder="0" width="100%" height="130px" src="http://www.rtve.es/comunes/loteria-navidad/2014/comprobarNumeroForm.html"></iframe>
-         
-            </div>
-          </div>
-        </div>
-        </div>
         <section class="container" style="padding:10px;">
           <div class="col-md-1"></div>
           <div class="col-sm-2">
@@ -107,7 +93,7 @@ include "cabecera.php";
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <h1>CinesLy</h1>
-            <h3 class="near-top">Disfruta del cine, en compañía</h3>
+            <h3 class="near-top"><?php echo $text["labelH3Index"];?></h3>
             </div>
             <div class="col-md-1"></div>
           </div>

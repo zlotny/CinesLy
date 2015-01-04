@@ -1,11 +1,7 @@
 <?php
 include_once "sesion_segura.php";
-include_once "modelos/pelicula.php";
-include_once "modelos/usuario.php";
-include_once "modelos/sesion.php";
-include_once "modelos/evento.php";
 
-session_start();
+
 
 ?>
 
@@ -62,22 +58,22 @@ session_start();
  <div class="row top-margin">
   <div class="col-sm-6">
    <div class="panel panel-default">
-     <div class="panel-heading">Nuevo Grupo</div>
+     <div class="panel-heading"><?php echo $text["newGroup"];?></div>
      <div class="panel-body">
 
 
       <form action="controladoras/crearGrupo.php" role="form" method="POST">
         <div class="form-group">
-          <label for="nombre_grupo">Nombre del Grupo</label>
+          <label for="nombre_grupo"><?php echo $text["nameGroup"];?></label>
           <input name="nombreGrupo" class="form-control" id="nombre_grupo"
-          placeholder="Nombre de tu grupo">
+          placeholder="<?php echo $text["nameYourGroup"];?>">
         </div>
         <div class="form-group">
-          <label for="descripcion_grupo">Descripción</label>
-          <input type="text" name="descripcionGrupo" class="form-control" id="descripcion_grupo" placeholder="Introduce una descripción">
+          <label for="descripcion_grupo"><?php echo $text["description"];?></label>
+          <input type="text" name="descripcionGrupo" class="form-control" id="descripcion_grupo" placeholder="<?php echo $text["description"];?>">
         </div>
         <div class="form-group">
-          <label for="add_sesion">Elegir Sesión</label><br/>
+          <label for="add_sesion"><?php echo $text["chooseSesion"];?></label><br/>
           <select name="idSesion" class="form-control">
             <?php
             $sesiones = Sesion::getFuturasSesiones();
@@ -89,18 +85,18 @@ session_start();
             ?>
           </select>
         </div>
-        <label for="add_amigos">Añadir Amigos</label>
+        <label for="add_amigos"><?php echo $text["addFriends"];?></label>
         <div class="form-group scrollable-table">
           <table class="table table-striped">
-            <?php
+           <?php
             $amigos = $_SESSION["usuario"]->getAmigos();
             foreach($amigos as $amigo){
-              echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'>Añadir&nbsp;</span></td></tr>";
-            }
+              echo "<tr><td>$amigo->nombreUsuario</td><td><input class='pull-right' value='$amigo->email' name='arrayamigos[]' type='checkbox'> <span class='pull-right'>".$text['add']."&nbsp;</span></td></tr>";
+           }
             ?>
           </table>
         </div>
-        <button type="submit" class="btn btn-success pull-right">Crear</button>
+        <button type="submit" class="btn btn-success pull-right"><?php echo $text["crear"];?></button>
       </form>
     </div>
   </div>
@@ -108,21 +104,22 @@ session_start();
 
 <div class="col-sm-6">
   <div class="panel panel-default">
-    <div class="panel-heading">Grupos</div>
+    <div class="panel-heading"><?php echo $text["grupo"];?></div>
     <div class="panel-body">
       <form action="controladoras/eliminarGrupos.php" method="POST">   
        <div class="form-group scrollable-table">
         <table class="table table-striped">
-          <tr><td>Nombre</td><td>Nº Integrantes</td><td></td><td></td></tr>
+          <tr><td><?php echo $text["nombre"];?></td><td><?php echo $text["numInteger"];?></td><td></td><td></td></tr>
           <?php
           $grupos = Evento::listarGrupos($_SESSION["usuario"]->email);
           foreach ($grupos as $grupo){
-            echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> Ver </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>Borrar&nbsp;</span></td></tr>";
+        
+            echo "<tr ><td>$grupo->nombre</td><td>".Evento::getNumIntegrantes($grupo->idEvento)."</td><td><a href='ver_grupo.php?id=$grupo->idEvento' class='btn btn-success btn-mini btn-makesmall'> ".$text['ver']." </a></td><td><input  name='paraEliminar[]'' class='pull-right' type='checkbox' value='$grupo->idEvento'> <span class='pull-right'>".$text['borrar']."&nbsp;</span></td></tr>";
           }
           ?>
         </table>
       </div>
-      <input type="submit" class="btn btn-success pull-right" value="Validar"/>
+      <input type="submit" class="btn btn-success pull-right" value="<?php echo $text["validar"];?>"/>
     </form>
   </div>
 </div>

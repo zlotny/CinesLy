@@ -28,14 +28,12 @@ include_once "sesion_segura.php";
 
      <?php
 
-     error_reporting(E_ERROR | E_PARSE);
 
-     include_once "modelos/pelicula.php";
      include_once "cabecera.php";
      
      
      cabeceraCartelera();
-     session_start();
+
      if($_REQUEST["filtrado"]==true){
       $filtro=$_SESSION["filtro"];
       unset($_SESSION["filtro"]);
@@ -46,8 +44,8 @@ include_once "sesion_segura.php";
 
 
     
-<h1 class="tackle-right">Catálogo de Películas</h1>
-<p class="tackle-right">Busca y comenta tus películas favoritas. Haz click sobre el póster de una película para ver su ficha detallada</p>
+<h1 class="tackle-right"><?php echo $text["h1Catalogo"];?></h1>
+<p class="tackle-right"><?php echo $text["pAmigos"];?></p>
     <div class="col-md-1"> </div>
     <div class="col-md-8 ">
       <ul class="media-list" style="margin-left:-20px;">
@@ -74,10 +72,10 @@ include_once "sesion_segura.php";
 
             echo '</a>';  
             echo '<div class="media-body">';
-            echo '<p><b>Nombre: </b>'.$panelPelicula["titulo"].'</p>';
-            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+            echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+            echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+            echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -100,10 +98,10 @@ include_once "sesion_segura.php";
             }
             echo '</a>';  
             echo '<div class="media-body">';
-            echo '<p><b>Título: </b>'.$panelPelicula["titulo"].'</p>';
-            echo '<p><b>Genero: </b>'.$panelPelicula["genero"].'</p>';
-            echo '<p><b>Año: </b>'.$panelPelicula["anho"].'</p>';
-            echo '<p><b>Sinopsis: </b>'.$panelPelicula["sinopsis"].'</p>';
+            echo "<p><b>".$text['titulo']."</b>".$panelPelicula['titulo']."</p>";
+            echo "<p><b>".$text['genero']."</b>".$panelPelicula['genero']."</p>";
+            echo "<p><b>".$text['anho']."</b>".$panelPelicula['anho']."</p>";
+            echo "<p><b>".$text['sinopsis']."</b>".$panelPelicula['sinopsis']."</p>";
             echo '</div>';
             echo '</div>';
             echo '</div>';
@@ -129,37 +127,37 @@ include_once "sesion_segura.php";
 
           <div class="input-group">
 
-            <input name="busqueda" type="text" class="form-control" placeholder="Buscar Pelicula">
+            <input name="busqueda" type="text" class="form-control" placeholder="<?php echo $text["findFilm"];?>">
             <span class="input-group-btn">
-              <button type="submit" class="btn btn-success">Buscar</button>
+              <button type="submit" class="btn btn-success"><?php echo $text["find"];?></button>
             </span>
           </div>            
           <br>
           <div class="form-group">
-            <label for="tipo_peli">Tipo de Peliculas</label><br>
+            <label for="tipo_peli"><?php echo $text["typeFlim"];?></label><br>
             <select name="tipo" class="form-control" aria-labelledby="buscar_peli">
-              <option  value="">Todas las peliculas</option>
-              <option  value="cartelera">En Cartelera</option>
-              <option  value="especial">Especiales</option>
-              <option  value="proximamente">Proximamente</option>
+              <option  value=""><?php echo $text["allFilms"];?></option>
+              <option  value="cartelera"><?php echo $text["carteleras"];?></option>
+              <option  value="especial"><?php echo $text["especial"];?></option>
+              <option  value="proximamente"><?php echo $text["proximamente"];?></option>
             </select>
 
           </div>
           <div class="form-group">
-            <label >Género</label>
+            <label ><?php echo $text["genero"];?></label>
 
             <table class="table table-striped">
 
-              <tr ><td>Acción</td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
-              <tr ><td>Aventura</td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Comedia</td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Drama</td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Fantasía</td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Ficción</td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Pornografía</td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" onclick="alertify.error('En que pinchas picaron?')"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Romántica</td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Suspense</td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
-              <tr ><td>Terror</td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["accion"];?></td><td><input name="accion" value="accion" class="pull-right" type="checkbox"> <span class="pull-right"></span></td></tr>
+              <tr ><td><?php echo $text["aventura"];?></td><td><input name="aventura" value="aventura" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["comedia"];?></td><td><input name="comedia" value="comedia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["drama"];?></td><td><input name="drama" value="drama" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["fantasia"];?></td><td><input name="fantasia" value="fantasia" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["ficcion"];?></td><td><input name="ficcion" value="ficcion" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["porn"];?></td><td><input name="pornografia" value="pornografia"  class="pull-right" type="checkbox" > <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["romantica"];?></td><td><input name="romantica" value="romantica" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["suspense"];?></td><td><input name="suspense" value="suspense" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
+              <tr ><td><?php echo $text["terror"];?></td><td><input name="terror" value="terror" class="pull-right" type="checkbox"> <span class="pull-right">&nbsp;</span></td></tr>
 
             </table>
           </div>
