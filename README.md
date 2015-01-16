@@ -16,8 +16,10 @@ usando el script que ubicado bajo database-setup/ cuando esté terminado.
   `git clone https://github.com/ndrs92/Cinesly.git`
   
 Crear la base de datos CinesLy en tu servidor mysql y ejecutar:
-  
-  `mysql -u user -p < database-setup/setup.sql`
+
+  `cd CinesLy`
+  `mysql -u user -p < setup/setup.sql`
+  `sh setup/setup.sh`
 
 A partir de ahí la web será usable.
 
